@@ -6,7 +6,8 @@
 Serious
 -------
 
-1. Bar chart (much like this one that shifts https://www.youtube.com/watch?v=Og847HVwRSI) that shows the 
+1. Obesity:
+   Bar chart (much like this one that shifts https://www.youtube.com/watch?v=Og847HVwRSI) that shows the 
    number of fast food venues over time in the UK and then along side it or in another tab have a graph 
    or some sort of visualisation showing the increasing obesity rates across the UK. Could also extend 
    it to the entire world and have a globe (like https://www.covidvisualizer.com) and when the user clicks
@@ -16,7 +17,8 @@ Serious
 
    Problem: rising obesity
 
-2. Again with obesity / fast food: Could make an interactive menu for people containing the most popular fast
+2. Fast Food:
+   Again with obesity / fast food: Could make an interactive menu for people containing the most popular fast
    food place's meals, but instead of just showing the food along with a list of ingredients and macros, they're
    invited to click the picture of the food (or some sprite representing the meal) and the sprite (guess it would
    work best with a burger because the animation of it splitting up into its components would look decent) separates
@@ -28,7 +30,8 @@ Serious
 
    Problem: rising obesity
 
-3. Could have a map of the USA and track the progression of the 2020 / 21 civil unrest (https://en.wikipedia.org/wiki/2020%E2%80%932021_United_States_racial_unrest) 
+3. US Civil Unrest 2020/21:
+   Could have a map of the USA and track the progression of the 2020 / 21 civil unrest (https://en.wikipedia.org/wiki/2020%E2%80%932021_United_States_racial_unrest) 
    that (I think) began with Ahmaud Arbery. There'd be a timeline that would automatically move on and with each event 
    a new pin or something would appear on the map with "Name of event, date" and a snippet of information underneath. 
 
@@ -36,22 +39,36 @@ Serious
 
    Problem: racism in the US 
 
-4. This could be extremely difficult to map out but could be cool: visualise the loss of the rainforest / forest areas in general. 
+4. Deforestation: 
+   This could be extremely difficult to map out but could be cool: visualise the loss of the rainforest / forest areas 
+   in general. 
    Again have a timeline and as it goes through the years you can see the forest recede. 
 
    Problem: habitat & biodiversity loss
 
-5. The growth of wind power over the years. Could create a bar chart showing the most common form of energy used by
+5. Wind Power:
+   The growth of wind power over the years. Could create a bar chart showing the most common form of energy used by
    different countries and how its changed for the world and individual states over time. 
 
    Problem: fossil fuels, climate change, clean energy
 
-6. Bit of a dark one, sorry: suicide rates, got a CSV in 'Mental Health' that shows the number of suicides in different
-   countries, separated by male/female and age group, between 1979-2016. Could look at the highest suicide rate by 
-   population and see if that's changed. Which gender / age is more likely to commit suicide. 
+6. Suicide Rates (bit dark, apologies):
+   Got a CSV in 'Mental Health' that shows the number of suicides in different countries, separated by male/female and 
+   age group, between 1979-2016. Could look at the highest suicide rate by population and see if that's changed. Which
+   gender / age group is more likely to commit suicide. 
 
    Problem: Mental Health
    CSV from: https://www.kaggle.com/szamil/who-suicide-statistics
+
+7. Rising sea levels & CO2 output:
+   Could visualise the changing sea levels, have a globe and as time moves on they rise and cover the earth. Ask the
+   user questions and again, compare to the truth. 
+   Could also include something about CO2 levels and how as they increase, so does global temperature, so does sea level. 
+   Sea levels 1880-2014, emission data, CSV's included in 'Climate Change' folder. 
+
+   co2_emission CSV from: https://www.kaggle.com/yoannboyere/co2-ghg-emissionsdata
+   Sea_levels_2015 CSV from: https://www.kaggle.com/somesh24/sea-level-change
+   Problem: climate change
 
 Everyday Life
 -------------
