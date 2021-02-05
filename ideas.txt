@@ -67,6 +67,7 @@ Serious
    gender / age group is more likely to commit suicide. 
 
    Problem: Mental Health
+
    CSV from: https://www.kaggle.com/szamil/who-suicide-statistics
 
 7. Rising sea levels & CO2 output:
@@ -76,6 +77,7 @@ Serious
    Sea levels 1880-2014, emission data, CSV's included in 'Climate Change' folder. 
 
    Problem: climate change
+   
    co2_emission CSV from: https://www.kaggle.com/yoannboyere/co2-ghg-emissionsdata
    Sea_levels_2015 CSV from: https://www.kaggle.com/somesh24/sea-level-change
 
