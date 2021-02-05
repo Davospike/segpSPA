@@ -9,3 +9,4 @@ https://github.com/awesomedata/awesome-public-datasets/blob/master/README.rst - 
 																				has split them up in to categories
 
 
+https://www.kaggle.com/ - github for datasets 

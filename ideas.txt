@@ -1,5 +1,7 @@
 // Put your ideas in here. Attempted to split the serious ones that deal with a global problem, the serious 
-// ones that just solve an everyday problem or make life easier, and the ones that are not serious at all
+// ones that just solve an everyday problem or make life easier, and the ones that are not.
+// If people want to move them around based on opinions, do it. The lines between everyday and not serious
+// are quite blurred.
 
 Serious
 -------
@@ -39,24 +41,86 @@ Serious
 
    Problem: habitat & biodiversity loss
 
-5. 
+5. The growth of wind power over the years. Could create a bar chart showing the most common form of energy used by
+   different countries and how its changed for the world and individual states over time. 
 
+   Problem: fossil fuels, climate change, clean energy
+
+6. Bit of a dark one, sorry: suicide rates, got a CSV in 'Mental Health' that shows the number of suicides in different
+   countries, separated by male/female and age group, between 1979-2016. Could look at the highest suicide rate by 
+   population and see if that's changed. Which gender / age is more likely to commit suicide. 
+
+   Problem: Mental Health
+   CSV from: https://www.kaggle.com/szamil/who-suicide-statistics
 
 Everyday Life
 -------------
 
 1. 
 
-Not Serious at all
-------------------
-1. The best bagel/sandwich/panini to have based on the temperature outside and your star sign. Whilst an important issue, may be difficult
-   to get the data unless we get a survey out to facebook mums
+Not Serious
+-----------
+1. The best bagel/sandwich/panini to have based on the temperature outside and your star sign:
+   Whilst an important issue, may be difficult to get the data unless we get a survey out to 
+   facebook mums
 
-2. Trump Tweets: bit overdone but still good. Could attempt to visualise his tweets or speeches, what the most common phrases/words are, the time he tweeted etc. 
-   https://www.thetrumparchive.com   	The folder "Trump" has a transcript of all his speeches & a .csv file of all the insults he threw out on twitter. Could be
-   good to see who was insulted most and the most common insult
+2. Trump Tweets:
+   Bit overdone but still good. Could attempt to visualise his tweets or speeches, what the most common 
+   phrases/words are, the time he tweeted etc. https://www.thetrumparchive.com contains all his tweets	
+   The folder 'Trump' has a transcript of all his speeches & a .csv file of all the insults he threw 
+   out on twitter 2015-2021. Could be good to see who was insulted most and the most common insult.
 
-3. 
+   We could also compare it with Obama's tweets between 2012-2019, look at how they differ in terms of 
+   number of tweets, length of tweet. If we could analyse the words used in the tweets we could pass it 
+   into some program that tells us the average reading age and see if that goes somewhere. Harvard CS50
+   have a "Readability" exercise in which people create the program that determines reading age based on 
+   text here - https://cs50.harvard.edu/x/2020/psets/2/readability and it's in C.
+
+   I've put the Obama CSV in the 'Trump' folder because I don't think we'd use it as a standalone dataset. 
+
+   Transcript from: https://www.kaggle.com/arnavsharmaas/all-donald-trump-transcripts
+   Trump CSV from: https://www.kaggle.com/ayushggarg/all-trumps-twitter-insults-20152021 
+   Obama CSV from: https://www.kaggle.com/datacrux/barack-obama-twitterdata-from-20122019
+
+3. Visualise which states Parler users came from:
+   Created 'Parler' folder and added a CSV file that contains geotagged metadata which (I believe) shows 
+   the time and location of where users captured video on their phones
+
+4. Something to do with reddit.com/r/wallstreetbets:
+   Created 'WSB' folder with a CSV file that has 29500 posts on the subreddit up to 28.1.21. Could look 
+   again at most common word, most common stock, the time they post, whatever. 
+
+   CSV from: https://www.kaggle.com/gpreda/reddit-wallstreetsbets-posts
+
+5. Spotify: 
+   Got a CSV file in the folder 'Spotify' that has 160K songs from 1920-2020 that can be filtered in a 
+   number of ways. I don't know how but someone has applied different ratings, such as "acousticness" 
+   & "danceability", so we could look at how these ratings, if at all, have changed over the years. 
+   Has music increased in "danceability" or has the duration of songs changed. 
+   
+   CSV from: https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks
+
+6. Netflix: 
+   CSV in "Netflix" folder which shows the number of tv shows / movies on netflix, the date added, date 
+   produced, rating of it, duration etc. 
+   
+   CSV from: https://www.kaggle.com/shivamb/netflix-shows
+
+7. The best dish to buy from an Indian takeaway based on the date and time:
+   Got a CSV in 'Takeaway' that has 33k orders from two Indian takeaways in London, with the date & time, the 
+   item & quantity ordered and price. So we could just get all the timestamp data and see which is the most
+   popular item at a specific time and tell people "If it's this day in this month and this time, this is what
+   you need to buy". 
+
+   CSV from: https://www.kaggle.com/henslersoftware/19560-indian-takeaway-orders
+
+8. Airplane Crashes: 
+   CSV in 'Plane', shows crashes and fatalities between 1908-2019. We could go show what kind of plane has had 
+   the most crashes, the most dangerous year/month/place to fly in, the airline with the most deaths. 
+   Data can be filtered to include just military, cargo, or passenger. 
+
+   CSV from: https://www.kaggle.com/cgurkan/airplane-crash-data-since-1908
+
 
 
 
