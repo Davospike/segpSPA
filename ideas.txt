@@ -1,11 +1,14 @@
-// Put your ideas in here 
-Test
+// Put your ideas in here. Attempted to split the serious ones that deal with a global problem, the serious 
+// ones that just solve an everyday problem or make life easier, and the ones that are not serious at all
+
+Serious
+-------
 
 1. Bar chart (much like this one that shifts https://www.youtube.com/watch?v=Og847HVwRSI) that shows the 
    number of fast food venues over time in the UK and then along side it or in another tab have a graph 
    or some sort of visualisation showing the increasing obesity rates across the UK. Could also extend 
    it to the entire world and have a globe (like https://www.covidvisualizer.com) and when the user clicks
-   on it they can see a similar char & graph set up. 
+   on it they can see a similar chart & graph set up. 
    Could also take "inspiration" from https://www.gapminder.org/ and have the user answer questions before 
    they see the chart and like Vini said, compare their answers against the truth. 
 
@@ -16,6 +19,7 @@ Test
    invited to click the picture of the food (or some sprite representing the meal) and the sprite (guess it would
    work best with a burger because the animation of it splitting up into its components would look decent) separates
    not into flour, water, egg or whatever, but into the amount of fat, sugar, salt, whatever other rubbish that's in them.
+   Any graphics would have to quite cartoony just so it wasn't so disgusting.
    Again ask questions, compare with reality. 
 
    Could combine 1 & 2. 
@@ -29,6 +33,30 @@ Test
    Actual data may be difficult with this: I don't know what kind of data you could display
 
    Problem: racism in the US 
+
+4. This could be extremely difficult to map out but could be cool: visualise the loss of the rainforest / forest areas in general. 
+   Again have a timeline and as it goes through the years you can see the forest recede. 
+
+   Problem: habitat & biodiversity loss
+
+5. 
+
+
+Everyday Life
+-------------
+
+1. 
+
+Not Serious at all
+------------------
+1. The best bagel/sandwich/panini to have based on the temperature outside and your star sign. Whilst an important issue, may be difficult
+   to get the data unless we get a survey out to facebook mums
+
+2. Trump Tweets: bit overdone but still good. Could attempt to visualise his tweets or speeches, what the most common phrases/words are, the time he tweeted etc. 
+   https://www.thetrumparchive.com   	The folder "Trump" has a transcript of all his speeches & a .csv file of all the insults he threw out on twitter. Could be
+   good to see who was insulted most and the most common insult
+
+3. 
 
 
 
