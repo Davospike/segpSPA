@@ -14,6 +14,15 @@ Serious
    on it they can see a similar chart & graph set up. 
    Could also take "inspiration" from https://www.gapminder.org/ and have the user answer questions before 
    they see the chart and like Vini said, compare their answers against the truth. 
+   CSV added to 'Health/Obesity' folder
+
+   There is a US wide health dataset here: https://www.kaggle.com/cdc/behavioral-risk-factor-surveillance-system
+   but it's 2.7GB so it's not in the repo (yet) but it has a lot (454) columns that can be filtered, such as; are
+   they a smoker, do they have diabetes, consumption of vegetables etc. So we could make correlations and use one
+   of the visualisations from https://datavizcatalogue.com/ to display it. Could use this to look at who is at an
+   increased risk of heart disease or whatever.  
+
+   obesity-cleaned CSV from: https://www.kaggle.com/amanarora/obesity-among-adults-by-country-19752016
 
    Problem: rising obesity
 
