@@ -6,7 +6,7 @@ Test
    or some sort of visualisation showing the increasing obesity rates across the UK. Could also extend 
    it to the entire world and have a globe (like https://www.covidvisualizer.com) and when the user clicks
    on it they can see a similar char & graph set up. 
-   Could also take "inspiration" from https://www.gapminder.org/ dnd have the user answer questions before 
+   Could also take "inspiration" from https://www.gapminder.org/ and have the user answer questions before 
    they see the chart and like Vini said, compare their answers against the truth. 
 
    Problem: rising obesity
