@@ -66,14 +66,22 @@ Serious
    Could also include something about CO2 levels and how as they increase, so does global temperature, so does sea level. 
    Sea levels 1880-2014, emission data, CSV's included in 'Climate Change' folder. 
 
+   Problem: climate change
    co2_emission CSV from: https://www.kaggle.com/yoannboyere/co2-ghg-emissionsdata
    Sea_levels_2015 CSV from: https://www.kaggle.com/somesh24/sea-level-change
-   Problem: climate change
 
 Everyday Life
 -------------
 
-1. 
+1. Phone screen time:
+   Could look at how much people use their phones, try to inform them about the healthier choices of putting their phones
+   down. Could allow people to compare themselves with the average of the data set? 
+   Unfortauntely I've only been able to find a small data set for this so far, but we could, if we choose this, add our 
+   own personal data to this. Or we could stick with the small data size and just try to find more. Could use this and 
+   surveys.
+   CSV added to 'Phone' folder.
+
+   typical_smartphone_usage CSV from: http://www.research.lancs.ac.uk/portal/en/datasets/typical-smartphone-usage-dataset(24cc8151-a0fc-4753-8fd9-efb0313a8651).html
 
 Not Serious
 -----------
