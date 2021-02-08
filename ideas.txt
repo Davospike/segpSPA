@@ -87,7 +87,7 @@ Everyday Life
 1. Phone screen time:
    Could look at how much people use their phones, try to inform them about the healthier choices of putting their phones
    down. Could allow people to compare themselves with the average of the data set? 
-   Unfortauntely I've only been able to find a small data set for this so far, but we could, if we choose this, add our 
+   Unfortunately I've only been able to find a small data set for this so far, but we could, if we choose this, add our 
    own personal data to this. Or we could stick with the small data size and just try to find more. Could use this and 
    surveys.
    CSV added to 'Phone' folder.
@@ -119,7 +119,7 @@ Not Serious
    Obama CSV from: https://www.kaggle.com/datacrux/barack-obama-twitterdata-from-20122019
 
 3. Visualise which states Parler users came from:
-   Created 'Parler' folder and added a CSV file that contains geotagged metadata which (I believe) shows 
+   Created 'Parler' folder and added a CSV file that contains geotagged meta data which (I believe) shows 
    the time and location of where users captured video on their phones
 
 4. Something to do with reddit.com/r/wallstreetbets:
@@ -137,20 +137,20 @@ Not Serious
    CSV from: https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks
 
 6. Netflix: 
-   CSV in "Netflix" folder which shows the number of tv shows / movies on netflix, the date added, date 
+   CSV in "Netflix" folder which shows the number of TV shows / movies on Netflix, the date added, date 
    produced, rating of it, duration etc. 
    
    CSV from: https://www.kaggle.com/shivamb/netflix-shows
 
 7. The best dish to buy from an Indian takeaway based on the date and time:
-   Got a CSV in 'Takeaway' that has 33k orders from two Indian takeaways in London, with the date & time, the 
+   Got a CSV in 'Takeaway' that has 33K orders from two Indian takeaways in London, with the date & time, the 
    item & quantity ordered and price. So we could just get all the timestamp data and see which is the most
    popular item at a specific time and tell people "If it's this day in this month and this time, this is what
    you need to buy". 
 
    CSV from: https://www.kaggle.com/henslersoftware/19560-indian-takeaway-orders
 
-8. Airplane Crashes: 
+8. Aeroplane Crashes: 
    CSV in 'Plane', shows crashes and fatalities between 1908-2019. We could go show what kind of plane has had 
    the most crashes, the most dangerous year/month/place to fly in, the airline with the most deaths. 
    Data can be filtered to include just military, cargo, or passenger. 
