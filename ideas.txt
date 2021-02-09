@@ -106,10 +106,24 @@ Everyday Life
    wine rating app.
 
    Categories: White: Colour, Green fruit vs Tropical Fruit, ABV, Price range 
-               Red: Colour, Red Fruit vs Black Fruit, ABV, Oak-aged, Price range
+   Red: Colour, Red Fruit vs Black Fruit, ABV, Oak-aged, Price range
 
    Reccommends you a grape variety/ or a list of wines that match your choice/ link to Google Shopping 
 
+3. What lineup should I chose? Using data to take some of the emotion out of fantasy football.
+
+   Problem: Putting too much time and effort into chosing your fantasy football team, with decisions often
+   driven by emotion, as opposed to data. Input/import team into SPA, the amount of subsyoure willing to
+   take, favourite team/players (for some tie breakers), and any other input that can inform data decisions
+   Then, use web scrapers to scrape news to inform of any injuries etc, and have some calculations run
+   on the vast amount of FF data to calc things like xG, xA, and combine with FF own data to suggest
+   transfers and team changes for each week.
+   Theres plenty of resources, data and guides out there for this sort of stuff. Not sure if people are
+   into FF as much as I am, but I've been wanting to do a FF data thing for a while. My pal has a medium
+   article on scraping predicted lineups for FF from the FF scout with python and another one of football
+   betting, so could get some methods for calculating stats and what not to inform FF transfer decisions.
+   He would also no doubt be happy to help along the way if we needed it.
+  
 
 Not Serious
 -----------
