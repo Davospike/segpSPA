@@ -97,13 +97,18 @@ Everyday Life
 2. Wine App for Young People: removing the wankery from wine
    
    Problem: Wine is often seen as prententious, wanky and for old stuffy men. However, wine is nice to drink and it should be made
-   more accessible and approachable for young people. How to solve problem: create a fun SPA that asks the user simple 
+   more accessible and approachable for young people. How to solve problem: create a fun, educational SPA that asks the user simple 
    questions in a playful way about what their favourite colour wine, acidity, fruit flavours, ABV (alcohol content) perhaps what
    food they might be eating, and the app on that basis will reccommend the user different wines that fit their category. We could 
    add a multi-sensory component by matching wine styles to music - i.e. acidic (spiky) wines would play funky music, and more
    smooth wines could play smooth music. We could even do some basic research about which music fits which wine. After a user has
    entered their choices, a list of wines and where to buy online appears, along with a link to its score on Vivino ( a peer-to-peer
-   wine rating app.   
+   wine rating app.
+
+   Categories: White: Colour, Green fruit vs Tropical Fruit, ABV, Price range 
+   Red: Colour, Red Fruit vs Black Fruit, ABV, Oak-aged, Price range
+
+   Reccommends you a grape variety/ or a list of wines that match your choice/ link to Google Shopping 
 
 3. What lineup should I chose? Using data to take some of the emotion out of fantasy football.
 
@@ -119,8 +124,6 @@ Everyday Life
    betting, so could get some methods for calculating stats and what not to inform FF transfer decisions.
    He would also no doubt be happy to help along the way if we needed it.
   
-
-
 
 Not Serious
 -----------
