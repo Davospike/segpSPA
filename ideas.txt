@@ -1,5 +1,5 @@
 // Put your ideas in here. Attempted to split the serious ones that deal with a global problem, the serious
-// ones that just solve an everyday problem or make life easier, and the ones that are not.
+// ones that just solve an everyday problem or make life easier, and the ones that are not serious at all.
 // If people want to move them around based on opinions, do it. The lines between everyday and not serious
 // are quite blurred.
 
