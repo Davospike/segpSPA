@@ -3,10 +3,10 @@
 https://visme.co/blog/examples-data-visualizations - List of what data visualisation should be and some good examples
 
 https://datavizcatalogue.com - displays about 60 options on how to display the data and when you click on one it tells
-							   you what tools can be used to achieve it
+							   							 you what tools can be used to achieve it
 
 https://github.com/awesomedata/awesome-public-datasets/blob/master/README.rst - a huge list of data sets available and
-																				has split them up in to categories
+																																								has split them up in to categories
 
 
-https://www.kaggle.com/ - github for datasets 
+https://www.kaggle.com/ - github for datasets
