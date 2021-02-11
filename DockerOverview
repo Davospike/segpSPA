@@ -1,0 +1,169 @@
+Docker
+-> open platform for developing, shipping, running apps
+-> allows u to separate apps from your infrastructure - quick software delivery
+-> can manange software same way as manage apps
+-> by using docker methodologies for shipping/testing/deploying code, can
+   reduce delay btw writing code and running it in prodn
+
+Docker provides ability to run prodn and run in loosely isolated env called
+a container - the isolation / security allows u to run many containers
+simultaenously on given host
+
+containers
+-> lightweight, contain everything needed for running app
+-> can share and ensure everyone u share to gets same container
+
+Docker provides tooling and platform
+-> manages lifecycle of containers
+-> develop app and its supporting components using containers
+-> !!!!Container is the unit for distributing and testing your app!!!!!
+-> When ready, deploy app into prodn env, as a container or orchestrated
+   service - works same if your prodn env is a local data center, cloud provider
+   or a hybrid
+
+
+What can i use docker for?
+1) DELIVERY OF APPLICATIONS
+  -> streamlines dev lifecycle by allowing devs to work in standardized envs
+      using local container which provide apps and services
+   -> containers are great for CI/CD WORKFLOWS
+
+Common scenario
+- devs write code locally, share work with colleagues using Docker containers
+- they use docker to push their apps into test env
+- when find bugs, can fix them in dev env and redeploy them to test env
+- when testing complete, getting the fix to the customer as simple as pushing
+   the updated image to the production env
+
+
+2) RESPONSIVE DEPLOYMENT AND SCALING
+-
+-> dockers container based platform allows for HIGHLY PORTABLE workloads
+-> container run on dev's local laptop / physical or virtual machines in data center,
+      etc
+-> portability and lightweight: easy to dynamically manage workloads, scaling up or
+   tearing down apps and servcies as business needs dictate, in near real time
+
+
+3) RUNNING MORE WORKLOADS ON SAME HARDWARE
+-> docker lightweight and fast - viable, cost-effec alt to hypervisor-based
+   VMs, can use more of your computer capacity to achieve business goals
+-> since docker uses linux containers and is designed for the kernel only,
+   it does not use a hypervisor
+-> docker perfect for high density envs and for small and medium deployments
+   where you need to do more with fewer resources
+
+
+
+Docker Architecture
+- client-servcie Architecture
+- client talks to docker daemon, which does heavy lifting of building, running,
+   distributing Docker containers
+- client and daemon can run on same system, or can connect docker client to
+   remote docker daemon
+- client and daemon communicate using a REST API over UNIX sockets or a network
+   interface
+- another docker client is docker compose - lets u work with apps
+   consisting of a set of containers
+
+
+See diagram: https://docs.docker.com/get-started/overview/
+-> client: docker build, docker pull, docker run
+-> dokcer_shost: docker daemon -> images -> cotnainers -> registry ..
+
+
+The docker daemon
+-> AKA the dockerd listens for Docker API requests and manages docker objects
+   such as images, containers, networks, and volumes
+-> daemon can also communicate with other daemons to manage docker services
+
+The docker client
+-> AKA docker, primary way docker users interact with docker
+-> with u use commands like docker run, client sends these commands to
+   dockerd (docker daemon) which carries them out
+-> docker command uses the docker API
+-> docker can communicate with > 1 daemon
+
+Docker registries
+-> store docker images
+-> docker hub is public registry anyone can use, docker is configures to look
+   for images on docker hub by default
+-> can run private registry
+-> by using docker pull or docker run commands, the required images are pulled
+   from configured registry
+-> by using docker push, your image is pushed to configured registry
+
+
+
+Docker objects:
+
+1) Images
+-> an image is a read only template for creating a docker container
+-> used to preconfigure server envs and package up apps
+-> often based on another image, with same additional customisation
+-> ie build an image based on ubunutu image, but installs the apache web server
+   and your application as well as config details needed to make your app run
+-> can create own images, ur use other people's that are published in a registry
+to build ur own,
+   -> create dockerfile, with simple syntax for defining the steps
+      needed to create the image and run it
+   -> each instruction in dockerfile creates a layer in the image
+   -> when u change the dockerfile and rebuild the image, only those layers that
+      have CHANGED are rebuilt. This is what makes images lightweight and small
+      and fast, when compared to other virtualisation technologies.
+
+"If a docker image is a digital photograph, a docker container is like a printout
+of that photograph, i.e. its an isntance of the image"
+
+2) Containers
+-> runnable instance of an image
+-> can create start stop move or develete a container using Docker API or CLI
+-> can connect a container to one or more networks, attach storage to it or
+   even create new image based on its current state
+-> container relatively well isolated from other containers and its host
+   machine by default
+-> can control how isolated a container's network, storage or other
+   subsystems are from other containers from the host machine
+-> container is defined by its image as well as any configuration options
+   you provide to it when u create or start it
+-> when a container is removed, any changes to its state that are not stored
+   in persistent storage disappear
+
+(Example) docker run command
+-> following command runs an ubuntu container, attaches interactively to your
+   local command-line session and runs /bin/bash
+
+$ docker run -i -t ubuntu /bin/bash
+
+When u run this, the following happens (assuming u are using default registry
+configuration)
+-> if u do not have ubuntu image locally, docker pulls it from ur configured
+   registry, as though u had run docker pull ubuntu
+-> docker create a cnew container as though you had run docker container create
+-> docker alllocates a read-write filesystem to the container as its final layer.
+   This allows a running container to create or modify files and dirs in the local
+   filesystem.
+-> docker creates a network interace to connect container to default network,
+   since u didnt specify any networking options -> incl assigning an IP address
+   to the container. By default, containers can connect to external networks
+   using the host machine's network connection
+-> docker starts container and executes /bin/bash - as container runs interactively
+   and attached to your terminal (due to -i and -t flags) you can provide input using
+   your keyboard while the output is linked to your terminal
+-> type exit to terminate /bin/bash - container stops but is not removed. can
+   start it again or remove it
+
+
+Underlying technology
+- Docker written in Go programming language - takes adv of several features
+   of the linux kernel to deliver its functionality
+- uses a technology called namespaces to provide the isolated workspace called
+   the container
+- when u run the container, docker creates a set of namespaces for that container
+
+(Namespaces are a feature of the Linux kernel that partitions kernel resources such
+that one set of processes sees one set of resources while another set of processes
+sees a different set of resources. )
+
+These namespaces provide a layer of isolation. Each aspect of a container runs in a
+separate namespace and its access is limited to that namespace. 
