@@ -1,5 +1,5 @@
 // Put your ideas in here. Attempted to split the serious ones that deal with a global problem, the serious
-// ones that just solve an everyday problem or make life easier, and the ones that are not.
+// ones that just solve an everyday problem or make life easier, and the ones that are not serious at all.
 // If people want to move them around based on opinions, do it. The lines between everyday and not serious
 // are quite blurred.
 
@@ -113,7 +113,7 @@ Everyday Life
 3. What lineup should I chose? Using data to take some of the emotion out of fantasy football.
 
    Problem: Putting too much time and effort into chosing your fantasy football team, with decisions often
-   driven by emotion, as opposed to data. Input/import team into SPA, the amount of subsyoure willing to
+   driven by emotion, as opposed to data. Input/import team into SPA, the amount of subs youre willing to
    take, favourite team/players (for some tie breakers), and any other input that can inform data decisions
    Then, use web scrapers to scrape news to inform of any injuries etc, and have some calculations run
    on the vast amount of FF data to calc things like xG, xA, and combine with FF own data to suggest
