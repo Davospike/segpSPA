@@ -8,5 +8,6 @@ you what tools can be used to achieve it
 https://github.com/awesomedata/awesome-public-datasets/blob/master/README.rst - a huge list of data sets available and
 has split them up in to categories
 
+https://www.snopes.com - a website that tackles fake news claims, can take inspiration from the way the facts are presented, and what can make the interaction more addictive.
 
 https://www.kaggle.com/ - github for datasets
