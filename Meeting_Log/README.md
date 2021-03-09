@@ -14,11 +14,6 @@ Meeting 02.02.2021
 - Created a list of questions for users to give feedback on the first paper prototype
 - Booked next meeting - started to think about delegating tasks -> doing more research on parts of the stack
   before next meeting to help with deciding individual tasks. Also going to try and get user feedback before next meeting.
-- Next meeting Friday 5th 2:30pm
-
-Meeting 05.02.2021
-
-- Meeting postponed due to things coming up for majority of group
 
 Meeting 10.03.2021
 Agenda:
