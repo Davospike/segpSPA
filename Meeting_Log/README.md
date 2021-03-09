@@ -16,10 +16,12 @@ Meeting 02.02.2021
   before next meeting to help with deciding individual tasks. Also going to try and get user feedback before next meeting.
 
 Meeting 10.03.2021
+
 Agenda:
 - Discuss our progress made on the week 6 API development workbook;
 - Review Survey Monkey responses to our Paper Prototype we sent out last week and note down any changes to be made; 
 - Discuss role distribution (i.e. front vs backend assignment);
 - Review previous project examples from GitHub.
+
 Log:
 - tbc
