@@ -1,14 +1,14 @@
-# Weekly Standup Meeting Log
+## Weekly Standup Meeting Log
 
-## 15/03/2021
+### 15/03/2021
 
 Dan:
-- 
+
 Vini:
-- 
+
 Nath:
-- 
+
 Jack:
-- 
+
 Harry:
-- 
+
