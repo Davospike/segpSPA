@@ -24,4 +24,13 @@ Agenda:
 - Review previous project examples from GitHub.
 
 Log:
-- tbc
+Survey Monkey Summary:
+- Name is OK
+- Navigation seems OK
+- Substantial negative feedback about the colour scheme 
+- Appealed as interesting to users 
+- Not a lot of users would suggest to a friend – add a social element, link to friend / social media account? 
+Actions:
+- Update colour scheme, add new page for just Fake News info/education
+- New meeting for 12/03/2021 for final discussion on role distribution
+- Achieve by easter state agreed - Aim to have landing page on webpage done and maybe some DB integration
