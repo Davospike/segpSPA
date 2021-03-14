@@ -1,22 +1,5 @@
 <h1 align="center"> Would They Lie to You? </h1>
-<p align="center"><b> Think you can spot fake news? Get woke. </p></b>
-
-## The Team
-
-- [Harry](https://github.com/hs14428) 
-- [Nathan](https://github.com/nwtay) 
-- [Daniel](https://github.com/Davospike)
-- [Vincenzo](https://github.com/vinigibilaro)
-- [Jack](https://github.com/numberonepikey)
-
-## **The Product**
-
-This project aims to challenge and test awareness on the topic of fake news in media on the internet, as well as demystifying current global events. The project will be largely targeted at those that consume large amounts of new information from web sources and social media. We will aim to not only educate a user on how damaging fake news can be to society, but also allow users to compare themselves to the rest of the players who have visited the application.  
-
-The application will be for both desktop and mobile, and integrates play via a quiz-based interface, whereby users choose whether they thought a particular news article resembled true or fake news. The application will present data on fake news in an engaging manner.  
-
-We assume a challenge would come about when trying to store user inputs and presenting that data to a new user. Another includes converging APIs/DBs from different sources, since we want to categorise Fake News into big, current topics. Another challenge might involve filtering data using datapoints and tagging.
-
+<p align="center"><b> The Design Process </p></b>
 
 ## **Background and Motivation**
 
