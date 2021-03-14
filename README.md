@@ -1,7 +1,7 @@
 <h1 align="center"> Would They Lie to You? </h1>
 <p align="center"><b> Think you can spot fake news? Get woke. </p></b>
 
-<p align="center"><img src="Documentation/Images/FakeNews.png"width=100%>
+<p align="center"><img src="Documentation/Images/FakeNews.png"width=80%>
 </p>
 
 ## The Team
