@@ -1,18 +1,15 @@
-# **Would They Lie to You?**
-## Think you can spot fake news? Get woke. 
+<h1 align="center"> Would They Lie to You? </h1>
+<p align="center"><b> Think you can spot fake news? Get woke. </p></b>
 
-# **Project Report**
+## The Team
 
-## **Team**
+- [Harry](https://github.com/hs14428) 
+- [Nathan](https://github.com/nwtay) 
+- [Daniel](https://github.com/Davospike)
+- [Vincenzo](https://github.com/vinigibilaro)
+- [Jack](https://github.com/numberonepikey)
 
-Team project name: Would They Lie To You?
-- Harry
-- Nathan 
-- Daniel
-- Vincenzo
-- Jack
-
-## **Introduction**
+## **The Product**
 
 This project aims to challenge and test awareness on the topic of fake news in media on the internet, as well as demystifying current global events. The project will be largely targeted at those that consume large amounts of new information from web sources and social media. We will aim to not only educate a user on how damaging fake news can be to society, but also allow users to compare themselves to the rest of the players who have visited the application.  
 
