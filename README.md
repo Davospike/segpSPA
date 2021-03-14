@@ -19,3 +19,14 @@ This project aims to challenge and test awareness on the topic of fake news in m
 The application will be for both desktop and mobile, and integrates play via a quiz-based interface, whereby users choose whether they thought a particular news article resembled true or fake news. The application will present data on fake news in an engaging manner.  
 
 We assume a challenge would come about when trying to store user inputs and presenting that data to a new user. Another includes converging APIs/DBs from different sources, since we want to categorise Fake News into big, current topics. Another challenge might involve filtering data using datapoints and tagging.
+
+### 1. [System Design](The Process/SystemDesign.md)
+Placeholder for information of the design process for the app
+
+### 2. [System Implementation](The Process/SystemImplementation.md)
+Placeholder for information on the system implemenetation, sprints etc
+
+### 3. [Project Evaluation](The Process/ProjectEvaluation.md)
+Placeholder for information on the project evaluation
+
+## Built with the MEAN Stack
