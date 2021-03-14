@@ -1,0 +1,20 @@
+14-03-2021:
+
+Objectives of meeting :
+-> Start thinking about the construction of our static DB 
+-> Start with ER model - list attributes, relationships etc 
+-> Construct list of sources 
+-> Think about how to integrate with API? -> store as CSV, use SQL? 
+
+Made basic ER Diagram for backend work.
+Consolidate with front end members to where we can incorporate images via a Fake News link.
+As another team-member to check the ER diagram, probably via a pull request.
+Made decisions regarding dependencies and uses of articles in terms of quiz questions.
+Ambiguity regarding News items having multiple News topics
+	-Would be good to utilise news info to declare a topic 
+	-and then tell the user what topic the news item is regarding
+
+For next session:
+	-review notes on normalisation
+	-check it conforms to BCNF (for writing tables)
+	
