@@ -20,7 +20,8 @@ The application will be for both desktop and mobile, and integrates play via a q
 
 We assume a challenge would come about when trying to store user inputs and presenting that data to a new user. Another includes converging APIs/DBs from different sources, since we want to categorise Fake News into big, current topics. Another challenge might involve filtering data using datapoints and tagging.
 
-## [The Process](The_Process)
+## The Process
+View our design process and documentation [here](The_Process)
 
 ### 1. [System Design](The_Process/SystemDesign.md)
 Placeholder for information of the design process for the app
