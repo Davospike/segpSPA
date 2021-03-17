@@ -28,7 +28,7 @@ Objectives of meeting:
 -> decide on coherent list of datasets we will use
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::												:::
-::: WHEN CREATING EXAMPLE .CSV FILE TO TEST ER DIAGRAM:						:::
+:::  CREATING EXAMPLE .CSV FILE TO TEST ER DIAGRAM						:::
 :::												:::
 :::-Realised that News_Item table would only be used to ask a Quiz Question			:::
 :::-Therefore having a Quiz Question table is redundant.					:::
@@ -49,42 +49,10 @@ Objectives of meeting:
 :::												:::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
--Updated ERDiagram considering changes made from .csv example
--Checked for normalisation in the backend layout (See '../DatabaseDesign/Normalisation_RunThrough.txt').
--Slight confusion between Composite/Non-composite candidate keys in terms of violating BCNF 2.
-	-> checked notes and David's powerpoints to iron out this issue. (BCNF2 O.K now).
+-Updated ERDiagram considering changes made fro .csv example
+-Checked for normalisation in the backend layout (See 'BCNF_Conformity').
 
 For next session:
 	- add actual data to directory/mongoDB
 	- consult with team when to program user follow-up questions 
 	- hard to explain but 'is the follow up going to be triggered from the backend or the frontend.'
-	- choose datasets and start filling in databses
-		-> may have to change backend structure depending on dataset found
-
-
-                          $$$$$$$$$$$$$$$$$$$$
-                       $$$$$$$$$$$$$$$$$$$$$$$$$$$
-                    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$         $$   $$$$$
-    $$$$$$        $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$       $$$$$$$$$$
- $$ $$$$$$      $$$$$$$$$$    $$$$$$$$$$$$$    $$$$$$$$$$       $$$$$$$$
- $$$$$$$$$     $$$$$$$$$$      $$$$$$$$$$$      $$$$$$$$$$$    $$$$$$$$
-   $$$$$$$    $$$$$$$$$$$      $$$$$$$$$$$      $$$$$$$$$$$$$$$$$$$$$$$
-   $$$$$$$$$$$$$$$$$$$$$$$    $$$$$$$$$$$$$    $$$$$$$$$$$$$$  $$$$$$
-    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$     $$$$
-     $$$   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$     $$$$$
-    $$$$   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$       $$$$
-    $$$    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ $$$$$$$$$$$$$$$$$
-   $$$$$$$$$$$$$  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$   $$$$$$$$$$$$$$$$$$
-   $$$$$$$$$$$$$   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$     $$$$$$$$$$$$
-  $$$$       $$$$    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$      $$$$
-             $$$$$     $$$$$$$$$$$$$$$$$$$$$$$$$         $$$
-               $$$$          $$$$$$$$$$$$$$$           $$$$
-                $$$$$                                $$$$$
-                 $$$$$$      $$$$$$$$$$$$$$        $$$$$
-                   $$$$$$$$     $$$$$$$$$$$$$   $$$$$$$
-                      $$$$$$$$$$$  $$$$$$$$$$$$$$$$$
-                         $$$$$$$$$$$$$$$$$$$$$$
-                                 $$$$$$$$$$$$$$$
-                                     $$$$$$$$$$$$
-                                      $$$$$$$$$$$
-                  			$$$$$$$
