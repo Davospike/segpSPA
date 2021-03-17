@@ -18,7 +18,6 @@ For next session:
 	-review notes on normalisation
 	-check it conforms to BCNF (for writing tables)
 
-
 ---------------------------------------------
 
 17-03-21:
@@ -27,10 +26,33 @@ Objectives of meeting:
 -> check DB structure conforms to BCNF
 -> start creating directory structure and input examples
 -> decide on coherent list of datasets we will use
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::												:::
+:::  CREATING EXAMPLE .CSV FILE TO TEST ER DIAGRAM						:::
+:::												:::
+:::-Realised that News_Item table would only be used to ask a Quiz Question			:::
+:::-Therefore having a Quiz Question table is redundant.					:::
+:::-Due to the 1 to 1 relationship between News Item and Quiz Question.				:::
+:::--Solution: merge Quiz Question and News_Item						:::
+:::												:::
+:::-Even though in our original model, each question was going to be based on one news topic.	:::
+:::-If we can, we would implement multiple news topics per question				:::
+:::-Therefore we have left 'News Topic' as a separate table.					:::
+:::												:::
+:::-Researched about join tables, realised they don't necessarily need a PK			:::
+:::-Removed PK from join table Topic_Library for clarity and ease of use.			:::
+:::												:::
+:::-Considered when we would store user follow up input						:::
+:::-i.e when user is incorrect *then* they will be prompted with a follow up qu.		:::
+:::-Need to consult with team (See 'for next session')						:::
+:::												:::
+:::												:::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-
-
-
+-Updated ERDiagram considering changes made fro .csv example
+-Checked for normalisation in the backend layout (See 'BCNF_Conformity').
 
 For next session:
 	- add actual data to directory/mongoDB
+	- consult with team when to program user follow-up questions 
+	- hard to explain but 'is the follow up going to be triggered from the backend or the frontend.'

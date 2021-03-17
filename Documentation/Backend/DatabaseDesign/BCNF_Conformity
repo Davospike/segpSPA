@@ -1,0 +1,11 @@
+	Table names:
+	-News Item
+	-Quiz Question
+	-User answer
+	-News Topic
+	-Topic Library (Join Table)
+
+-Used a Surrogate key (id) for each table.
+	-No meaning to the user themselves.
+
+
