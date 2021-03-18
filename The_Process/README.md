@@ -1,6 +1,10 @@
 <h1 align="center"> Would They Lie to You? </h1>
 <p align="center"><b> The Design Process </p></b>
 
+<p align="center"><img src="Documentation/Images/'Project Managament Plan(1).png'"width=80%>
+</p>
+
+
 ## **Background and Motivation**
 
 ---- DO MARKET RESERCH ----
