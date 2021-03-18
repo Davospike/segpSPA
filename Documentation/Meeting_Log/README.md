@@ -69,4 +69,24 @@ Actions:
 - NT and VG to begin to mock up a DB design in excel
 - JP and DD to look into appropriate JS quiz frameworks
 - HS to format and organise GitHub page and some market research
+
+
+
+------------------------
+Meeting log 18.03.2021
+
+-> discussed progress in separate group tasks, i.e, backend and front end development stages (see corresponding meeting logs for individual meetings)
+-> dicussed scoping / evaluationg methods to maintian consistent work flow and effective project outcome visualisation 
+-> booked a meeting with TAs (Allison / Marceli) in Easter break for feedback on our project 
+-> constructed a notebook for documenting scope / further evaluation ideas, see scoping discussion document 
+
+Actions for next meeting:
+-> further develop respective parts of the application - back end and front end 
+-> get feedback on respective parts of the application from those working in a different part of the application (ie front end team look at back end and   vice versa) to allow everyone to be on the same page, and provide constructive feedback. 
+
+
+
+------
+
+
    
