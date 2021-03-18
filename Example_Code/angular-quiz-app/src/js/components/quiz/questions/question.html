@@ -1,0 +1,20 @@
+<div>
+  <div class="row">
+    <div class="col s12">
+      <div class="card white">
+        <div class="card-content center-align black-text">
+          <span class="card-title teal-text">Question {{ question.id }} of {{ quizService.totalQuestions }}</span>
+
+          <ng-template container-ref></ng-template>
+
+          <div animates animatesInitMode="show" [animatesOnInit]="{type:'fadeInDown', fixed: false, duration: 400}" *ngIf="hasAnswer" class="next" hidden>
+            <span #button (click)="nextQuestion(button)" class="waves-effect waves-light btn-large">Next Question</span>
+          </div>
+          <div class="next grey-text text-lighten-1" [hidden]="hasAnswer">
+            Answer the question above to continue.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
