@@ -1,0 +1,30 @@
+<div class="col s12 m8 offset-m2 l6 offset-l3">
+  <div class="card-panel grey lighten-5 z-depth-1">
+    <div class="row valign-wrapper">
+      <div class="col s2">
+        <i class="material-icons circle blue white-text">hearing</i>
+      </div>
+      <div class="col s10 truncate question-title">
+        {{ title }}
+        <br>
+        <div class="song-preview">
+          <audio #player id="audio{{ question.track.id }}" src="{{ question.track.preview_url }}" preload="auto">
+                <p>Sorry, your browser does not support the <code>audio</code> element.</p>
+              </audio>
+          <button #button (click)="playSong(player, button)" class="btn waves-effect waves-light" type="submit" name="action">
+                Play ({{ countdown }} seconds)
+              </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<answer-choice-track [question]="question" (onAnswerChange)="answerChanged($event)">
+
+<ng-template #statusTemplate>
+  <audio #player id="audio{{ question.track.id }}" src="{{ question.track.preview_url }}" (ended)="stopPlayback(player)" preload="auto">
+    <p>Sorry, your browser does not support the <code>audio</code> element.</p>
+  </audio>
+  <i class="material-icons circle blue-grey play-button waves-effect waves-light" (click)="togglePlayback(player)">{{ !isAudioPlaying(player) ? 'play_arrow' : 'stop' }}</i>
+</ng-template>

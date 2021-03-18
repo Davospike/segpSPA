@@ -1,0 +1,26 @@
+.card-panel {
+  margin-top: 1.5em;
+}
+
+.card-panel button i {
+  line-height: 15px
+}
+
+.card-panel i {
+  padding: 12px;
+  font-size: 24px;
+}
+
+.card-panel .row.valign-wrapper {
+  margin-bottom: 0;
+}
+
+.question-title {
+  padding-left: 1.5rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .question-title {
+    padding-left: 0;
+  }
+}
