@@ -1,11 +1,12 @@
-Meeting 25.02.2021
+## Meeting 25.02.2021
 
 - Aim of meeting to design our first paper prototype.
 - Collaborated together to design prototype on powerpoint through Teams.
 - Put together 5 slides including: Home Page, Questions Page, Fake News Article Page, Answer Page, Data Visualization Page.
 - Discussed data sets that we could use, plans for ditributing prototype to potential users for feedback and our next meeting.
 
-Meeting 02.03.2021
+------------------------
+## Meeting 02.03.2021
 
 - Did some Git branch practice - making sure everyone is up to date with git knowledge
 - Changed and finished first Paper prototype on powerpoint - all updates noted in Notes section of each slide
@@ -13,7 +14,8 @@ Meeting 02.03.2021
 - Booked next meeting - started to think about delegating tasks -> doing more research on parts of the stack
   before next meeting to help with deciding individual tasks. Also going to try and get user feedback before next meeting.
 
-Meeting 10.03.2021
+------------------------
+## Meeting 10.03.2021
 
 Agenda:
 - Discuss our progress made on the week 6 API development workbook;
@@ -22,6 +24,7 @@ Agenda:
 - Review previous project examples from GitHub.
 
 Log:
+
 Survey Monkey Summary:
 - Name is OK
 - Navigation seems OK
@@ -34,7 +37,8 @@ Actions:
 - New meeting for 12/03/2021 for final discussion on role distribution
 - Achieve by easter state agreed - Aim to have landing page on webpage done and maybe some DB integration
 
-Meeting 11.03.2021
+------------------------
+## Meeting 11.03.2021
 
 - Started to properly outlined and formatted README file on github landing page.
 - Took time to discuss a roadmap (e.g. Reading week a good time for first sprint??)
@@ -57,7 +61,8 @@ Meeting 11.03.2021
    - Early Implementation and testing is key.
 - Organised to commit the Angular Dashboard, Design Choices directory and Meeting Log (Obviously).
 
-Meeting 12.03.2021
+------------------------
+## Meeting 12.03.2021
 
 Log:
 - Agreed on role split, but also agreed that roles can be flexible as most are keen to try a bit of everything.
@@ -73,25 +78,33 @@ Actions:
 
 
 ------------------------
-Meeting log 18.03.2021
+## Meeting log 18.03.2021 - back end work (VG and NT)
 
--> discussed progress in separate group tasks, i.e, backend and front end development stages (see corresponding meeting logs for individual meetings)
--> dicussed scoping / evaluationg methods to maintian consistent work flow and effective project outcome visualisation 
--> booked a meeting with TAs (Allison / Marceli) in Easter break for feedback on our project 
--> constructed a notebook for documenting scope / further evaluation ideas, see scoping discussion document 
+- discussed progress in separate group tasks, i.e, backend and front end development stages (see corresponding meeting logs for individual meetings)
+- dicussed scoping / evaluationg methods to maintian consistent work flow and effective project outcome visualisation 
+- booked a meeting with TAs (Allison / Marceli) in Easter break for feedback on our project 
+- constructed a notebook for documenting scope / further evaluation ideas, see scoping discussion document 
 
 Actions for next meeting:
--> further develop respective parts of the application - back end and front end 
--> get feedback on respective parts of the application from those working in a different part of the application (ie front end team look at back end and   vice versa) to allow everyone to be on the same page, and provide constructive feedback. 
+- further develop respective parts of the application - back end and front end 
+- get feedback on respective parts of the application from those working in a different part of the application (ie front end team look at back end and   vice versa) to allow everyone to be on the same page, and provide constructive feedback.
 
 
+------------------------
+## Meeting log 18.03.2021 - front end work (JP, DD and HS)
 
-------
+DD, JP and HS met at 10am to discuss potential JavaScript frameworks that could be used to run the quiz element of our SPA on fake news.
+- As the focus of the project is not on becoming quality JavaScript developers, we were advised by Thomas Bale (TB) to find a premade quiz framework and implement it.
+Spent first 30 minutes doing some market research trying to find appropriate and potentially usable JavaScript frameworks to implement into our codebase.
+- Evaluated ~5 premade quiz frameworks/tutorials plus investigated YouTube video tutorials on how to create an Angular quiz.
+Spent ~2hrs “pair programming” where we followed along with some of the tutorials getting a feel for the codebase and potential for each tutorial/framework
+- Decided that a few of the framework's UI/design was a bit basic, and we wanted a more engaging UI that would be more enjoyable to use
+- Settled on a framework that had animations and progress bars etc.
+- Extracted and got running the base quiz framework on our local host webpages
 
+Actions:
 
-   
-Meeting log 18.03.2021
+- Study and begin to understand the structure/framework of chosen quiz interface
+- Begin to deconstruct and extract relevant code and remove redundant features of quiz
 
--> discussed progress in separate group tasks, i.e, backend and front end development stages (see corresponding meeting logs for individual meetings) -> dicussed scoping / evaluationg methods to maintian consistent work flow and effective project outcome visualisation -> booked a meeting with TAs (Allison / Marceli) in Easter break for feedback on our project -> constructed a notebook for documenting scope / further evaluation ideas, see scoping discussion document
-
-Actions for next meeting: -> further develop respective parts of the application - back end and front end -> get feedback on respective parts of the application from those working in a different part of the application (ie front end team look at back end and vice versa) to allow everyone to be on the same page, and provide constructive feedback.
+Notes/images view [here](Documentation/DesignChoices/17-03-21_Front-End_Pair_Programming_Session.docx)
