@@ -107,4 +107,4 @@ Actions:
 - Study and begin to understand the structure/framework of chosen quiz interface
 - Begin to deconstruct and extract relevant code and remove redundant features of quiz
 
-Notes/images view [here](Documentation/DesignChoices/17-03-21_Front-End_Pair_Programming_Session.docx)
+Notes/images view [here](Documentation/DesignChoices)
