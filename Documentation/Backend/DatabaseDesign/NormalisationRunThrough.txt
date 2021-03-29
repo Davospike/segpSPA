@@ -1,0 +1,106 @@
+For reference, in this document:
+--------------------------------
+FD - functional dependency
+CK - candidate key
+PK - primary key
+FK - foreign key
+NKA - non key attribute
+
+////////////////////////////////////
+///      Tables and keys         ///
+////////////////////////////////////
+
+Table1: Quiz Question
+id
+headline
+URL
+occurred_on
+correct_answer
+text_body
+--------------------
+CKs:
+{id},
+{URL},
+{id, URL}
+--------------------
+FDs:
+id -> {headline, occurred_on, correct_answer, text_body}
+URL -> {headline, occurred_on, correct_answer, text_body}
+--------------------
+
+
+Table2: Topic library (Join Table)
+quiz_question (FK)
+news_topic (FK)
+--------------------
+CKs:
+{quiz_question, news_topic} - composite key [this is the PK!]
+--------------------
+FDs:
+--------------------
+
+
+Table3: News topic
+id
+news_topic
+--------------------
+CKs:
+{id} - PK,
+{news_topic}
+{id, news_topic}
+--------------------
+FDs:
+id -> news_topic
+news_topic -> id
+--------------------
+
+
+Table4: User Answer
+id
+quiz_question (FK)
+user_input
+user_follow_on_input
+--------------------
+CKs
+{id} - PK,
+{quiz_question, user_input, user_follow_on_input} - composite key
+--------------------
+FDs
+id -> quiz_question
+{quiz_question, user_input, user_follow_on_input} -> id
+--------------------
+
+
+////////////////////////////////////
+///        Normalisation         ///
+////////////////////////////////////
+
+1st Normal Form
+-> no collection-valued attributes
+-> no lists, fine
+
+2nd Normal Form
+-> no partial functional dependencies
+-> ie, {A} -> B where B is a non key attribute and A is part of a CK but not whole
+1st table fine, no composite CK
+2nd table fine - no partial FDs from compositie CK
+3rd table fine - no partial FDs from compositie CK
+4th table fine, non NKAs
+
+3rd Normal Form
+-> no transistive dependencies
+-> i.e., {A} -> B, {B} -> C where B and C are NKAs
+1st table fine
+2nd table fine
+3rd table fine
+4th table fine
+
+BCNF
+-> the determinants of every nontrivial FD is a superkey
+-> only FDs allowed to have in table are ones wholly related to CKs
+-> no overlapping composite candidate keys
+Table 1 fine
+Table 2 fine
+Table 3 fine
+Table 4 fine -> no composite keys here, and FDs depend wholly on each separate CK,
+                and not partially on each seaparate CK

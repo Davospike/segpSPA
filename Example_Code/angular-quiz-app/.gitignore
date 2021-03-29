@@ -1,0 +1,13 @@
+node_modules
+jspm_packages
+bower_components
+dist
+temp
+npm-debug.log
+server/.env
+typings
+.idea
+newrelic_agent.log
+pathmap.json
+.DS_Store
+tsconfig.json.backup

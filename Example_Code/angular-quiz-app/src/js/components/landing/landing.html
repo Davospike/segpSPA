@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card white">
+      <div class="card-content center-align black-text">
+        <span class="card-title cyan-text">You're almost ready to start!</span>
+        <blockquote>
+          This is a music quiz, realized with <a class="btn-flat" href="https://angular.io/" target="_blank">Angular</a>
+          using data from the <a class="btn-flat" href="https://developer.spotify.com/web-api/" target="_blank">Spotify API</a>,
+          developed with <span class="red-text text-lighten-2">&hearts;</span> in Austria and available on <a class="btn-flat" href="https://github.com/fabiandev/angular-quiz-app" target="_blank">GitHub</a>.
+        </blockquote>
+        <div class="input-field col s12">
+          <select [(ngModel)]="regionSelection" materialize="material_select" [materializeSelectOptions]="selectOptions">
+            <option *ngFor="let option of selectOptions" [value]="option.value">{{option.name}}</option>
+          </select>
+          <label>Choose your region</label>
+        </div>
+        <p>
+          <a (click)="startQuiz()" class="waves-effect waves-light btn btn-large cyan">Start Quiz</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
