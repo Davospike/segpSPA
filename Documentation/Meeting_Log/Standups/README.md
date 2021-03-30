@@ -43,3 +43,4 @@ On wednesday, want to discuss
 - meeting prep before technical meeting w/ Allison and Marceli - list of Qs we want to ask them 
 - Formulate sprints for the week and integrate into gantt chart 
 - discuss what next round of user feedback will look like (marcelapp.com??)
+
