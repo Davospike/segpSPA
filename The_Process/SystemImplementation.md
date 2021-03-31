@@ -10,7 +10,6 @@
    - [No Sprints : Continue Working On Workbooks (08.03.21-21.03.21)](#no-sprints--continue-working-on-workbooks-080321-210321)
    - [Sprint 2 : Market Research & Deploying Boilerplate (22.03.21-28.03.21)](#sprint-2--market-research--deploying-boilerplate-220321-280321)
    - [Sprint 3 : Prepare Backend & Additional Wireframe (29.03.21-04.04.21)](#sprint-3--prepare-backend--additional-wireframe-290321-040421)
-   - [Sprint 4 : TBC]
 
 ## Software Development Process
 A software development process can be seen as the application of divide and conquer whereby the development process is divided into smaller, parallel steps or subprocesses. Doing so helps improve the design and management of a project. Given that we, as university students, had other commitments and modules, we were aware that we would have to manage the project development in a flexible manner, and in a fixed amount of time. Unlike in the professional world, we could not get extensions. 
@@ -46,3 +45,20 @@ During this time we worked on other university commitments whilst continuing to 
 ### Sprint 2 : Market Research & Deploying Boilerplate (22.03.21-28.03.21)
 
 ### Sprint 3 : Prepare Backend & Additional Wireframe (29.03.21-04.04.21)
+
+
+# Mark Scheme Relevant Topics:
+
+## System Implementation
+- Stack architecture and system design (e.g. class diagrams, sequence diagrams).
+- Back End - MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams).
+- Middle Tier - Express, Node, the RESTful API
+- Front End - Angular. Details of implementation.
+- Additional elements and components e.g. authentification. Tell us about any other aspects not covered above!
+- Deployment details (including Docker), include how you have been achieving continuous integration and deployment.
+
+## Sprints & Project Management
+- Group working methods used (for instance did your team choose a particular style of agile? what communication channels did you use?)
+- Discussion of team roles (specialisation is ok!). A summary of individual contributions (note: this is for reference, your team will all receive the same grade!).
+- Documentation of your sprints, including both high level overview, timeline, and selected highlights that were critical points in the project (remember to show the users stories implemented in each sprint). We expect a summary of meeting logs (including for instance apologies for absence etc)
+- Team use of Git, how your team used continuous integration / continuous deployment. Streamlining of workflow throughout.
