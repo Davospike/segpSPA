@@ -1,0 +1,18 @@
+Feedback from Marceli and Allison on our paper prototype.
+
+-Process folder is what should be in main, a big breakdown of stuff
+-Per folder there needs to be Readme.md's that point the user in certain directions.
+-Introductory section with background info.
+
+-Can set up a Wiki on github, which is more structured than just a bunch of files.
+ -> homepage for contents etc
+ -> each page would have their own files and readmes
+
+-Documentation is quite similar to The_process.
+-Praise for gant chart.
+
+-User feedback:
+ 	->Could use a system to track where users click and how long they spend on a page
+	->could be possible to use a free system for this, or google analytics
+
+-Sort out the layout of the repo sooner rather than later.

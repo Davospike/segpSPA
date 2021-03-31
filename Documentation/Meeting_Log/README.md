@@ -108,3 +108,12 @@ Actions:
 - Begin to deconstruct and extract relevant code and remove redundant features of quiz
 
 Notes/images view [here](../DesignChoices)
+
+------------------------
+## Meeting Log 31.03.2021
+
+-Full team meeting to prepare for feedback session and discuss our first sprint.
+-Discussed overall structure of our repository.
+
+-Feedback session notes in ./Documentation/Paper\ Prototype\/
+
