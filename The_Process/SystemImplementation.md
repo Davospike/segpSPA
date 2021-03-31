@@ -1,8 +1,5 @@
 <h1 align="center"> System Implementation </h1>
 
-## System Implementation
-
-
 ## Table of Contents
 
 - [Software Development Process](#software-development-process)
@@ -12,7 +9,7 @@
    - [Sprint 1 : Webpage Design & Initial Feedback (01.03.21-07.03.21)](#sprint-1--webpage-design--initial-feedback-010321-070321)
    - [No Sprints : Continue Working On Workbooks (08.03.21-21.03.21)](#no-sprints--continue-working-on-workbooks-080321-210321)
    - [Sprint 2 : Market Research & Deploying Boilerplate (22.03.21-28.03.21)](#sprint-2--market-research--deploying-boilerplate-220321-280321)
-   - [Sprint 3 : Prepare Backend & Additional Wirefram (29.03.21-04.04.21)](#sprint-3--prepare-backend--additional-wireframe-290321-040421)
+   - [Sprint 3 : Prepare Backend & Additional Wireframe (29.03.21-04.04.21)](#sprint-3--prepare-backend--additional-wireframe-290321-040421)
    - [Sprint 4 : TBC]
 
 ## Software Development Process
@@ -44,8 +41,8 @@ Using the takeaways from the design sessions, we were able to develop a paper pr
 Allowing time in this sprint to play around with GitHub also proved beneficial to hit the ground running on the documentation of the project, especially as we had little-to-no experience with it prior to this course. And thinking about and pulling together some potential data sets we saw as a good idea in order to help with the technical side of things further down the line.
 
 ### No Sprints : Continue Working on Workbooks (08.03.21-21.03.21)
-During this time we worked on other university commitments whilst continuing to follow along with the Software Engineering workbooks and lectures, all the while meeting up to take note of ideas, thoughts and design conceptualization
+During this time we worked on other university commitments whilst continuing to follow along with the Software Engineering workbooks and lectures, all the while meeting up to take note of ideas, thoughts and design conceptualization.
 
 ### Sprint 2 : Market Research & Deploying Boilerplate (22.03.21-28.03.21)
 
-### Sprint 3 : Prepare Backend & Additional Wirefram (29.03.21-04.04.21)
+### Sprint 3 : Prepare Backend & Additional Wireframe (29.03.21-04.04.21)
