@@ -72,6 +72,8 @@ For next session:
 -However (in short), we decided to persue a NoSQL database as it would be easier to implement new features if we had the time at the end of the core development.
 -The flexibility and scalability that NoSQL has over SQL is much more useful for us as we have narrowed our developmental ideas for the project in order to maximise our applications performance.
 
+-Full documentation of our choice is in ./Documentation/DesignChoices
+
 
                           $$$$$$$$$$$$$$$$$$$$
                        $$$$$$$$$$$$$$$$$$$$$$$$$$$
