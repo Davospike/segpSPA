@@ -61,6 +61,17 @@ For next session:
 	- choose datasets and start filling in databses
 		-> may have to change backend structure depending on dataset found
 
+31/03/2021:
+
+	Backend meeting VG & NT.
+
+-Discussion after completing MongoDB workbook on SEGP Github.
+-We originally developed our database/schema to be used in a full SQL environment.
+-Took the time to discuss and research the differences between SQL and NoSQL databases (As MongoDB is a NoSQL service).
+-We initially believed that an SQL database would suit us better as we had a pre-defined and long-standing layout for our data that we were not planning on changing.
+-However (in short), we decided to persue a NoSQL database as it would be easier to implement new features if we had the time at the end of the core development.
+-The flexibility and scalability that NoSQL has over SQL is much more useful for us as we have narrowed our developmental ideas for the project in order to maximise our applications performance.
+
 
                           $$$$$$$$$$$$$$$$$$$$
                        $$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -87,4 +98,4 @@ For next session:
                                  $$$$$$$$$$$$$$$
                                      $$$$$$$$$$$$
                                       $$$$$$$$$$$
-                  			$$$$$$$
+                  			$$$$$$$$

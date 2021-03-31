@@ -1,0 +1,22 @@
+<div class="col s12 m8 offset-m2 l6 offset-l3">
+  <div class="card-panel grey lighten-5 z-depth-1">
+    <div class="row valign-wrapper">
+      <div class="col s2">
+        <i class="material-icons circle red white-text">album</i>
+      </div>
+      <div class="col s10 truncate">
+        {{ question.title }}
+        <br>
+        <span class="black-text flow-text">
+          <span class="blue-grey-text">&ldquo;</span>{{ question.track.album.name }}<span class="blue-grey-text darken-2">&rdquo;</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<answer-choice-artist [question]="question" (onAnswerChange)="answerChanged($event)">
+
+<ng-template #statusTemplate>
+  <i class="material-icons circle red white-text">album</i>
+</ng-template>

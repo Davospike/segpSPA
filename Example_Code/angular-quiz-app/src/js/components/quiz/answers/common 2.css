@@ -1,0 +1,37 @@
+.answers {
+  padding-bottom: 4.5em;
+}
+
+.row.answers {
+  line-height: 4;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+@media only screen and (min-width: 992px) {
+  .row.answers .col:nth-child(even) {
+    text-align: right;
+    padding-right: 15%;
+    direction: rtl;
+  }
+  .row.answers .col:nth-child(even) [type="checkbox"]+label {
+    padding-right: 35px;
+    background-color: #fff;
+  }
+  .row.answers .col:nth-child(even) [type="checkbox"]+label:before, .row.answers .col:nth-child(even) [type="checkbox"]:not(.filled-in)+label:after {
+    left: auto;
+    right: 0;
+  }
+  .row.answers .col:nth-child(even) [type="checkbox"]:checked+label:before {
+    right: 10px !important;
+  }
+  .row.answers .col:nth-child(odd) {
+    text-align: left;
+    padding-left: 12%;
+  }
+  .row.answers .col {
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: ellipsis;
+  }
+}

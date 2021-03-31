@@ -1,0 +1,170 @@
+{
+  "name": "angular-quiz-app",
+  "version": "1.10.1",
+  "description": "A music quiz in Angular 2+ using the Spotify API.",
+  "main": "server/index.js",
+  "scripts": {
+    "postinstall": "node_modules/.bin/jspm install && npm run update-paths && npm run build",
+    "heroku-postbuild": "npm run prune",
+    "update-paths": "node_modules/.bin/jspm-tsc-update",
+    "prune": "node_modules/.bin/jspm clean && npm prune --production",
+    "update": "yarn upgrade && jspm update && npm run update-paths",
+    "build": "node_modules/.bin/gulp build",
+    "start": "node server"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fabiandev/angular-quiz-app.git"
+  },
+  "author": "Fabian Pirklbauer <hi@fabiandev.io>",
+  "contributors": [
+    "Sascha Zarhuber",
+    "Lorenz Krautgartner"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fabiandev/angular-quiz-app/issues"
+  },
+  "homepage": "https://github.com/fabiandev/angular-quiz-app#readme",
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "body-parser": "^1.15.0",
+    "compression": "^1.6.1",
+    "errorhandler": "^1.4.3",
+    "express": "^4.13.4",
+    "method-override": "^3.0.0",
+    "newrelic": "^5.9.1",
+    "node-env-file": "^0.1.8",
+    "node-notifier": "^5.1.2",
+    "spotify-web-api-node": "^4.0.0",
+    "yargs": "^13.2.4"
+  },
+  "devDependencies": {
+    "@types/core-js": "^2.5.1",
+    "@types/hammerjs": "^2.0.36",
+    "@types/iscroll": "^5.2.2",
+    "@types/materialize-css": "^0.100.0",
+    "ansi-colors": "^3.2.4",
+    "del": "^4.1.1",
+    "fancy-log": "^1.3.2",
+    "flat-color-icons": "^1.1.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-filter": "^6.0.0",
+    "gulp-if": "^2.0.0",
+    "gulp-less": "^4.0.1",
+    "gulp-preprocess": "^3.0.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-tslint": "^8.1.1",
+    "jspm": "^0.17.0-beta.49",
+    "jspm-tsc-update": "^0.2.0-beta.2",
+    "less": "^3.9.0",
+    "lodash.assign": "^4.0.6",
+    "material-design-icons": "^3.0.1",
+    "materialize-css": "^0.98.2",
+    "node-exec-promise": "^1.0.2",
+    "normalize.css": "^8.0.1",
+    "tslint": "^5.4.3",
+    "typescript": "^3.5.1"
+  },
+  "jspm": {
+    "configFiles": {
+      "jspm": "system.config.js"
+    },
+    "configFile": "system.config.js",
+    "dependencies": {
+      "@angular/forms": "npm:@angular/forms@^8.0.0",
+      "@angular/http": "npm:@angular/http@^7.2.15",
+      "@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic@^8.0.0",
+      "@angular/router": "npm:@angular/router@^8.0.0",
+      "angular2-materialize": "npm:angular2-materialize@^15.0.1",
+      "css-animator": "npm:css-animator@^2.3.1",
+      "hammerjs": "npm:hammerjs@^2.0.8",
+      "iscroll": "npm:iscroll@^5.2.0",
+      "jquery": "npm:jquery@^2.2.4",
+      "reflect-metadata": "npm:reflect-metadata@^0.1.13"
+    },
+    "devDependencies": {
+      "core-js": "npm:core-js@^3.1.3",
+      "source-map-support": "npm:source-map-support@^0.5.12",
+      "ts-runtime": "npm:babel-runtime@^6.26.0",
+      "text": "github:systemjs/plugin-text@^0.0.11",
+      "ts": "github:frankwallis/plugin-typescript@^9.0.0",
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.25",
+      "typescript": "npm:typescript@^3.0.3"
+    },
+    "peerDependencies": {
+      "@angular/common": "npm:@angular/common@^8.0.0",
+      "@angular/compiler": "npm:@angular/compiler@^8.0.0",
+      "@angular/core": "npm:@angular/core@8.0.0",
+      "@angular/platform-browser": "npm:@angular/platform-browser@^8.0.0",
+      "assert": "npm:jspm-nodelibs-assert@^0.2.0",
+      "buffer": "npm:jspm-nodelibs-buffer@^0.2.0",
+      "child_process": "npm:jspm-nodelibs-child_process@^0.2.0",
+      "constants": "npm:jspm-nodelibs-constants@^0.2.0",
+      "crypto": "npm:jspm-nodelibs-crypto@^0.2.0",
+      "events": "npm:jspm-nodelibs-events@^0.2.0",
+      "fs": "npm:jspm-nodelibs-fs@^0.2.0",
+      "http": "npm:jspm-nodelibs-http@^0.2.0",
+      "materialize-css": "npm:materialize-css@^0.100.1",
+      "module": "npm:jspm-nodelibs-module@^0.2.0",
+      "net": "npm:jspm-nodelibs-net@^0.2.0",
+      "os": "npm:jspm-nodelibs-os@^0.2.0",
+      "path": "npm:jspm-nodelibs-path@^0.2.0",
+      "process": "npm:jspm-nodelibs-process@^0.2.0",
+      "readline": "npm:jspm-nodelibs-readline@^0.2.0",
+      "rxjs": "npm:rxjs@^6.4.0",
+      "stream": "npm:jspm-nodelibs-stream@^0.2.0",
+      "string_decoder": "npm:jspm-nodelibs-string_decoder@^0.2.0",
+      "timers": "npm:jspm-nodelibs-timers@^0.2.0",
+      "tty": "npm:jspm-nodelibs-tty@^0.2.0",
+      "url": "npm:jspm-nodelibs-url@^0.2.0",
+      "util": "npm:jspm-nodelibs-util@^0.2.0",
+      "vm": "npm:jspm-nodelibs-vm@^0.2.0",
+      "zlib": "npm:jspm-nodelibs-zlib@^0.2.0",
+      "zone.js": "npm:zone.js@~0.9.1"
+    },
+    "overrides": {
+      "npm:browserify-zlib@0.1.4": {
+        "dependencies": {
+          "readable-stream": "^2.0.2",
+          "pako": "~0.2.0"
+        },
+        "map": {
+          "_stream_transform": "readable-stream/transform"
+        }
+      },
+      "npm:inherits@2.0.3": {
+        "ignore": [
+          "test.js"
+        ]
+      },
+      "npm:jquery@2.2.4": {
+        "format": "amd"
+      },
+      "npm:pbkdf2@3.0.17": {
+        "main": "browser.js"
+      },
+      "npm:reflect-metadata@0.1.13": {
+        "jspmNodeConversion": true,
+        "map": {}
+      },
+      "npm:safe-buffer@5.1.2": {
+        "browser": "index.js"
+      },
+      "npm:tslib@1.10.0": {
+        "format": "cjs",
+        "meta": {
+          "tslib.js": {
+            "esModule": true
+          }
+        }
+      }
+    }
+  }
+}
