@@ -101,3 +101,88 @@ For next session:
                                      $$$$$$$$$$$$
                                       $$$$$$$$$$$
                   			$$$$$$$$
+
+---
+
+---
+
+#### **01/04/21**
+
+Database construction:
+
+<u>Objectives for the meeting:</u>
+
+- design a data model that conforms to noSQL - for this we will convert the old SQL model and construct models
+- create a data model diagram with relationships and attributes
+- construct javascript classes and start filling in data
+
+*Following this tutorial for the session: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose#related_documents*
+
+
+
+##### Meeting notes:
+
+###### [Designing the data model]
+
+- got up excel spreadsheet (old SQL) + old ER diagram
+- changed excel spreadsheet to make documents for noSQL DB - saved in *noSQLDBdevelopment/NoSQLDatabaseModel*
+  - a document in noSQL is a collection of data, like an entity. 
+  - we split ours up by similar tables as we had before, and removed the join table
+- chagned ER diagram to make noSQL data model diagram - saved in *noSQLDBdevelopment/NoSQLUML*
+
+
+
+###### [Designing schemas]
+
+- made an init.js file to practice connecting to mongo
+- defined a schema, called quiz question, in <quiz_question.js>, filled in field this will contain
+- since our DB is static, we decided not to enter custome validators in our schemas - we will be hand selecting the data
+
+...
+
+
+
+
+
+###### [Routes and Controllers]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
