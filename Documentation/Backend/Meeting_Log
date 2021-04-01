@@ -135,12 +135,23 @@ Database construction:
 ###### [Designing schemas]
 
 - made an init.js file to practice connecting to mongo
-- defined a schema, called quiz question, in <quiz_question.js>, filled in field this will contain
+- defined our schemas:
+  - Quiz_question
+  - user_answer
+  - news_topic
+- ...and constructed them in js files, with the data fields they contain, and links to arrays of collections to access other collections in a collection (i.e., for modelling relationships)
 - since our DB is static, we decided not to enter custome validators in our schemas - we will be hand selecting the data
 
-...
+- connected to mongoDB locally, and wrote a script for inserting example data in mongo collections (Example_Code/AngularDemoSite/insertDataScript.js)
 
 
+
+---
+
+Meeting objectives:
+
+- read through <https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes> to gain a better understanding on route modules/functions, and start planning our route modules and use of http verbs (ie get, post, ...)
+- plan integration of insertDataScript.js within our project, and test pushing json data to our /api page
 
 
 

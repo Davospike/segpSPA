@@ -18,7 +18,7 @@ var NewsTopic = require('./models/news_topic')
 var UserAnswer = require('./models/user_answer')
 
 
-var mongoose = require('mongoose');
+var mongoose = require('mongoose');i
 var mongoDB = userArgs[0];
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.Promise = global.Promise;
