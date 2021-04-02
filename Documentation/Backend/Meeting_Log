@@ -78,35 +78,6 @@ For next session:
 -Starting extra exercise given at the end of workbook 7. (https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose)
 -Started to adapt original SQL schema for MongoDB use, based off tutorial and our old SQL work.
 
-
-
-                          $$$$$$$$$$$$$$$$$$$$
-                       $$$$$$$$$$$$$$$$$$$$$$$$$$$
-                    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$         $$   $$$$$
-    $$$$$$        $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$       $$$$$$$$$$
- $$ $$$$$$      $$$$$$$$$$    $$$$$$$$$$$$$    $$$$$$$$$$       $$$$$$$$
- $$$$$$$$$     $$$$$$$$$$      $$$$$$$$$$$      $$$$$$$$$$$    $$$$$$$$
-   $$$$$$$    $$$$$$$$$$$      $$$$$$$$$$$      $$$$$$$$$$$$$$$$$$$$$$$
-   $$$$$$$$$$$$$$$$$$$$$$$    $$$$$$$$$$$$$    $$$$$$$$$$$$$$  $$$$$$
-    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$     $$$$
-     $$$   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$     $$$$$
-    $$$$   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$       $$$$
-    $$$    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ $$$$$$$$$$$$$$$$$
-   $$$$$$$$$$$$$  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$   $$$$$$$$$$$$$$$$$$
-   $$$$$$$$$$$$$   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$     $$$$$$$$$$$$
-  $$$$       $$$$    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$      $$$$
-             $$$$$     $$$$$$$$$$$$$$$$$$$$$$$$$         $$$
-               $$$$          $$$$$$$$$$$$$$$           $$$$
-                $$$$$                                $$$$$
-                 $$$$$$      $$$$$$$$$$$$$$        $$$$$
-                   $$$$$$$$     $$$$$$$$$$$$$   $$$$$$$
-                      $$$$$$$$$$$  $$$$$$$$$$$$$$$$$
-                         $$$$$$$$$$$$$$$$$$$$$$
-                                 $$$$$$$$$$$$$$$
-                                     $$$$$$$$$$$$
-                                      $$$$$$$$$$$
-                  			$$$$$$$$
-
 ---
 
 ---
@@ -153,7 +124,7 @@ Database construction:
 
 ---
 
-Meeting objectives:
+Meeting objectives for next meeting:
 
 - read through <https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes> to gain a better understanding on route modules/functions, and start planning our route modules and use of http verbs (ie get, post, ...)
 - plan integration of insertDataScript.js within our project, and test pushing json data to our /api page
@@ -164,41 +135,64 @@ Meeting objectives:
 
 
 
+---
 
 
 
+### 02/04/2021
+
+###### <u>NT & VG had meeting with Marceli (40m)</u>
+
+- Went through our current methods for inserting data into MongoDB
+
+  - Discussed the use of callbacks and decided to keep them within our code.
+
+  - Marceli suggested ways of making insertion easier.
+
+    - i.e by using seeds and migrations through mongoose.
+
+    - Rather than inserting multiple parameters into our 'create' functions.
+
+      - i.e with 'QuizQuestionCreate'.
+
+    - Passing objects into the create functions that are defined by migration (Mongoose seed/migration).
+
+    - Migration was similar to **Create/Drop Scripts** in MySQL.
+
+      
+
+- Spoke about sub documents
+
+  - to reference objects within objects
+  - news topics within quiz questions.
+  - Suggestions for news_topic to not be a separate entity
+  - A list would be made with a complete list of News Topics that would be made in the migration.
+    - Each quiz question would hold one or more references to this News Topic list via indexing.
+
+- Confirmed with Marceli our structure when handling requests and returning the required data from the Database.
+
+##### <u>NEW MEETING OBJECTIVES:</u>
+
+- Alter insertScript to utilise seeds and migration.
+- Gain a better understanding of Seeds, Migration and Many-to-Many relationships in Mongoose via these links:
+  - https://university.mongodb.com/
+  - https://bezkoder.com/mongodb-many-to-many-mongoose/
+  - https://www.madetech.com/blog/migrations-seeds-and-pipelines
+  - https://www.npmjs.com/package/mongoose-seed
+  - https://mongoosejs.com/docs/subdocs.html
 
 
 
+- Discussed the relationship between News Topics and Quiz Questions and their uses in the web application.
+- Perhaps a Many-to-Many relationship is best because we need to categorise the Quiz Question by News Topic.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Tested running insertScript with different devices.
+- Discovered a VSCode extension for MongoDB to help us work through the assignment and understand the backend further.
+- Didn't manage to complete Meeting Objectives:
+  - Have been trying to store filled DBs in docker container/image to be used on other devices.
+- Next meeting tomorrow we will give insertScript a rehaul.
 
 
 

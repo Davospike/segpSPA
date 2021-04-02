@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 // our URL = 'mongodb://localhost:27017';
-// to run this: in project root, node demo mongodb://localhost:27017
+// to run this: in project root, node insertDataScript mongodb://localhost:27017
 
 // Get arguments passed on command line
 var userArgs = process.argv.slice(2);
@@ -17,8 +17,7 @@ var QuizQuestion = require('./models/quiz_question')
 var NewsTopic = require('./models/news_topic')
 var UserAnswer = require('./models/user_answer')
 
-
-var mongoose = require('mongoose');i
+var mongoose = require('mongoose');
 var mongoDB = userArgs[0];
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.Promise = global.Promise;
