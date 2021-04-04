@@ -5,10 +5,11 @@ Our list of topics:
 - Immigration
 - China 
 - Economy
+- Climate Change
 
 ------------------------------------------------------------
 Brexit:
-{url,   date,   headline,   textbody,   correct_answer}
+{url,   date,   headline,   textbody,   correct_answer, correct_answer_url}
 
 
 
@@ -22,7 +23,7 @@ Brexit:
 
 ------------------------------------------------------------
 Coronavirus:
-{url,   date,   headline,   textbody,   correct_answer}
+{url,   date,   headline,   textbody,   correct_answer, correct_answer_url}
 
 
 
@@ -37,7 +38,7 @@ Coronavirus:
 
 ------------------------------------------------------------
 Immigration:
-{url,   date,   headline,   textbody,   correct_answer}
+{url,   date,   headline,   textbody,   correct_answer, correct_answer_url}
 
 
 
@@ -50,7 +51,7 @@ Immigration:
 
 ------------------------------------------------------------
 China:
-{url,   date,   headline,   textbody,   correct_answer}
+{url,   date,   headline,   textbody,   correct_answer, correct_answer_url}
 
 
 
@@ -62,7 +63,7 @@ China:
 
 ------------------------------------------------------------
 Economy:
-{url,   date,   headline,   textbody,   correct_answer}
+{url,   date,   headline,   textbody,   correct_answer, correct_answer_url}
 
 
 
@@ -71,3 +72,11 @@ Economy:
 
 
 
+------------------------------------------------------------
+Climate Change:
+{url,   date,   headline,   textbody,   correct_answer, correct_answer_url}
+https://web.archive.org/web/20181116133754/https://metro.co.uk/2018/11/16/a-mini-ice-age-could-be-on-the-way-and-its-going-to-get-very-very-cold-8146529/, A mini ice age could be on the way and it’s going to get very, very cold, false, https://www.poynter.org/fact-checking/2018/this-fact-checker-got-several-news-outlets-to-correct-a-false-story-about-a-mini-ice-age/
+, false ,https://climate.nasa.gov/faq/14/is-the-sun-causing-global-warming/#:~:text=No.,enough%20for%20us%20to%20survive.
+
+
+------------------------------------------------------------
