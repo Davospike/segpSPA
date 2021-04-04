@@ -17,8 +17,6 @@ var QuizQuestion = require('./models/quiz_question')
 var NewsTopic = require('./models/news_topic')
 var UserAnswer = require('./models/user_answer')
 
-<<<<<<< HEAD
->>>>>>> dev
 var mongoose = require('mongoose');
 var mongoDB = userArgs[0];
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});

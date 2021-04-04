@@ -1,7 +1,11 @@
 #!/bin/bash
 
 docker build .
-
 docker-compose up -d
 
-docker exec -i db sh -c 'mongoimport -u "your_username" -p "your_password" --authenticationDatabase "admin" -c test_collection -d db --jsonArray' < testJSON.json
+# setting up the db
+# - need to find a way to clear the DB 
+# insert data into the collections
+docker exec -i db sh -c 'mongoimport -u "your_username" -p "your_password" --authenticationDatabase "admin" -c newstopics -d fakeNewsDB --upsert --jsonArray' < newsTopicsOutput.json
+docker exec -i db sh -c 'mongoimport -u "your_username" -p "your_password" --authenticationDatabase "admin" -c quizquestions -d fakeNewsDB --upsert --jsonArray' < quizQuestionsOutput.json
+docker exec -i db sh -c 'mongoimport -u "your_username" -p "your_password" --authenticationDatabase "admin" -c useranswers -d fakeNewsDB --upsert --jsonArray' < userAnswersOutput.json
