@@ -1,6 +1,0 @@
-<div class="row answers">
-  <div class="col l6 m12 s12" *ngFor="let answer of answers; let i = index">
-    <input #check type="checkbox" id="answer{{question.id}}{{i}}" (change)="answerChanged(check.checked ? answer.title : null)" [disabled]="!check.checked && hasAnswer()">
-    <label htmlFor="answer{{question.id}}{{i}}" class="grey-text text-darken-3">{{ answer.title }}</label>
-  </div>
-</div>
