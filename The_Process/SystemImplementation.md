@@ -72,8 +72,19 @@ The documented market research can be found in Documentation/BackgroundResearch/
 
 We then go onto to find 3 sample websites that offer fake news quizzes (or similar), like ours, and explain the similarities between our idea and theirs. As of date, we have found no web applications that offer we would like to: a one-stop-shop for demystifying fake news headlines that users may have heard of, which is **categorised** into separate global events (i.e., Brexit / TradeWar / Coronavirus).
 
-
 ### Sprint 3 : Prepare Backend & Additional Wireframe (29.03.21-04.04.21)
+
+#### Backend
+
+The aim of the sprint with respect to the backend was to prepare our mongoDB containers to the point where we can start calling methods that correspond to HTTP requests. The current state of our backend is as follows.
+
+We currently have a DB set up in a dockerised mongoDB container, with proxy data used for testing purposes. The DB is structured with collections, with relationships represented in our data. For example, in our news topic collection, we have multiple quizquestion references, therefore we are in a place where we can access all the quiz questions related to a particular topic via a mongoDB command. 
+
+Whilst preparing the backend, we faced some structural difficulties. We started off by writing a script, *insertDataScript.js* that constructs collections and inputs data. Since our script was targeted as storing data in a local mongoDB DB, the data was not there when we started a docker mongoDB container. We got around this problem by importing data into the dockerised mongoDB container, using mongoimport on json files we exported from our local mongoDB DB. Hence, we could then access the data in our dockerised mongoDB container. However, when we tested our solution by building the docker images on another machine, the data did not persist. Hence, we created a script, that is run when on another machine to ensure the data persists, this script is found in *deploy.sh*, and running this will build the docker images and mongoDB container, with persistent data inside it.
+
+Although this may not be the most efficient solution, we have decided to focus on the data contained within our DB for the time being, since we're still using proxy data. After consolidating across the back-end team, we will making some further changes to our data model, as we feel that some of the relationships and collections already in place are redundant (for example, the relationship between a useranswer document and quizquestion document). Full details of these changes, and the process by which we got our mongoDB docker container working are found in /Documentation/Backend/Meeting_Log.
+
+
 
 
 ## MEAN Stack System Implementation
