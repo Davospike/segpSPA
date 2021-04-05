@@ -196,3 +196,127 @@ Meeting objectives for next meeting:
 
 
 
+---
+
+#### Meeting Log 04/04/2021
+
+Plans for meeting:
+
+- by the end of the day, want to be able to run *docker-compose up* and after this, whoover's machine is running the container, to have a populated database  that we have created 
+
+- current problems: we can populate a db by passing in a json file, as follows:
+
+  ```sh
+  docker exec -i db sh -c 'mongoimport -u "your_username" -p "your_password" --authenticationDatabase "admin" -c test_collection -d db --jsonArray' < testJSON.json
+  ```
+
+  - *note, testJSON* is just a sample json file we took from our local mongo, just to test this mongoimport command ^ works
+
+- ...however, this data does not persist when starting the docker container on a different machine - still staying local
+
+- So our idea is to construct all the json files via our insertDataScript.js and get the correct data out of mongo (local mongo, not dockerised mongo) into a json file, from then we will mongoimport this json payload into the dockerised mongo (From the start)
+
+
+
+We constructed a shell script (*deploy.sh*) which does the following:
+
+- builds docker - *docker build .*
+- aggregate the output of each container in detached mode - *docker-compose up -d*
+- inserts all the JSON data we need into the dockerised mongoDB DB
+
+
+
+Tested this initally with a file: *testJSON.json* 
+
+Next, tested with an exported file from a local mongoDB DB
+
+- hence, the third command in our script was:
+
+  - *mongoexport -d test -c newstopics -o newsTopicsOutput.json --jsonArray*
+
+  - here, we exported the newsTopics collection from our local mongoDB DB to a file called newTopicsOutput
+
+  - we then imported this file into our dockerised MongoDB DB via the command (in deploy.sh):
+
+    - ```sh
+      docker exec -i db sh -c 'mongoimport -u "your_username" -p "your_password" --authenticationDatabase "admin" -c test_collection -d db --jsonArray' < newsTopicsOutput.json
+      ```
+
+Now checked the correct data was in our dockerised mongoDB DB using the following commands:
+
+```sh
+$ sudo docker exec -it db bash
+$ mongo
+# use admin
+# db.auth("<OUR_USERNAME>",passwordPrompt());
+# <OUR_PASSWORD>
+# db.collection.find() 											// replaced collection with collection name, so test_collection in this case
+```
+
+
+
+##### Now we've correctly imported some our data, going to create a DB with the right collection names, and populate via this method.
+
+- i.e., each time you run ./deploy.sh now, it will build and start docker containers, then create the collections we need, and populate the entire DB.
+
+- made DB called fakeNewsDB - this is where all data is stored
+
+- got quiz questions data and user answer data into this data in their respective collections using the commands:
+
+  - for **quizquestions** collection:
+
+    ```bash
+    $ mongoexport -d test -c quizquestions -o quizQuestionsOutput.json --jsonArray
+    ```
+
+  - for **useranswers** collection:
+
+    ```bash
+    $ mongoexport -d test -c useranswers -o userAnswersOutput.json --jsonArray
+    ```
+
+  - then imported these, like we did with newsTopicsOutput.json:
+
+  ```sh
+  docker exec -i db sh -c 'mongoimport -u "your_username" -p "your_password" --authenticationDatabase "admin" -c quizquestions -d fakeNewsDB --upsert --jsonArray' < quizQuestionsOutput.json
+  
+  docker exec -i db sh -c 'mongoimport -u "your_username" -p "your_password" --authenticationDatabase "admin" -c useranswers -d fakeNewsDB --upsert --jsonArray' < userAnswersOutput.json
+  ```
+
+  - note, in these commands, and the command for importing newsTopicsOutput, included --upsert flag, which modifies the import process so the we drop the collection before importing the data, hence we avoid the duplicate import errors, i.e.,
+
+    ```bash
+    error inserting documents: multiple errors in bulk operation:
+    
+    - E11000 duplicate key error collection: fakeNewsDB.useranswers index: _id_ dup key: { _id: ObjectId('6069a6379da6ffa6ec3c2e0f') }
+    ```
+
+    
+
+Now our ./deploy.sh script creates and runs docker container, with the correct data in our mongoDB DB.
+
+Also, for navigation, added the 3 JSON files (exported from local mongo) into a folder called **blockData**. 
+
+
+
+#### Before Inserting All our Data, checked Data Model Again...
+
+- the useranswers collection may be redundant, since the only use for this is to give a statistic on how many users answered a particular question right / wrong, hence could just store that statistic in the quizquestion collection
+- also, the relationship between quizquestion and newstopic collections is a many-to-many relationship, so will want to have arrays of quiz questions in a news topic, and arrays of news topics in a quiz question
+
+- hence reajdusted our datamodel again, and the resulting model is reflected in the model diagram, insertdatascript and the final data that lay in our mongoDB database
+- also, should we include a text body explaining why the answer is true
+
+
+
+#### Inserting Data
+
+- agreed on fake news categories as listed on our marvel paper prototype: 
+  - Brexit
+  - Coronavirus
+  - Immigration
+  - China 
+  - Economy
+- also agreed to add:
+  - Climate Change
+
