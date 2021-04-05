@@ -1,0 +1,36 @@
+.done-icon {
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.done-icon .circle {
+  width: 130px;
+  height: 130px;
+  display: inline-block;
+}
+
+.done-icon .circle img {
+  width: 92px;
+  margin-top: 16px;
+  position: relative;
+}
+
+.card-content .text {
+  display: table;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.card-content .text p {
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center;
+}
+
+.card-content .text p i {
+  display: inline-block;
+  padding: 5px;
+  font-size: 20px;
+  margin: 0 5px;
+  vertical-align: middle;
+}
