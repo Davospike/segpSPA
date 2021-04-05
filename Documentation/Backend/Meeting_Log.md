@@ -311,12 +311,42 @@ Also, for navigation, added the 3 JSON files (exported from local mongo) into a 
 
 #### Inserting Data
 
-- agreed on fake news categories as listed on our marvel paper prototype: 
+- Agreed on fake news categories as listed on our marvel paper prototype: 
   - Brexit
   - Coronavirus
   - Immigration
   - China 
   - Economy
-- also agreed to add:
+- Also agreed to add:
   - Climate Change
 
+---
+
+#### Meeting Log 05/04/2021
+
+Goals for today:
+
+- Have a completed Dataset, with fake and real news in all topics.
+- Finalise data model for implementation later this week.
+
+
+
+When filling in dataset:
+
+- Spent majority of the day collecting data.
+- We hand-picked our own data rather than using found datasets (in /Archive)
+  - We wanted our quiz to be organised into news topics, which all the datasets didn't have, and not to be organised in terms of 'misinformation' or 'conspiracy' as we didn't think a dataset like that would work effectively in a quiz setting.
+  - Had to make sure that we had a verified website opposing the fake news article to make sure that is was **FAKE NEWS**
+
+- Although our dataset is now exactly how we like it and is perfect for the web app, we found it quite difficult to find this data through the use of google (as no one really wants to view fake news, we assume they attempt to phase it out), was difficult and perhaps a proper web-scraping device or a system that implements NLP to searches for the appropriate data would have been a much more effective way to gather this data.
+
+
+
+- Updated Data model:
+  - Removed User answer table and created new columns in Quiz Question:
+    - Num_correct
+    - Num_attempted
+  - User answer was redundant because we were no longer storing user responses specifically, we are going to give feedback on all users' answers for an insight into how the userbase sees fake news.
+  - We have changed our Data model to be more simple by having a one to many relationship between news topics and quiz questions
+    - We didnt want quiz questions to appear in multiple topics 
+    - Some articles were ambiguous in their topic so it was better to stick with just one instead of putting them in multiple quizzes.
