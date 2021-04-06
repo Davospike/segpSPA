@@ -9,7 +9,10 @@ var QuizQuestionSchema = new Schema({
   postDate: Date,
   headline: String,
   text_body: String,
-  correct_answer: Boolean
+  correct_answer: Boolean,
+  correct_answer_url: String,
+  num_correct: Number,
+  num_attempted: Number
 });
 
 
@@ -22,4 +25,3 @@ QuizQuestionSchema
 
 //Creating a model from schema we've just made, and exporting it to be used elsewhere
 module.exports = mongoose.model('QuizQuestion', QuizQuestionSchema);
-
