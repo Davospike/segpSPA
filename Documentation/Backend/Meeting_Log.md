@@ -350,3 +350,47 @@ When filling in dataset:
   - We have changed our Data model to be more simple by having a one to many relationship between news topics and quiz questions
     - We didnt want quiz questions to appear in multiple topics 
     - Some articles were ambiguous in their topic so it was better to stick with just one instead of putting them in multiple quizzes.
+  
+  ---
+  
+  #### Meeting Log 06/04/2021
+  
+  Now we've adjusted our data model, and the changes have been reflected in our UML diagram and spreadsheet, we're going to change our insertDataScript.js script to incorporate these changes, and insert our data.
+  
+  We will mongoexport this data into our json files in blockData directory, then insert them into our dockerised mongoDB container via the the deploy.sh script.
+  
+  
+  
+  Adjusting the insertDataScript
+  
+  - first of all, changed our fields in our collections
+  - then, decided to add another function, *sortQuizQuestions* which will add quiz questions from the main quizquestion_arr into their respective quiz question category arrays:
+    - var brexit_questions = []
+    - var corona_questions = []
+    - var climate_questions = []
+    - var china_questions = []
+    - var general_questions = []
+  
+  - Num_correct, num_attempted (our metric for user performance in questions) are initialised to be 0 when we create a quiz question
+  
+  
+  
+  Had to adjust our script, based on a similar script we found here:
+  
+  https://bezkoder.com/mongoose-one-to-many-relationship/, 
+  
+  - as we could not insert multiple objects as an array from our original script.
+  
+  
+  
+  Exported output from local mongoDB as before, into JSON files found in blockData:
+  
+  ```bash
+  $ mongoexport -d test -c quizquestions -o quizQuestionsOutput.json --jsonArray
+  ```
+  
+  ```bash
+  $ mongoexport -d test -c newstopics -o newsTopicsOutput.json --jsonArray
+  ```
+  
+  Now imported into dockerised mongoDB DB via the deploy.sh script.
