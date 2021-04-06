@@ -6,7 +6,8 @@ var Schema = mongoose.Schema;
 
 var NewsTopicSchema = new Schema({
   topicName: String,
-  quiz_question: [{type: Schema.Types.ObjectId, ref: 'QuizQuestion'}]
+  //quiz_question: [{type: Schema.Types.ObjectId, ref: 'QuizQuestion'}]
+  quizquestions: []
 });
 
 
