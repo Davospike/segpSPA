@@ -1,3 +1,4 @@
+
 # We use the official image as a parent image.
 FROM node:10-alpine
 
