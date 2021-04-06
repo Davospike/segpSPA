@@ -44,8 +44,8 @@ During this week we had a reading week and a break from new content on our modul
 
 The goals of the first sprint were as follows:
 - Come together and brainstorm an initial webpage design.
-- Develop a paper prototype design of what we thought our Fake News quiz could look like (to read more about our design processes and ideation, please see the [System Design page](The_Process/SystemDesign.md)).
-- Generate a SurveyMonkey feedback questionaire for our paper prototype (see here).
+- Develop a paper prototype design of what we thought our Fake News quiz could look like (to read more about our design processes and ideation, please see the [System Design page](SystemDesign.md)).
+- Generate a SurveyMonkey feedback questionaire for our paper prototype ([see here](../Documentation/Paper_Prototype)).
 - Familiarise ourselves with GitHub and continuous integration best practises.
 - Amalgamate some potential datasets.
 
@@ -68,15 +68,27 @@ Key goals:
 
 As this was also deadline week for another assignment, this sprint was deliberately brief, but was decided with good intentions. Having all teams members at the same level of understanding, regarding the full stack deployment, going into 3 weeks of sprints where we expected to achieve a lot, in terms of advancing the front and backend, would be hugely beneficial. With everyone at the same level, it would mean that if additional resources were required at either end, we would be able to pivot and share the load better amongsts ourselves. Further, with a fully working dashboard up on the GitHub repo, we would be in good stead to hit the ground running for further development on the quiz for the first sprint of Easter.
 
-The documented market research can be found in Documentation/BackgroundResearch/Market + Field Research.md. Here, we discuss the surrounding field, and our motivations for our web application. In summary, this section explains how fake news can contribute to the detriment of social health, and cost to companies that are the burden of fake news stories.
+The documented market research can be found [here](../Documentation/BackgroundResearch/Market+Field_Research.md). Here, we looked into the surrounding field, and our motivations for our web application. In summary, the section explains how fake news can contribute to the detriment of social health, and cost to companies that are the burden of fake news stories.
 
-We then go onto to find 3 sample websites that offer fake news quizzes (or similar), like ours, and explain the similarities between our idea and theirs. As of date, we have found no web applications that offer we would like to: a one-stop-shop for demystifying fake news headlines that users may have heard of, which is **categorised** into separate global events (i.e., Brexit / TradeWar / Coronavirus).
+During the research, we investigated 3 sample websites that offer fake news quizzes (or similar), like ours, and looked into the similarities between our idea and theirs. As of the time of writing, we found no web applications that offer what we have set out to create: a one-stop-shop for demystifying and educating users about fake news in a fun and engaging way. By providing a quiz that is broken down into categories e.g. Brexit, TradeWar, Coronavirus, we hope to target a wider audience.
 
 ### Sprint 3 : Prepare Backend & Additional Wireframe (29.03.21-04.04.21)
+Sprint number 3 came in the first week on Easter and the key goals related to advancing our paper prototype into a more developed wire frame and develop the backend with respect to the mongoDB containers and finalizing the dataset with sample questions, broken down by news topic. Further we set a stretch goal to prepare the data model for handling HTTP requests.
 
-#### Backend
+Key goals:
+- Finalize data model.
+- Finish hand-made quiz dataset, broken down into various topics ready for linking to the front end.
+- Prepare mongoDB container ready for HTTPP requests.
+- Create a more developed wire frame, implementing the feedback from the initial paper prototype SurveyMonkey questionnaire.
+- Send out new wire frame and questionnaire for further front end feedback.
 
-The aim of the sprint with respect to the backend was to prepare our mongoDB containers to the point where we can start calling methods that correspond to HTTP requests. The current state of our backend is as follows.
+For the front end, the focus was taking onboard the feedback obtained from the SurveyMonkey questionnaire that was previously sent round based off the initial paper prototype. The feedback proved to be useful, especially points focussed around UI and UX, such as the navigation being intuitive and consistent, colour scheme and suggestions for a social sharing feature. As well as taking onboard UX and UI feedback, we also received reasurring feedback that the idea was liked by respondents and that they were interested to use the webpage and take the quiz.
+
+One of the reasons we wanted to create a wire frame was that the idea behind a prototype/wire frame is to demonstrate the functionality of an idea before the build stage. It is beneficial because it allows to you to visualize and simulate the user experience of your idea; one can consider the users' needs and journey through the webpage more effectively. By developing a wireframe that we think will represent our final product more closely after carrying out market research, taking user feedback, and having thought about the design more, would mean that we could begin building the front end based off the wireframe with more confidence that the design is good.
+
+With the feedback onboard, we set out on making a more robust wire frame that would better represent the end product. We used a software called "MarvelApp" to make the wire frame interactive and more engaging, allowing the users to click and play around with the latest design ideas. We updated the Survey Money to ask people to scale their answers based on whether they "Strongly Agree", "Strong Disagree" etc. By sending out a new revised feedback form during the front end build, we would be able to take on feedback about the design and functionality as we build, allowing us to keep the user feedback loop and adaptation cycle short. This idea of having a short feedback loop and adaptation cycle is a key concept of agile and is something we were keen to do given the short time frame we have to design and build the idea.
+
+With the backend, the aim of the sprint was to prepare our mongoDB containers to the point where we could start calling methods that correspond to HTTP requests. The current state of our backend is as follows:
 
 We currently have a DB set up in a dockerised mongoDB container, with proxy data used for testing purposes. The DB is structured with collections, with relationships represented in our data. For example, in our news topic collection, we have multiple quizquestion references, therefore we are in a place where we can access all the quiz questions related to a particular topic via a mongoDB command. 
 
@@ -85,10 +97,7 @@ Whilst preparing the backend, we faced some structural difficulties. We started 
 Although this may not be the most efficient solution, we have decided to focus on the data contained within our DB for the time being, since we're still using proxy data. After consolidating across the back-end team, we will making some further changes to our data model, as we feel that some of the relationships and collections already in place are redundant (for example, the relationship between a useranswer document and quizquestion document). Full details of these changes, and the process by which we got our mongoDB docker container working are found in /Documentation/Backend/Meeting_Log.
 
 
-
-
 ## MEAN Stack System Implementation
-
 
 ### Stack Architecture & System Design
 [ADD TO] - e.g. class diagrams, sequence diagrams. Might be best place/more detail in SystemDesign.md?
