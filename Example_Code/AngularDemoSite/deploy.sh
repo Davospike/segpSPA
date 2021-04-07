@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker build .
+docker-compose build
 docker-compose up -d
 
 # setting up the db
