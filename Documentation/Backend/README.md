@@ -466,3 +466,7 @@ Using this webpage for reference: `https://www.digitalocean.com/community/tutori
 
 `Schema/Models -----> Controllers -----> Api etc..`
 
+Objectives for tomorrow:
+
+- Continue attempting to process queries through Api.js through to Localhost to see if it works.
+
