@@ -1,5 +1,3 @@
-
-
 14-03-2021:
 
 Objectives of meeting :
@@ -333,8 +331,6 @@ Goals for today:
 - Have a completed Dataset, with fake and real news in all topics.
 - Finalise data model for implementation later this week.
 
-
-
 When filling in dataset:
 
 - Spent majority of the day collecting data.
@@ -343,8 +339,6 @@ When filling in dataset:
   - Had to make sure that we had a verified website opposing the fake news article to make sure that is was **FAKE NEWS**
 
 - Although our dataset is now exactly how we like it and is perfect for the web app, we found it quite difficult to find this data through the use of google (as no one really wants to view fake news, we assume they attempt to phase it out), was difficult and perhaps a proper web-scraping device or a system that implements NLP to searches for the appropriate data would have been a much more effective way to gather this data.
-
-
 
 - Updated Data model:
   - Removed User answer table and created new columns in Quiz Question:
@@ -416,7 +410,7 @@ When filling in dataset:
 
   - i.e All quiz questions from news topics **SEPARATELY** rather than all together.
 
-  - ```mariadb
+    ```mariadb
     > db.newstopics.aggregate( [{$unwind : "$quizquestions"}] )
     ```
 
@@ -488,4 +482,10 @@ When filling in dataset:
 ```bash
 docker exec -i db sh -c 'mongoexport -u "your_username" -p "your_password" --authenticationDatabase "admin" -c newstopics -d fakeNewsDB --query='db.newstopics.aggregate([{"$unwind": {path: "$quizquestions",includeArrayIndex:"arrayIndex"} },{ $match : { topicName : "Coronavirus" } },   {$match : { "arrayIndex" : 7 } },])'' > blockData/queryoutput.json
 ```
+
+### Creating Methods to determine how user data is inserted and returned to/from the user.
+
+Using this webpage for reference: `https://www.digitalocean.com/community/tutorials/how-to-integrate-mongodb-with-your-node-application`, we are going to learn ways of manoevering data to and from MongoDB, *properly*, using Mongoose-style methods. Most likely using controllers. So the chain would be:
+
+`Schema/Models -----> Controllers -----> Api etc..`
 
