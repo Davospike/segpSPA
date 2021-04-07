@@ -1,3 +1,5 @@
+
+
 14-03-2021:
 
 Objectives of meeting :
@@ -251,6 +253,8 @@ $ mongo
 # db.auth("<OUR_USERNAME>",passwordPrompt());
 # <OUR_PASSWORD>
 # db.collection.find() 											// replaced collection with collection name, so test_collection in this case
+
+# db.auth("your_username","your_password");
 ```
 
 
@@ -350,19 +354,19 @@ When filling in dataset:
   - We have changed our Data model to be more simple by having a one to many relationship between news topics and quiz questions
     - We didnt want quiz questions to appear in multiple topics 
     - Some articles were ambiguous in their topic so it was better to stick with just one instead of putting them in multiple quizzes.
-  
+
   ---
-  
+
   #### Meeting Log 06/04/2021
-  
+
   Now we've adjusted our data model, and the changes have been reflected in our UML diagram and spreadsheet, we're going to change our insertDataScript.js script to incorporate these changes, and insert our data.
-  
+
   We will mongoexport this data into our json files in blockData directory, then insert them into our dockerised mongoDB container via the the deploy.sh script.
+
   
-  
-  
+
   Adjusting the insertDataScript
-  
+
   - first of all, changed our fields in our collections
   - then, decided to add another function, *sortQuizQuestions* which will add quiz questions from the main quizquestion_arr into their respective quiz question category arrays:
     - var brexit_questions = []
@@ -370,27 +374,118 @@ When filling in dataset:
     - var climate_questions = []
     - var china_questions = []
     - var general_questions = []
-  
+
   - Num_correct, num_attempted (our metric for user performance in questions) are initialised to be 0 when we create a quiz question
+
   
-  
-  
+
   Had to adjust our script, based on a similar script we found here:
-  
+
   https://bezkoder.com/mongoose-one-to-many-relationship/, 
-  
+
   - as we could not insert multiple objects as an array from our original script.
+
   
-  
-  
+
   Exported output from local mongoDB as before, into JSON files found in blockData:
-  
+
   ```bash
   $ mongoexport -d test -c quizquestions -o quizQuestionsOutput.json --jsonArray
   ```
-  
+
   ```bash
   $ mongoexport -d test -c newstopics -o newsTopicsOutput.json --jsonArray
   ```
-  
+
   Now imported into dockerised mongoDB DB via the deploy.sh script.
+
+  
+
+  ---
+  
+
+  #### Meeting Log 07/04/2021
+
+  - Aim today is to familiarise ourselves with MongoDB commands ready for handling HTTP requests and acquring the correct data for the frontend.
+  - Began considering how to give random questions to the front-end, the initial thought being:
+    - Instead of using ObjectIDs or web_urls to be the unique parameter of a quiz question
+    - We would number the questions with an integer (i.e 1-10)
+    - And shuffle these into a random order.
+
+- Found a command to write out each element of an array out in MongoDB
+
+  - i.e All quiz questions from news topics **SEPARATELY** rather than all together.
+
+  - ```mariadb
+    > db.newstopics.aggregate( [{$unwind : "$quizquestions"}] )
+    ```
+
+- Even better - found a command that gives the array index as well as all of these separate quiz questions
+
+  ```mariadb
+  db.newstopics.aggregate([{$unwind:{path:"$quizquestions",includeArrayIndex:"arrayIndex"}}])
+  ```
+
+  i.e output would be:
+
+  ```mariadb
+  {
+  	"_id" : ObjectId("606ca606c745630012e235de"), #i.e the array object ID
+  	"quizquestions" : {
+  		"web_url" : "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters",
+  		"postDate" : "2021-03-26",
+  		"headline" : "The prolonged use of medical masks when properly worn, DOES NOT cause CO2 intoxication nor oxygen deficiency",
+  		"text_body" : "The prolonged use of medical masks can be uncomfortable. However, it does not lead to CO2 intoxication nor oxygen deficiency. While wearing a medical mask, make sure it fits properly and that it is tight enough to allow you to breathe normally.",
+  		"correct_answer" : true,
+  		"correct_answer_url" : "",
+  		"num_correct" : 0,
+  		"num_attempted" : 0
+  	},
+  	"topicName" : "Coronavirus",
+  	"__v" : 0,
+  	"arrayIndex" : NumberLong(4) #<Here is the index of the quiz question within the NewsTopic
+  }
+  ```
+
+- In another extraordinary turn of events, we found a lot of potential with the `.aggregate` MongoDB command.
+
+- We have formulated a command to target a certain news topic and their array index:
+
+  ```mariadb
+  db.newstopics.aggregate(
+      [ 
+          { "$unwind": {path: "$quizquestions", includeArrayIndex: "arrayIndex"} }, 
+          { $match : { topicName : "Coronavirus" } }, #e.g Coronavirus [News Topic].
+          { $match : { "arrayIndex" : 7 } },					#e.g Quiz Question Number 7.
+      ]
+  )
+  ```
+
+- The goal would be to create a random array of numbers (obviously no repeats) and give the user a random bunch of questions using this method.
+
+### Using MongoExport with queries
+
+- Referencing this website: `https://database.guide/how-to-export-mongodb-query-results-to-a-json-file/` We can shift the output of a query into a JSON file
+
+- Example from the site:
+
+  ```mariadb
+  mongoexport --db=PetHotel --collection=pets --query='{ "type": "Dog" }' --out=data/dogs.json
+  ```
+
+- So, in our case:
+
+  ```mariadb
+  mongoexport --db=fakeNewsDB --collection=newstopics --query='db.newstopics.aggregate(
+      [ 
+          { "$unwind": {path: "$quizquestions", includeArrayIndex: "arrayIndex"} }, 
+          { $match : { topicName : "Coronavirus" } },
+          { $match : { "arrayIndex" : 7 } },					
+      ]
+  )' --out=queryoutput.json
+  ```
+
+```bash
+docker exec -i db sh -c 'mongoexport -u "your_username" -p "your_password" --authenticationDatabase "admin" -c newstopics -d fakeNewsDB --query='db.newstopics.aggregate([{"$unwind": {path: "$quizquestions",includeArrayIndex:"arrayIndex"} },{ $match : { topicName : "Coronavirus" } },   {$match : { "arrayIndex" : 7 } },])'' > blockData/queryoutput.json
+```
+
