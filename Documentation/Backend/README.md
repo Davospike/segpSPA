@@ -1,4 +1,4 @@
-14-03-2021:
+### 14-03-2021:
 
 Objectives of meeting :
 -> Start thinking about the construction of our static DB
@@ -20,34 +20,30 @@ For next session:
 
 ---------------------------------------------
 
-17-03-21:
+### 17-03-21:
 
 Objectives of meeting:
 -> check DB structure conforms to BCNF
 -> start creating directory structure and input examples
 -> decide on coherent list of datasets we will use
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:::												:::
-::: WHEN CREATING EXAMPLE .CSV FILE TO TEST ER DIAGRAM:						:::
-:::												:::
-:::-Realised that News_Item table would only be used to ask a Quiz Question			:::
-:::-Therefore having a Quiz Question table is redundant.					:::
-:::-Due to the 1 to 1 relationship between News Item and Quiz Question.				:::
-:::--Solution: merge Quiz Question and News_Item						:::
-:::												:::
-:::-Even though in our original model, each question was going to be based on one news topic.	:::
-:::-If we can, we would implement multiple news topics per question				:::
-:::-Therefore we have left 'News Topic' as a separate table.					:::
-:::												:::
-:::-Researched about join tables, realised they don't necessarily need a PK			:::
-:::-Removed PK from join table Topic_Library for clarity and ease of use.			:::
-:::												:::
-:::-Considered when we would store user follow up input						:::
-:::-i.e when user is incorrect *then* they will be prompted with a follow up qu.		:::
-:::-Need to consult with team (See 'for next session')						:::
-:::												:::
-:::												:::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+`WHEN CREATING EXAMPLE .CSV FILE TO TEST ER DIAGRAM:	`				
+
+`-Realised that News_Item table would only be used to ask a Quiz Question
+-Therefore having a Quiz Question table is redundant.					
+-Due to the 1 to 1 relationship between News Item and Quiz Question.				
+-Solution: merge Quiz Question and News_Item`						
+
+`-Even though in our original model, each question was going to be based on one news topic.	
+-If we can, we would implement multiple news topics per question				
+-Therefore we have left 'News Topic' as a separate table.`
+
+`-Researched about join tables, realised they don't necessarily need a PK	
+-Removed PK from join table Topic_Library for clarity and ease of use.		
+-Considered when we would store user follow up input				
+-i.e when user is incorrect *then* they will be prompted with a follow up qu.`
+
+`-Need to consult with team (See 'for next session')`
 
 -Updated ERDiagram considering changes made from .csv example
 -Checked for normalisation in the backend layout (See '../DatabaseDesign/Normalisation_RunThrough.txt').
@@ -61,7 +57,9 @@ For next session:
 	- choose datasets and start filling in databses
 		-> may have to change backend structure depending on dataset found
 
-31/03/2021:
+------
+
+### 31/03/2021:
 
 	Backend meeting VG & NT.
 
@@ -80,8 +78,6 @@ For next session:
 
 ---
 
----
-
 #### **01/04/21**
 
 Database construction:
@@ -94,8 +90,6 @@ Database construction:
 
 *Following this tutorial for the session: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose#related_documents*
 
-
-
 ##### Meeting notes:
 
 ###### [Designing the data model]
@@ -105,8 +99,6 @@ Database construction:
   - a document in noSQL is a collection of data, like an entity. 
   - we split ours up by similar tables as we had before, and removed the join table
 - chagned ER diagram to make noSQL data model diagram - saved in *noSQLDBdevelopment/NoSQLUML*
-
-
 
 ###### [Designing schemas]
 
@@ -120,8 +112,6 @@ Database construction:
 
 - connected to mongoDB locally, and wrote a script for inserting example data in mongo collections (Example_Code/AngularDemoSite/insertDataScript.js)
 
-
-
 ---
 
 Meeting objectives for next meeting:
@@ -129,15 +119,11 @@ Meeting objectives for next meeting:
 - read through <https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes> to gain a better understanding on route modules/functions, and start planning our route modules and use of http verbs (ie get, post, ...)
 - plan integration of insertDataScript.js within our project, and test pushing json data to our /api page
 
-
-
 ###### [Routes and Controllers]
 
 
 
 ---
-
-
 
 ### 02/04/2021
 
@@ -194,8 +180,6 @@ Meeting objectives for next meeting:
   - Have been trying to store filled DBs in docker container/image to be used on other devices.
 - Next meeting tomorrow we will give insertScript a rehaul.
 
-
-
 ---
 
 #### Meeting Log 04/04/2021
@@ -223,8 +207,6 @@ We constructed a shell script (*deploy.sh*) which does the following:
 - builds docker - *docker build .*
 - aggregate the output of each container in detached mode - *docker-compose up -d*
 - inserts all the JSON data we need into the dockerised mongoDB DB
-
-
 
 Tested this initally with a file: *testJSON.json* 
 
@@ -254,8 +236,6 @@ $ mongo
 
 # db.auth("your_username","your_password");
 ```
-
-
 
 ##### Now we've correctly imported some our data, going to create a DB with the right collection names, and populate via this method.
 
@@ -293,13 +273,10 @@ $ mongo
     - E11000 duplicate key error collection: fakeNewsDB.useranswers index: _id_ dup key: { _id: ObjectId('6069a6379da6ffa6ec3c2e0f') }
     ```
 
-    
 
 Now our ./deploy.sh script creates and runs docker container, with the correct data in our mongoDB DB.
 
 Also, for navigation, added the 3 JSON files (exported from local mongo) into a folder called **blockData**. 
-
-
 
 #### Before Inserting All our Data, checked Data Model Again...
 
@@ -308,8 +285,6 @@ Also, for navigation, added the 3 JSON files (exported from local mongo) into a 
 
 - hence reajdusted our datamodel again, and the resulting model is reflected in the model diagram, insertdatascript and the final data that lay in our mongoDB database
 - also, should we include a text body explaining why the answer is true
-
-
 
 #### Inserting Data
 
