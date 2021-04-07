@@ -6,7 +6,6 @@ var Schema = mongoose.Schema;
 
 var NewsTopicSchema = new Schema({
   topicName: String,
-  //quiz_question: [{type: Schema.Types.ObjectId, ref: 'QuizQuestion'}]
   quizquestions: []
 });
 
@@ -21,3 +20,4 @@ NewsTopicSchema
 
 //Creating a model from schema we've just made, and exporting it to be used elsewhere
 module.exports = mongoose.model('NewsTopic', NewsTopicSchema);
+module.exports = NewsTopicSchema;
