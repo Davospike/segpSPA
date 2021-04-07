@@ -20,4 +20,3 @@ NewsTopicSchema
 
 //Creating a model from schema we've just made, and exporting it to be used elsewhere
 module.exports = mongoose.model('NewsTopic', NewsTopicSchema);
-module.exports = NewsTopicSchema;
