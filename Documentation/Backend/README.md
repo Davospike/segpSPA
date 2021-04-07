@@ -1,4 +1,6 @@
-14-03-2021:
+# <u>Backend Meeting Log</u>
+
+### 14-03-2021:
 
 Objectives of meeting :
 -> Start thinking about the construction of our static DB
@@ -20,34 +22,30 @@ For next session:
 
 ---------------------------------------------
 
-17-03-21:
+### 17-03-21:
 
 Objectives of meeting:
 -> check DB structure conforms to BCNF
 -> start creating directory structure and input examples
 -> decide on coherent list of datasets we will use
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:::												:::
-::: WHEN CREATING EXAMPLE .CSV FILE TO TEST ER DIAGRAM:						:::
-:::												:::
-:::-Realised that News_Item table would only be used to ask a Quiz Question			:::
-:::-Therefore having a Quiz Question table is redundant.					:::
-:::-Due to the 1 to 1 relationship between News Item and Quiz Question.				:::
-:::--Solution: merge Quiz Question and News_Item						:::
-:::												:::
-:::-Even though in our original model, each question was going to be based on one news topic.	:::
-:::-If we can, we would implement multiple news topics per question				:::
-:::-Therefore we have left 'News Topic' as a separate table.					:::
-:::												:::
-:::-Researched about join tables, realised they don't necessarily need a PK			:::
-:::-Removed PK from join table Topic_Library for clarity and ease of use.			:::
-:::												:::
-:::-Considered when we would store user follow up input						:::
-:::-i.e when user is incorrect *then* they will be prompted with a follow up qu.		:::
-:::-Need to consult with team (See 'for next session')						:::
-:::												:::
-:::												:::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+`WHEN CREATING EXAMPLE .CSV FILE TO TEST ER DIAGRAM:	`				
+
+`-Realised that News_Item table would only be used to ask a Quiz Question
+-Therefore having a Quiz Question table is redundant.					
+-Due to the 1 to 1 relationship between News Item and Quiz Question.				
+-Solution: merge Quiz Question and News_Item`						
+
+`-Even though in our original model, each question was going to be based on one news topic.	
+-If we can, we would implement multiple news topics per question				
+-Therefore we have left 'News Topic' as a separate table.`
+
+`-Researched about join tables, realised they don't necessarily need a PK	
+-Removed PK from join table Topic_Library for clarity and ease of use.		
+-Considered when we would store user follow up input				
+-i.e when user is incorrect *then* they will be prompted with a follow up qu.`
+
+`-Need to consult with team (See 'for next session')`
 
 -Updated ERDiagram considering changes made from .csv example
 -Checked for normalisation in the backend layout (See '../DatabaseDesign/Normalisation_RunThrough.txt').
@@ -61,7 +59,9 @@ For next session:
 	- choose datasets and start filling in databses
 		-> may have to change backend structure depending on dataset found
 
-31/03/2021:
+------
+
+### 31/03/2021:
 
 	Backend meeting VG & NT.
 
@@ -80,8 +80,6 @@ For next session:
 
 ---
 
----
-
 #### **01/04/21**
 
 Database construction:
@@ -94,8 +92,6 @@ Database construction:
 
 *Following this tutorial for the session: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose#related_documents*
 
-
-
 ##### Meeting notes:
 
 ###### [Designing the data model]
@@ -105,8 +101,6 @@ Database construction:
   - a document in noSQL is a collection of data, like an entity. 
   - we split ours up by similar tables as we had before, and removed the join table
 - chagned ER diagram to make noSQL data model diagram - saved in *noSQLDBdevelopment/NoSQLUML*
-
-
 
 ###### [Designing schemas]
 
@@ -120,8 +114,6 @@ Database construction:
 
 - connected to mongoDB locally, and wrote a script for inserting example data in mongo collections (Example_Code/AngularDemoSite/insertDataScript.js)
 
-
-
 ---
 
 Meeting objectives for next meeting:
@@ -129,15 +121,11 @@ Meeting objectives for next meeting:
 - read through <https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes> to gain a better understanding on route modules/functions, and start planning our route modules and use of http verbs (ie get, post, ...)
 - plan integration of insertDataScript.js within our project, and test pushing json data to our /api page
 
-
-
 ###### [Routes and Controllers]
 
 
 
 ---
-
-
 
 ### 02/04/2021
 
@@ -194,8 +182,6 @@ Meeting objectives for next meeting:
   - Have been trying to store filled DBs in docker container/image to be used on other devices.
 - Next meeting tomorrow we will give insertScript a rehaul.
 
-
-
 ---
 
 #### Meeting Log 04/04/2021
@@ -224,8 +210,6 @@ We constructed a shell script (*deploy.sh*) which does the following:
 - aggregate the output of each container in detached mode - *docker-compose up -d*
 - inserts all the JSON data we need into the dockerised mongoDB DB
 
-
-
 Tested this initally with a file: *testJSON.json* 
 
 Next, tested with an exported file from a local mongoDB DB
@@ -251,9 +235,9 @@ $ mongo
 # db.auth("<OUR_USERNAME>",passwordPrompt());
 # <OUR_PASSWORD>
 # db.collection.find() 											// replaced collection with collection name, so test_collection in this case
+
+# db.auth("your_username","your_password");
 ```
-
-
 
 ##### Now we've correctly imported some our data, going to create a DB with the right collection names, and populate via this method.
 
@@ -291,13 +275,10 @@ $ mongo
     - E11000 duplicate key error collection: fakeNewsDB.useranswers index: _id_ dup key: { _id: ObjectId('6069a6379da6ffa6ec3c2e0f') }
     ```
 
-    
 
 Now our ./deploy.sh script creates and runs docker container, with the correct data in our mongoDB DB.
 
 Also, for navigation, added the 3 JSON files (exported from local mongo) into a folder called **blockData**. 
-
-
 
 #### Before Inserting All our Data, checked Data Model Again...
 
@@ -306,8 +287,6 @@ Also, for navigation, added the 3 JSON files (exported from local mongo) into a 
 
 - hence reajdusted our datamodel again, and the resulting model is reflected in the model diagram, insertdatascript and the final data that lay in our mongoDB database
 - also, should we include a text body explaining why the answer is true
-
-
 
 #### Inserting Data
 
@@ -329,8 +308,6 @@ Goals for today:
 - Have a completed Dataset, with fake and real news in all topics.
 - Finalise data model for implementation later this week.
 
-
-
 When filling in dataset:
 
 - Spent majority of the day collecting data.
@@ -340,8 +317,6 @@ When filling in dataset:
 
 - Although our dataset is now exactly how we like it and is perfect for the web app, we found it quite difficult to find this data through the use of google (as no one really wants to view fake news, we assume they attempt to phase it out), was difficult and perhaps a proper web-scraping device or a system that implements NLP to searches for the appropriate data would have been a much more effective way to gather this data.
 
-
-
 - Updated Data model:
   - Removed User answer table and created new columns in Quiz Question:
     - Num_correct
@@ -350,19 +325,19 @@ When filling in dataset:
   - We have changed our Data model to be more simple by having a one to many relationship between news topics and quiz questions
     - We didnt want quiz questions to appear in multiple topics 
     - Some articles were ambiguous in their topic so it was better to stick with just one instead of putting them in multiple quizzes.
-  
+
   ---
-  
+
   #### Meeting Log 06/04/2021
-  
+
   Now we've adjusted our data model, and the changes have been reflected in our UML diagram and spreadsheet, we're going to change our insertDataScript.js script to incorporate these changes, and insert our data.
-  
+
   We will mongoexport this data into our json files in blockData directory, then insert them into our dockerised mongoDB container via the the deploy.sh script.
+
   
-  
-  
+
   Adjusting the insertDataScript
-  
+
   - first of all, changed our fields in our collections
   - then, decided to add another function, *sortQuizQuestions* which will add quiz questions from the main quizquestion_arr into their respective quiz question category arrays:
     - var brexit_questions = []
@@ -370,27 +345,124 @@ When filling in dataset:
     - var climate_questions = []
     - var china_questions = []
     - var general_questions = []
-  
+
   - Num_correct, num_attempted (our metric for user performance in questions) are initialised to be 0 when we create a quiz question
+
   
-  
-  
+
   Had to adjust our script, based on a similar script we found here:
-  
+
   https://bezkoder.com/mongoose-one-to-many-relationship/, 
-  
+
   - as we could not insert multiple objects as an array from our original script.
+
   
-  
-  
+
   Exported output from local mongoDB as before, into JSON files found in blockData:
-  
+
   ```bash
   $ mongoexport -d test -c quizquestions -o quizQuestionsOutput.json --jsonArray
   ```
-  
+
   ```bash
   $ mongoexport -d test -c newstopics -o newsTopicsOutput.json --jsonArray
   ```
-  
+
   Now imported into dockerised mongoDB DB via the deploy.sh script.
+
+  
+
+  ---
+  
+
+  #### Meeting Log 07/04/2021
+
+  - Aim today is to familiarise ourselves with MongoDB commands ready for handling HTTP requests and acquring the correct data for the frontend.
+  - Began considering how to give random questions to the front-end, the initial thought being:
+    - Instead of using ObjectIDs or web_urls to be the unique parameter of a quiz question
+    - We would number the questions with an integer (i.e 1-10)
+    - And shuffle these into a random order.
+
+- Found a command to write out each element of an array out in MongoDB
+
+  - i.e All quiz questions from news topics **SEPARATELY** rather than all together.
+
+    ```mariadb
+    > db.newstopics.aggregate( [{$unwind : "$quizquestions"}] )
+    ```
+
+- Even better - found a command that gives the array index as well as all of these separate quiz questions
+
+  ```mariadb
+  db.newstopics.aggregate([{$unwind:{path:"$quizquestions",includeArrayIndex:"arrayIndex"}}])
+  ```
+
+  i.e output would be:
+
+  ```mariadb
+  {
+  	"_id" : ObjectId("606ca606c745630012e235de"), #i.e the array object ID
+  	"quizquestions" : {
+  		"web_url" : "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters",
+  		"postDate" : "2021-03-26",
+  		"headline" : "The prolonged use of medical masks when properly worn, DOES NOT cause CO2 intoxication nor oxygen deficiency",
+  		"text_body" : "The prolonged use of medical masks can be uncomfortable. However, it does not lead to CO2 intoxication nor oxygen deficiency. While wearing a medical mask, make sure it fits properly and that it is tight enough to allow you to breathe normally.",
+  		"correct_answer" : true,
+  		"correct_answer_url" : "",
+  		"num_correct" : 0,
+  		"num_attempted" : 0
+  	},
+  	"topicName" : "Coronavirus",
+  	"__v" : 0,
+  	"arrayIndex" : NumberLong(4) #<Here is the index of the quiz question within the NewsTopic
+  }
+  ```
+
+- In another extraordinary turn of events, we found a lot of potential with the `.aggregate` MongoDB command.
+
+- We have formulated a command to target a certain news topic and their array index:
+
+  ```mariadb
+  db.newstopics.aggregate(
+      [ 
+          { "$unwind": {path: "$quizquestions", includeArrayIndex: "arrayIndex"} }, 
+          { $match : { topicName : "Coronavirus" } }, #e.g Coronavirus [News Topic].
+          { $match : { "arrayIndex" : 7 } },					#e.g Quiz Question Number 7.
+      ]
+  )
+  ```
+
+- The goal would be to create a random array of numbers (obviously no repeats) and give the user a random bunch of questions using this method.
+
+### Using MongoExport with queries
+
+- Referencing this website: `https://database.guide/how-to-export-mongodb-query-results-to-a-json-file/` We can shift the output of a query into a JSON file
+
+- Example from the site:
+
+  ```mariadb
+  mongoexport --db=PetHotel --collection=pets --query='{ "type": "Dog" }' --out=data/dogs.json
+  ```
+
+- So, in our case:
+
+  ```mariadb
+  mongoexport --db=fakeNewsDB --collection=newstopics --query='db.newstopics.aggregate(
+      [ 
+          { "$unwind": {path: "$quizquestions", includeArrayIndex: "arrayIndex"} }, 
+          { $match : { topicName : "Coronavirus" } },
+          { $match : { "arrayIndex" : 7 } },					
+      ]
+  )' --out=queryoutput.json
+  ```
+
+```bash
+docker exec -i db sh -c 'mongoexport -u "your_username" -p "your_password" --authenticationDatabase "admin" -c newstopics -d fakeNewsDB --query='db.newstopics.aggregate([{"$unwind": {path: "$quizquestions",includeArrayIndex:"arrayIndex"} },{ $match : { topicName : "Coronavirus" } },   {$match : { "arrayIndex" : 7 } },])'' > blockData/queryoutput.json
+```
+
+### Creating Methods to determine how user data is inserted and returned to/from the user.
+
+Using this webpage for reference: `https://www.digitalocean.com/community/tutorials/how-to-integrate-mongodb-with-your-node-application`, we are going to learn ways of manoevering data to and from MongoDB, *properly*, using Mongoose-style methods. Most likely using controllers. So the chain would be:
+
+`Schema/Models -----> Controllers -----> Api etc..`
+
