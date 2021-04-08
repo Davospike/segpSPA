@@ -9,10 +9,10 @@ var QuizQuestionSchema = new Schema({
   postDate: Date,
   headline: String,
   text_body: String,
-  correct_answer: Boolean,
   correct_answer_url: String,
   num_correct: Number,
-  num_attempted: Number
+  num_attempted: Number,
+  options: []
 });
 
 

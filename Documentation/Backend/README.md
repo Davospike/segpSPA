@@ -592,5 +592,92 @@ No longer need correct_answer field in Quiz Question as this information is stor
 So, 4 options in memory, but each question will store 2 options in its array.
 
 In the spreadsheet, in Options Table (document) will see Selected initialised to be false. 
->>>>>>> nathan
+
+
+
+**Updated data model in Documentation**
+
+
+
+
+
+**STEP 2: Creating Options Model Schema in /models**
+
+models/options.js now looks like this:
+
+```javascript
+//Require Mongoose
+var mongoose = require('mongoose');
+
+//Define a schema
+var Schema = mongoose.Schema;
+
+var OptionsSchema = new Schema({
+  name: String,
+  isCorrectAnswer: Boolean,
+  selected: Boolean
+});
+
+
+// Virtual for newsTopics's URL
+OptionsSchema
+.virtual('url')
+.get(function () {
+  return '/models/options/' + this._id;
+});
+
+
+//Creating a model from schema we've just made, and exporting it to be used elsewhere
+module.exports = mongoose.model('Options', OptionsSchema);
+```
+
+Note, also had to change quizquestion schema for our updated data model:
+
+models/quiz_question.js now looks like this:
+
+```javascript
+//Require Mongoose
+var mongoose = require('mongoose');
+
+//Define a schema
+var Schema = mongoose.Schema;
+
+var QuizQuestionSchema = new Schema({
+  web_url: String,
+  postDate: Date,
+  headline: String,
+  text_body: String,
+  correct_answer_url: String,
+  num_correct: Number,
+  num_attempted: Number,
+  options: []
+});
+
+
+// Virtual for quizQuestion's URL
+QuizQuestionSchema
+.virtual('url')
+.get(function () {
+  return '/models/quiz_question/' + this._id;
+});
+
+//Creating a model from schema we've just made, and exporting it to be used elsewhere
+module.exports = mongoose.model('QuizQuestion', QuizQuestionSchema);
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
