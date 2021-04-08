@@ -75,8 +75,6 @@ Actions:
 - JP and DD to look into appropriate JS quiz frameworks
 - HS to format and organise GitHub page and some market research
 
-
-
 ------------------------
 ## Meeting log 18.03.2021 - back end work (VG and NT)
 
@@ -112,8 +110,18 @@ Notes/images view [here](../DesignChoices)
 ------------------------
 ## Meeting Log 31.03.2021
 
--Full team meeting to prepare for feedback session and discuss our first sprint.
--Discussed overall structure of our repository.
+- Full team meeting to prepare for feedback session and discuss our first sprint.
+- Discussed overall structure of our repository.
 
--Feedback session notes in ./Documentation/Paper\ Prototype\/
+- Feedback session notes in ./Documentation/Paper\ Prototype\/
 
+------
+
+## Meeting Log 08.04.2021
+
+- Discussed how frontend will start to link to backend.
+- Backend were planning on randominsing the questions in each news topic and handing questions one at a time.
+- After discussion, came to the conclusion that it would be easier to pass all of the questions as a big payload for the front end to randomise and display to the user.
+- Backend will need to add certain fields such as an options array to make sure that the front and back end align properly. [See backend meeting log for more details.]
+
+- Front and backend consolitation wasn't a complete trainwreck, which is positive! Working towards the merge and aiming for a full link by tomorrow.
