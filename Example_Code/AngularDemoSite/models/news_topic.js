@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 //Define a schema
 var Schema = mongoose.Schema;
 
-var NewsTopicSchema = new Schema({
+var NewsTopicSchema = new mongoose.Schema({
   topicName: String,
   quizquestions: []
 });

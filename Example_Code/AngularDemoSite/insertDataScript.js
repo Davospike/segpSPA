@@ -1,7 +1,7 @@
 // our URL = 'mongodb://localhost:27017';
-const userArgs = process.argv.slice(2);
+//const userArgs = process.argv.slice(2);
 const mongoose = require("mongoose");
-const mongoDB = userArgs[0];
+const mongoDB = mongoose.connection;
 const QuizQuestion = require('./models/quiz_question');
 const NewsTopic = require('./models/news_topic');
 const Option = require('./models/options');

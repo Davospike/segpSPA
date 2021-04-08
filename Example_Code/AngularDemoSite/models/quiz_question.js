@@ -1,10 +1,8 @@
 //Require Mongoose
 var mongoose = require('mongoose');
 
-//Define a schema
-var Schema = mongoose.Schema;
 
-var QuizQuestionSchema = new Schema({
+var QuizQuestionSchema = new mongoose.Schema({
   web_url: String,
   postDate: Date,
   headline: String,
