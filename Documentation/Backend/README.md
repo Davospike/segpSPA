@@ -466,3 +466,125 @@ Using this webpage for reference: `https://www.digitalocean.com/community/tutori
 
 `Schema/Models -----> Controllers -----> Api etc..`
 
+
+
+
+
+### 08/04/2021
+
+---
+
+Meeting with front-end team, started consolidating our work
+
+They have found a framework, and realised we need to export a JSON file for each newstopic, and from that they can render quizquestions data in a random order
+
+However, data model needs to be adjusted to incorporate the following changes:
+
+- add options object array to quizquestions, in which stores true/false (2 options)
+- we need to return the json file with its array index in news topic schema 
+- *maybe hard code "questionTypeID:1 when printing out as json"*
+
+
+
+Going to structure our mongoose output according to this composed example JSON file.
+
+```json
+{
+    "topicName": "JavaScript Quiz",
+    "questions": [
+        {
+            "questionId": 1010,
+            "headline": "A fake news headline",
+            "web_url": "www.fakenewswebsite.com",
+            "postData": "2021-04-08",
+            "text_body": "......fake text.......", 
+            "correct_answer_url": "<leave me blank for true headline questions>",
+            "num_correct": 10,
+            "num_attempted": 20,
+            "questionTypeId": 1,
+            "options": [
+                {
+                    "id": 1055,
+                    "name": "Real",
+                    "isCorrectAnswer": false				
+                },
+                {
+                    "id": 1056,
+                    "name": "Fake",
+                    "isCorrectAnswer": true					
+                },
+            ]
+        },
+      {
+            "questionId": 1010,
+            "headline": "A real news headline",
+        		"web_url": "www.trustednewswebsite.com",
+        		"postData": "2021-04-08",
+            "text_body": "......fake text.......",
+            "correct_answer_url": "<leave me blank for true headline questions>",
+            "num_correct": 15,
+            "num_attempted": 30,
+            "questionTypeId": 1,
+            "options": [
+                {
+                    "id": 1055,
+                    "name": "Real",
+                    "isCorrectAnswer": true				
+                },
+                {
+                    "id": 1056,
+                    "name": "Fake",
+                    "isCorrectAnswer": false				
+                },
+            ]
+        },
+      ]
+}      
+```
+
+
+
+as well as the schema we need, *output.ts*:
+
+```typescript
+export class Option {
+    id: number;
+    name: string;
+    isAnswer: boolean;
+    selected: boolean;									// initialise this to be false
+
+    constructor(data: any) {
+        data = data || {};
+        this.id = data.id;
+        this.questionId = data.questionId;
+        this.name = data.name;
+        this.isAnswer = data.isAnswer;
+    }
+}
+```
+
+
+
+**STEP 1: Adjusting The Data Model**
+
+- now adjusting the data model UML and data model spreadsheet to incorporate options 
+
+No longer need correct_answer field in Quiz Question as this information is stored in Options
+
+
+
+*Going to need to create 4 different Options schemas:*
+
+1. name: Real && isCorrectAnswer = true;
+2. name: Real && isCorrectAnswer = false;
+3. name: Fake && isCorrectAnswer = true;
+4. name: Fake && isCorrectAnswer = false;
+
+- that way we can reference each option when we need to when instantiating quizQuestion arrays
+
+
+
+So, 4 options in memory, but each question will store 2 options in its array.
+
+In the spreadsheet, in Options Table (document) will see Selected initialised to be false. 
+
