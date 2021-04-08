@@ -26,7 +26,7 @@ Harry: 1) Last week: Pair programming on the quiz framework w/ JP and DD, market
 
 
 
-29/03/2021
+# 29/03/2021
 
 ---
 
@@ -43,4 +43,24 @@ On wednesday, want to discuss
 - meeting prep before technical meeting w/ Allison and Marceli - list of Qs we want to ask them 
 - Formulate sprints for the week and integrate into gantt chart 
 - discuss what next round of user feedback will look like (marcelapp.com??)
+
+# 05/04/2021
+
+
+Dan:  Last week: Worked on wireframe on Marvel for next round of user feedback. Next week: reverse engineer front 
+end to link up with back end on data. Blockers: Difficulty of task/ lack of JS knowledge. 
+
+Nath: Last week: constructed a script that imports data into dockerised mongodb, using collection and reflecting our data model.
+ Next week: finalising data model and dataset, start working with front end on how to integrate api requests. Blockers: Difficulty of task.
+
+Vini: Last week: constructed a script that imports data into dockerised mongodb, using collection and reflecting our data model. 
+ Next week: finalising data model and dataset, start working with front end on how to integrate api requests. Bloclers: Difficulty of task.
+
+Jack: Last week: updated Gant chart and worked on wireframe on Marvel for next round of user feedback. Next week: reverse engineer front 
+end to link up with back end on data. Mood board for front end and ethical framework. Blockers: difficulty of task/ lack of JS knowledge.
+
+Harry: Last week: Worked on wireframe on Marvel for next round of user feedback & updated github structure to more closely match mark 
+scheme requirements. Further formatting (T.O.C, links etc.) of System implemenation and added Sprint info. Next week: reverse engineer front 
+end to link up with back end on data. Blockers: Difficulty of task/ lack of JS knowledge.
+
 
