@@ -1,10 +1,8 @@
 //Require Mongoose
 var mongoose = require('mongoose');
 
-//Define a schema
-var Schema = mongoose.Schema;
 
-var OptionsSchema = new Schema({
+var OptionsSchema = new mongoose.Schema({
   name: String,
   isCorrectAnswer: Boolean,
   selected: Boolean
