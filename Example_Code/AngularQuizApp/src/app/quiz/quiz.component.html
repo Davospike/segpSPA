@@ -16,12 +16,20 @@
     padding-right: 150px;
     padding-left: 150px;
   }
+  #container {
+    position: relative;
+  }
+  #footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
 </style>
 <body>
 
 <app-toolbar></app-toolbar>
 
-<div class="pad w3-display-container w3-grayscale-min">
+<div id="container" class="pad w3-display-container w3-grayscale-min">
   <div class="row">
     <div class="col-6">
       <h3>Fake News Quiz</h3>
@@ -91,4 +99,11 @@
       <button class="btn btn-primary" (click)="onSubmit();">Submit Quiz</button>
     </div>
   </div>
+</div>
+<div id="footer">
+  <app-social></app-social>
+  <footer class="w3-container w3-padding-30 w3-light-grey w3-center w3-xlarge">
+  <p class="w3-medium">Powered by the University of Bristol knowledge</p>
+  <p class="w3-medium">Special thanks to Anurag Gandhi for the quiz framework. </p>
+  </footer>
 </div>
