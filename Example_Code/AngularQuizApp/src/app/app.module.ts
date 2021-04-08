@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { SocialComponent } from './social/social.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
     QuizComponent,
     WelcomePageComponent,
     ToolbarComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    SocialComponent
   ],
   imports: [
     BrowserModule,
