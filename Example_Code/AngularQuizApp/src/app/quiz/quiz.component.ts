@@ -11,7 +11,6 @@ import { Option, Question, Quiz, QuizConfig } from '../models/index';
   providers: [QuizService]
 })
 export class QuizComponent implements OnInit {
-  quizzes: any[];
   quiz: Quiz = new Quiz(null);
   mode = 'quiz';
   quizName: string;
@@ -44,8 +43,7 @@ export class QuizComponent implements OnInit {
   constructor(private quizService: QuizService) { }
 
   ngOnInit() {
-    this.quizzes = this.quizService.getAll();
-    this.quizName = this.quizzes[0].id;
+    this.quizName = 'data/javascript.json';
     this.loadQuiz(this.quizName);
   }
 
