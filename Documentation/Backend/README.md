@@ -710,72 +710,54 @@ $ mongoexport -d test -c newstopics -o newsTopicsOutput.json --jsonArray
 
 And changed *deploy.sh* to import these 3 new json files
 
+------
 
+## Meeting 09/04/2021
 
+*<u>Meeting with Marceli</u>*
 
+- *Wanted to talk about our framework and how it doesn't really need us to execute mongoDB commands, is this OK?*
 
-db.newstopics.aggregate(
-    [ 
-        { "$unwind": {path: "$quizquestions", includeArrayIndex: "arrayIndex"} }, 
-        { $match : { topicName : "Coronavirus" } },
-    ]
-).pretty()
+- *What's going on with the mongoose connection (in db.js), i.e., why cant i require(./db) in api.js?*
 
+  - *We require it in server? so how do i export the connection so it can be used elsewhere?*
+  - *In db.js, tried assigning mongoose.connect to a const called connectDB, then exporting connectDB, but when requiring this got errors.*
 
+  
 
---out blockData/queryoutput.json
+- After the meeting, it was clear that the main problem was that we weren't passing the correct environment variables when accessing the container's MongoDB.
+- We also needed to change the way we 'docker build' as the process was taking too long]
+  - So Marceli advised us to create a local docker build process which uses Port 27018 which used the `LOCAL` fields in the .env file.
 
+Changed the following files in order to have a working query:
 
+- **`Docker-compose.yml`** 
+  - Commented out Environment in services:
+    - This wasn't needed as these variables are already initialised using the `.env` file.
+  - Implemented ports as variables from `.env` file.
+- **`Server.js`** 
+  - Required a check to see if we were `LOCAL` or not:
+    - If so, module `dotenv` (gets all the .env credentials) is required. `dotenv` is a module defined in `package.json`.
+- **`db.js`**
+  - Used new `.env` variables mentioned previously
+  - Created Local and Container URLs, which gets used depending on well, if we are using the local or the container's MongoDB.
+  - Added `console.logs` as part of the debugging process, but may keep them in.
+- **`Package.json`**
+  - Included the local command aforementioned.
+- **`Api.js`**
+  - Formulated a /newsTopic response, basically using a Mongoose command to query MongoDB with `db.newstopics.find()`.
+    - This is a good starting point to start creating the right methods to handle user responses tomorrow.
+  - Again, `console.logs` for debugging, but may keep them in because useful to have responses in the terminal down the line.
+- **`.env`**
+  - Added hostname variables for `LOCAL` Mongo and container Mongo.
+  - Added port variables for both mongos
+    - Exposing the db on `MONGO_PORT_LOCAL` for example.
+      - For local access.
+    - Added ports for both `APPS`, i.e exposing both ports:
+      - `APP_PORT=3000`
+      - `APP_PORT_LOCAL=3001`
 
-sudo mongoexport -d fakeNewsDB -c newstopics --type=json --query='db.newstopics.aggregate(
-    [ 
-        { "$unwind": {path: "$quizquestions", includeArrayIndex: "arrayIndex"} }, 
-        { $match : { topicName : "Coronavirus" } },
-    ]
-).pretty()' -u 'your_username' -p 'your_password' --authenticationDatabase=admin --jsonArray
-
----
-
-
-
-
-
-<u>Meeting w Marceli Notes:</u>
-
-What we want to know
-
-- talk about our framework and how it doesn't really need us to execute mongoDB commands, is this OK?
-- what's going on with the mongoose connection (in db.js), i.e., why cant i require(./db) in api.js?
-  - we require it in server? so how do i export the connection so it can be used elsewhere?
-  - in db.js, tried assigning mongoose.connect to a const called connectDB, then exporting connectDB, but when requiring this got errors
-
-
-
-
-
-
-
-
-
-This repo is really good:
-
-https://github.com/vguleaev/Express-Mongo-Docker-tutorial/blob/master/test-mongo-app/server.js
-
-
-
-
-
-
-
-
-
-
-
----
-
-
-
-package.json
+Other notes from meeting:
 
 ```bash
 npm run local 										// where local a script in package.json
@@ -785,28 +767,6 @@ npm run local 										// where local a script in package.json
 - and runs node serve.js with flag is IS_LOCAL (does process.env)
   - reason for this is we will use it in server.js to see what port to use
   - if not true, then just uses process.env:PORT 
-- we also require a module dotenv (gets all the .env credentials) , dotenv is a module defined in package.json 
 
-
-
-dont need environment: in docker-compose
-
-- expose the port using APP_PORT
-- expose the db on mongo_port_local (for local access)
-
-
-
-our main issue
-
-- not loading environment vars in db.js
-
-
-
-from docker-compose 
-
-- removed environment as these fields will be loaded in .env file 
-
-
-
-
+------
 
