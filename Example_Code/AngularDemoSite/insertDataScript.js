@@ -1,7 +1,9 @@
 // our URL = 'mongodb://localhost:27017';
 //const userArgs = process.argv.slice(2);
 const mongoose = require("mongoose");
-const mongoDB = mongoose.connection;
+const connectDB = require('./db');
+//const mongoDB = mongoose.connection;
+//const mongoDB = userArgs;
 const QuizQuestion = require('./models/quiz_question');
 const NewsTopic = require('./models/news_topic');
 const Option = require('./models/options');
@@ -591,7 +593,7 @@ china_newstopic = await createQuizQuestion(china_newstopic._id, {
     web_url: "https://worldtruth.tv/china-poised-to-demand-u-s-land-as-payment-for-u-s-debt/",
     postDate: "",
     headline: "China Poised To Demand U.S. Land As Payment For U.S. Debt",
-    text_body: "That’s part of an evolving proposal Beijing has been developing quietly since 2009 to convert more than $1 trillion of U.S debt it owns into equity. Under the plan, China would own U.S. businesses, U.S. infrastructure and U.S. high-value land, all with a U.S. government guarantee against loss. Yu Qiao, a professor of economics in the School of Public Policy and Management at Tsighua University in Beijing, proposed in 2009 a plan for the U.S. government to guarantee foreign investments in the United States.",
+    text_body: "That’s part of an evolving proposal Beijing has been developing quietly since 2009 to convert more than $1 trillion of U.S debt it owns into equity. Under the plan, China would own U.S. businesses, U.S. infrastructure and U.S. high-value land, all with a U.S. government guarantee against loss. Yu Qiao, a professor of economics in the School of Public Policy and Management at Tsighua University in Beijing, proposed in 2009 a plan for the U.S. government to guarantee foreign investments in the United States.",
     correct_answer_url: "https://www.factcheck.org/2009/03/eminently-nonsensical/",
     num_correct: 0,
     num_attempted: 0,
@@ -679,7 +681,7 @@ console.log("\n>> CHINA News Topic:\n", china_newstopic);
 
     mongoose.connection.close();
 }
-
+/*
 mongoose
   .connect(mongoDB, {
     useNewUrlParser: true,
@@ -687,5 +689,5 @@ mongoose
   })
   .then(() => console.log("Successfully connect to MongoDB."))
   .catch(err => console.error("Connection error", err));
-
+*/
 run();

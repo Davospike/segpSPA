@@ -1,20 +1,45 @@
 // Dependencies
 const express = require('express');
-//const db = require('./db');
 const router = express.Router();
-const mongoose = require("mongoose");
+const connectDB = require("../../db");
 
 const data = require("../../blockData/newsTopicsOutput");
 
+connectDB();
+
 // Models
 const NewsTopic = require("../../models/news_topic");
+const QuizQuestion = require("../../models/quiz_question");
+// const Options = require("../../models/options");
+
+//console.log(newstopics);
 
 /* GET api listing. */
-router.get('/', async (req, res) => {
+// router.get('/', async (req, res) => {
+//   res.header("Content-Type",'application/json');
+//   console.log(newstopics);
+//   res.send(JSON.stringify(data.toarray));
+//   //const newstopics = await NewsTopic.find();
+//   //res.send(JSON.stringify(newstopics));
+// })
+
+
+router.get('/newsTopics', async (req, res) => {
+  console.debug('Executing /newsTopics endpoint.')
+
   res.header("Content-Type",'application/json');
-  res.send(JSON.stringify(data));
-  //const newstopics = await NewsTopic.find();
-  //res.send(JSON.stringify(newstopics));
+  const newsTopics = await NewsTopic.find({})
+    .then(results => {
+      console.debug('NewsTopic(s) queried successfully!');
+      console.debug(results);
+      return results
+    })
+    .catch(e => {
+      console.error('Error occurred in the NewsTopic query.');
+      console.error(e);
+    });
+  res.send(JSON.stringify(newsTopics));
 })
+
 
 module.exports = router;

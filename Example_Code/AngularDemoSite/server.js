@@ -1,8 +1,13 @@
+if(process.env.IS_LOCAL){
+  require('dotenv').config();
+}
+
 // Get dependencies
 const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
+const mongoose = require("mongoose");
 // setting up the db
 const db = require('./db');
 
@@ -32,7 +37,7 @@ app.get('*', (req, res) => {
 /**
  * Get port from environment and store in Express.
  */
-const port = process.env.PORT || '3000';
+const port = process.env.IS_LOCAL ? process.env.APP_PORT_LOCAL : process.env.APP_PORT; 
 app.set('port', port);
 
 /**
