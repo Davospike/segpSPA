@@ -1,7 +1,9 @@
 #!/bin/bash
 
-docker-compose build
-docker-compose up -d
+#docker-compose build
+#docker-compose up -d
+
+docker-compose up --build -d
 
 # setting up the db
 # insert data into the collections

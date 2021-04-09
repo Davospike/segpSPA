@@ -769,15 +769,42 @@ https://github.com/vguleaev/Express-Mongo-Docker-tutorial/blob/master/test-mongo
 
 
 
-----
+
+
+---
 
 
 
+package.json
+
+```bash
+npm run local 										// where local a script in package.json
 ```
 
-```
+- local runs docker-compose up -d 
+- and runs node serve.js with flag is IS_LOCAL (does process.env)
+  - reason for this is we will use it in server.js to see what port to use
+  - if not true, then just uses process.env:PORT 
+- we also require a module dotenv (gets all the .env credentials) , dotenv is a module defined in package.json 
 
 
+
+dont need environment: in docker-compose
+
+- expose the port using APP_PORT
+- expose the db on mongo_port_local (for local access)
+
+
+
+our main issue
+
+- not loading environment vars in db.js
+
+
+
+from docker-compose 
+
+- removed environment as these fields will be loaded in .env file 
 
 
 
