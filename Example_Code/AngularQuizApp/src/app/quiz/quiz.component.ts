@@ -43,7 +43,7 @@ export class QuizComponent implements OnInit {
   constructor(private quizService: QuizService) { }
 
   ngOnInit() {
-    this.quizName = 'data/javascript.json';
+    this.quizName = 'data/brexit.json';
     this.loadQuiz(this.quizName);
   }
 

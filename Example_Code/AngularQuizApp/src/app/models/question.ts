@@ -10,7 +10,7 @@ export class Question {
     constructor(data: any) {
         data = data || {};
         this.id = data.id;
-        this.name = data.name;
+        this.name = data.headline;
         this.questionTypeId = data.questionTypeId;
         this.options = [];
         data.options.forEach(o => {

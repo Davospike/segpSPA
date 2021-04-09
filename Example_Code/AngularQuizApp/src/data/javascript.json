@@ -1,9 +1,9 @@
 {
     "topicName": "JavaScript Quiz",
-    "questions": [
+    "quizquestions": [
         {
             "id": 1010,
-            "name": "A fake news headline",
+            "headline": "A first fake news headline",
             "web_url": "www.fakenewswebsite.com",
             "postData": "2021-04-08",
             "text_body": "......fake text.......", 
@@ -15,18 +15,18 @@
                 {
                     "id": 1055,
                     "name": "Real",
-                    "isAnswer": false				
+                    "isCorrectAnswer": false				
                 },
                 {
                     "id": 1056,
                     "name": "Fake",
-                    "isAnswer": true					
+                    "isCorrectAnswer": true					
                 }
             ]
         },
       {
             "id": 1010,
-            "name": "A real news headline",
+            "headline": "Another real news headline",
         		"web_url": "www.trustednewswebsite.com",
         		"postData": "2021-04-08",
             "text_body": "......fake text.......",
@@ -38,12 +38,12 @@
                 {
                     "id": 1055,
                     "name": "Real",
-                    "isAnswer": true				
+                    "isCorrectAnswer": true				
                 },
                 {
                     "id": 1056,
                     "name": "Fake",
-                    "isAnswer": false				
+                    "isCorrectAnswer": false				
                 }
             ]
         }

@@ -1,0 +1,71 @@
+
+
+    {
+    "topicName" : "Brexit",
+    "_id":{"$oid":"606ef4311a70c9229fa6c775"},
+    "quizquestions":
+       [
+          {
+             "web_url":"https://www.facebook.com/brexitpartyuk/photos/a.271166190434819/379249536293150/?type=3&theater",
+             "postDate":"2019-10-01",
+             "headline":"CLEAN BREAK BREXIT",
+             "text_body":"It's our money to invest as we see fit. We don't owe the EU a single-penny more. Let us invest our money as we see fit - starting with a £200bn Brexit dividend for Britain's regions",
+             "correct_answer_url":"https://firstdraftnews.org/latest/brexit-the-false-misleading-and-suspicious-claims-crosscheck-has-uncovered/",
+             "num_correct":0,
+             "num_attempted":0,
+             "options":
+                [
+                   {
+                      "optionR_F":{
+                         "_id":{"$oid":"606ef4311a70c9229fa6c772"},
+                         "name":"Real",
+                         "isCorrectAnswer":false,
+                         "selected":false,
+                         "__v":0
+                      }
+                   },
+                   {
+                      "optionF_T":{
+                         "_id":{"$oid":"606ef4311a70c9229fa6c773"},
+                         "name":"Fake",
+                         "isCorrectAnswer":true,
+                         "selected":false,
+                         "__v":0
+                      }
+                   }
+                ]
+          },
+ 
+          {
+             "web_url":"https://bylinetimes.com/2019/09/11/brexit-disaster-capitalism-8-billion-bet-on-no-deal-crash-out-by-boris-johnsons-leave-backers/",
+             "postDate":"2019-11-09",
+             "headline":"EXCLUSIVE: BREXIT DISASTER CAPITALISM - £8 Billion Bet on No Deal Crash-Out By Boris Johnson's Leave Backers",
+             "text_body":"Boris Johnson’s leadership campaign backers in the City stand to make billions of pounds from his ‘do or die’ pledge to take Britain out the of the EU by the end of October, [REDACTED] can reveal. From the financial data publicly available, [REDACTED] can reveal that currently £4,563,350,000 (£4.6 billion) of aggregate short positions on a ‘no deal’ Brexit have been taken out by hedge funds that directly or indirectly bankrolled Boris Johnson’s leadership campaign.",
+             "correct_answer_url":"https://www.ft.com/content/72db9e42-be23-3b5f-92fb-7e2d2079d51c.",
+             "num_correct":0,
+             "num_attempted":0,
+             "options":
+                [
+                   {
+                      "optionR_F":{
+                         "_id":{"$oid":"606ef4311a70c9229fa6c772"},
+                         "name":"Real",
+                         "isCorrectAnswer":false,
+                         "selected":false,"__v":0
+                      }
+                   },
+                   {
+                      "optionF_T":{
+                         "_id":{"$oid":"606ef4311a70c9229fa6c773"},
+                         "name":"Fake",
+                         "isCorrectAnswer":true,
+                         "selected":false,
+                         "__v":0
+                      }
+                   }
+                ]
+          }
+       ]
+    }
+
+
