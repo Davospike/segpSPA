@@ -667,6 +667,87 @@ module.exports = mongoose.model('QuizQuestion', QuizQuestionSchema);
 
 
 
+Now models updated, need to make options schemas in mongo, so added .... to insertDataScript.js
+
+
+
+Gone through, created the 4 different Options tables, then each time we create a quizQuestion (and push it to the quizquestion array in NewsTopics shchema), we specify the 2 options necessary:
+
+- i.e., for our first quiz question, which is a fake news headline, in the Brexit news topics collection, we add the following options:
+
+  ```javascript
+  var optionR_F = await createOption({										// '..R_F' for Real-False, i.e., is it a REAL news headline? False
+          name: "Real",
+          isCorrectAnswer: false,
+          selected: false
+      });
+  
+  var optionF_T = await createOption({									// '..F_T' for Fake-True, i.e., is it a FAKE news headline? True
+          name: 'Fake',
+          isCorrectAnswer: true,
+          selected: false 
+     });
+  
+  ```
+
+- for a real news headline, we would add **optionR_T** and **optionF_F**
+
+
+
+Now data inserted into localMongo, we export to the json files in blockData, like so:
+
+```bash
+$ mongoexport -d test -c options -o optionsOutput.json --jsonArray
+```
+
+```bash
+$ mongoexport -d test -c quizquestions -o quizQuestionsOutput.json --jsonArray
+```
+
+```bash
+$ mongoexport -d test -c newstopics -o newsTopicsOutput.json --jsonArray
+```
+
+And changed *deploy.sh* to import these 3 new json files
+
+
+
+
+
+db.newstopics.aggregate(
+    [ 
+        { "$unwind": {path: "$quizquestions", includeArrayIndex: "arrayIndex"} }, 
+        { $match : { topicName : "Coronavirus" } },
+    ]
+).pretty()
+
+
+
+--out blockData/queryoutput.json
+
+
+
+sudo mongoexport -d fakeNewsDB -c newstopics --type=json --query='db.newstopics.aggregate(
+    [ 
+        { "$unwind": {path: "$quizquestions", includeArrayIndex: "arrayIndex"} }, 
+        { $match : { topicName : "Coronavirus" } },
+    ]
+).pretty()' -u 'your_username' -p 'your_password' --authenticationDatabase=admin --jsonArray
+
+---
+
+
+
+
+
+<u>Meeting w Marceli Notes:</u>
+
+What we want to know
+
+- talk about our framework and how it doesn't really need us to execute mongoDB commands, is this OK?
+- what's going on with the mongoose connection (in db.js), i.e., why cant i require(./db) in api.js?
+  - we require it in server? so how do i export the connection so it can be used elsewhere?
+  - in db.js, tried assigning mongoose.connect to a const called connectDB, then exporting connectDB, but when requiring this got errors
 
 
 
@@ -674,6 +755,27 @@ module.exports = mongoose.model('QuizQuestion', QuizQuestionSchema);
 
 
 
+
+
+This repo is really good:
+
+https://github.com/vguleaev/Express-Mongo-Docker-tutorial/blob/master/test-mongo-app/server.js
+
+
+
+
+
+
+
+
+
+----
+
+
+
+```
+
+```
 
 
 
