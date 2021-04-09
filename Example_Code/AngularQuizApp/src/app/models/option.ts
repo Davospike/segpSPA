@@ -9,8 +9,9 @@ export class Option {
 
         data = data || {};
         this.id = data.id;
-        this.questionId = data.questionId;
+        this.questionId = data.id;
         this.name = data.name;
         this.isAnswer = data.isCorrectAnswer;
+        this.selected = data.selected;
     }
 }
