@@ -4,10 +4,10 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require("mongoose");
 
-const data = require("./blockData/newsTopicsOutput");
+const data = require("../../blockData/newsTopicsOutput");
 
 // Models
-const NewsTopic = require("./models/news_topic");
+const NewsTopic = require("../../models/news_topic");
 
 /* GET api listing. */
 router.get('/', async (req, res) => {
