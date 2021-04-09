@@ -93,7 +93,7 @@ const run = async function() {
         correct_answer_url: "https://firstdraftnews.org/latest/brexit-the-false-misleading-and-suspicious-claims-crosscheck-has-uncovered/",
         num_correct: 0,
         num_attempted: 0,
-        options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+        options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
     } );
 
     brex_newstopic = await createQuizQuestion(brex_newstopic._id, {
@@ -104,7 +104,7 @@ const run = async function() {
         correct_answer_url: "https://www.ft.com/content/72db9e42-be23-3b5f-92fb-7e2d2079d51c.",
         num_correct: 0,
         num_attempted: 0,
-        options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+        options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
     } );
 
     brex_newstopic = await createQuizQuestion(brex_newstopic._id, {
@@ -115,7 +115,7 @@ const run = async function() {
         correct_answer_url: "https://ec.europa.eu/info/sites/info/files/esi_2019_09_en.pdf",
         num_correct: 0,
         num_attempted: 0,
-        options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+        options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
     } );
 
     brex_newstopic = await createQuizQuestion(brex_newstopic._id, {
@@ -126,7 +126,7 @@ const run = async function() {
         correct_answer_url: "https://firstdraftnews.org/latest/brexit-the-false-misleading-and-suspicious-claims-crosscheck-has-uncovered/",
         num_correct: 0,
         num_attempted: 0,
-        options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+        options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
     } );
 
     brex_newstopic = await createQuizQuestion(brex_newstopic._id, {
@@ -137,7 +137,7 @@ const run = async function() {
         correct_answer_url: "https://www.theguardian.com/commentisfree/2017/sep/18/boris-johnson-350-million-claim-bogus-foreign-secretary/",
         num_correct: 0,
         num_attempted: 0,
-        options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+        options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
     } );
 
     brex_newstopic = await createQuizQuestion(brex_newstopic._id, {
@@ -148,7 +148,7 @@ const run = async function() {
         correct_answer_url: "",
         num_correct: 0,
         num_attempted: 0,
-        options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+        options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
     } );
 
     brex_newstopic = await createQuizQuestion(brex_newstopic._id, {
@@ -159,7 +159,7 @@ const run = async function() {
         correct_answer_url: "",
         num_correct: 0,
         num_attempted: 0,
-        options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+        options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
     } );
 
     brex_newstopic = await createQuizQuestion(brex_newstopic._id, {
@@ -170,7 +170,7 @@ const run = async function() {
         correct_answer_url: "",
         num_correct: 0,
         num_attempted: 0,
-        options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+        options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
     } );
 
     brex_newstopic = await createQuizQuestion(brex_newstopic._id, {
@@ -181,7 +181,7 @@ const run = async function() {
         correct_answer_url: "",
         num_correct: 0,
         num_attempted: 0,
-        options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+        options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
     } );
 
     brex_newstopic = await createQuizQuestion(brex_newstopic._id, {
@@ -192,7 +192,7 @@ const run = async function() {
         correct_answer_url: "",
         num_correct: 0,
         num_attempted: 0,
-        options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+        options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
     } );
 
     console.log("\n>> BREXIT News Topic:\n", brex_newstopic);
@@ -213,7 +213,7 @@ const run = async function() {
       correct_answer_url: "",
       num_correct: 0,
       num_attempted: 0,
-      options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+      options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
    } );
 
    corona_newstopic = await createQuizQuestion(corona_newstopic._id, {
@@ -224,7 +224,7 @@ const run = async function() {
       correct_answer_url: "",
       num_correct: 0,
       num_attempted: 0,
-      options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+      options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
    } );
 
    corona_newstopic = await createQuizQuestion(corona_newstopic._id, {
@@ -235,7 +235,7 @@ const run = async function() {
       correct_answer_url: "",
       num_correct: 0,
       num_attempted: 0,
-      options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+      options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
    } );
 
    corona_newstopic = await createQuizQuestion(corona_newstopic._id, {
@@ -246,7 +246,7 @@ const run = async function() {
       correct_answer_url: "",
       num_correct: 0,
       num_attempted: 0,
-      options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+      options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
    } );
 
    corona_newstopic = await createQuizQuestion(corona_newstopic._id, {
@@ -257,7 +257,7 @@ const run = async function() {
       correct_answer_url: "",
       num_correct: 0,
       num_attempted: 0,
-      options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+      options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
    } );
 
 
@@ -269,7 +269,7 @@ const run = async function() {
       correct_answer_url: "https://www.npr.org/sections/health-shots/2021/04/02/983666339/study-covid-19-vaccine-is-safe-during-pregnancy-and-may-protect-baby-too",
       num_correct: 0,
       num_attempted: 0,
-      options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+      options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
    } );
 
    corona_newstopic = await createQuizQuestion(corona_newstopic._id, {
@@ -280,7 +280,7 @@ const run = async function() {
       correct_answer_url: "https://www.reuters.com/article/uk-factcheck-masks-idUSKBN26R3D9",
       num_correct: 0,
       num_attempted: 0,
-      options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+      options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
    } );
 
    corona_newstopic = await createQuizQuestion(corona_newstopic._id, {
@@ -291,7 +291,7 @@ const run = async function() {
       correct_answer_url: "https://www.reuters.com/article/uk-factcheck-vaccine-nanoparticles-idUSKBN28F0I9",
       num_correct: 0,
       num_attempted: 0,
-      options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+      options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
    } );
 
    corona_newstopic = await createQuizQuestion(corona_newstopic._id, {
@@ -302,7 +302,7 @@ const run = async function() {
       correct_answer_url: "https://fullfact.org/health/Covid-recovery-vaccine/",
       num_correct: 0,
       num_attempted: 0,
-      options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+      options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
    } );
 
    corona_newstopic = await createQuizQuestion(corona_newstopic._id, {
@@ -313,7 +313,7 @@ const run = async function() {
       correct_answer_url: "'https://faktograf.hr/2020/02/05/nije-dokazano-da-je-jedenje-juhe-od-sismisa-povezano-s-koronavirusom/",
       num_correct: 0,
       num_attempted: 0,
-      options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+      options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
    } );
 
    console.log("\n>> CORONAVIRUS News Topic:\n", corona_newstopic);
@@ -334,7 +334,7 @@ const run = async function() {
        correct_answer_url: "https://www.poynter.org/fact-checking/2018/this-fact-checker-got-several-news-outlets-to-correct-a-false-story-about-a-mini-ice-age/",
        num_correct: 0,
        num_attempted: 0,
-       options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+       options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
    } );
 
    climate_newstopic = await createQuizQuestion(climate_newstopic._id, {
@@ -345,7 +345,7 @@ const run = async function() {
        correct_answer_url: "https://marinelitter.no/",
        num_correct: 0,
        num_attempted: 0,
-       options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+       options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
    } );
 
    climate_newstopic = await createQuizQuestion(climate_newstopic._id, {
@@ -356,7 +356,7 @@ const run = async function() {
        correct_answer_url: "https://www.politifact.com/factchecks/2020/jan/10/facebook-posts/those-claims-about-nearly-200-arrested-arson-austr/",
        num_correct: 0,
        num_attempted: 0,
-       options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+       options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
    } );
 
    climate_newstopic = await createQuizQuestion(climate_newstopic._id, {
@@ -367,7 +367,7 @@ const run = async function() {
        correct_answer_url: "https://www.nature.com/articles/d41586-018-07638-w'",
        num_correct: 0,
        num_attempted: 0,
-       options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+       options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
    } );
 
    climate_newstopic = await createQuizQuestion(climate_newstopic._id, {
@@ -378,7 +378,7 @@ const run = async function() {
        correct_answer_url: "https://www.carbonbrief.org/why-the-sun-is-not-responsible-for-recent-climate-change",
        num_correct: 0,
        num_attempted: 0,
-       options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+       options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
    } );
 
    climate_newstopic = await createQuizQuestion(climate_newstopic._id, {
@@ -389,7 +389,7 @@ const run = async function() {
        correct_answer_url: "",
        num_correct: 0,
        num_attempted: 0,
-       options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+       options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
    } );
 
    climate_newstopic = await createQuizQuestion(climate_newstopic._id, {
@@ -400,7 +400,7 @@ const run = async function() {
        correct_answer_url: "",
        num_correct: 0,
        num_attempted: 0,
-       options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+       options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
    } );
 
    climate_newstopic = await createQuizQuestion(climate_newstopic._id, {
@@ -411,7 +411,7 @@ const run = async function() {
        correct_answer_url: "",
        num_correct: 0,
        num_attempted: 0,
-       options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+       options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
    } );
 
    climate_newstopic = await createQuizQuestion(climate_newstopic._id, {
@@ -422,7 +422,7 @@ const run = async function() {
        correct_answer_url: "",
        num_correct: 0,
        num_attempted: 0,
-       options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+       options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
    } );
 
    climate_newstopic = await createQuizQuestion(climate_newstopic._id, {
@@ -433,7 +433,7 @@ const run = async function() {
        correct_answer_url: "",
        num_correct: 0,
        num_attempted: 0,
-       options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+       options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
    } );
 
    console.log("\n>> Climate Change News Topic:\n", climate_newstopic);
@@ -455,7 +455,7 @@ gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
     correct_answer_url: "",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+    options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
 } );
 
 gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
@@ -466,7 +466,7 @@ gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
     correct_answer_url: "",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+    options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
 } );
 
 gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
@@ -477,7 +477,7 @@ gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
     correct_answer_url: "",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+    options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
 } );
 
 gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
@@ -488,7 +488,7 @@ gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
     correct_answer_url: "",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+    options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
 } );
 
 gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
@@ -499,7 +499,7 @@ gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
     correct_answer_url: "",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
 } );
 
 gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
@@ -510,7 +510,7 @@ gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
     correct_answer_url: "",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
 } );
 
 gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
@@ -521,7 +521,7 @@ gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
     correct_answer_url: "",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
 } );
 
 gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
@@ -532,7 +532,7 @@ gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
     correct_answer_url: "",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
 } );
 
 gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
@@ -543,7 +543,7 @@ gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
     correct_answer_url: "",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
 } );
 
 gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
@@ -554,7 +554,7 @@ gen_newstopic = await createQuizQuestion(gen_newstopic._id, {
     correct_answer_url: "",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
 } );
 
 console.log("\n>> GENERAL News Topic:\n", gen_newstopic);
@@ -575,7 +575,7 @@ china_newstopic = await createQuizQuestion(china_newstopic._id, {
     correct_answer_url: "https://www.factcheck.org/2020/02/no-link-between-harvard-scientist-charles-lieber-and-coronavirus/",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+    options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
 } );
 
 china_newstopic = await createQuizQuestion(china_newstopic._id, {
@@ -586,7 +586,7 @@ china_newstopic = await createQuizQuestion(china_newstopic._id, {
     correct_answer_url: "https://www.bbc.co.uk/news/blogs-trending-40574049",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+    options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
 } );
 
 china_newstopic = await createQuizQuestion(china_newstopic._id, {
@@ -597,7 +597,7 @@ china_newstopic = await createQuizQuestion(china_newstopic._id, {
     correct_answer_url: "https://www.factcheck.org/2009/03/eminently-nonsensical/",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+    options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
 } );
 
 china_newstopic = await createQuizQuestion(china_newstopic._id, {
@@ -608,7 +608,7 @@ china_newstopic = await createQuizQuestion(china_newstopic._id, {
     correct_answer_url: "https://en.wikipedia.org/wiki/List_of_countries_by_real_GDP_growth_rate",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+    options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
 } );
 
 china_newstopic = await createQuizQuestion(china_newstopic._id, {
@@ -619,7 +619,7 @@ china_newstopic = await createQuizQuestion(china_newstopic._id, {
     correct_answer_url: "https://www.gov.uk/government/news/hong-kong-hong-kong-myth-busting-article",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.isCorrectAnswer},]
+    options: [{name: optionR_F.name, isCorrectAnswer: optionR_F.isCorrectAnswer, selected: optionR_F.selected},{name: optionF_T.name, isCorrectAnswer: optionF_T.isCorrectAnswer, selected: optionF_T.selected},]
 } );
 
 china_newstopic = await createQuizQuestion(china_newstopic._id, {
@@ -630,7 +630,7 @@ china_newstopic = await createQuizQuestion(china_newstopic._id, {
     correct_answer_url: "",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
 } );
 
 china_newstopic = await createQuizQuestion(china_newstopic._id, {
@@ -641,7 +641,7 @@ china_newstopic = await createQuizQuestion(china_newstopic._id, {
     correct_answer_url: "",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
 } );
 
 china_newstopic = await createQuizQuestion(china_newstopic._id, {
@@ -652,7 +652,7 @@ china_newstopic = await createQuizQuestion(china_newstopic._id, {
     correct_answer_url: "",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
 } );
 
 china_newstopic = await createQuizQuestion(china_newstopic._id, {
@@ -663,7 +663,7 @@ china_newstopic = await createQuizQuestion(china_newstopic._id, {
     correct_answer_url: "",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
 } );
 
 china_newstopic = await createQuizQuestion(china_newstopic._id, {
@@ -674,7 +674,7 @@ china_newstopic = await createQuizQuestion(china_newstopic._id, {
     correct_answer_url: "",
     num_correct: 0,
     num_attempted: 0,
-    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.isCorrectAnswer},]
+    options: [{name: optionR_T.name, isCorrectAnswer: optionR_T.isCorrectAnswer, selected: optionR_T.selected},{name: optionF_F.name, isCorrectAnswer: optionF_F.isCorrectAnswer, selected: optionF_F.selected},]
 } );
 
 console.log("\n>> CHINA News Topic:\n", china_newstopic);
