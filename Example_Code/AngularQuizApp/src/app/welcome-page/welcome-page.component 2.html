@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+  body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+  }
+
+  img {
+    padding-top: 50px;
+  }
+</style>
+<body>
+
+<app-toolbar></app-toolbar>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    <span class="w3-tag">Open from 6am to 5pm</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:90px">the<br>Cafe</span>
+  </div>
+  <div class="w3-display-bottomright w3-center w3-padding-large">
+    <span class="w3-text-white">15 Adr street, 5015</span>
+  </div>
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+  <div class="w3-container"></div>
+  <div class="w3-container" id="image">
+    <div class="w3-content" style="max-width:700px">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/FAKE_NEWS.png/800px-FAKE_NEWS.png" style="width:100%;max-width:1000px;margin-top:32px;">
+    </div>
+  </div>
+
+  <!-- About Container -->
+  <div class="w3-container" id="about">
+    <div class="w3-content" style="max-width:700px">
+      <h5 class="w3-center w3-padding-32"><span class="w3-tag w3-wide">WHAT IS FAKE NEWS?</span></h5>
+      <p>Generally speaking, fake news is a false narrative that is published and promoted as if it were true. Historically, fake news was usually propaganda put out by those in power to create a certain belief or support a certain position, even if it was completely false. Social media has now created an environment where anyone with an agenda can publish falsehoods as if they were truths. People can be paid to post fake news on behalf of someone else or automated programs, often called bots, can publish auto-generated fake news.</p>
+      <h5 class="w3-center w3-padding-32"><span class="w3-tag w3-wide">THE DANGERS OF FAKE NEWS</span></h5>
+      <p>While some examples of fake news seem innocent or just an attempt at fun, a lot of it can be malicious and even dangerous. Fake news is created to change people's beliefs, attitudes, or perceptions, so they will ultimately change their behavior. This means if you fall into the trap of believing fake news, your beliefs and your decisions are being driven by someone else’s agenda.</p>
+      <div class="w3-panel w3-leftbar w3-light-grey">
+        <p><i>“Alternative facts and fake news are just other names for propaganda”</i></p>
+        <p>Comedian and Actor: Johnny Corn</p>
+      </div>
+      <h5 class="w3-center w3-padding-32"><span class="w3-tag w3-wide">HOW TO SPOT FAKE NEWS</span></h5>
+      <p>So how do you protect yourself from fake news? The most effective way is to scrutinise sources to verify their content. This is where Would They Lie To You? comes in. Test your knowledge of fake news within current affairs and benchmark your scores against your friends.</p>
+<!--      <img src="https://commons.wikimedia.org/wiki/File:FAKE_NEWS.png" style="width:100%;max-width:1000px" class="w3-margin-top">-->
+<!--      <p><strong>Opening hours:</strong> everyday from 6am to 5pm.</p>-->
+<!--      <p><strong>Address:</strong> 15 Adr street, 5015, NY</p>-->
+    </div>
+  </div>
+
+  <!-- Next Steps Container -->
+  <div class="w3-container" id="next-steps">
+    <div class="w3-content" style="max-width:700px">
+
+      <h5 class="w3-center w3-padding-32"><span class="w3-tag w3-wide">WHERE NOW?</span></h5>
+
+      <div class="w3-row w3-center w3-card w3-padding">
+        <nav>
+          <div class="w3-col s6 tablink" routerLink="/quiz">Take the quiz</div>
+          <div class="w3-col s6 tablink" routerLink="/stats">View stats about fake news</div>
+        </nav>
+      </div>
+      <div class="w3-container w3-padding-32"></div>
+    </div>
+  </div>
+
+  <!-- End page content -->
+</div>
+<app-social></app-social>
+<footer class="w3-container w3-padding-30 w3-light-grey w3-center w3-xlarge">
+  <p class="w3-medium">Powered by the University of Bristol knowledge</p>
+</footer>
+</body>
+</html>
+<router-outlet></router-outlet>
