@@ -11,6 +11,8 @@
    - [No Sprints : Continue Working On Workbooks (08.03.21-21.03.21)](#no-sprints--continue-working-on-workbooks-080321-210321)
    - [Sprint 2 : Market Research & Deploying Boilerplate (22.03.21-28.03.21)](#sprint-2--market-research--deploying-boilerplate-220321-280321)
    - [Sprint 3 : Prepare Backend & Additional Wireframe (29.03.21-04.04.21)](#sprint-3--prepare-backend--additional-wireframe-290321-040421)
+   - [Sprint 4 : Build Frontend Webpages & Begin Linking Front and Backend (05.04.21-11.04.21)](#sprint-4--build-frontend-webpages--begin-linking-front-and-backend-050421-110421)
+   - [Sprint 5 : Further Front and Backend Integration (12.04.21-18.04.21)](#sprint-5--further-front-and-backend-integration-120421-180421)
 - [MEAN Stack System Implementation](#mean-stack-system-implementation)
    - [Stack Architecture & System Design](#stack-architecture--system-design)
    - [Back End : MongoDB](#back-end--mongodb)
@@ -76,7 +78,6 @@ During the research, we investigated 3 sample websites that offer fake news quiz
 Sprint number 3 came in the first week on Easter and the key goals related to advancing our paper prototype into a more developed wire frame and develop the backend with respect to the mongoDB containers and finalizing the dataset with sample questions, broken down by news topic. Further we set a stretch goal to prepare the data model for handling HTTP requests.
 
 Key goals:
-- Finalize data model.
 - Finish hand-made quiz dataset, broken down into various topics ready for linking to the front end.
 - Prepare mongoDB container ready for HTTPP requests.
 - Create a more developed wire frame, implementing the feedback from the initial paper prototype SurveyMonkey questionnaire.
@@ -94,6 +95,28 @@ Whilst preparing the backend, we faced some structural difficulties. We started 
 
 Although this may not be the most efficient solution, we have decided to focus on the data contained within our DB for the time being, since we're still using proxy data. After consolidating across the back-end team, we will making some further changes to our data model, as we feel that some of the relationships and collections already in place are redundant (for example, the relationship between a useranswer document and quizquestion document). Full details of these changes, and the process by which we got our mongoDB docker container working are found in /Documentation/Backend/Meeting_Log.
 
+### Sprint 4 : Build Frontend Webpages & Begin Linking Front and Backend (05.04.21-11.04.21)
+Sprint number 4 saw the team coming together to start bringing the frontend and backend elements together, as well as some individual advancements for each area, separate of the linking work. On the front end, work was done to start trimming down the fat on the quiz framework that we had selected to use, so that it could be ready to link up to the backend, and also we began to start adding some meat to the website. A moodboard was also drawn up in order to help design on the frontend. With the backend, work was done on finalising the data model schema and creating mongoose commands to return the correct JSON payload, ready to be used by the quiz for questions.
+
+Key goals:
+- Start stripping out undeed features from quiz framework.
+- Add new pages and features to frontend, e.g. landing page, stats page, navigation.
+- Start linking up the front and backend.
+- Finalize question data model schema appropriate for integration into front end.
+- Create mongoose commands JSON payload retrieval.
+
+This weeks sprint was a busy one with lots of movement on all fronts. There was good collaboration between the front and backend in starting to get the database linked up to the front end so that questions for the quiz wouldn't have to be hard coded.
+
+At the start of the sprint, the frontend crew got together for a pair programming session with the aim to start stripping out needed features that were not needed from the quiz framework, and to start streamline the code ready for database integration towards the end of this sprint, and hopefully finalised by the end of the following weeks sprint. However, it quickly became clear that the quiz framework that we had hoped to use was far too complicated for our use case. It was decided between us that we would need to pivot and find a new, simpler framework instead (please see the [System Design page](SystemDesign.md)) for more on this). Granted, this was a bit of a set back as we had spent some time analysing and understanding how the quiz framework functioned and obviously had to start from scratch with a new framework.
+
+Setback aside, after a new framework was found, the frontend team set about understanding and stripping back any irrelevant features. Once we had an understanding of the framework, simultaneous work on adding new features, and refactoring the quiz question JSON format begun, ready for the connect with backend team later in the week. The front end team was succesfully able to decide on a HTML template to use for the non-quiz pages (see [System Design page](SystemDesign.md)) for more), adding in navigation features, social buttons and generally just starting to work on fleshing the website out. Separately, but simultaneously other members on the team worked with the backend team to refactor the quiz question JSON inputs. Here work was done on re-factoring the typescript models for the quiz and re-factoring the quiz service files that actually operated the questions in the quiz. Some difficulties arose but they were eventually ironed out (JACK TO ADD/CHECK?).
+
+With the frontend taking shape, work with the backend to get the database linked started. Sessions between the front and backend were held where discussions focussed on collaborating to get the most efficient and appropriate JSON setup in our database data schemas and frontend typescript models. As well as this, the backend team started on creating mongoose commands for JSON payload requests (VINI/NATH TO ADD).
+
+
+On reflection of the sprint, it was a productive week and we were in a position whereby if our stakeholders (ADD TO SYSTEM DESIGN) were to use the quiz, they would be able to navigate through our SPA and take a dummy quiz. We were in a position to start work in the next sprint on requesting the data from the database, and having these questions presented in the quiz.
+
+### Sprint 5 : Further Front and Backend Integration (12.04.21-18.04.21)
 
 ## MEAN Stack System Implementation
 
