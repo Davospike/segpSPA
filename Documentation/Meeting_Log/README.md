@@ -123,5 +123,12 @@ Notes/images view [here](../DesignChoices)
 - Backend were planning on randominsing the questions in each news topic and handing questions one at a time.
 - After discussion, came to the conclusion that it would be easier to pass all of the questions as a big payload for the front end to randomise and display to the user.
 - Backend will need to add certain fields such as an options array to make sure that the front and back end align properly. [See backend meeting log for more details.]
-
 - Front and backend consolitation wasn't a complete trainwreck, which is positive! Working towards the merge and aiming for a full link by tomorrow.
+
+------
+
+## Meeting Log 12.04.2021
+
+- Discussed sprint 4 goals and objectives for this week.
+- Further discussion around how the frontend and backend will come together. Currently JSON payload and JSON quiz format are mostly the same and so once DB requests have been finalised, we can start having the quiz service subscribe to the API data request for the quiz questions.
+- Set up meeting to go through latest round of user feedback. 
