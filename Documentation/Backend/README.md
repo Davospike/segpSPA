@@ -599,8 +599,6 @@ In the spreadsheet, in Options Table (document) will see Selected initialised to
 
 
 
-
-
 **STEP 2: Creating Options Model Schema in /models**
 
 models/options.js now looks like this:
@@ -727,6 +725,7 @@ And changed *deploy.sh* to import these 3 new json files
 
 - After the meeting, it was clear that the main problem was that we weren't passing the correct environment variables when accessing the container's MongoDB.
 - We also needed to change the way we 'docker build' as the process was taking too long]
+  
   - So Marceli advised us to create a local docker build process which uses Port 27018 which used the `LOCAL` fields in the .env file.
 
 Changed the following files in order to have a working query:
@@ -767,6 +766,22 @@ npm run local 										// where local a script in package.json
 - and runs node serve.js with flag is IS_LOCAL (does process.env)
   - reason for this is we will use it in server.js to see what port to use
   - if not true, then just uses process.env:PORT 
+
+------
+
+## Meeting 12/04/2021
+
+Plan today: 
+
+- Get some methods completed that we are actually going to use for our web-app.
+
+- Dished certain data to certain /pages; querying MongoDB through the `.find` method.
+
+- Began methods that increment the `num_correct` and `num_attempted` quiz question fields by using `findOneandUpdate` method.
+
+  - Will complete these properly tomorrow, by making them dynamic and `.save`ing them back to MongoDB.
+
+    
 
 ------
 
