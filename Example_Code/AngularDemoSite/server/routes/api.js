@@ -23,7 +23,6 @@ const QuizQuestion = require("../../models/quiz_question");
 //   //res.send(JSON.stringify(newstopics));
 // })
 
-
 router.get('/newsTopics', async (req, res) => {
   console.debug('Executing /newsTopics endpoint.')
 
