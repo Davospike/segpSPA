@@ -11,13 +11,10 @@ const mongoose = require("mongoose");
 // setting up the db
 const db = require('./db');
 
-
 // Get our API routes
 const api = require('./server/routes/api');
 
 const app = express();
-
-
 
 // Parsers for POST data
 app.use(bodyParser.json());

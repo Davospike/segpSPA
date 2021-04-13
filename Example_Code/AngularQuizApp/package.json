@@ -2,10 +2,10 @@
   "name": "ng6-quiz",
   "version": "0.0.0",
   "scripts": {
+    "test": "mocha",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -26,6 +26,7 @@
     "core-js": "^3.1.4",
     "express": "^4.17.1",
     "jquery": "^3.3.1",
+    "mocha": "^8.3.2",
     "ng2-charts": "^2.3.0",
     "rxjs": "^6.0.0",
     "zone.js": "^0.9.1",
