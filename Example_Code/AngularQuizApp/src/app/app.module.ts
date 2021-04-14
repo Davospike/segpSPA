@@ -8,20 +8,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { SocialComponent } from './social/social.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
-
-// const appRoutes: Routes = [
-//   { path: 'welcome', component: WelcomePageComponent },
-//   { path: 'quiz', component: QuizComponent },
-//   { path: 'stats', component: StatisticsComponent },
-//   { path: 'bar-chart', component: BarChartComponent},
-//   { path: '**', component: WelcomePageComponent }
-// ];
+import { TopicsComponent } from './topics/topics.component';
 
 @NgModule({
   declarations: [
@@ -31,17 +23,17 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
     ToolbarComponent,
     StatisticsComponent,
     SocialComponent,
-    BarChartComponent
+    BarChartComponent,
+    TopicsComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    // RouterModule.forRoot(appRoutes),
     AppRoutingModule,
-    ChartsModule
+    ChartsModule,
   ],
-  // exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

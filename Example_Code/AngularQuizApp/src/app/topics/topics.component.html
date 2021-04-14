@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+  body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+  }
+  .pad {
+    padding-top: 70px;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+  #container {
+    position: relative;
+  }
+  #footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+</style>
+<body>
+<div class="content">
+
+
+<app-toolbar></app-toolbar>
+
+<div class="pad card-deck">
+  <div class="card">
+    <img class="card-img-top" src="https://www.willisinsurance.co.uk/media/1746/brexit-survey-logopng.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Brexit</h5>
+      <p class="card-text">Brexit, eh. That really dragged on, didn't it? After a lot of to and fro, delays, buses and more, the UK eventually left the bloc. For good or for worse? Who knows. Over what felt like a lifetime, there was a lot of misinformation surrounding Brexit; can you distinguish between what was true, and what isn't?</p>
+    </div>
+    <div class="card-footer text-center bg-info">
+      <a class="btn btn-info" routerLink="/quiz">Take the Brexit quiz</a>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="https://cornwallglass.co.uk/wp-content/uploads/2020/08/Covid-19-Coronavirus-logo.jpg" alt="Card image cap" style="padding-top: 15px">
+    <div class="card-body">
+      <span style="display:inline-block; width: auto;"></span>
+      <h5 class="card-title">Coronavirus</h5>
+      <p class="card-text">Coronavirus cancelled 2020, a year many earmarked as their best one yet... New year, new me! As well as ruining the Euros, COVID-19 was a catalyst for increased gaslighting and caused divisions between the inhabitants of earth due to a fair share of fake news and downright outrageous claims. But, can you tell what's what?</p>
+    </div>
+    <div class="card-footer text-center bg-info">
+      <a class="btn btn-info" routerLink="/quiz">Take the Coronavirus quiz</a>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="https://media.newyorker.com/photos/5b8855b7b40a9d62f099c8a4/16:9/w_1200,h_630,c_limit/Climate-Change-Icon.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Climate Change</h5>
+      <p class="card-text">Greta, Greta, Greta. Our lord and saviour, perhaps? Who knows... What we do know, however, is that climate change is most certainly real (looking at you, Donald), and it is going to spoil the party if we, as a planet, are not careful with our actions. Misinformation is rife, with many senior folk not accepting the facts and plenty of interesting characters sharing interesting "news"...</p>
+    </div>
+    <div class="card-footer text-center bg-info">
+      <a class="btn btn-info" routerLink="/quiz">Take the Climate Change quiz</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer class="footer" style="padding-top: 30px">
+  <app-social></app-social>
+</footer>
+
+</body>
+</html>
+<router-outlet></router-outlet>
