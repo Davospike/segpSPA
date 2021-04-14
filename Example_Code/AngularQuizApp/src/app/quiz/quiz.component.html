@@ -10,7 +10,6 @@
     height: 100%;
     font-family: "Inconsolata", sans-serif;
   }
-
   .pad {
     padding-top: 60px;
     padding-right: 150px;
@@ -21,8 +20,11 @@
   }
   #footer {
     width: 100%;
-    position: absolute;
+    /*position: absolute;*/
     bottom: 0;
+  }
+  #container img {
+    width: 100%;
   }
 </style>
 <body>
@@ -32,7 +34,10 @@
 <div id="container" class="pad w3-display-container w3-grayscale-min">
   <div class="row">
     <div class="col-6">
-      <h3>Fake News Quiz</h3>
+      <span>
+        <h3>Fake News Quiz</h3>
+<!--        <img src="https://www.psdstamps.com/wp-content/uploads/2019/12/fake-news-stamp-png.png" alt="Fake News" style="height: 500px">-->
+      </span>
     </div>
   </div>
   <div id="quiz">
@@ -46,6 +51,9 @@
         <h3 class="font-weight-normal">{{pager.index + 1}}.
           <span [innerHTML]="question.name"></span>
         </h3>
+        <h4 class="font-weight-normal">Article snippet:
+          <span [innerHTML]="question.articleBody"></span>
+        </h4>
         <div class="row text-left options">
           <div class="col-6" *ngFor="let option of question.options">
             <div class="option">
@@ -76,6 +84,9 @@
       <div *ngFor="let question of quiz.questions; let index = index">
         <div class="result-question">
           <h5>{{index + 1}}. {{question.name}}</h5>
+          <h6>Article URL:
+           <a href={{question.articleUrl}}>Click here!</a>
+          </h6>
           <div class="row">
             <div class="col-6" *ngFor="let Option of question.options">
               <input id="{{Option.id}}" type="checkbox" disabled="disabled" [(ngModel)]="Option.selected" /> {{Option.name}}
@@ -92,12 +103,13 @@
       <button class="btn btn-info" (click)="mode = 'review'">Review</button>
       <button class="btn btn-primary" (click)="onSubmit();">Submit Quiz</button>
     </div>
+    <hr />
   </div>
 </div>
 <div id="footer">
   <app-social></app-social>
   <footer class="w3-container w3-padding-30 w3-light-grey w3-center w3-xlarge">
-  <p class="w3-medium">Powered by the University of Bristol knowledge</p>
-  <p class="w3-medium">Special thanks to Anurag Gandhi for the quiz framework. </p>
+    <p class="w3-medium">Powered by the University of Bristol knowledge</p>
+    <p class="w3-medium">Special thanks to Anurag Gandhi for the quiz framework.</p>
   </footer>
 </div>
