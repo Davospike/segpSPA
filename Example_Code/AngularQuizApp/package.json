@@ -19,12 +19,9 @@
     "@angular/platform-browser": "^8.0.2",
     "@angular/platform-browser-dynamic": "^8.0.2",
     "@angular/router": "^8.0.2",
-<<<<<<< HEAD
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
-=======
     "@types/core-js": "^2.5.4",
->>>>>>> dev
     "bootstrap": "^4.6.0",
     "chart.js": "^2.9.3",
     "core-js": "^3.1.4",
@@ -57,10 +54,8 @@
     "protractor": "~5.4.2",
     "ts-node": "~8.3.0",
     "tslint": "~5.17.0",
-<<<<<<< HEAD
     "typescript": "3.4.5",
     "nodemon": "^1.18.10"
-=======
     "typescript": "3.4.5"
   },
   "jspm": {
@@ -70,6 +65,5 @@
     "devDependencies": {
       "plugin-babel": "npm:systemjs-plugin-babel@^0.0.25"
     }
->>>>>>> dev
   }
 }
