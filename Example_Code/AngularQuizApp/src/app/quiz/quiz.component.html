@@ -20,7 +20,7 @@
   }
   #footer {
     width: 100%;
-    /*position: absolute;*/
+    position: absolute;
     bottom: 0;
   }
   #container img {
@@ -85,7 +85,7 @@
         <div class="result-question">
           <h5>{{index + 1}}. {{question.name}}</h5>
           <h6>Article URL:
-           <a href={{question.articleUrl}}>Click here!</a>
+           <a href={{question.articleUrl}} target="_blank">Click here!</a>
           </h6>
           <div class="row">
             <div class="col-6" *ngFor="let Option of question.options">
@@ -109,7 +109,6 @@
 <div id="footer">
   <app-social></app-social>
   <footer class="w3-container w3-padding-30 w3-light-grey w3-center w3-xlarge">
-    <p class="w3-medium">Powered by the University of Bristol knowledge</p>
     <p class="w3-medium">Special thanks to Anurag Gandhi for the quiz framework.</p>
   </footer>
 </div>
