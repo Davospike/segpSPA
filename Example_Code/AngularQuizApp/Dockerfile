@@ -17,8 +17,12 @@ RUN npm install
 
 COPY --chown=node:node . .
 
+#Building the website
+RUN ./node_modules/.bin/npm start
+
 # Add metadata to the image to describe which port the container is listening on at runtime.
-EXPOSE 4200
+EXPOSE 3000
 
 # Run the specified command within the container.
 CMD [ "node", "server.js" ]
+
