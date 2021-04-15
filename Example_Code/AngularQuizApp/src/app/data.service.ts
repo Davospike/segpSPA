@@ -19,10 +19,10 @@ export class DataService {
 
   public getQuizNames() {
     return [
-      {name: 'brexit'},
-      {name: 'coronavirus'},
-      {name: 'climate change'},
-      {name: 'general'},
+      {name: 'Brexit'},
+      {name: 'Coronavirus'},
+      {name: 'Climate-Change'},
+      {name: 'General'},
       {name: 'china'}
     ];
   }

@@ -48,7 +48,6 @@ export class QuizComponent implements OnInit {
   constructor(private quizService: QuizService, private dataService: DataService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
-    // this.quizName = 'data/brexit.json';
     this.quizzes = this.dataService.getQuizNames();
     // this.quizName = this.quizzes[0].name;
     this.quizName = String(this.route.snapshot.paramMap.get('id'));
@@ -59,20 +58,24 @@ export class QuizComponent implements OnInit {
   loadQuiz(quizName: string) {
     this.dataService.getAll().subscribe(
       res => {
-      // this.quizJSON = res;
-      // console.log(res);
-      if (quizName === 'brexit') {
+      if (quizName === 'Brexit') {
         this.quiz = new Quiz(res[0]);
-      } else if (quizName === 'coronavirus') {
+        this.quiz.name = 'Brexit';
+      } else if (quizName === 'Coronavirus') {
         this.quiz = new Quiz(res[1]);
-      } else if (quizName === 'climate change') {
+        this.quiz.name = 'Coronavirus';
+      } else if (quizName === 'Climate-Change') {
         this.quiz = new Quiz(res[2]);
-      } else if (quizName === 'general') {
+        this.quiz.name = 'Climate Change';
+      } else if (quizName === 'General') {
         this.quiz = new Quiz(res[3]);
-      } else if (quizName === 'china') {
+        this.quiz.name = 'General';
+      } else if (quizName === 'China') {
         this.quiz = new Quiz(res[4]);
+        this.quiz.name = 'China';
       } else {
         this.quiz = new Quiz(res[0]);
+        this.quiz.name = 'Brexit';
       }
       this.pager.count = this.quiz.questions.length;
       this.startTime = new Date();
