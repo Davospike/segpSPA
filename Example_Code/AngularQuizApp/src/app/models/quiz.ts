@@ -1,5 +1,6 @@
 import { QuizConfig } from './quiz-config';
 import { Question } from './question';
+import {isNotNullOrUndefined} from 'codelyzer/util/isNotNullOrUndefined';
 
 export class Quiz {
     id: number;
@@ -9,11 +10,21 @@ export class Quiz {
     questions: Question[];
 
     constructor(data: any) {
+      // for checking if json is na array or single item
+      // if (isNotNullOrUndefined(data.length)) {
+      //   console.log('Harry im not an array...');
+      // } else {
+      //   console.log('IM AN Array');
+      // }
+
+      // Check all data types and if not there, set to 0 or Not Set as default
         if (data) {
-            this.id = data.id;
-            this.name = data.topicName;
-            this.description = data.description;
-            this.config = new QuizConfig(data.config);
+            this.id = data.id ? 0 : data.id;
+            this.name = data.topicName ? 'Not Set' : data.topicName;
+            this.description = data.description ? 'Not Set' : data.description;
+            if (data.config) {
+              this.config = new QuizConfig(data.config);
+            }
             this.questions = [];
             data.quizquestions.forEach(q => {
                 this.questions.push(new Question(q));

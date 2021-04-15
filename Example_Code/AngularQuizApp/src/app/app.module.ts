@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DataService} from './data.service';
 
 import { ChartsModule} from 'ng2-charts';
 
@@ -25,7 +26,6 @@ import { TopicsComponent } from './topics/topics.component';
     SocialComponent,
     BarChartComponent,
     TopicsComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -34,7 +34,7 @@ import { TopicsComponent } from './topics/topics.component';
     AppRoutingModule,
     ChartsModule,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

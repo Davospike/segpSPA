@@ -39,6 +39,10 @@
         <div class="col-6">
           <span>
             <h3>Fake News Quiz</h3>
+            <div *ngIf="mode=='quiz' && quizJSON">
+              <p>Quiz json here: {{quizJSON}}</p>
+              <p>Quiz json here2: {{quizJSON.toString()}}</p>
+            </div>
     <!--        <img src="https://www.psdstamps.com/wp-content/uploads/2019/12/fake-news-stamp-png.png" alt="Fake News" style="height: 500px">-->
           </span>
         </div>
