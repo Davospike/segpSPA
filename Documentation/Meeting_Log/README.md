@@ -132,3 +132,14 @@ Notes/images view [here](../DesignChoices)
 - Discussed sprint 4 goals and objectives for this week.
 - Further discussion around how the frontend and backend will come together. Currently JSON payload and JSON quiz format are mostly the same and so once DB requests have been finalised, we can start having the quiz service subscribe to the API data request for the quiz questions.
 - Set up meeting to go through latest round of user feedback. 
+
+------
+
+## Meeting Log 15.04.2021
+
+- Troubleshooting some issues when trying to merge Frontend frameword with current backend structure
+  - At the moment trying to merge AngularDemoSite and AngularQuizApp.
+- We think it'd be better to git reset to a working state and try again.
+- Trying to take a more meticulous route by planning which files are needed from each directory before merging them (Included the hidden `.` Files!)
+  - Will plan a proper merge of the two frontend/backend projects for later on today.
+  - This has been useful as it allowed the whole group to go through all files/directories one-by-one together to make sure we all understand what is going on under the hood in each of these projects.
