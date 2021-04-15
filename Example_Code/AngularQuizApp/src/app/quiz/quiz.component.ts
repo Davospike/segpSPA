@@ -55,14 +55,20 @@ export class QuizComponent implements OnInit {
   loadQuiz(quizName: string) {
     this.dataService.getAll().subscribe(
       res => {
-      this.quizJSON = res;
-      console.log(res);
+      // this.quizJSON = res;
+      // console.log(res);
       if (quizName === 'Brexit') {
         this.quiz = new Quiz(res[0]);
       } else if (quizName === 'Coronavirus') {
         this.quiz = new Quiz(res[1]);
-      } else {
+      } else if (quizName === 'Climate Change') {
         this.quiz = new Quiz(res[2]);
+      } else if (quizName === 'General') {
+        this.quiz = new Quiz(res[3]);
+      } else if (quizName === 'China') {
+        this.quiz = new Quiz(res[4]);
+      } else {
+        this.quiz = new Quiz(res[0]);
       }
       this.pager.count = this.quiz.questions.length;
       this.startTime = new Date();
