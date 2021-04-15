@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/nathantaylor/Documents/MScComputerScience/SWEngProject/SWEngineeringProject/AngularSite/dashboard/src/main.ts */"zUnb");
+module.exports = __webpack_require__(/*! /home/pikey/Documents/Group_Project/sepgSPA/Example_Code/AngularDemoSite/src/main.ts */"zUnb");
 
 
 /***/ }),
@@ -87,22 +87,41 @@ const environment = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RadarChartComponent", function() { return RadarChartComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ng2-charts */ "LPYB");
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data.service */ "R7Hv");
+/* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ng2-charts */ "LPYB");
+
 
 
 class RadarChartComponent {
-    constructor() {
+    constructor(dataService) {
+        this.dataService = dataService;
+        // This is what gets initialised by default
         this.radarChartLabels = ['Q1', 'Q2', 'Q3', 'Q4'];
         this.radarChartData = [
             { data: [120, 130, 180, 70], label: '2017' },
             { data: [90, 150, 200, 45], label: '2018' }
         ];
+        this.stats = [];
+        this.currentdata = null;
+        this.currentIndex = -1;
+        this.title = '';
         this.radarChartType = 'radar';
     }
     ngOnInit() {
+        this.retrieveData();
+    }
+    retrieveData() {
+        this.dataService.getAll().subscribe(data => {
+            this.stats = data;
+            // now let's update the fields
+            this.radarChartLabels = this.stats.radarChartLabels;
+            this.radarChartData = this.stats.radarChartData;
+        }, error => {
+            console.log(error);
+        });
     }
 }
-RadarChartComponent.ɵfac = function RadarChartComponent_Factory(t) { return new (t || RadarChartComponent)(); };
+RadarChartComponent.ɵfac = function RadarChartComponent_Factory(t) { return new (t || RadarChartComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"])); };
 RadarChartComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RadarChartComponent, selectors: [["app-radar-chart"]], decls: 2, vars: 3, consts: [[2, "display", "block"], ["baseChart", "", 3, "datasets", "labels", "chartType"]], template: function RadarChartComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "canvas", 1);
@@ -110,7 +129,7 @@ RadarChartComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("datasets", ctx.radarChartData)("labels", ctx.radarChartLabels)("chartType", ctx.radarChartType);
-    } }, directives: [ng2_charts__WEBPACK_IMPORTED_MODULE_1__["BaseChartDirective"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJyYWRhci1jaGFydC5jb21wb25lbnQuY3NzIn0= */"] });
+    } }, directives: [ng2_charts__WEBPACK_IMPORTED_MODULE_2__["BaseChartDirective"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJyYWRhci1jaGFydC5jb21wb25lbnQuY3NzIn0= */"] });
 
 
 /***/ }),
@@ -147,6 +166,35 @@ DoughnutChartComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("data", ctx.doughnutChartData)("labels", ctx.doughnutChartLabels)("chartType", ctx.doughnutChartType);
     } }, directives: [ng2_charts__WEBPACK_IMPORTED_MODULE_1__["BaseChartDirective"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJkb3VnaG51dC1jaGFydC5jb21wb25lbnQuY3NzIn0= */"] });
+
+
+/***/ }),
+
+/***/ "R7Hv":
+/*!*********************************!*\
+  !*** ./src/app/data.service.ts ***!
+  \*********************************/
+/*! exports provided: DataService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+
+
+class DataService {
+    constructor(httpClient) {
+        this.httpClient = httpClient;
+        this.REST_API_SERVER = "http://localhost:3000/api";
+    }
+    getAll() {
+        return this.httpClient.get(this.REST_API_SERVER);
+    }
+}
+DataService.ɵfac = function DataService_Factory(t) { return new (t || DataService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
+DataService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: DataService, factory: DataService.ɵfac, providedIn: 'root' });
 
 
 /***/ }),
@@ -457,14 +505,17 @@ webpackContext.id = "RnhZ";
 /*!**********************************!*\
   !*** ./src/app/app.component.ts ***!
   \**********************************/
-/*! exports provided: AppComponent */
+/*! exports provided: AppComponent, DataComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataComponent", function() { return DataComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data.service */ "R7Hv");
+
 
 
 class AppComponent {
@@ -502,6 +553,22 @@ AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterOutlet"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY29tcG9uZW50LmNzcyJ9 */"] });
+// need to ensure we include a dectorator and export calss as abstract
+class DataComponent {
+    constructor(dataService) {
+        this.dataService = dataService;
+        // instantiate data to an empty array
+        this.data = [];
+    }
+    ngOnInit() {
+        // Retrieve posts from the API
+        this.dataService.getAll().subscribe(data => {
+            this.data = data;
+        });
+    }
+}
+DataComponent.ɵfac = function DataComponent_Factory(t) { return new (t || DataComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"])); };
+DataComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DataComponent, selectors: [["ng-component"]], decls: 0, vars: 0, template: function DataComponent_Template(rf, ctx) { }, encapsulation: 2 });
 
 
 /***/ }),
@@ -517,14 +584,18 @@ AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "jhN1");
-/* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ng2-charts */ "LPYB");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-routing.module */ "vY5A");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "Sy1n");
-/* harmony import */ var _bar_chart_bar_chart_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./bar-chart/bar-chart.component */ "k7d8");
-/* harmony import */ var _doughnut_chart_doughnut_chart_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./doughnut-chart/doughnut-chart.component */ "Ovr7");
-/* harmony import */ var _radar_chart_radar_chart_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./radar-chart/radar-chart.component */ "CR6i");
-/* harmony import */ var _pie_chart_pie_chart_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pie-chart/pie-chart.component */ "1U8D");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data.service */ "R7Hv");
+/* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ng2-charts */ "LPYB");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "vY5A");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "Sy1n");
+/* harmony import */ var _bar_chart_bar_chart_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./bar-chart/bar-chart.component */ "k7d8");
+/* harmony import */ var _doughnut_chart_doughnut_chart_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./doughnut-chart/doughnut-chart.component */ "Ovr7");
+/* harmony import */ var _radar_chart_radar_chart_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./radar-chart/radar-chart.component */ "CR6i");
+/* harmony import */ var _pie_chart_pie_chart_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pie-chart/pie-chart.component */ "1U8D");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
 
 
 
@@ -537,19 +608,21 @@ __webpack_require__.r(__webpack_exports__);
 class AppModule {
 }
 AppModule.ɵfac = function AppModule_Factory(t) { return new (t || AppModule)(); };
-AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]] });
-AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineInjector"]({ providers: [], imports: [[
+AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]] });
+AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({ providers: [_data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"]], imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
-            ng2_charts__WEBPACK_IMPORTED_MODULE_1__["ChartsModule"]
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClientModule"],
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
+            ng2_charts__WEBPACK_IMPORTED_MODULE_3__["ChartsModule"]
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-        _bar_chart_bar_chart_component__WEBPACK_IMPORTED_MODULE_4__["BarChartComponent"],
-        _doughnut_chart_doughnut_chart_component__WEBPACK_IMPORTED_MODULE_5__["DoughnutChartComponent"],
-        _radar_chart_radar_chart_component__WEBPACK_IMPORTED_MODULE_6__["RadarChartComponent"],
-        _pie_chart_pie_chart_component__WEBPACK_IMPORTED_MODULE_7__["PieChartComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-        _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
-        ng2_charts__WEBPACK_IMPORTED_MODULE_1__["ChartsModule"]] }); })();
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
+        _bar_chart_bar_chart_component__WEBPACK_IMPORTED_MODULE_6__["BarChartComponent"],
+        _doughnut_chart_doughnut_chart_component__WEBPACK_IMPORTED_MODULE_7__["DoughnutChartComponent"],
+        _radar_chart_radar_chart_component__WEBPACK_IMPORTED_MODULE_8__["RadarChartComponent"],
+        _pie_chart_pie_chart_component__WEBPACK_IMPORTED_MODULE_9__["PieChartComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+        _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClientModule"],
+        _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
+        ng2_charts__WEBPACK_IMPORTED_MODULE_3__["ChartsModule"]] }); })();
 
 
 /***/ }),
