@@ -4,6 +4,8 @@ import { QuizService } from '../services/quiz.service';
 // import { HelperService } from '../services/helper.service';
 import { Option, Question, Quiz, QuizConfig } from '../models/index';
 import {DataService} from '../data.service';
+import {ActivatedRoute} from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-quiz',
@@ -43,32 +45,37 @@ export class QuizComponent implements OnInit {
   ellapsedTime = '00:00';
   duration = '';
 
-  constructor(private quizService: QuizService, private dataService: DataService) { }
+  constructor(private quizService: QuizService, private dataService: DataService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
-    // this.quizName = 'data/brexit.json';
     this.quizzes = this.dataService.getQuizNames();
-    this.quizName = this.quizzes[0].name;
+    // this.quizName = this.quizzes[0].name;
+    this.quizName = String(this.route.snapshot.paramMap.get('id'));
+    console.log(this.quizName);
     this.loadQuiz(this.quizName);
   }
 
   loadQuiz(quizName: string) {
     this.dataService.getAll().subscribe(
       res => {
-      // this.quizJSON = res;
-      // console.log(res);
       if (quizName === 'Brexit') {
         this.quiz = new Quiz(res[0]);
+        this.quiz.name = 'Brexit';
       } else if (quizName === 'Coronavirus') {
         this.quiz = new Quiz(res[1]);
-      } else if (quizName === 'Climate Change') {
+        this.quiz.name = 'Coronavirus';
+      } else if (quizName === 'Climate-Change') {
         this.quiz = new Quiz(res[2]);
+        this.quiz.name = 'Climate Change';
       } else if (quizName === 'General') {
         this.quiz = new Quiz(res[3]);
+        this.quiz.name = 'General';
       } else if (quizName === 'China') {
         this.quiz = new Quiz(res[4]);
+        this.quiz.name = 'China';
       } else {
         this.quiz = new Quiz(res[0]);
+        this.quiz.name = 'Brexit';
       }
       this.pager.count = this.quiz.questions.length;
       this.startTime = new Date();

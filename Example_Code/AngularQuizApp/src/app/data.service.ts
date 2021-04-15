@@ -21,9 +21,9 @@ export class DataService {
     return [
       {name: 'Brexit'},
       {name: 'Coronavirus'},
-      {name: 'Climate Change'},
+      {name: 'Climate-Change'},
       {name: 'General'},
-      {name: 'China'}
+      {name: 'china'}
     ];
   }
 }
