@@ -22,10 +22,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-echo "wait_for is running..."
-
 set -- "$@" -- "$TIMEOUT" "$QUIET" "$PROTOCOL" "$HOST" "$PORT" "$result"
-
 TIMEOUT=15
 QUIET=0
 # The protocol to make the request with, either "tcp" or "http"
