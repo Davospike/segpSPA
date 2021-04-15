@@ -21,20 +21,23 @@
     "@angular/platform-browser": "^8.0.2",
     "@angular/platform-browser-dynamic": "^8.0.2",
     "@angular/router": "^8.0.2",
+    "@types/core-js": "^2.5.4",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.6.0",
-    "chart.js": "^2.9.3",
-    "core-js": "^3.1.4",
+    "chart.js": "^2.9.4",
+    "core-js": "^3.10.1",
+    "ejs": "^2.6.1",
     "express": "^4.17.1",
     "jquery": "^3.3.1",
     "mocha": "^8.3.2",
-    "ng2-charts": "^2.3.0",
+    "mongoose": "^5.4.10",
+    "ng2-charts": "^2.4.2",
     "rxjs": "^6.0.0",
     "zone.js": "^0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.800.3",
+    "@angular-devkit/build-angular": "^0.800.6",
     "@angular/cli": "~8.0.3",
     "@angular/compiler-cli": "^8.0.2",
     "@angular/language-service": "^8.0.2",
@@ -49,9 +52,19 @@
     "karma-coverage-istanbul-reporter": "~2.0.5",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
+    "module-name": "0.0.1-security",
+    "nodemon": "^1.18.10",
     "protractor": "~5.4.2",
     "ts-node": "~8.3.0",
     "tslint": "~5.17.0",
     "typescript": "3.4.5"
+  },
+  "jspm": {
+    "name": "ng6-quiz",
+    "main": "ng6-quiz.js",
+    "dependencies": {},
+    "devDependencies": {
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.25"
+    }
   }
 }
