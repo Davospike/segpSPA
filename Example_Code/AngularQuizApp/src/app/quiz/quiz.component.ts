@@ -47,16 +47,23 @@ export class QuizComponent implements OnInit {
 
   ngOnInit() {
     // this.quizName = 'data/brexit.json';
-    this.quizzes = this.
-    this.loadQuiz();
+    this.quizzes = this.dataService.getQuizNames();
+    this.quizName = this.quizzes[0].name;
+    this.loadQuiz(this.quizName);
   }
 
-  loadQuiz() {
+  loadQuiz(quizName: string) {
     this.dataService.getAll().subscribe(
       res => {
       this.quizJSON = res;
       console.log(res);
-      this.quiz = new Quiz(res[1]);
+      if (quizName === 'Brexit') {
+        this.quiz = new Quiz(res[0]);
+      } else if (quizName === 'Coronavirus') {
+        this.quiz = new Quiz(res[1]);
+      } else {
+        this.quiz = new Quiz(res[2]);
+      }
       this.pager.count = this.quiz.questions.length;
       this.startTime = new Date();
       this.ellapsedTime = '00:00';

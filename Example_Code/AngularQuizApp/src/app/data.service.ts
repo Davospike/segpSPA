@@ -16,4 +16,14 @@ export class DataService {
   public getAll(){
     return this.httpClient.get(this.REST_API_SERVER)
   }
+
+  public getQuizNames() {
+    return [
+      {name: 'Brexit'},
+      {name: 'Coronavirus'},
+      {name: 'Climate Change'},
+      {name: 'General'},
+      {name: 'China'}
+    ];
+  }
 }
