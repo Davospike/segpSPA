@@ -9,6 +9,7 @@ import {TopicsComponent} from './topics/topics.component';
 const routes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'quiz', component: QuizComponent },
+  { path: 'quiz/:id', component: QuizComponent },
   { path: 'topics', component: TopicsComponent },
   { path: 'stats', component: StatisticsComponent },
   { path: 'bar-chart', component: BarChartComponent},
