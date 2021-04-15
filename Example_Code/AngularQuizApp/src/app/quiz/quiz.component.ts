@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../services/quiz.service';
 // import { HelperService } from '../services/helper.service';
 import { Option, Question, Quiz, QuizConfig } from '../models/index';
+import {DataService} from '../data.service';
 
 @Component({
   selector: 'app-quiz',
@@ -11,8 +12,10 @@ import { Option, Question, Quiz, QuizConfig } from '../models/index';
   providers: [QuizService]
 })
 export class QuizComponent implements OnInit {
+  quizzes: any[];
   quiz: Quiz = new Quiz(null);
   mode = 'quiz';
+  quizJSON: Object;
   quizName: string;
   config: QuizConfig = {
     'allowBack': true,
@@ -40,24 +43,62 @@ export class QuizComponent implements OnInit {
   ellapsedTime = '00:00';
   duration = '';
 
-  constructor(private quizService: QuizService) { }
+  constructor(private quizService: QuizService, private dataService: DataService) { }
 
   ngOnInit() {
-    this.quizName = 'data/brexit.json';
+    // this.quizName = 'data/brexit.json';
+    this.quizzes = this.dataService.getQuizNames();
+    this.quizName = this.quizzes[0].name;
     this.loadQuiz(this.quizName);
   }
 
   loadQuiz(quizName: string) {
-    this.quizService.get(quizName).subscribe(res => {
-      this.quiz = new Quiz(res);
+    this.dataService.getAll().subscribe(
+      res => {
+      // this.quizJSON = res;
+      // console.log(res);
+      if (quizName === 'Brexit') {
+        this.quiz = new Quiz(res[0]);
+      } else if (quizName === 'Coronavirus') {
+        this.quiz = new Quiz(res[1]);
+      } else if (quizName === 'Climate Change') {
+        this.quiz = new Quiz(res[2]);
+      } else if (quizName === 'General') {
+        this.quiz = new Quiz(res[3]);
+      } else if (quizName === 'China') {
+        this.quiz = new Quiz(res[4]);
+      } else {
+        this.quiz = new Quiz(res[0]);
+      }
       this.pager.count = this.quiz.questions.length;
       this.startTime = new Date();
       this.ellapsedTime = '00:00';
       this.timer = setInterval(() => { this.tick(); }, 1000);
       this.duration = this.parseTime(this.config.duration);
-    });
+    },
+      error => {
+      console.log(error);
+      });
     this.mode = 'quiz';
   }
+
+  // ngOnInit() {
+  //   this.quizName = 'data/brexit.json';
+  //   this.loadQuiz(this.quizName);
+  // }
+  //
+  // loadQuiz(quizName: string) {
+  //   this.quizService.get(quizName).subscribe(res => {
+  //     this.quizJSON = res;
+  //     this.quiz = new Quiz(res);
+  //     this.pager.count = this.quiz.questions.length;
+  //     this.startTime = new Date();
+  //     this.ellapsedTime = '00:00';
+  //     this.timer = setInterval(() => { this.tick(); }, 1000);
+  //     this.duration = this.parseTime(this.config.duration);
+  //   });
+  //   this.mode = 'quiz';
+  // }
 
   tick() {
     const now = new Date();
