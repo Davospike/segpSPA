@@ -49,33 +49,36 @@ export class QuizComponent implements OnInit {
 
   ngOnInit() {
     this.quizzes = this.dataService.getQuizNames();
-    // this.quizName = this.quizzes[0].name;
     this.quizName = String(this.route.snapshot.paramMap.get('id'));
-    console.log(this.quizName);
+    // console.log(this.quizName);
     this.loadQuiz(this.quizName);
   }
 
+  // Reminder for if backend boiz get a method for API call for single topic
+  // Can check if subscribe response is an Array with Array.isArray(res)
+  // If get single topic returned, as opposed to array of quiz topics and Qs,
+  // Then can instantiate quiz as new Quiz(res), as opposed to new Quiz(res[0])
   loadQuiz(quizName: string) {
     this.dataService.getAll().subscribe(
       res => {
       if (quizName === 'Brexit') {
         this.quiz = new Quiz(res[0]);
-        this.quiz.name = 'Brexit';
+        this.quiz.name = quizName;
       } else if (quizName === 'Coronavirus') {
         this.quiz = new Quiz(res[1]);
-        this.quiz.name = 'Coronavirus';
+        this.quiz.name = quizName;
       } else if (quizName === 'Climate-Change') {
         this.quiz = new Quiz(res[2]);
-        this.quiz.name = 'Climate Change';
+        this.quiz.name = quizName;
       } else if (quizName === 'General') {
         this.quiz = new Quiz(res[3]);
-        this.quiz.name = 'General';
+        this.quiz.name = quizName;
       } else if (quizName === 'China') {
         this.quiz = new Quiz(res[4]);
-        this.quiz.name = 'China';
+        this.quiz.name = quizName;
       } else {
         this.quiz = new Quiz(res[0]);
-        this.quiz.name = 'Brexit';
+        this.quiz.name = quizName;
       }
       this.pager.count = this.quiz.questions.length;
       this.startTime = new Date();
