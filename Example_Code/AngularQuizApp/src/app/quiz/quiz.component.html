@@ -50,13 +50,14 @@
           </span>
         </div>
       </div>
-      <div id="quiz">
-        <h2 class="text-center font-weight-normal">{{quiz.name}}</h2>
-        <hr />
 
-        <div class="w3-content" style="max-width:700px">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/FAKE_NEWS.png/800px-FAKE_NEWS.png" style="width:100%;max-width:1000px;margin-top:32px;">
-        </div>
+      <div class="w3-content" style="max-width:500px">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/FAKE_NEWS.png/800px-FAKE_NEWS.png" style="width:100%;max-width:1000px;margin-top:32px;">
+      </div>
+
+      <div id="quiz">
+        <h4 class="text-center font-weight-normal">{{quiz.name}}</h4>
+        <hr />
 
         <div *ngIf="mode=='quiz' && quiz">
           <div *ngFor="let question of filteredQuestions;">
