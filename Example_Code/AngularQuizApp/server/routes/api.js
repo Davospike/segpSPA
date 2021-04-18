@@ -41,11 +41,79 @@ const QuizQuestion = require("../../models/quiz_question");
   res.send(JSON.stringify(newsTopics));
 })*/
 
-router.get('/newsTopics', async (req, res) => {
+router.get('/newsTopics/coronavirus', async (req, res) => {
   console.debug('Executing /newsTopics endpoint.')
 
   res.header("Content-Type",'application/json');
   const newsTopics = await NewsTopic.find({'topicName' : 'Coronavirus'})            // change string in value element from Coronavirus to whatever topic needed
+    .then(results => {
+      console.debug('NewsTopic(s) queried successfully!');
+      console.debug(results);
+      return results
+    })
+    .catch(e => {
+      console.error('Error occurred in the NewsTopic query.');
+      console.error(e);
+    });
+  res.send(JSON.stringify(newsTopics, null, 2));
+})
+
+router.get('/newsTopics/brexit', async (req, res) => {
+  console.debug('Executing /newsTopics endpoint.')
+
+  res.header("Content-Type",'application/json');
+  const newsTopics = await NewsTopic.find({'topicName' : 'Brexit'})            // change string in value element from Coronavirus to whatever topic needed
+    .then(results => {
+      console.debug('NewsTopic(s) queried successfully!');
+      console.debug(results);
+      return results
+    })
+    .catch(e => {
+      console.error('Error occurred in the NewsTopic query.');
+      console.error(e);
+    });
+  res.send(JSON.stringify(newsTopics, null, 2));
+})
+
+router.get('/newsTopics/general', async (req, res) => {
+  console.debug('Executing /newsTopics endpoint.')
+
+  res.header("Content-Type",'application/json');
+  const newsTopics = await NewsTopic.find({'topicName' : 'General'})            // change string in value element from Coronavirus to whatever topic needed
+    .then(results => {
+      console.debug('NewsTopic(s) queried successfully!');
+      console.debug(results);
+      return results
+    })
+    .catch(e => {
+      console.error('Error occurred in the NewsTopic query.');
+      console.error(e);
+    });
+  res.send(JSON.stringify(newsTopics, null, 2));
+})
+
+router.get('/newsTopics/china', async (req, res) => {
+  console.debug('Executing /newsTopics endpoint.')
+
+  res.header("Content-Type",'application/json');
+  const newsTopics = await NewsTopic.find({'topicName' : 'China'})            // change string in value element from Coronavirus to whatever topic needed
+    .then(results => {
+      console.debug('NewsTopic(s) queried successfully!');
+      console.debug(results);
+      return results
+    })
+    .catch(e => {
+      console.error('Error occurred in the NewsTopic query.');
+      console.error(e);
+    });
+  res.send(JSON.stringify(newsTopics, null, 2));
+})
+
+router.get('/newsTopics/climatechange', async (req, res) => {
+  console.debug('Executing /newsTopics endpoint.')
+
+  res.header("Content-Type",'application/json');
+  const newsTopics = await NewsTopic.find({'topicName' : 'Climate Change'})            // change string in value element from Coronavirus to whatever topic needed
     .then(results => {
       console.debug('NewsTopic(s) queried successfully!');
       console.debug(results);
