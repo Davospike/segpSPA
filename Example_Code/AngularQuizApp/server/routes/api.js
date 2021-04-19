@@ -128,4 +128,22 @@ router.get('/newsTopics/quizquestion1/correct', async (req, res) => {
   res.send(JSON.stringify(quizquestions, null, 2));
 })
 
+// method to get all newsTopics
+router.get('/NewsTopics', async (req, res) => {
+  console.debug('Executing /newsTopics endpoint.')
+
+  res.header("Content-Type",'application/json');
+  const newsTopics = await NewsTopic.find({})
+    .then(results => {
+      console.debug('NewsTopic(s) queried successfully!');
+      console.debug(results);
+      return results
+    })
+    .catch(e => {
+      console.error('Error occurred in the NewsTopic query.');
+      console.error(e);
+    });
+  res.send(JSON.stringify(newsTopics));
+})
+
 module.exports = router;
