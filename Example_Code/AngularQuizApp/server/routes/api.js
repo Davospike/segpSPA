@@ -12,36 +12,7 @@ const NewsTopic = require("../../models/news_topic");
 const QuizQuestion = require("../../models/quiz_question");
 // const Options = require("../../models/options");
 
-//console.log(newstopics);
-
-/* GET api listing. */
-// router.get('/', async (req, res) => {
-//   res.header("Content-Type",'application/json');
-//   console.log(newstopics);
-//   res.send(JSON.stringify(data.toarray));
-//   //const newstopics = await NewsTopic.find();
-//   //res.send(JSON.stringify(newstopics));
-// })
-
-
-/*router.get('/newsTopics', async (req, res) => {
-  console.debug('Executing /newsTopics endpoint.')
-
-  res.header("Content-Type",'application/json');
-  const newsTopics = await NewsTopic.find({})
-    .then(results => {
-      console.debug('NewsTopic(s) queried successfully!');
-      console.debug(results);
-      return results
-    })
-    .catch(e => {
-      console.error('Error occurred in the NewsTopic query.');
-      console.error(e);
-    });
-  res.send(JSON.stringify(newsTopics));
-})*/
-
-router.get('/newsTopics/coronavirus', async (req, res) => {
+router.get('/quiz/Coronavirus', async (req, res) => {
   console.debug('Executing /newsTopics endpoint.')
 
   res.header("Content-Type",'application/json');
@@ -58,7 +29,7 @@ router.get('/newsTopics/coronavirus', async (req, res) => {
   res.send(JSON.stringify(newsTopics, null, 2));
 })
 
-router.get('/newsTopics/brexit', async (req, res) => {
+router.get('/quiz/Brexit', async (req, res) => {
   console.debug('Executing /newsTopics endpoint.')
 
   res.header("Content-Type",'application/json');
@@ -75,7 +46,7 @@ router.get('/newsTopics/brexit', async (req, res) => {
   res.send(JSON.stringify(newsTopics, null, 2));
 })
 
-router.get('/newsTopics/general', async (req, res) => {
+router.get('/quiz/General', async (req, res) => {
   console.debug('Executing /newsTopics endpoint.')
 
   res.header("Content-Type",'application/json');
@@ -92,7 +63,7 @@ router.get('/newsTopics/general', async (req, res) => {
   res.send(JSON.stringify(newsTopics, null, 2));
 })
 
-router.get('/newsTopics/china', async (req, res) => {
+router.get('/quiz/China', async (req, res) => {
   console.debug('Executing /newsTopics endpoint.')
 
   res.header("Content-Type",'application/json');
@@ -109,7 +80,7 @@ router.get('/newsTopics/china', async (req, res) => {
   res.send(JSON.stringify(newsTopics, null, 2));
 })
 
-router.get('/newsTopics/climatechange', async (req, res) => {
+router.get('/Climate-change', async (req, res) => {
   console.debug('Executing /newsTopics endpoint.')
 
   res.header("Content-Type",'application/json');
@@ -126,26 +97,6 @@ router.get('/newsTopics/climatechange', async (req, res) => {
   res.send(JSON.stringify(newsTopics, null, 2));
 })
 
-
-// finding a particular quiz question from topic list. Shown in localhost:3000/newsTopics/quizquestion1
-router.get('/newsTopics/quizquestion1', async (req, res) => {
-  console.debug('Executing /newsTopics endpoint.')
-
-  res.header("Content-Type",'application/json');
-  const quizquestions = await QuizQuestion.find({'web_url' : 'https://metro.co.uk/2020/04/02/north-korea-claims-0-coronavirus-cases-global-count-reaches-one-million-12498221/'})           
-    .then(results => {
-      console.debug('NewsTopic(s) queried successfully!');
-      console.debug(results);
-      return results
-    })
-    .catch(e => {
-      console.error('Error occurred in the NewsTopic query.');
-      console.error(e);
-    });
-  res.send(JSON.stringify(quizquestions, null, 2));
-})
-
-// then, after they have answered, update the data and present a message back.
 
 // if they got it correct
 
