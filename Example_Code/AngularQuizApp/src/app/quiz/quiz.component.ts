@@ -154,7 +154,32 @@ export class QuizComponent implements OnInit {
   };
 
   isCorrect(question: Question) {
-    return question.options.every(x => x.selected === x.isAnswer) ? 'correct' : 'wrong';
+    // use data service method to tell api result of this
+
+    let result: Boolean = question.options.every(x => x.selected === x.isAnswer);
+    let question_id: string = question.id;
+
+    if(result === true){
+      this.dataService.update_question_correct(question_id).subscribe(
+        data=>{
+        console.log(data);
+        },
+        error=>{console.log(error);
+        }
+      );
+      return 'correct';
+    }
+    else{
+      this.dataService.update_question_incorrect(question_id).subscribe(
+        data=>{
+        console.log(data);
+        },
+        error=>{console.log(error);
+        }
+      );
+      return 'wrong';
+    }
+    //return question.options.every(x => x.selected === x.isAnswer) ? 'correct' : 'wrong';;
   };
 
   onSubmit() {
@@ -166,3 +191,5 @@ export class QuizComponent implements OnInit {
     this.mode = 'result';
   }
 }
+
+
