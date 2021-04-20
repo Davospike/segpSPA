@@ -157,6 +157,15 @@ export class QuizComponent implements OnInit {
     return question.options.every(x => x.selected === x.isAnswer) ? 'correct' : 'wrong';
   };
 
+  isRealFake(question: Question) {
+    // options[0] is always Real option, so if isAnswer == true, then real
+      if (question.options[0].isAnswer === true) {
+        return 'real';
+      } else {
+      return 'fake';
+    }
+  };
+
   onSubmit() {
     let answers = [];
     this.quiz.questions.forEach(x => answers.push({ 'quizId': this.quiz.id, 'questionId': x.id, 'answered': x.answered }));
