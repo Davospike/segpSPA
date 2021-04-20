@@ -1,5 +1,22 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+/* Sticky footer */
+html {
+  font-family: "Inconsolata", sans-serif;
+}
+
+.application-wrapper {
+  display: flex;
+  height: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.application-wrapper-inner {
+  flex: 1;
+}
+
+
 .btn{
     border-radius: 0;
 }
