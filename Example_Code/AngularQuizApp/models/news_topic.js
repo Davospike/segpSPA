@@ -1,12 +1,13 @@
 //Require Mongoose
 var mongoose = require('mongoose');
+var {QuizQuestionSchema} = require('./quiz_question');
 
 //Define a schema
 var Schema = mongoose.Schema;
 
 var NewsTopicSchema = new mongoose.Schema({
   topicName: String,
-  quizquestions: []
+  quizquestions: [QuizQuestionSchema]
 });
 
 

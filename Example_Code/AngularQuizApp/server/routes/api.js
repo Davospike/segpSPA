@@ -9,7 +9,7 @@ connectDB();
 
 // Models
 const NewsTopic = require("../../models/news_topic");
-const QuizQuestion = require("../../models/quiz_question");
+const {QuizQuestion} = require("../../models/quiz_question");
 // const Options = require("../../models/options");
 
 //CORONAVIRUS
@@ -161,7 +161,7 @@ router.get('/NewsTopics', async (req, res) => {
 // and this is our signal that they got this question correct. so we need to 
 // add 1 to num_correct, and add 1 to num_answered
 
-router.get('/correct', async (req, res) => {
+router.get('/correct/:id', async (req, res) => {
 
   console.debug('Executing /correct endpoint.');
   res.header("Content-Type",'application/json');
