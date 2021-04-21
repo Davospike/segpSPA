@@ -13,6 +13,7 @@
    - [Sprint 3 : Prepare Backend & Additional Wireframe (29.03.21-04.04.21)](#sprint-3--prepare-backend--additional-wireframe-290321-040421)
    - [Sprint 4 : Build Frontend Webpages & Begin Linking Front and Backend (05.04.21-11.04.21)](#sprint-4--build-frontend-webpages--begin-linking-front-and-backend-050421-110421)
    - [Sprint 5 : Further Front and Backend Integration (12.04.21-18.04.21)](#sprint-5--further-front-and-backend-integration-120421-180421)
+   - [Sprint 6 : Write-up & Minor Frontend Amendments (19.04.21-07.05.21)](#sprint-6--write-up--minor-frontend-amendments-190421-070521)
 - [MEAN Stack System Implementation](#mean-stack-system-implementation)
    - [Stack Architecture & System Design](#stack-architecture--system-design)
    - [Back End : MongoDB](#back-end--mongodb)
@@ -39,6 +40,11 @@ Due to these constraints, we first sought out a strategy to apply to our work ap
 [ADD TO] - Stuff on "Team use of Git, how your team used continuous integration / continuous deployment. Streamlining of workflow throughout."
 
 ## Sprints
+![Project Management Plan(4)](https://user-images.githubusercontent.com/63299377/113732608-a1287500-96f1-11eb-8e2a-69db94644cc6.png)
+As previously mentioned, as a team we were following an agile approach and so broke up our work into (mostly) week long sprints. Given that we all had an idea of the order to which we needed to approach the build, each sprints list of objectives were decided at the beginning of the sprint by assessing the current state of the project. Tasks were prioritised if they were required to continue development. 
+
+By breaking the workload into manageable sprints, we were able to week-by-week slowly build up the product, adding in more features as we went. Any tasks that were not completed by the end of the sprint were noted and these were set as a priority for the next sprint (unless not pivotal). As we were working in self-organising teams (i.e. front and backend), during each sprint we often had regular, sometimes daily, standups and catch ups for each team to make sure we stayed on track. By doing this we were able to catch any potential issues early on and pivot if needed.
+
 [MARK SCHEME] - Documentation of your sprints, including both high level overview, timeline, and selected highlights that were critical points in the project (remember to show the users stories implemented in each sprint). We expect a summary of meeting logs (including for instance apologies for absence etc)
 
 ### Sprint 1 : Webpage Design & Initial Feedback (01.03.21-07.03.21) 
@@ -133,31 +139,9 @@ In this sprint, the backend team also investigated upgrading the API so that it 
 
 At the end of the sprint, the team were in agreement that we were all happy with the product and how it operated. The team agreed that the current state was our minimum viable product, and every improvement from here would be an added bonus!
 
-Stakeholders Update:
-<table>
-<tr>
-  <th>Stakeholders</th>
-  <th>Updated Use Case</th>
-</tr>
-<tr>
-  <td>
-    <a href="https://github.com/Davospike/segpSPA/blob/dev/The_Process/SystemDesign.md>
-      <br>Donald (End-User)</a>
-  </td>
-  <td>Success! I can now use the website to prove that I am indeed the best fake news detector the world has ever seen. I am able to select between my favourite topics (China!), share my scores and this website. Further, I can view interesting stats to see how bad fake news are. The user interface is engaging, and I enjoy visiting the site.</td>
-</tr>
-<tr>
-  <td>
-    <a href="https://github.com/Davospike/segpSPA/blob/dev/The_Process/SystemDesign.md>
-      <br>Emma (Admin)</a>
-  </td>
-  <td>Unfortunately I cannot view how many of our quiz takers got each question right. This would've been helpful for deciding how hard to make future quizzes.</td>
-</tr>
-</table>
-
 | Stakeholders            | Updated Use Case        |
 | ------------------------| ------------------------|
-| Donald (End-User)       | Success! I can now use the website to prove that I am indeed the best fake news detector the world has ever seen. I am able to select between my favourite topics (China!), share my scores and this website. Further, I can view interesting stats to see how bad fake news are. The user interface is engaging, and I enjoy visiting the site.|
+| Donald (End-User)       | Success! I can now use the website to prove that I am indeed the best fake news detector the world has ever seen. I am able to select between my favourite topics (China!), share my scores and this website. Further, I can view interesting stats to see how bad fake news is. The user interface is engaging, and I enjoy visiting the site.|
 | Emma (Admin)            | Unfortunately I cannot view how many of our quiz takers got each question right. This would've been helpful for deciding how hard to make future quizzes.|
 
 System implementation issues:
@@ -166,6 +150,16 @@ System implementation issues:
 | ------------| ----------- |-------|-----|
 | Backend     | Admin wants to view user question stats| Mainting the state/count of number of times a question was correctly answered proved difficult. Persistence of the data kept getting lost | N/A - Dropped feature|
 | Frontend    | Linking up front and backend| Data sent through from API was not being picked up by the data service | Realized that the JSON payload from the API was being sent as an array of topics and questions. quiz.component.ts needed updating to reflect this |
+
+### Sprint 6 : Write-up & Minor Frontend Amendments (19.04.21-07.05.21)
+After succesfully linking up the front and backend last sprint, the team had a minimum viable product and were ready to start focusing on writing up the project alongside attending to any remaining backlog/formatting on the code base and website. The team also undertook a final round of user feedback in order to ensure any quirks/bugs were addressed and to see if there were any finishing touches that could be made.
+
+Backlog of improvements at start of sprint:
+- Add line chart onto fake news stats, plus any other stats ideas that arose.
+- Code base tidy up; removing unused code and add comments.
+- Minor frontend formatting.
+
+By the end of the sprint... [ADD TO]
 
 ## MEAN Stack System Implementation
 
