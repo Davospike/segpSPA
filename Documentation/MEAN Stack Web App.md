@@ -76,6 +76,7 @@ Also on your Github repository, you must write a front-page document (readme.md)
   - **Refer to backend meeting log**
   - **Spotify quiz **
   - **Pair programming sessions**
+  - **reminder: Why answers weren't presented after each question**
   - **choice between frameworks**
 
 - Additional elements and components e.g. authentification. Tell us about any other aspects not covered above!
