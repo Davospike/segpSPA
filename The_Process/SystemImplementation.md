@@ -135,17 +135,17 @@ At the end of the sprint, the team were in agreement that we were all happy with
 
 Stakeholders Update:
 
-| Stakeholders| Updated Use Case |
-| ----------- | ----------- |
-| Donald (End-User)| Success! I can now use the website to prove that I am indeed the best fake news detector the world has ever seen. I am able to select between my favourite topics (China!), share my scores and this website. Further, I can view interesting stats to see how bad fake news are. The user interface is engaging, and I enjoy visiting the site.|
-| Emma (Admin)| Unfortunately I cannot view how many of our quiz takers got each question right. This would've been helpful for deciding how hard to make future quizzes.|
+| Stakeholders            | Updated Use Case        |
+| ------------------------| ------------------------|
+| Donald (End-User)       | Success! I can now use the website to prove that I am indeed the best fake news detector the world has ever seen. I am able to select between my favourite topics (China!), share my scores and this website. Further, I can view interesting stats to see how bad fake news are. The user interface is engaging, and I enjoy visiting the site.|
+| Emma (Admin)            | Unfortunately I cannot view how many of our quiz takers got each question right. This would've been helpful for deciding how hard to make future quizzes.|
 
 System implementation issues:
 
-| Stack Part | Goal | Issue | Fix |
-| ----------- | ----------- |
-| Backend | Admin wants to view user question stats| Mainting the state/count of number of times a question was correctly answered proved difficult. Persistence of the data kept getting lost | N/A - Dropped feature|
-| Frontend | Linking up front and backend| Data sent through from API was not being picked up by the data service | Realized that the JSON payload from the API was being sent as an array of topics and questions. quiz.component.ts needed updating to reflect this |
+| Stack Part  | Goal        | Issue | Fix |
+| ------------| ----------- |-------|-----|
+| Backend     | Admin wants to view user question stats| Mainting the state/count of number of times a question was correctly answered proved difficult. Persistence of the data kept getting lost | N/A - Dropped feature|
+| Frontend    | Linking up front and backend| Data sent through from API was not being picked up by the data service | Realized that the JSON payload from the API was being sent as an array of topics and questions. quiz.component.ts needed updating to reflect this |
 
 ## MEAN Stack System Implementation
 
