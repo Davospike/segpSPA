@@ -347,21 +347,144 @@ docker exec -i db sh -c 'mongoimport -u <OUR_USERNAME> -p <OUR_PASSWORD> --authe
 
 
 ### Middle Tier : Express, Node, RESTful API
-[ADD TO] - No further markscheme notes.
+[ADD TO] - No further mark scheme notes.
 
 ### Front End : Angular
-[ADD TO] - Details of implementation.
+**Choice and change of Angular Quiz Framework**
+
+Once we had decided on implementing a quiz, our first front end activity involved a morning pair programming session sitting down to research and test and try different Angular quiz frameworks that might be suitable as a template for the purpose of this project.  We looked at a number of different frameworks in depth including this framework developed by Code Project  https://www.codeproject.com/Articles/1167451/Quiz-Application-in-Angular , but we decided we would use this Spotify app https://awesomeopensource.com/project/fabiandev/angular-quiz-app. Our next task was to familiarise ourselves with the Angular component structure that rendered the site, which we tried and tested for some days. This quiz app even formed the basis of one of our rounds of user feedback. However, it was not until we made more concerted attempts to build out and refactor the code on this quiz we realised that this quiz was too advanced for our still relatively nascent experience of Angular. As such, we had to make a u-turn and thus settled on this https://github.com/evagrean/quiz-app new quiz framework altogether which was less complex and more malleable for what we had in mind to achieve.  There were sufficiently less components and the code was more simple to re-work and manipulate. 
+
+**Refactoring and restructuring to prepare for back-end code**
+
+One of the major challenges for the front end was linking with the back end to load their .json file that would render our quiz questions and answers on the website. First, we had to refactor a lot of the models, service and component code on the front end, which included the removal of a lot of unnecessary variables. 
+
+For example, the original quiz service looked as follows originally:
+
+```javascript
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class QuizService {
+
+  constructor(private http: HttpClient) { }
+
+  get(url: string) {
+    return this.http.get(url);
+  }
+
+  getAll() {
+    return [
+      { id: 'data/testQuiz.json', name: 'Test Quiz' },
+      { id: 'data/javascript.json', name: 'JavaScript' },
+      { id: 'data/csharp.json', name: 'C Sharp' },
+      { id: 'data/designPatterns.json', name: 'Design Patterns' }
+    ];
+  }
+
+}
+```
+
+The three main models were all refactored also to prepare for the new json: question.ts, quiz.ts and option.ts. New option.ts:
+
+```javascript
+export class Option {
+    id: number;
+    questionId: number;
+    name: string;
+    isAnswer: boolean;
+    selected: boolean;
+
+    constructor(data: any) {
+
+        data = data || {};
+        this.id = data.id;
+        this.questionId = data.id;
+        this.name = data.name;
+        this.isAnswer = data.isCorrectAnswer;
+        this.selected = data.selected;
+    }
+}
+```
+
+At the beginning, we could not link the back end json file with the front end. This was due to an extra variable within the "options" called "optionR_F" or "optionF_T" that made it very hard to access the data. As shown below:
+
+```typescript
+"options":
+               [
+                  {
+                     "optionR_F":{
+                        "_id":{"$oid":"606ef4311a70c9229fa6c772"},
+                        "name":"Real",
+                        "isCorrectAnswer":false,
+                        "selected":false,
+                        "__v":0
+                     }
+                  },
+                  {
+                     "optionF_T":{
+                        "_id":{"$oid":"606ef4311a70c9229fa6c773"},
+                        "name":"Fake",
+                        "isCorrectAnswer":true,
+                        "selected":false,
+                        "__v":0
+                     }
+                  }
+               ]
+```
+
+Eventually, we managed to link up with the back end after lengthy communication between the two teams to produce this working format for the quiz framework:
+
+```typescript
+ {
+    "topicName": "JavaScript Quiz",
+    "quizquestions": [
+        {
+            "id": 1010,
+            "headline": "A first fake news headline",
+            "web_url": "www.fakenewswebsite.com",
+            "postData": "2021-04-08",
+            "text_body": "......fake text.......", 
+            "correct_answer_url": "<leave me blank for true headline questions>",
+            "num_correct": 10,
+            "num_attempted": 20,
+            "questionTypeId": 1,
+            "options": [
+                {
+                    "id": 1055,
+                    "name": "Real",
+                    "isCorrectAnswer": false				
+                },
+                {
+                    "id": 1056,
+                    "name": "Fake",
+                    "isCorrectAnswer": true					
+                }
+            ]
+        },
+```
+
+**Building up Angular features**
 
 ### Deployment
 **Continuous Integration**
 
-
+To align with agile working principles, we opted for continuous integration when developing this project. Small incremental progress in the form of frequent commits on our git repositories allowed both for a tangible goals to be realised more easily and for constant revision of our progress. Mentally, this method of working helped to compartmentalise big tasks to make the project at large seem less insurmountable.    
 
 **Deployment with Docker**
 
 Deploying our new quiz framework with Docker involved integrating what we had achieved and learnt through the Angular Demo Site with our new Angular Quiz Framework.  We had to first move across all the relevant files that supported the docker container ecosystem and the MongoDB such as 
 
-deploy.sh, blockData, wait-for.sh, insertDataScript.js and others. Initially we had some difficulty in rendering the new framework with the docker container. This was for myriad reasons. We had to change some dependencies in package.json and package-lock.json which resulted in merge conflicts which were tricky to solve. Another issue we had was that originally we serving our new application with the command npm serve - which was not ideal for the docker container. As such, we installed some further dependencies to ensure the application would be rendered with ng build.  However, the application would not work still. As such, Harry and Jack set up a Teams  pair programming call to run over the changes that had been made and after a good session we realised that we had to tweek a path in the server.js file. Once we solved this issue, we were jubilant to deploy our full stack through docker. 
+deploy.sh, blockData, wait-for.sh, insertDataScript.js and others. Initially we had some difficulty in rendering the new framework with the docker container. This was for myriad reasons. We had to change some dependencies in package.json and package-lock.json which resulted in merge conflicts which were tricky to solve. Another issue we had was that originally we serving our new application with the command npm serve - which was not ideal for the docker container. As such, we installed some further dependencies to ensure the application would be rendered with ng build.  However, the application would not work still. As such, Harry and Jack set up a Teams  pair programming call to run over the changes that had been made and after a good session we realised that we had to tweek a static path in the server.js file. Once we solved this issue, we were jubilant to deploy our full stack through docker. 
+
+Resolving this path issue was the key to full stack deployment through Docker:
+
+```javascript
+// Point static path to dist (folder where build files are located)
+app.use(express.static(path.join(__dirname, 'dist/ng6-quiz')));
+```
+
+
 
 ### Additional
 [ADD TO] - Additional elements and components e.g. authentification. Tell us about any other aspects not covered above!
