@@ -354,6 +354,12 @@ docker exec -i db sh -c 'mongoimport -u <OUR_USERNAME> -p <OUR_PASSWORD> --authe
 
 Once we had decided on implementing a quiz, our first front end activity involved a morning pair programming session sitting down to research and test and try different Angular quiz frameworks that might be suitable as a template for the purpose of this project.  We looked at a number of different frameworks in depth including this framework developed by Code Project  https://www.codeproject.com/Articles/1167451/Quiz-Application-in-Angular , but we decided we would use this Spotify app https://awesomeopensource.com/project/fabiandev/angular-quiz-app. Our next task was to familiarise ourselves with the Angular component structure that rendered the site, which we tried and tested for some days. This quiz app even formed the basis of one of our rounds of user feedback. However, it was not until we made more concerted attempts to build out and refactor the code on this quiz we realised that this quiz was too advanced for our still relatively nascent experience of Angular. As such, we had to make a u-turn and thus settled on this https://github.com/evagrean/quiz-app new quiz framework altogether which was less complex and more malleable for what we had in mind to achieve.  There were sufficiently less components and the code was more simple to re-work and manipulate. 
 
+During our research of Angular frameworks, we also took the opportunity to brainstorm some design ideas as a team about prospective designs for our quiz. This helped us to focus in on our needs and initiate the creative process of building up the single page application front end in our minds. 
+
+We created this mood board to consolidate and draw ideas from:
+
+![My Post(1)](https://user-images.githubusercontent.com/63299377/115616380-09797800-a2e8-11eb-9224-32af6db66aae.jpg)
+
 **Refactoring and restructuring to prepare for back-end code**
 
 One of the major challenges for the front end was linking with the back end to load their .json file that would render our quiz questions and answers on the website. First, we had to refactor a lot of the models, service and component code on the front end, which included the removal of a lot of unnecessary variables. 
@@ -465,6 +471,8 @@ Eventually, we managed to link up with the back end after lengthy communication 
 ```
 
 **Building up Angular features**
+
+
 
 ### Deployment
 **Continuous Integration**
