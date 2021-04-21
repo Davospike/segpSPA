@@ -166,8 +166,185 @@ By the end of the sprint... [ADD TO]
 ### Stack Architecture & System Design
 [ADD TO] - e.g. class diagrams, sequence diagrams. Might be best place/more detail in SystemDesign.md?
 
-### Back End : MongoDB
-[ADD TO] - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams).
+### <u>Back End : MongoDB</u>
+## 1. SQL vs noSQL
+
+##### Why we switched from SQL to noSQL (mongo)
+
+Although we have pre-defined our DB schema, and checked for normalisation, we made the transition from an SQL schema to noSQL (mongoDB), in order to utilise the mongoose object modelling tool.
+
+Initially, we ventured out designing a relational database for SQL because ...
+
+- SQL performance - 
+  - initially, we thought that as we had a rigid structure, that was unlikely to be changed, using the SQL framework for designing our DB schema was the best choice. 
+  - We also thought that we would need to incroporate a lot more data for our site. 
+  - After designing our schema with normalisation techniques, we realised that all of the data could be sorted into 4 schemas, with a majority of data entries being in 1 of those schemas.
+
+The relative advantages of using SQL at this point were not so apparent, and we started to discuss what a noSQL version of our database may look like.
+
+We vouched for switching to noSQL for the following reasons:
+
+- usable 
+  - we feel it would be easier to amend the data scheme using the mongoose object modelling tool. We feel that utilising a framework that resolves around using objects, as opposed to just pure data, would be more suited to the skills of the back-end team in this project.
+  - this was supported by Purewal (Learning Web App Development, 2014), who stated that NoSQL data stores use the trade-off of storing some redundant information in "exchange for increased ease-of-use from a programming perspective". As well as this, Purewal discusses how NoSQL data stores are more useful for this reason in applications where "data reading needs to be more efficient than writing data". Since our application tends to read our mongo data a lot more than writing to mongo, we deemed this was a valid reason for utilising a NoSQL DB.
+- scalable 
+  - we read that  SQL struggles to cope with big data processing requirements (https://www.geeksforgeeks.org/sql-vs-nosql-which-one-is-better-to-use/). Although our SPA does not come close to utilising *big data*, we find that to future-proof our SPA, it would be wise to adopt a back-end which incorporates scalability.
+- performance / speed 
+  - although we do not necessarily avoid data duplication with noSQL, performing queries on single entities is generally faster than SQL. SQL is more suited to doing quick complicated queries on multiple entities, for example joins / sub-selects (https://www.geeksforgeeks.org/sql-vs-nosql-which-one-is-better-to-use/)
+
+SQL Databases work best with schema that are long established and aren't prone to change - NoSQL benefits our project as there is scope for further development. As a single page application, there is always potential for improvements and new features. Therefore using a more dynamic, scalable database with NoSQL can benefit our project in the long term.
+
+We have left the SQL DB schema in this [folder](../Documentation/Backend/DatabaseDesign/SQLDBdevelopment) for reference, and also to show our progression to our final DB design. 
+
+## 2. Design of our data model (UML, tables)
+
+Our data model was designed via the use of draw.io, in which we constructed a UML diagram to show relationships among our entities. We defined our final data model as being comprised of the following three entities:
+
+- News Topics
+- Quiz Questions
+- Options
+
+Quiz Questions are the entities which hold the core of our data for our web application. Each quiz question has the following elements:
+
+- Headline - this is presented to the user, and is the headline of the fake news article.
+- web_url - this is the web url of the news article. It is used in the answers section so users can view the fake news article.
+- postData - this is the data in which the article was written. It is presented to the user with the question.
+- text_body - this is a snippet from the article, in which the user can expand on their judgement of the news headline, in order to give their answer.
+- correct_answer_url - this document can be null, and is given when an article is a fake news article. It is an article that either directly or indirectly debunks the fake news article in question
+- Num_correct - this is one of the two statistics used to calculate the average number of users that got this quiz question correct
+- Num_attempted - this is the other statstic 
+  - note, we constructed these two statistics, and various methods to implement them in the answers section of our web application. We had the idea of making them dynamic, so that each time a question is answered, they are updated
+- Options - this is an array of options (2 options for each quiz question)
+
+Options are the entities that determine whether a user has answered a particular quiz question correctly. They hold:
+
+- name - a String that is used to refer to that option object
+- isCorrectAnswer - a boolean, where for each quiz question, for a particular option, true is selected if this option is the correct answer for this quiz question
+- selected - this is set to false by default. If a user selects this option for a quiz question, selected becomes true.
+
+
+
+The way we verify the user's response in terms of it being correct was conceptually quite difficult. Our design lead to a situation in which 4 option documents were created:
+
+1. Option 1, name = "R_F"
+2. Option 2, name = "R_T"
+3. Option 3, name = "F_F"
+4. Option 4, name = "F_T"
+
+The syntax is described as follows:
+
+```
+OPTION <REAL/FAKE>_<FALSE/TRUE>
+```
+
+So, for each quiz question, there will be 2 options - 
+
+OPTION<REAL>_<FALSE/TRUE>
+
+OPTION<FAKE>_<FALSE/TRUE>
+
+- if the quiz question is from a **real** news article, the 2 options for this quiz question will be as follows:
+
+OPTION<REAL>_<**TRUE**>
+
+OPTION<FAKE>_<**FALSE**>
+
+- if the quiz question is from a **fake** news article, the 2 options for this quiz question will be as follows:
+
+OPTION<REAL>_<**FALSE**>
+
+OPTION<FAKE>_<**TRUE**>
+
+Therefore, for a user's answer to be logged as correct, they need to select the option in which the second element is **true**.
+
+
+
+Our third entity is News Topic. This includes the following documents:
+
+- news_topic - a string, that defines the news topic, i.e., "Brexit". These strings are used in the landing page, when a user chooses a topic to do a quiz one. 
+- Quiz_question - this is an array of quiz questions, that are related to this particular news topic.
+
+News Topic is the entity that includes all the data we need, and it is from this we stem out and retrieve all our object and quiz question data. 
+
+Our data model was designed from the idea of how the pipeline may look for a user's choice of news topic, to the data being presented to them on which they could see how many responses they got correct. From a high level view, the user chooses a news topic. From this, we can retrieve all of this quiz questions needed to do the quiz for the topic, along with their respective options - which will give them back data based on how they did in the quiz. 
+
+We constructed the following UML diagram to visualise our data model:
+
+![Screenshot 2021-04-21 at 15.16.39](/Users/nathantaylor/Library/Application Support/typora-user-images/Screenshot 2021-04-21 at 15.16.39.png)
+
+From this, we can talk about the relationships we deemed necessary for our entities. 
+
+The relationship between quiz question and news topic was clearly a 1 to many relationship. For each quiz question, there was one news topic it stemmed from. In light of one of our project aims, to educate user's about fake news surrounding particular global topics, we seemed it fitting that quiz questions did not overlap across news topics. We did this by keeping in mind the data we were going to collect. We wanted quiz questions that were clearly associated with a particular topic. The opposing relationship was clear too. For each news topic, there are multiple, and more than 1, quiz questions.
+
+The relationship between quiz question was decided to be a 1 to many relationship. For each quiz question, there are 2 options, so this seemed fitting. There was difficulty in deciding the opposing relationship - since each option may be mapped on to multiple quiz questions. However, we decided that if it comes to a point where we need to access a quiz question from an option object, it may prove difficult. We therefore decided that each option should come from one quiz question, in order to isolate the question an option came from.
+
+
+
+Following the construction of our UML diagram, we decided to make a spreadsheet to initiate ideas on what data we will be collecting, and to get a more solid understanding of the relationships between our entities. The spreadsheet is as shown below:
+
+![Screenshot 2021-04-21 at 15.51.03](/Users/nathantaylor/Library/Application Support/typora-user-images/Screenshot 2021-04-21 at 15.51.03.png)
+
+
+
+Throughout this data model design process, we adhered to conform to good data model design practices. Our previous model, which utilised SQL and its best practices (normalisation), was used to aid the design of our current noSQL model. Via this, we achieved a data model that did not unnecessarily repeat data. 
+
+We also followed this guide, to cater our design choices to best practices:
+
+https://developer.mongodb.com/article/mongodb-schema-design-best-practices/
+
+- our data model is clearly one that uses an embedded design. This allows us to retrieve the necessary data we need for a larger data entity, like a news topic, with a single query. We also found it would be easy to access individual elements within this data type.
+- rule number 5 in this guide also solidified our choice in catering out design to our application's data access patterns.
+
+With respect to constructing our mongoose models, to be used when instantiating and loading collections, we created these [three models](../Example_Code/AngularQuizApp/models) that correspond to our three entities. These will be the three collections in our mongoDB database. We start by creating a mongoose schema, which defines all of the data entries for each collection. We then export these as a mongoose model. This is so they can be used with mongoose commands, for example finding a particular object in our database.
+
+Note, in our quiz_question model, we also export the schema. This is to fix an issue we had in which embedded documents were being referenced by value, as oppose to referencing the actual objects themselves.
+
+## 3. Collecting data 
+
+It's critical for a web-app in this category to have accurate and *thought-provoking* data to utilise in order to make it as educational as possible. Our initial thought was to find ready-made datasets that would have formulated all our quiz questions. We found plenty of large datasets that were filled to the brim with articles - good and bad. Most of these datasets had outdated links, broken web-pages and irrelevant material. We wanted our quiz to have proper 'punch' at every question and the datasets found were not going to help us achieve that. Furthermore, the data was not organised in a manner that was useful to us; we are aiming to have a our questions categoriesed into News Topics that the user can choose from. This focussed approach allowed the user to experience how Fake News varies from topic to topic and allows a more comfortable learning exerience as a whole.
+
+So without suitable datasets and no competent web-scraping systems to be seen, we decided to hand-pick the data ourselves making sure the articles were as deserving as possible to be featured in our quiz. This proved a trickier task than you'd assume. Google, being the world's most proficient search engine aims to phase out all fake news in order to give their users the most 'truthful' experience. This wasn't great for us, actively searching for bogus information.
+
+It's worth mentioning that we also wanted to find **debunking** articles in relation to the Fake News we gathered. Venturing into the darkest (but not _too_ dark) depths of the internet, we came across some perfect examples of Fake News and gave the goal of having a mixture of **5 Fake News** articles and **5 Real News** articles for each of our **5 News Topics** that we had proposed.
+
+Aside from the grind in acquiring the necessary data, we also found ways to improve other elements of our backend structure. We initially had a _Many-to-Many_ relationship between questions and news topics; however, refering to the underlying intent to make this as educational as possible for the user, we decided to alter this to a _One-to-Many_ relationship. This meant that there will no longer be multiple news topics related to a question, we intended to make each article as relevant to the news topic as possible - eradicating and vagueness.
+
+## 4. Inputting data via insertDataScript
+
+The mechanism we used to get data ready for use in our application consisted of two main steps: creating the database, and seeding the data from the database into a mongoDB container.
+
+###### Creating a mongoDB database
+
+The first step in allowing us to test our backend structure was to get the data we gathered into a MongoDB client to test how effective it was. We decided that rather than inserting our data within the MongoDB shell, we will aim to run a Javascript 'script' that would insert all this data using Mongoose commands - appropriately named [insertDataScript.js](./Example_Code/AngularQuizApp/insertDataScript.js). In short, the script injects into a MongoDB client (using a URL specified in args[0]), our data.
+
+This script underwent many changes depending on our evolving decisions regarding backend structure but this final script allows us to unload our data into MongoDB ready for use. A reason why we decided to use import our data in this way because it makes it easier to add more data at a later date; i.e, the structure is there and it is set out into `createOption`, `createNewsTopic` and `createQuizQuestion` methods (amongst others). A simple '*copy + paste*' and '*fill in the blanks*' allows us to add more data whenever we need to. 
+
+We needed to require the necessary models at the top of the script:
+
+```javascript
+const QuizQuestion = require('./models/quiz_question');
+const NewsTopic = require('./models/news_topic');
+const Option = require('./models/options');
+```
+
+It's worth noting that this script is ran privately and doesn't take part in the deployment of the docker container with [deploy.sh](./Example_Code/AngularQuizApp/deploy.sh). The script allowed us to export from a local MongoDB client into [three JSON files](./Example_Code/AngularQuizApp/blockData) that were prepared for seeding.
+
+###### Seeding
+
+The docker image we create is generally read only. Therefore, for the data to be used in our server, it needs to be stored somewhere that has read/write permissions. The issue that arises is that when someone, who doesn't have the data that we store, starts the docker container when running our application, the mount point is local to that person's machine. In other words, volume is mounted from a local machine, hence data from our own machine's will not persist. Therefore, we decided to create a script that would seed all the relevant JSON data into the dockerised mongoDB container. Thus, when the server starts, all this data can be read from this container using mongoose commands. 
+
+We implemented seeding by issuing the three following commands in our script used to start up our application:
+
+```bash
+docker exec -i db sh -c 'mongoimport -u <OUR_USERNAME> -p <OUR_PASSWORD> --authenticationDatabase "admin" -c options -d db --upsert --jsonArray' < blockData/optionsOutput.json
+
+docker exec -i db sh -c 'mongoimport -u <OUR_USERNAME> -p <OUR_PASSWORD> --authenticationDatabase "admin" -c newstopics -d db --upsert --jsonArray' < blockData/newsTopicsOutput.json
+
+docker exec -i db sh -c 'mongoimport -u <OUR_USERNAME> -p <OUR_PASSWORD> --authenticationDatabase "admin" -c quizquestions -d db --upsert --jsonArray' < blockData/quizQuestionsOutput.json
+
+```
+
+
 
 ### Middle Tier : Express, Node, RESTful API
 [ADD TO] - No further markscheme notes.
