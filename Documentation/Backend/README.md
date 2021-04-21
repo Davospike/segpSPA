@@ -65,14 +65,18 @@ For next session:
 
 	Backend meeting VG & NT.
 
--Discussion after completing MongoDB workbook on SEGP Github.
--We originally developed our database/schema to be used in a full SQL environment.
--Took the time to discuss and research the differences between SQL and NoSQL databases (As MongoDB is a NoSQL service).
--We initially believed that an SQL database would suit us better as we had a pre-defined and long-standing layout for our data that we were not planning on changing.
--However (in short), we decided to persue a NoSQL database as it would be easier to implement new features if we had the time at the end of the core development.
--The flexibility and scalability that NoSQL has over SQL is much more useful for us as we have narrowed our developmental ideas for the project in order to maximise our applications performance.
+- Discussion after completing MongoDB workbook on SEGP Github.
+  - We originally developed our database/schema to be used in a full SQL environment.
 
--Full documentation of our choice is in ./Documentation/DesignChoices
+- Took the time to discuss and research the differences between SQL and NoSQL databases (As MongoDB is a NoSQL service).
+
+- We initially believed that an SQL database would suit us better as we had a pre-defined and long-standing layout for our data that we were not planning on changing.
+
+- However (in short), we decided to persue a NoSQL database as it would be easier to implement new features if we had the time at the end of the core development.
+
+- The flexibility and scalability that NoSQL has over SQL is much more useful for us as we have narrowed our developmental ideas for the project in order to maximise our applications performance.
+
+- Full documentation of our choice is in ./Documentation/DesignChoices
 
 	2nd Meeting VG & NT
 -Starting [extra exercise](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose) given at the end of workbook 7.
@@ -86,7 +90,7 @@ Database construction:
 
 <u>Objectives for the meeting:</u>
 
-- design a data model that conforms to noSQL - for this we will convert the old SQL model and construct models
+- **design a data model that conforms to noSQL** - for this we will convert the old SQL model and construct models
 - create a data model diagram with relationships and attributes
 - construct javascript classes and start filling in data
 
@@ -96,7 +100,7 @@ Database construction:
 
 ###### [Designing the data model]
 
-- got up excel spreadsheet (old SQL) + old ER diagram
+- Pulled up excel spreadsheet (old SQL) + old ER diagram
 - changed excel spreadsheet to make documents for noSQL DB - saved in *noSQLDBdevelopment/NoSQLDatabaseModel*
   - a document in noSQL is a collection of data, like an entity. 
   - we split ours up by similar tables as we had before, and removed the join table
@@ -105,7 +109,7 @@ Database construction:
 ###### [Designing schemas]
 
 - made an init.js file to practice connecting to mongo
-- defined our schemas:
+- defined our schemas/models:
   - Quiz_question
   - user_answer
   - news_topic
@@ -149,7 +153,7 @@ Meeting objectives for next meeting:
 
       
 
-- Spoke about sub documents
+- Spoke about subdocuments
 
   - to reference objects within objects
   - news topics within quiz questions.
@@ -169,12 +173,8 @@ Meeting objectives for next meeting:
   - https://www.npmjs.com/package/mongoose-seed
   - https://mongoosejs.com/docs/subdocs.html
 
-
-
 - Discussed the relationship between News Topics and Quiz Questions and their uses in the web application.
 - Perhaps a Many-to-Many relationship is best because we need to categorise the Quiz Question by News Topic.
-
-
 
 - Tested running insertScript with different devices.
 - Discovered a VSCode extension for MongoDB to help us work through the assignment and understand the backend further.
@@ -188,7 +188,7 @@ Meeting objectives for next meeting:
 
 Plans for meeting:
 
-- by the end of the day, want to be able to run *docker-compose up* and after this, whoover's machine is running the container, to have a populated database  that we have created 
+- by the end of the day, want to be able to run *docker-compose up* and after this, whoever's machine is running the container, to have a populated database  that we have created 
 
 - current problems: we can populate a db by passing in a json file, as follows:
 
@@ -204,7 +204,7 @@ Plans for meeting:
 
 
 
-We constructed a shell script ([*deploy.sh*]()) which does the following:
+We constructed a shell script ([*deploy.sh*](../../Example_Code/AngularQuizApp/deploy.sh)) which does the following:
 
 - builds docker - *docker build .*
 - aggregate the output of each container in detached mode - *docker-compose up -d*
@@ -310,7 +310,7 @@ Goals for today:
 
 When filling in dataset:
 
-- Spent majority of the day collecting data.
+- Spent majority of the day collecting data by hand.
 - We hand-picked our own data rather than using found datasets (in /Archive)
   - We wanted our quiz to be organised into news topics, which all the datasets didn't have, and not to be organised in terms of 'misinformation' or 'conspiracy' as we didn't think a dataset like that would work effectively in a quiz setting.
   - Had to make sure that we had a verified website opposing the fake news article to make sure that is was **FAKE NEWS**
