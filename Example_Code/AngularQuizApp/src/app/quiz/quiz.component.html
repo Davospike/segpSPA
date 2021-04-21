@@ -8,6 +8,12 @@
           </span>
         </div>
       </div>
+
+      <div class="w3-content" style="max-width:500px">
+        <img src="https://res.cloudinary.com/davospike/image/upload/v1618330896/Word_Art_1_wrtelq.png" style="width:100%;max-width:1000px;margin-top:32px;"
+             alt="The words Fake News comprised of words relating to fake news">
+      </div>
+
       <div id="quiz">
         <h2 class="text-center font-weight-normal">{{quiz.name}}</h2>
         <hr />
@@ -63,7 +69,9 @@
               <div class="p-1 m-2 alert {{ isCorrect(question) == 'correct'? 'alert-success': 'alert-danger'}}">Your answer is {{isCorrect(question)}}. This was article was {{isRealFake(question)}}.</div>
             </div>
           </div>
-          <h4 class="alert alert-info text-center">You may close this window now.</h4>
+          <h4 class="alert alert-info text-center" routerLink="/stats">Now that you have completed the quiz, learn more
+            about fake news by clicking here</h4>
+
         </div>
         <hr />
         <div *ngIf="mode!='result'">

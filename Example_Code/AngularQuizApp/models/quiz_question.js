@@ -22,4 +22,9 @@ QuizQuestionSchema
 });
 
 //Creating a model from schema we've just made, and exporting it to be used elsewhere
-module.exports = mongoose.model('QuizQuestion', QuizQuestionSchema);
+
+module.exports = {
+  QuizQuestionModel: mongoose.model('QuizQuestion', QuizQuestionSchema),
+  QuizQuestionSchema
+}
+
