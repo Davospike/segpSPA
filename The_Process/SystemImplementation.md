@@ -134,6 +134,26 @@ In this sprint, the backend team also investigated upgrading the API so that it 
 At the end of the sprint, the team were in agreement that we were all happy with the product and how it operated. The team agreed that the current state was our minimum viable product, and every improvement from here would be an added bonus!
 
 Stakeholders Update:
+<table>
+<tr>
+  <th>Stakeholders</th>
+  <th>Updated Use Case</th>
+</tr>
+<tr>
+  <td>
+    <a href="https://github.com/Davospike/segpSPA/blob/dev/The_Process/SystemDesign.md>
+      <br>Donald (End-User)</a>
+  </td>
+  <td>Success! I can now use the website to prove that I am indeed the best fake news detector the world has ever seen. I am able to select between my favourite topics (China!), share my scores and this website. Further, I can view interesting stats to see how bad fake news are. The user interface is engaging, and I enjoy visiting the site.</td>
+</tr>
+<tr>
+  <td>
+    <a href="https://github.com/Davospike/segpSPA/blob/dev/The_Process/SystemDesign.md>
+      <br>Emma (Admin)</a>
+  </td>
+  <td>Unfortunately I cannot view how many of our quiz takers got each question right. This would've been helpful for deciding how hard to make future quizzes.</td>
+</tr>
+</table>
 
 | Stakeholders            | Updated Use Case        |
 | ------------------------| ------------------------|
