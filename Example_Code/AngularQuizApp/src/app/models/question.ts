@@ -4,7 +4,8 @@ export class Question {
     id: string;
     name: string;
     articleBody: string;
-    articleUrl: string;
+    articleURL: string;
+    debunkArticleUrl: string;
     questionTypeId: number;
     options: Option[];
     answered: boolean;
@@ -16,7 +17,8 @@ export class Question {
         this.id = data.id;
         this.name = data.headline;
         this.articleBody = data.text_body;
-        this.articleUrl = data.correct_answer_url;
+        this.articleURL = data.web_url;
+        this.debunkArticleUrl = data.correct_answer_url;
         this.questionTypeId = data.questionTypeId;
         this.options = [];
         data.options.forEach(o => {
