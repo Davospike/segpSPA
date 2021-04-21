@@ -1,13 +1,13 @@
   <div class="content">
 <!--    <app-toolbar></app-toolbar>-->
     <div id="container" class="pad w3-display-container w3-grayscale-min">
-      <div class="row">
-        <div class="col-6">
-          <span>
-            <h3>Fake News Quiz</h3>
-          </span>
-        </div>
-      </div>
+<!--      <div class="row">-->
+<!--        <div class="col-6">-->
+<!--          <span>-->
+<!--            <h3>Fake News Quiz</h3>-->
+<!--          </span>-->
+<!--        </div>-->
+<!--      </div>-->
 
       <div class="w3-content" style="max-width:500px">
         <img src="https://res.cloudinary.com/davospike/image/upload/v1618330896/Word_Art_1_wrtelq.png" style="width:100%;max-width:1000px;margin-top:32px;"
@@ -69,7 +69,7 @@
               <div class="p-1 m-2 alert {{ isCorrect(question) == 'correct'? 'alert-success': 'alert-danger'}}">Your answer is {{isCorrect(question)}}. This was article was {{isRealFake(question)}}.</div>
             </div>
           </div>
-          <h4 class="alert alert-info text-center" routerLink="/stats">Now that you have completed the quiz, learn more
+          <h4 class="alert alert-info text-center" routerLink="/bar-chart">Now that you have completed the quiz, learn more
             about fake news by clicking here</h4>
 
         </div>

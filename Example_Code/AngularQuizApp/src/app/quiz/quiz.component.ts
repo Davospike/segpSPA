@@ -50,7 +50,6 @@ export class QuizComponent implements OnInit {
   ngOnInit() {
     this.quizzes = this.dataService.getQuizNames();
     this.quizName = String(this.route.snapshot.paramMap.get('id'));
-    // console.log(this.quizName);
     this.loadQuiz(this.quizName);
   }
 
@@ -91,24 +90,6 @@ export class QuizComponent implements OnInit {
       });
     this.mode = 'quiz';
   }
-
-  // ngOnInit() {
-  //   this.quizName = 'data/brexit.json';
-  //   this.loadQuiz(this.quizName);
-  // }
-  //
-  // loadQuiz(quizName: string) {
-  //   this.quizService.get(quizName).subscribe(res => {
-  //     this.quizJSON = res;
-  //     this.quiz = new Quiz(res);
-  //     this.pager.count = this.quiz.questions.length;
-  //     this.startTime = new Date();
-  //     this.ellapsedTime = '00:00';
-  //     this.timer = setInterval(() => { this.tick(); }, 1000);
-  //     this.duration = this.parseTime(this.config.duration);
-  //   });
-  //   this.mode = 'quiz';
-  // }
 
   tick() {
     const now = new Date();
@@ -156,30 +137,30 @@ export class QuizComponent implements OnInit {
   isCorrect(question: Question) {
     // use data service method to tell api result of this
 
-    let result: Boolean = question.options.every(x => x.selected === x.isAnswer);
-    let question_id: string = question.id;
-
-    if(result === true){
-      this.dataService.update_question_correct(question_id).subscribe(
-        data=>{
-        console.log(data);
-        },
-        error=>{console.log(error);
-        }
-      );
-      return 'correct';
-    }
-    else{
-      this.dataService.update_question_incorrect(question_id).subscribe(
-        data=>{
-        console.log(data);
-        },
-        error=>{console.log(error);
-        }
-      );
-      return 'wrong';
-    }
-    //return question.options.every(x => x.selected === x.isAnswer) ? 'correct' : 'wrong';;
+    // let result: Boolean = question.options.every(x => x.selected === x.isAnswer);
+    // let question_id: string = question.id;
+    //
+    // if(result === true){
+    //   this.dataService.update_question_correct(question_id).subscribe(
+    //     data=>{
+    //     console.log(data);
+    //     },
+    //     error=>{console.log(error);
+    //     }
+    //   );
+    //   return 'correct';
+    // }
+    // else{
+    //   this.dataService.update_question_incorrect(question_id).subscribe(
+    //     data=>{
+    //     console.log(data);
+    //     },
+    //     error=>{console.log(error);
+    //     }
+    //   );
+    //   return 'wrong';
+    // }
+    return question.options.every(x => x.selected === x.isAnswer) ? 'correct' : 'wrong';;
   };
 
   isRealFake(question: Question) {
