@@ -79,7 +79,7 @@ Sprint number 3 came in the first week on Easter and the key goals related to ad
 
 Key goals:
 - Finish hand-made quiz dataset, broken down into various topics ready for linking to the front end.
-- Prepare mongoDB container ready for HTTPP requests.
+- Prepare mongoDB container ready for HTTP requests.
 - Create a more developed wire frame, implementing the feedback from the initial paper prototype SurveyMonkey questionnaire.
 - Send out new wire frame and questionnaire for further front end feedback.
 
@@ -103,7 +103,7 @@ Key goals:
 - Add new pages and features to frontend, e.g. landing page, stats page, navigation.
 - Start linking up the front and backend.
 - Finalize question data model schema appropriate for integration into front end.
-- Create mongoose commands JSON payload retrieval.
+- Create mongoose commands for JSON payload retrieval.
 
 This weeks sprint was a busy one with lots of movement on all fronts. There was good collaboration between the front and backend in starting to get the database linked up to the front end so that questions for the quiz wouldn't have to be hard coded.
 
@@ -117,6 +117,35 @@ With the frontend taking shape, work with the backend to get the database linked
 On reflection of the sprint, it was a productive week and we were in a position whereby if our stakeholders (ADD TO SYSTEM DESIGN) were to use the quiz, they would be able to navigate through our SPA and take a dummy quiz. We were in a position to start work in the next sprint on requesting the data from the database, and having these questions presented in the quiz.
 
 ### Sprint 5 : Further Front and Backend Integration (12.04.21-18.04.21)
+In this sprint, the team hoped to finally have a fully integrated front and backend by the end so that general house keeping and tidying up could begin. Further, on the front end, a quiz topic selection page we created so that the user could pick between any of the five different available quizzes. The backend team also investigated the possibility of returning a single quiz topic question set at a time, as opposed to all topics at once.
+
+Key goals:
+- Add a data service to frontend to inject API data requests from MongoDB
+- Add a quiz topic selection page
+- Return mongoDB data topic by topic, as opposed to all at once
+- Implement method to keep track of number of times questions were answered correctly
+
+Great progress was made during sprint number 5. During the week, the front end team were able to utilize the API that the backend team had developed in prior weeks. By using the JSON payload returned from the API, the frontend team created a data service to subscribe the front end to. With the API data now being automatically fed into the frontend, the team could then update the quiz component classes so that the individual quizzes were loaded into the quiz framework. By creating this link, the team had a fully operating MEAN stack web quiz. Success!
+
+After the success of finally linking up the front and backend, some minor work was required to allow the user to select which quiz topic they wanted to take. This was straight forward, but required some url redirecting to make sure the links sent the user to the correct quiz.
+
+In this sprint, the backend team also investigated upgrading the API so that it would only return the required quiz questions when a topic was selected on the topic page. The backend team were able to implement this, but upon further discussion with the wider team, we decided that the prefered method was to request all quiz topics at once and let the quiz framework decide which questions to access. Further, the backend team investigated implementing a feature we had been striving for since the first paper prototype; adding a "76% of users got this question wrong" at the end of the question. This proved to be too difficult, despite consulting with the TAs, and was ultimately dropped.
+
+At the end of the sprint, the team were in agreement that we were all happy with the product and how it operated. The team agreed that the current state was our minimum viable product, and every improvement from here would be an added bonus!
+
+Stakeholders Update:
+
+| Stakeholders| Updated Use Case |
+| ----------- | ----------- |
+| Donald (End-User)| Success! I can now use the website to prove that I am indeed the best fake news detector the world has ever seen. I am able to select between my favourite topics (China!), share my scores and this website. Further, I can view interesting stats to see how bad fake news are. The user interface is engaging, and I enjoy visiting the site.|
+| Emma (Admin)| Unfortunately I cannot view how many of our quiz takers got each question right. This would've been helpful for deciding how hard to make future quizzes.|
+
+System implementation issues:
+
+| Stack Part | Goal | Issue | Fix |
+| ----------- | ----------- |
+| Backend | Admin wants to view user question stats| Mainting the state/count of number of times a question was correctly answered proved difficult. Persistence of the data kept getting lost | N/A - Dropped feature|
+| Frontend | Linking up front and backend| Data sent through from API was not being picked up by the data service | Realized that the JSON payload from the API was being sent as an array of topics and questions. quiz.component.ts needed updating to reflect this |
 
 ## MEAN Stack System Implementation
 
