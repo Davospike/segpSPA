@@ -40,7 +40,7 @@ Due to these constraints, we first sought out a strategy to apply to our work ap
 [ADD TO] - Stuff on "Team use of Git, how your team used continuous integration / continuous deployment. Streamlining of workflow throughout."
 
 ## Sprints
-![Project Management Plan(4)](https://user-images.githubusercontent.com/63299377/113732608-a1287500-96f1-11eb-8e2a-69db94644cc6.png)
+![Project Management Plan(1)](https://user-images.githubusercontent.com/63299377/115594606-d629ef80-a2cd-11eb-8c4d-9ca2078008c3.png)
 As previously mentioned, as a team we were following an agile approach and so broke up our work into (mostly) week long sprints. Given that we all had an idea of the order to which we needed to approach the build, each sprints list of objectives were decided at the beginning of the sprint by assessing the current state of the project. Tasks were prioritised if they were required to continue development. 
 
 By breaking the workload into manageable sprints, we were able to week-by-week slowly build up the product, adding in more features as we went. Any tasks that were not completed by the end of the sprint were noted and these were set as a priority for the next sprint (unless not pivotal). As we were working in self-organising teams (i.e. front and backend), during each sprint we often had regular, sometimes daily, standups and catch ups for each team to make sure we stayed on track. By doing this we were able to catch any potential issues early on and pivot if needed.
