@@ -7,7 +7,7 @@ CONTENTS SUBJECT TO CHANGE
 - [Introduction](#introduction)
 - [Background & Motivation](#background--motivation)
    - [Current State of Industry](#current-state-of-industry)
-   - [Why Does Fake News Education Matter](#why-does-fake-news-education-natter)
+   - [Why Does Fake News Education Matter](#why-does-fake-news-education-matter)
 - [Product Requirements](#product-requirements)
    - [Idea Generation](#idea-generation)
    - [Stakeholders](#stakeholders)
@@ -53,10 +53,10 @@ CONTENTS SUBJECT TO CHANGE
 ### Design Methods
 [ADD TO]
 
-### Paper Prototypes and Wireframes
+### Paper Prototypes & Wireframes
 [ADD TO] Flow Diagrams?
 
-### User Feedback and Questionnaires
+### User Feedback & Questionnaires
 [ADD TO]
 
 ## System Architecture & Design
