@@ -1,21 +1,12 @@
   <div class="content">
-<!--    <app-toolbar></app-toolbar>-->
     <div id="container" class="pad w3-display-container w3-grayscale-min">
-<!--      <div class="row">-->
-<!--        <div class="col-6">-->
-<!--          <span>-->
-<!--            <h3>Fake News Quiz</h3>-->
-<!--          </span>-->
-<!--        </div>-->
-<!--      </div>-->
-
       <div class="w3-content" style="max-width:500px">
         <img src="https://res.cloudinary.com/davospike/image/upload/v1618330896/Word_Art_1_wrtelq.png" style="width:100%;max-width:1000px;margin-top:32px;"
              alt="The words Fake News comprised of words relating to fake news">
       </div>
 
       <div id="quiz">
-        <h2 class="text-center font-weight-normal">{{quiz.name}}</h2>
+        <h2 class="text-center font-weight-normal" style="padding-top: 15px">{{quiz.name}}</h2>
         <hr />
 
         <div *ngIf="mode=='quiz' && quiz">
@@ -23,7 +14,9 @@
             <div class="badge badge-info">Question {{pager.index + 1}} of {{pager.count}}.</div>
             <div *ngIf="config.duration" class="badge badge-info float-right">Time: {{ellapsedTime}} / {{duration}}</div>
             <h3 class="font-weight-normal">{{pager.index + 1}}.
+              <a href="{{question.articleURL}}" target="_blank">
               <span [innerHTML]="question.name"></span>
+              </a>
             </h3>
             <h4 class="font-weight-normal">Article snippet:
               <span [innerHTML]="question.articleBody"></span>
@@ -39,13 +32,13 @@
             </div>
           </div>
           <hr />
+
           <div class="text-center">
             <button class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(0);">First</button>
             <button class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(pager.index - 1);">Prev</button>
             <button class="btn btn-primary" (click)="goTo(pager.index + 1);">Next</button>
             <button class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(pager.count - 1);">Last</button>
-            <!--<pagination *ngIf="config.showPager" direction-links="false" total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination>-->
-          </div>
+            </div>
         </div>
 
         <div class="row text-center" *ngIf="mode=='review'">
@@ -82,6 +75,3 @@
       </div>
     </div>
   </div>
-<!--  <div class="w3-container w3-padding-30 w3-light-grey w3-center w3-xlarge">-->
-<!--    <p class="w3-medium">Special thanks to Anurag Gandhi for the quiz framework.</p>-->
-<!--  </div>-->

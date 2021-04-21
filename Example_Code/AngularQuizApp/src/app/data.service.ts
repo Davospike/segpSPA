@@ -28,13 +28,13 @@ export class DataService {
     return this.httpClient.get(this.REST_API_SERVER_UPDATE_CORRECT,{params: params})
   }
 
-  /* 
+  /*
   Better to create a new collection of ANSWERS to process after the quiz
   */
 
   // this method gets called if the user answered the question with this questionURL incorrectly
   // it passes the questionURL to the API, which updates num_correct / num_answered
-  
+
   public update_question_incorrect(question_id) {
     let params = new HttpParams();
     params = params.append('id', question_id);
