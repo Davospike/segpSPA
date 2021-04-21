@@ -75,7 +75,7 @@ For next session:
 -Full documentation of our choice is in ./Documentation/DesignChoices
 
 	2nd Meeting VG & NT
--Starting extra exercise given at the end of workbook 7. (https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose)
+-Starting [extra exercise](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose) given at the end of workbook 7.
 -Started to adapt original SQL schema for MongoDB use, based off tutorial and our old SQL work.
 
 ---
@@ -90,7 +90,7 @@ Database construction:
 - create a data model diagram with relationships and attributes
 - construct javascript classes and start filling in data
 
-*Following this tutorial for the session: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose#related_documents*
+*Following [this](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose#related_documents) tutorial for the session.*
 
 ##### Meeting notes:
 
@@ -118,7 +118,7 @@ Database construction:
 
 Meeting objectives for next meeting:
 
-- read through <https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes> to gain a better understanding on route modules/functions, and start planning our route modules and use of http verbs (ie get, post, ...)
+- read through [this article](<https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes>) to gain a better understanding on route modules/functions, and start planning our route modules and use of http verbs (ie get, post, ...)
 - plan integration of insertDataScript.js within our project, and test pushing json data to our /api page
 
 ###### [Routes and Controllers]
@@ -204,7 +204,7 @@ Plans for meeting:
 
 
 
-We constructed a shell script (*deploy.sh*) which does the following:
+We constructed a shell script ([*deploy.sh*]()) which does the following:
 
 - builds docker - *docker build .*
 - aggregate the output of each container in detached mode - *docker-compose up -d*
@@ -220,7 +220,7 @@ Next, tested with an exported file from a local mongoDB DB
 
   - here, we exported the newsTopics collection from our local mongoDB DB to a file called newTopicsOutput
 
-  - we then imported this file into our dockerised MongoDB DB via the command (in deploy.sh):
+  - we then imported this file into our dockerised MongoDB DB via the command (in [deploy.sh](../../Example_Code/AngularQuizApp/deploy.sh)):
 
     - ```sh
       docker exec -i db sh -c 'mongoimport -u "your_username" -p "your_password" --authenticationDatabase "admin" -c test_collection -d db --jsonArray' < newsTopicsOutput.json
@@ -241,7 +241,7 @@ $ mongo
 
 ##### Now we've correctly imported some our data, going to create a DB with the right collection names, and populate via this method.
 
-- i.e., each time you run ./deploy.sh now, it will build and start docker containers, then create the collections we need, and populate the entire DB.
+- i.e., each time you run [./deploy.sh](../../Example_Code/AngularQuizApp/deploy.sh) now, it will build and start docker containers, then create the collections we need, and populate the entire DB.
 
 - made DB called fakeNewsDB - this is where all data is stored
 
@@ -276,7 +276,7 @@ $ mongo
     ```
 
 
-Now our ./deploy.sh script creates and runs docker container, with the correct data in our mongoDB DB.
+Now our [./deploy.sh](../../Example_Code/AngularQuizApp/deploy.sh) script creates and runs docker container, with the correct data in our mongoDB DB.
 
 Also, for navigation, added the 3 JSON files (exported from local mongo) into a folder called **blockData**. 
 
@@ -332,7 +332,7 @@ When filling in dataset:
 
   Now we've adjusted our data model, and the changes have been reflected in our UML diagram and spreadsheet, we're going to change our insertDataScript.js script to incorporate these changes, and insert our data.
 
-  We will mongoexport this data into our json files in blockData directory, then insert them into our dockerised mongoDB container via the the deploy.sh script.
+  We will mongoexport this data into our json files in blockData directory, then insert them into our dockerised mongoDB container via the the [deploy.sh](../../Example_Code/AngularQuizApp/deploy.sh) script.
 
   
 
@@ -350,9 +350,7 @@ When filling in dataset:
 
   
 
-  Had to adjust our script, based on a similar script we found here:
-
-  https://bezkoder.com/mongoose-one-to-many-relationship/, 
+  Had to adjust our script, based on a similar script we found [here](https://bezkoder.com/mongoose-one-to-many-relationship/).
 
   - as we could not insert multiple objects as an array from our original script.
 
@@ -361,28 +359,28 @@ When filling in dataset:
   Exported output from local mongoDB as before, into JSON files found in blockData:
 
   ```bash
-  $ mongoexport -d test -c quizquestions -o quizQuestionsOutput.json --jsonArray
+$ mongoexport -d test -c quizquestions -o quizQuestionsOutput.json --jsonArray
   ```
-
+  
   ```bash
-  $ mongoexport -d test -c newstopics -o newsTopicsOutput.json --jsonArray
+$ mongoexport -d test -c newstopics -o newsTopicsOutput.json --jsonArray
   ```
-
-  Now imported into dockerised mongoDB DB via the deploy.sh script.
+  
+  Now imported into dockerised mongoDB DB via the [deploy.sh](../../Example_Code/AngularQuizApp/deploy.sh) script.
 
   
 
   ---
-  
 
+  
   #### Meeting Log 07/04/2021
 
   - Aim today is to familiarise ourselves with MongoDB commands ready for handling HTTP requests and acquring the correct data for the frontend.
-  - Began considering how to give random questions to the front-end, the initial thought being:
+- Began considering how to give random questions to the front-end, the initial thought being:
     - Instead of using ObjectIDs or web_urls to be the unique parameter of a quiz question
     - We would number the questions with an integer (i.e 1-10)
     - And shuffle these into a random order.
-
+  
 - Found a command to write out each element of an array out in MongoDB
 
   - i.e All quiz questions from news topics **SEPARATELY** rather than all together.
@@ -436,7 +434,7 @@ When filling in dataset:
 
 ### Using MongoExport with queries
 
-- Referencing this website: `https://database.guide/how-to-export-mongodb-query-results-to-a-json-file/` We can shift the output of a query into a JSON file
+- Referencing [this](https://database.guide/how-to-export-mongodb-query-results-to-a-json-file/ ) website, we can shift the output of a query into a JSON file
 
 - Example from the site:
 
@@ -462,22 +460,18 @@ docker exec -i db sh -c 'mongoexport -u "your_username" -p "your_password" --aut
 
 ### Creating Methods to determine how user data is inserted and returned to/from the user.
 
-Using this webpage for reference: `https://www.digitalocean.com/community/tutorials/how-to-integrate-mongodb-with-your-node-application`, we are going to learn ways of manoevering data to and from MongoDB, *properly*, using Mongoose-style methods. Most likely using controllers. So the chain would be:
+Using [this]() webpage for reference, we are going to learn ways of manoevering data to and from MongoDB, *properly*, using Mongoose-style methods. Most likely using controllers. So the chain would be:
 
 `Schema/Models -----> Controllers -----> Api etc..`
 
-<<<<<<< HEAD
 Objectives for tomorrow:
 
-- Continue attempting to process queries through Api.js through to Localhost to see if it works.
-=======
+- ###### Continue attempting to process queries through Api.js through to Localhost to see if it works.
 
-
-
-
-### 08/04/2021
 
 ---
+
+### 08/04/2021
 
 Meeting with front-end team, started consolidating our work
 
@@ -488,8 +482,6 @@ However, data model needs to be adjusted to incorporate the following changes:
 - add options object array to quizquestions, in which stores true/false (2 options)
 - we need to return the json file with its array index in news topic schema 
 - *maybe hard code "questionTypeID:1 when printing out as json"*
-
-
 
 Going to structure our mongoose output according to this composed example JSON file.
 
@@ -547,8 +539,6 @@ Going to structure our mongoose output according to this composed example JSON f
 }      
 ```
 
-
-
 as well as the schema we need, *output.ts*:
 
 ```typescript
@@ -601,7 +591,7 @@ In the spreadsheet, in Options Table (document) will see Selected initialised to
 
 **STEP 2: Creating Options Model Schema in /models**
 
-models/options.js now looks like this:
+[models/options.js](../../Example_Code/AngularQuizApp/models/options.js) now looks like this:
 
 ```javascript
 //Require Mongoose
@@ -665,7 +655,7 @@ module.exports = mongoose.model('QuizQuestion', QuizQuestionSchema);
 
 
 
-Now models updated, need to make options schemas in mongo, so added .... to insertDataScript.js
+Now models updated, need to make options schemas in mongo, so added .... to [insertDataScript.js](../../Example_Code/AngularQuizApp/insertDataScript.js)
 
 
 
@@ -706,7 +696,7 @@ $ mongoexport -d test -c quizquestions -o quizQuestionsOutput.json --jsonArray
 $ mongoexport -d test -c newstopics -o newsTopicsOutput.json --jsonArray
 ```
 
-And changed *deploy.sh* to import these 3 new json files
+And changed [*deploy.sh*](../../Example_Code/AngularQuizApp/deploy.sh) to import these 3 new json files
 
 ------
 
@@ -730,20 +720,20 @@ And changed *deploy.sh* to import these 3 new json files
 
 Changed the following files in order to have a working query:
 
-- **`Docker-compose.yml`** 
+- [**`Docker-compose.yml`**](../../Example_Code/AngularQuizApp/docker-compose.yml) 
   - Commented out Environment in services:
     - This wasn't needed as these variables are already initialised using the `.env` file.
   - Implemented ports as variables from `.env` file.
-- **`Server.js`** 
+- [**`Server.js`**](../../Example_Code/AngularQuizApp/server.js) 
   - Required a check to see if we were `LOCAL` or not:
     - If so, module `dotenv` (gets all the .env credentials) is required. `dotenv` is a module defined in `package.json`.
-- **`db.js`**
+- [**`db.js`**](../../Example_Code/AngularQuizApp/db.js)
   - Used new `.env` variables mentioned previously
   - Created Local and Container URLs, which gets used depending on well, if we are using the local or the container's MongoDB.
   - Added `console.logs` as part of the debugging process, but may keep them in.
-- **`Package.json`**
+- [**`Package.json`**](../../Example_Code/AngularQuizApp/package.json)
   - Included the local command aforementioned.
-- **`Api.js`**
+- [**`Api.js`**](../../Example_Code/AngularQuizApp/server/routes/api.js)
   - Formulated a /newsTopic response, basically using a Mongoose command to query MongoDB with `db.newstopics.find()`.
     - This is a good starting point to start creating the right methods to handle user responses tomorrow.
   - Again, `console.logs` for debugging, but may keep them in because useful to have responses in the terminal down the line.
@@ -764,7 +754,7 @@ npm run local 										// where local a script in package.json
 
 - local runs docker-compose up -d 
 - and runs node serve.js with flag is IS_LOCAL (does process.env)
-  - reason for this is we will use it in server.js to see what port to use
+  - reason for this is we will use it in [server.js](../../Example_Code/AngularQuizApp/server.js) to see what port to use
   - if not true, then just uses process.env:PORT 
 
 ------
@@ -781,7 +771,67 @@ Plan today:
 
   - Will complete these properly tomorrow, by making them dynamic and `.save`ing them back to MongoDB.
 
-    
+------
+
+## Meeting 18/04/2021
+
+- We are planning on implementing the backend elements to a feature where the user can see how their answer compared to other people who have taken the quiz.
+
+- We will need to send a parameters (such as `_id`/`web_url`) through the front end to the back end in order to update `num_correct` and `num_attempted` per question.
+
+- Had to communicate with the front end to find at what point the application determines if a user got the question correct i.e `selected` field === `correct_answer` field in particular `quiz_question` document.
+
+- Found a method `'isCorrect'` inside[`quiz.component.ts`](../../src/app/quiz/quiz.component.ts), called in [ `quiz.component.html`](../../src/app/quiz/quiz.component.html)
+
+  
+
+  ##### The plan is:
+
+  - When a user input is labelled correct or incorrect, depending on the result, we want to send a request to the api to update the necessary quiz question and the appropriate fields.
+    - Most likely using `_id` and `$inc` to update `num_correct` and `num_attempted`
+  - Reading [this](https://stackoverflow.com/questions/514892/how-to-make-an-http-get-request-with-parameters) article:
+    - We found that we can pass parameters to our api via a `get` request. i.e passing `question_id` to the api.
+    - We can access our api using the `data_service` object in `quiz.component.ts`
+    - We decided to create two `get` methods in [Api.js](../../Example_Code/AngularQuizApp/server/routes/api.js), one for a correct answer and one for an incorrect answer.
+    - So:
+      - user answers -> call `isCorrect` -> determine correct answer -> pass question `_id` as a parameter to the appropriate correct/incorrect `get` method.
+
+- We created these methods mentioned above
+- However each parameter we passed ended up being `undefined` 
+- Could need some other assistance as this is a gap in knowledge that we are unable to get round at this moment in time.
+
+------
+
+## Meeting 20/04/2021
+
+- Found out in newsTopics we were referencing by value rather than referencing the reference.
+- In [quiz_question.js](../../Example_Code/AngularQuizApp/models/quiz_question.js):
+  - Exported the schema as well as the model, hoping the implement this and access the necessary fields.
+- Marceli made us aware of Subdocuments in Mongoose which is relevant to this issue.
+- Suggested to use `post` requests and pass in a `body` of quiz questions.
+  - So we'll be able to access the necessary parameters.
+
+##### Putting it into action:
+
+- We found that even whilst implementing the techniques suggested, we still struggled to avoid the parameters being `undefined` 
+- We think it may be something to do with how the framework we are implementing functions as we have tried multiple approaches to the issue.
+- Also when we tried to use the Schema instead of the Model, we had undefined values returned.
+
+------
+
+## Meeting 21/04/2021
+
+Plan Today:
+
+- Finalising Backend structure and internals
+- Checking all of our code and removing comments/unused methods and components.
+- Removing subdocument work:
+  - No success in a full implementation of this and didn't want to risk comprimising other work done previously to no avail.
+  - Need to update all models and schema to remove the affected fields
+- [Api.js](../../Example_Code/AngularQuizApp/server/routes/api.js):
+  - Decided to leave in individual `get` methods individual quiz topics
+    - Reason being, be may in the future build a database of questions getting to a size where it'll be more efficient to retrieve individual questions rather than a large JSON payload.
+    - SEE `FUTURE DEVELOPMENT CODE` - `CODE SECTION 1` etc.
 
 ------
 
