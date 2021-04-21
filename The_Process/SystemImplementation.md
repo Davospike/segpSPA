@@ -353,7 +353,15 @@ docker exec -i db sh -c 'mongoimport -u <OUR_USERNAME> -p <OUR_PASSWORD> --authe
 [ADD TO] - Details of implementation.
 
 ### Deployment
-[ADD TO] - Deployment details (including Docker), include how you have been achieving continuous integration and deployment.
+**Continuous Integration**
+
+
+
+**Deployment with Docker**
+
+Deploying our new quiz framework with Docker involved integrating what we had achieved and learnt through the Angular Demo Site with our new Angular Quiz Framework.  We had to first move across all the relevant files that supported the docker container ecosystem and the MongoDB such as 
+
+deploy.sh, blockData, wait-for.sh, insertDataScript.js and others. Initially we had some difficulty in rendering the new framework with the docker container. This was for myriad reasons. We had to change some dependencies in package.json and package-lock.json which resulted in merge conflicts which were tricky to solve. Another issue we had was that originally we serving our new application with the command npm serve - which was not ideal for the docker container. As such, we installed some further dependencies to ensure the application would be rendered with ng build.  However, the application would not work still. As such, Harry and Jack set up a Teams  pair programming call to run over the changes that had been made and after a good session we realised that we had to tweek a path in the server.js file. Once we solved this issue, we were jubilant to deploy our full stack through docker. 
 
 ### Additional
 [ADD TO] - Additional elements and components e.g. authentification. Tell us about any other aspects not covered above!
