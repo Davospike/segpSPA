@@ -21,8 +21,7 @@ QuizQuestionSchema
   return '/models/quiz_question/' + this._id;
 });
 
-//Creating a model from schema we've just made, and exporting it to be used elsewhere
-
+//Creating a model from schema we've just made, and exporting it to be used elsewhere (as well as exporting the Schema)
 module.exports = {
   QuizQuestionModel: mongoose.model('QuizQuestion', QuizQuestionSchema),
   QuizQuestionSchema

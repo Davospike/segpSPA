@@ -2,15 +2,36 @@
 const express = require('express');
 const router = express.Router();
 const connectDB = require("../../db");
-
 const data = require("../../blockData/newsTopicsOutput");
-
 connectDB();
 
 // Models
 const NewsTopic = require("../../models/news_topic");
 const {QuizQuestion} = require("../../models/quiz_question");
-// const Options = require("../../models/options");
+
+// method to get all newsTopics
+router.get('/NewsTopics', async (req, res) => {
+  console.debug('Executing /newsTopics endpoint.')
+
+  res.header("Content-Type",'application/json');
+  const newsTopics = await NewsTopic.find({})
+    .then(results => {
+      console.debug('NewsTopic(s) queried successfully!');
+      console.debug(results);
+      return results
+    })
+    .catch(e => {
+      console.error('Error occurred in the NewsTopic query.');
+      console.error(e);
+    });
+  res.send(JSON.stringify(newsTopics));
+})
+
+
+// FUTURE DEVELOPMENT CODE 
+
+// CODE SECTION 1: INDIVIDUAL GET METHODS FOR NEWS TOPIC QUIZZES
+// WILL BE USEFUL WHEN DATABASE GETS TO SUFFICIENT SIZE
 
 //CORONAVIRUS
 
@@ -108,56 +129,10 @@ router.get('/Climate-change', async (req, res) => {
 })
 
 
-// if they got it correct
+// CODE SECTION 2: UPDATING USER ANSWER STATISTICS GET METHODS
+// NOTE, ALSO TRIED POST METHODS PREVIOUSLY WITH NO LUCK
 
-// here, update the fields
-const filter = {'web_url' : 'https://metro.co.uk/2020/04/02/north-korea-claims-0-coronavirus-cases-global-count-reaches-one-million-12498221/'}
-const updateCorrect = {'num_correct' : 1}
-const updateAnswered = {'num_attempted' : 1}
-
-
-//const updateStats2 = QuizQuestion.findOneAndUpdate(filter, updateAnswered)
-
-// then present message in localhost:3000/quizquestion1/correct
-router.get('/newsTopics/quizquestion1/correct', async (req, res) => {
-  console.debug('Executing /newsTopics endpoint.')
-
-  res.header("Content-Type",'application/json');
-  const updateStats1 = await QuizQuestion.findOneAndUpdate(filter, updateCorrect)
-  await updateStats1.save()
-  const quizquestions = await QuizQuestion.find({'web_url' : 'https://metro.co.uk/2020/04/02/north-korea-claims-0-coronavirus-cases-global-count-reaches-one-million-12498221/'})           
-    .then(results => {
-      console.debug('NewsTopic(s) queried successfully!');
-      console.debug(results);
-      return results
-    })
-    .catch(e => {
-      console.error('Error occurred in the NewsTopic query.');
-      console.error(e);
-    });
-  res.send(JSON.stringify(quizquestions, null, 2));
-})
-
-// method to get all newsTopics
-router.get('/NewsTopics', async (req, res) => {
-  console.debug('Executing /newsTopics endpoint.')
-
-  res.header("Content-Type",'application/json');
-  const newsTopics = await NewsTopic.find({})
-    .then(results => {
-      console.debug('NewsTopic(s) queried successfully!');
-      console.debug(results);
-      return results
-    })
-    .catch(e => {
-      console.error('Error occurred in the NewsTopic query.');
-      console.error(e);
-    });
-  res.send(JSON.stringify(newsTopics));
-})
-
-
-// if this gets called, we pass it in a parameter (which is the question),
+// if this gets called, we pass it in a parameter (which is the question_id),
 // and this is our signal that they got this question correct. so we need to 
 // add 1 to num_correct, and add 1 to num_answered
 
@@ -165,27 +140,11 @@ router.get('/correct/:id', async (req, res) => {
 
   console.debug('Executing /correct endpoint.');
   res.header("Content-Type",'application/json');
-  var id = req.param('id'); 
-  console.debug('req ting correct: '+ id)
-
-  const filter = {'_id' : id};
-  const updateCorrect = {'num_correct' : 1}
-  const updateAnswered = {'num_attempted' : 1}
-  const newquizquestions = await QuizQuestion.findOneAndUpdate(filter, updateCorrect, {new:true})
-  const newquizquestions1 = await QuizQuestion.findOneAndUpdate(filter, updateAnswered, {new:true})
-  await newquizquestions.save().catch(e => {
-    console.error('Error occurred in the Correct query.');
-    console.error(e);
-  });
-})
-
-/*
-router.get('/correct', async (req, res) => {
-  console.debug('Executing /correct endpoint.');
-  res.header("Content-Type",'application/json');
   var incr_amount = 1;
+  var id = req.param('id');
+
   const newquizquestions = await QuizQuestion.findOneAndUpdate({
-    'web_url': req.query.result
+    '_id': id
   },
   {
     $inc: {
@@ -201,38 +160,37 @@ router.get('/correct', async (req, res) => {
   });
   console.debug('amounts added' );
 })
-*/
 
-// if this gets called, we pass it in a parameter (which is the question),
+// if this gets called, we pass it in a parameter (which is the question_id),
 // and this is our signal that they got this question incorrect. so we need to 
 // add 0 to num_correct, and add 1 to num_answered
 
-router.get('/incorrect', async (req, res) => {
-  console.debug('Executing /incorrect endpoint.')
-  res.header("Content-Type",'application/json');
-  var remain_amount = 0;
-  var incr_amount = 1;
-  
-  var questionID = req.param('id'); 
-  console.debug('!!!!!!!!!!!!QUESTION ID = ' + questionID);
+router.get('/incorrect/:id', async (req, res) => {
 
-  console.debug('req ting incorrect : '+ req.query.result)
+  console.debug('Executing /correct endpoint.');
+  res.header("Content-Type",'application/json');
+  var incr_amount = 1;
+  var incr_amount2 = 0;
+  var id = req.param('id');
+
   const newquizquestions = await QuizQuestion.findOneAndUpdate({
-    '_id': questionID
+    '_id': id
   },
   {
     $inc: {
-      'num_attempted': incr_amount
+      num_attempted: incr_amount
     },
     $inc: {
-      'num_correct': remain_amount
+      num_correct: incr_amount2
     }
   })
   .catch(e => {
-    console.error('Error occurred in the Incorrect query.');
+    console.error('Error occurred in the Correct query.');
     console.error(e);
   });
-  console.debug('Hi vini, just wanted to let you know you got this question: id: '+ req.query.result);
+  console.debug('amounts added' );
 })
+
+
 
 module.exports = router;
