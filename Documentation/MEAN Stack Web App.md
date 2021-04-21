@@ -53,6 +53,8 @@ Also on your Github repository, you must write a front-page document (readme.md)
 
 
 
+
+
 ---
 
 #### System Implementation [20 marks]:
@@ -88,8 +90,6 @@ Also on your Github repository, you must write a front-page document (readme.md)
   - **Refer to agile**
   - **Deploy.sh script**
   - **Integrating old DemoSite into QuizApp**
-
-
 
 #### Sprints & Project Management [15 marks]
 
@@ -134,4 +134,57 @@ Also on your Github repository, you must write a front-page document (readme.md)
   - **ethical framework**
 - Discussion of future work (in terms of design, development and evaluation)
   - **more fake news, continuous pulling of data, our own integrate fake news detection model, user accounts, different data formats ie using dataset DB in archive (and different types of quizzes), mobile app, expanding answers beyond true/false**
+
+
+
+
+
+### Work Split
+
+#### <u>General</u>
+
+Intro (10)		
+
+- **Dan**
+
+Background and motivation (10)		
+
+- **Dan**
+
+UX Design (15)		
+
+- **Vini **
+- **Harry**
+- **Jack** (moody gantt)
+
+System Implementation {Middle Tier, Additional Components, Deployment Details} (20)	
+
+- **Nathan (MT, DD) **
+- **Vini (MT) **
+- **Harry (MT) **
+- **Jack (DD, AC)**
+
+Sprints & Project Management (15)	
+
+- **Nathan** (git stuff)
+- **Harry**
+- **Jack** (agile?)
+
+Evaluation (15)	
+
+- **All of us**
+
+Conclusion (10)	
+
+- **All of us**
+
+
+
+#### <u>Frontend</u>
+
+System Implementation {Front End}
+
+#### <u>Backend</u>
+
+System Implementation {Stack architecture and system design, Back End}
 
