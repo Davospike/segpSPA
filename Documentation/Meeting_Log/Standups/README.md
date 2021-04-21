@@ -70,15 +70,18 @@ scheme requirements. Further formatting (T.O.C, links etc.) of System implemenat
 
 ### 12/04/2021
 
-Vini - Last week: Formulated proper schema in preparation to integrating with the front-end (Consulted front end). Made back-end as dynamic as possible through docker, making sure no urls (for example) were hard coded. Created our first mongoose command that returns a correct JSON payload.
+Vini :
+- Last week: Formulated proper schema in preparation to integrating with the front-end (Consulted front end). Made back-end as dynamic as possible through docker, making sure no urls (for example) were hard coded. Created our first mongoose command that returns a correct JSON payload.
 - This Week: planning on completing all required mongoose commands, ready for handling responses Begin communication with the front end in order to handle requests.
 - Blockers: Term beginning next week - Beginning revision and preparation for other units.
 
-Nath - Last week: Formulated proper schema in preparation to integrating with the front-end (Consulted front end). Made back-end as dynamic as possible through docker, making sure no urls (for example) were hard coded. Created our first mongoose command that returns a correct JSON payload.
+Nath :
+- Last week: Formulated proper schema in preparation to integrating with the front-end (Consulted front end). Made back-end as dynamic as possible through docker, making sure no urls (for example) were hard coded. Created our first mongoose command that returns a correct JSON payload.
 - This Week: planning on completing all required mongoose commands, ready for handling responses Begin communication with the front end in order to handle requests.
 - Blockers: Term beginning next week - Beginning revision and preparation for other units.
 
-Jack - Last week: Prepared and linked back end json with front end for successful rendering of data - Mood board
+Jack :
+- Last week: Prepared and linked back end json with front end for successful rendering of data - Mood board
 - This Week: Get wesite workng in Docker - Wireframe user feedback - Java framework
 - Blockers: Software tools revision
 
@@ -86,6 +89,27 @@ Dan - Last week: Quiz framework and back end front end link work
 This week:
 Blockers:
 
-Harry - Last week:  With DD and JP changed the front end framework to a more simple framework - Started fleshing out the webpage, adding a landing page, website navigation, social bar, and quiz stats page - Added chart.js to thhe framework for the quiz stats page. Encountered some version issues that had to debug.
+Harry:
+- Last week:  With DD and JP changed the front end framework to a more simple framework - Started fleshing out the webpage, adding a landing page, website navigation, social bar, and quiz stats page - Added chart.js to thhe framework for the quiz stats page. Encountered some version issues that had to debug.
 - This week: Continue integration with back end - Add select topic page for choosing quiz questions - Look at front end marking requirements and begin to think about these
 - Blockers: Job interviews and wanting to pick up other units again before restart of term
+
+### 19/04/2021
+
+Vini and Nath:
+- Last week: Tidied up code and assisted front end with understanding our methods and layout for integration
+- This week: Finish mongoose commands ready for full implementation and integration of the front/backend
+- Blockers: Java assignment and revision for the next few weeks
+
+Jack:
+- Last week: matching json, implementing framework in docker, writing ethical framework, front end dev worke.g. picture on quiz page
+- This week: testing, ethical framework writeup finish, Gant chart
+- Blockers: Java
+
+Dan:
+
+
+Harry:
+- Last week: Added in topic selection pages with some text and logos - Linked up frontend data for quiz to the database backend and made available with docker/deploy script - Added in routing via topic selection pagefor selecting which quiz you wanted to complete - Added in social media sharing links to share the website/fake website - Rejigged Fake news stats layout
+- This week: Add final topic selection pages - start writing up frontend/design notes - minor front end formatting
+- Blockers: Java and job interviews

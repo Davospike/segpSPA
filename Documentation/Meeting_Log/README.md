@@ -143,3 +143,16 @@ Notes/images view [here](../DesignChoices)
 - Trying to take a more meticulous route by planning which files are needed from each directory before merging them (Included the hidden `.` Files!)
   - Will plan a proper merge of the two frontend/backend projects for later on today.
   - This has been useful as it allowed the whole group to go through all files/directories one-by-one together to make sure we all understand what is going on under the hood in each of these projects.
+
+------
+
+## Meeting Log 21.04.2021
+
+- Came together to discuss backend team unfortunately having to give up on tracking the number of times an answer was correctly answered to present to the user.
+  - i.e. 50% of players got this question right - as per wireframe/paper prototype.
+- Agreed we were comfortable with the website and its front and backend design.
+  - From here on in, only minor changes should be made as it is in a good place.
+- Discussed the project write-up and work break up
+  - Went through and annotated mark scheme noting down previous work/notes/meeting logs that would be relevant to each part of write up
+  - Decided on what would be more front end, back end or general content
+  - Did a break down on who would do which bits.
