@@ -11,8 +11,7 @@ const routes: Routes = [
   { path: 'quiz', component: QuizComponent },
   { path: 'quiz/:id', component: QuizComponent },
   { path: 'topics', component: TopicsComponent },
-  // No longer need stats component as can direct from bar-chart
-  // { path: 'stats', component: StatisticsComponent },
+  { path: 'stats', component: StatisticsComponent },
   { path: 'bar-chart', component: BarChartComponent},
   { path: '**', component: WelcomePageComponent }
 ];
