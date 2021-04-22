@@ -156,3 +156,14 @@ Notes/images view [here](../DesignChoices)
   - Went through and annotated mark scheme noting down previous work/notes/meeting logs that would be relevant to each part of write up
   - Decided on what would be more front end, back end or general content
   - Did a break down on who would do which bits.
+
+------
+
+## Meeting Log 22.04.2021
+
+#### Feedback during tutorial:
+
+- Front landing page needs work
+- Screenshots showing key interaction points
+- Social media link
+  - Fine in terms of ethics etc.
