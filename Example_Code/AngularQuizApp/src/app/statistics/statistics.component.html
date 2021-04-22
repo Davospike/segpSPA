@@ -1,40 +1,139 @@
-<style>
-  .center {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-  }
-  #footer {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-  }
-</style>
-
-<app-toolbar></app-toolbar>
-<p style="padding-top: 60px"></p>
-<div align="centre" class="center">
-  <ul class="nav nav-tabs">
-    <li>
-        <nav>
-          <a class="w3-button w3-block w3-black" routerLink="/bar-chart">Bar Chart</a>
-        </nav>
-    </li>
-    <li>
-      <nav>
-        <a class="w3-button w3-block w3-black" routerLink="/bar-chart">---------</a>
-      </nav>
-    </li>
-    <li>
-        <nav>
-          <a class="w3-button w3-block w3-black" routerLink="/bar-chart">Line Chart</a>
-        </nav>
-    </li>
-  </ul>
-  <div>
-    <router-outlet></router-outlet>
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-grayscale w3-large">
+  <div class="w3-container" id="image">
+    <div class="w3-content" style="max-width:700px">
+      <img id="page_top" src="https://res.cloudinary.com/davospike/image/upload/v1618330896/Word_Art_1_wrtelq.png" style="width:100%;max-width:1000px;margin-top:32px;"
+           alt="The words Fake News comprised of words relating to fake news">
+    </div>
   </div>
+
+  <!-- About Container -->
+  <div class="w3-container" id="about">
+    <div class="w3-content" style="max-width:700px">
+      <br>
+      <h5 class="w3-center w3-padding-32"><span class="w3-tag w3-wide">A BRIEF HISTORY OF FAKE NEWS</span></h5>
+      <p> In 2017 "fake news" was Collins Dictionary word of the year and whilst we now might find ourselves in a
+        post-truth age, there has never really has been an age of truth. Outright lies or misrepresented
+        information have been used throughout time to alter views and opinions, and make people question what the truth
+        is. Whatever form it comes in, fake news has been present throughout time.
+      </p>
+      <p >2000 years ago, Octavian, a relative of Julius Caesar, understood he needed the support of the public to become
+        an effective ruler. During a civil war with one of Rome's greatest generals, Mark Anthony,
+        Augustus launched a campaign targeting the general, disseminating lies that he was the antithesis of a true
+        Roman, as he did not hold their prized values, such as faithfulness and respect, in high regard. Not only did
+        Augustus spread these lies throughout Rome by the use of public poetry and slogans printed on coins, he also
+        potentially fabricated Mark Anthony's official will and testament which claimed that he would leave Roman
+        territories to the children of the Egyptian ruler, Cleopatra, of whom Roman's were virulently critical of. The
+        result of this fake news campaign was that Mark Anthony was branded a traitor by the the Roman senate and it
+        ultimately led to the destruction of the Roman Republic and the rise of the Roman Empire with Octavian, now called
+        Augusts, as it's first emperor.
+      </p>
+      <img src="https://images.saymedia-content.com/.image/t_share/MTc0NDI5NTk0MTg5ODMzODYy/how-did-augustus-consolidate-his-power.jpg" style="width:100%;max-width:1000px;margin-top:32px;" alt="A statue of Augustus">
+      <p><br> One of humanities greatest inventions, the printing press, allowed for the mass production and spread of
+        information and news. Unfortunately this also included fake news.
+      </p>
+      <p> One instance of this new form of fake news occurred in Great Britain during the 18th Century at the height of
+        the Jacobite rebellion. King George II was targeted by rebel publishers who, in one attempt to destabilise the
+        establishment, reported that the king was ill. Whilst these falsehoods originated from within the rebels, the
+        news was republished by more reputable printers, leading to the King's reputation being tarnished.
+      </p>
+      <p> Since the invention of the printing press in the mid 15th Century and the creation of the first newspaper in
+        1605, newspapers have become an easy way to disseminate news and information to the public.
+      </p>
+      <p> In 1835, a newspaper, The New York Sun, printed a number of articles purporting that life and even civilisation, had been
+        discovered on the moon. The articles described creatures such as unicorns and flying bat-men, and described
+        how there were trees, oceans, and beaches on the moon. The newspaper wrongly attributed these discoveries to one of the most
+        well known astronomers of the time, Sir John Herschel. In detail, the article described the new scientific methods
+        that had been used in the discoveries, and this not only convinced people that there was in fact life on the moon,
+        but that they should also subscribe to the New York Sun. Once the newspaper had achieved their aim of increasing
+        subscribers, they announced that the reports of life on the moon had simply been a hoax.
+      </p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/1836_the-great-moon-hoax-new-inhabitants-of-the-moon.png/1024px-1836_the-great-moon-hoax-new-inhabitants-of-the-moon.png" style="width:100%;max-width:1000px;margin-top:32px;" alt="The portrait of a man-bat reported to be seen on on the moon">
+      <p><br> Throughout warfare, fake news, or if used in a political capacity, propaganda, has been used in an
+        attempt to change people's views. By convincing people that the other side is their enemy or that they should
+        go to war, propaganda has proven to be an effective tool utilised by governments to sway public opinion.
+      </p>
+      <p> In 1898 the USS Maine, a United States Navy ship, sank in the Havana Harbour in Cuba, following an explosion.
+        At that time Cuba was a Spanish territory. Two main theories on what caused the ship to sink emerged, with one
+        camp saying it was due to a mine and the other arguing it was caused by a spontaneous fire in the ship's
+        magazine. Even without any evidence, some American newspapers, in a bid to increase subscriber count, claimed
+        that Spain was responsible for the ship sinking. With dramatic illustrations used to convince readers, many
+        Americans came to see the Spanish as the enemy and two months later the Spanish-American War began.
+      </p>
+      <p> During World War One, two London newspapers, the Times and the Daily Mail, published articles stating that
+        Germany had 'Kadaver' factories which, according to the newspapers' "anonymous sources", were extracting fat from
+        the bodies of dead soldiers in order to make margarine and soap. Once the war had ended, it came to light that the
+        story had come from MI7, part of an official government department. Despite knowing that it was a lie, they used
+        the story to convince the public that the war was just, as they were fighting against a barbaric enemy.
+      </p>
+      <img src="https://www.thesocialhistorian.com/wp-content/uploads/2017/05/Kadaver.jpg" style="width:100%;max-width:1000px;margin-top:32px;" alt="A news clipping from the Kadaver Factory story">
+      <p><br> Despite the proliferation of falsehoods and misinformation throughout time, the term "fake news" has really
+        only come into the public mind in the last 5 years. With the ever increasing presence of social media and thus
+        the ease at which stories which haven't been fact-checked can spread, there has been an explosion of fake news.
+        Stories can reach millions within minutes and billions within hours, all without being fact-checked.
+      </p>
+      <iframe title="" aria-label="Interactive line chart" id="datawrapper-chart-yqAYJ" src="https://datawrapper.dwcdn.net/yqAYJ/7/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="338"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();</script>
+
+      <h5 class="w3-center w3-padding-32"><span class="w3-tag w3-wide">THE PROBLEM WITH FAKE NEWS</span></h5>
+      <p> Many publishers who create and share these stories are simply in it for "the clicks", as the more traffic that their websites gain,
+        the more money they can make. This is no different to the newspapers that published the fake moon stories, or those
+        who blamed the Spanish for the sinking of the USS Maine, their aim was to gain more subscribers, with this "clickbait"
+        appealing to many due to sensationalised headlines. Some are more insidious and want to sway public opinion
+        by spreading news that appeals to certain beliefs. This is especially poignant during the US elections, especially in 2016,
+        when fake news about certain candidates was spread and potentially impacted the way people voted. Some politicians
+        and influential individuals began to call legitimate news fake, which can lead people to be confused about what
+        is true and in turn can lead to the proliferation of actual fake news.
+      </p>
+      <p> With each historical instance of fake news outlined above, a specific problem with fake news, of which there are
+        multitudes, can be extracted.
+        With Octavian, who through a combination of factors, including fake news, became the first Roman emperor Augustus, the
+        clear problem is that officials who reside at the pinnacle of power are willing and able to use fake news in order
+        to propagate and further their personal aims. With millions looking up to these people, whether it be a Roman emperor
+        the Prime Minister of the UK, or the President of the United States, they can use the platform given to them by
+        the people, to spread misinformation and lies for selfish gains. There are many who would believe those with such
+        power and influence would not, or do not need to spread fake news, however if the previous 5 years have taught the world anything,
+        it should be that no one, even the "leader of the free world", are infallible.
+      </p>
+      <img src="https://media.vanityfair.com/photos/5eea2668f519da95a3b4147a/master/w_2560%2Cc_limit/Trump6.17.jpg" style="width:100%;max-width:1000px;margin-top:32px;" alt="Donald Trump shushes reporters at a bill signing ceremony June 5.">
+      <p><br>As with King George in the 1700s, one major problem with fake news is that despite many of these stories not being
+        fact-checked, they are still shared by individuals and organisations who believe they are true and if they
+        have a large following these falsehoods can often be taken more seriously and spread further, leading to the wider
+        dissemination of fake news. This has been especially poignant during the COVID-19 pandemic, as conspiracy
+        theorists have used their opportunity to spread false information about the causes. One such target, is 5G. Despite
+        there being no links between 5G and coronavirus, there have been multiple attacks on 5G masts and the UK government has
+        been forced to address the issue, with the theories being called "dangerous nonsense". Whilst much of this fake news
+        was initially spread via social media between non-influential individuals, there have been numerous celebrities with
+        a reach of millions who have furthered such unsubstantiated claims. The problem with this is that what these influential
+        individuals say is often believed by their followers without any second guessing.
+      </p>
+
+
+      <p> Much like with the printing press and social media, technology has had an active role in making the spread of fake
+        news much easier. What was once thought of as a relatively reliable source of news was video, which is due to the
+        difficulties people had faking them. Yet, due to the creation of a new technology, <i>deepfakes</i>, the reliability
+        of video sources is now more easily questioned. A deepfake is a video that has been generated by computer software.
+        Many current examples of deepfakes involve placing the head of someone famous onto another's body. Whilst many
+        simply involve having the deepfake sing a song, as the technology becomes more developed and understood, it could
+        lead to a new generation of fake news in which "deepfaked" politicians are made to say whatever the creator wants
+        and the fakes will become harder to detect.
+      </p>
+
+      <h5 class="w3-center w3-padding-32"><span class="w3-tag w3-wide">WHAT YOU CAN DO</span></h5>
+      <p> Due to the platform and reach that many celebrities and politicians hold, they should be held to a higher standard
+        when it comes to the information that they spread. Just because someone is your favourite artist or sports personality,
+        that does not mean they cannot be wrong.
+
+      </p>
+      <a href="#page_top"><h5 class="w3-center w3-padding-32" id="page_bottom"><span class="w3-tag w3-wide">Return to the top</span></h5></a>
+    </div>
+  </div>
+
+  <!-- End page content -->
 </div>
-<div id="footer">
-  <app-social></app-social>
-</div>
+<router-outlet></router-outlet>
+
+
+
+
+
+
