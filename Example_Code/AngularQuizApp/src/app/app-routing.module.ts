@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'quiz', component: QuizComponent },
   { path: 'quiz/:id', component: QuizComponent },
   { path: 'topics', component: TopicsComponent },
-  { path: 'stats', component: StatisticsComponent },
+  { path: 'about', component: StatisticsComponent },
   { path: 'bar-chart', component: BarChartComponent},
   { path: '**', component: WelcomePageComponent }
 ];
