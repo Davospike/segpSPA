@@ -51,9 +51,11 @@
           <div *ngFor="let question of quiz.questions; let index = index">
             <div class="result-question">
               <h5>{{index + 1}}. {{question.name}}</h5>
-              <h6>If this article was fake,
-               <a href="{{question.debunkArticleUrl}}" target="_blank">click here to debunk it!</a>
-              </h6>
+              <div class="debunk" *ngIf="isRealFake(question) == 'fake'">
+                <h6>This article was fake,
+                  <a href="{{question.debunkArticleUrl}}" target="_blank">click here to debunk it!</a>
+                </h6>
+              </div>
               <div class="row">
                 <div class="col-6" *ngFor="let Option of question.options">
                   <input id="{{Option.id}}" type="checkbox" disabled="disabled" [(ngModel)]="Option.selected" /> {{Option.name}}

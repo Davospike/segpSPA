@@ -45,7 +45,7 @@ export class QuizComponent implements OnInit {
   ellapsedTime = '00:00';
   duration = '';
 
-  constructor(private quizService: QuizService, private dataService: DataService, private route: ActivatedRoute, private location: Location) { }
+  constructor(private quizService: QuizService, private dataService: DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.quizzes = this.dataService.getQuizNames();
