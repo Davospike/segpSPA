@@ -25,9 +25,9 @@
 ## Software Development Process
 A software development process can be seen as the application of divide and conquer whereby the development process is divided into smaller, parallel steps or subprocesses. Doing so helps improve the design and management of a project. Given that we, as university students, had other commitments and modules, we were aware that we would have to manage the project development in a flexible manner, and in a fixed amount of time. Unlike in the professional world, we could not get extensions. 
 
-Due to these constraints, we first sought out a strategy to apply to our work approach. We knew little and often be beneficial, ensuring a smoother journey towards a minimal viable product. For that reason we set out to compare and contrast the industry standard software development life cycle methods in order to find our approach.
+Due to these constraints, we first sought out a strategy to apply to our work approach. We knew little and often would be beneficial, ensuring a smoother journey towards a minimal viable product. For that reason we set out to compare and contrast the industry standard software development life cycle methods in order to find our approach.
 
-[ADD TO] - Stuff on "Discussion of team roles (specialisation is ok!). A summary of individual contributions (note: this is for reference, your team will all receive the same grade!)."  OR this goes in conclusion/evaluation? 12.03.21 meeting
+To help manage workloads, we split up into separate, but closely linked, front and backend teams. Daniel Davies, Jack Pike and Harry Smith made up the frontend and Nathan Taylor and Vincenzo Gibliaro on the backend team.
 
 ### Software Development Life Cycle
 [ADD TO/REMOVE] - Discuss SDLC framework/ideas etc. 
@@ -37,6 +37,9 @@ Due to these constraints, we first sought out a strategy to apply to our work ap
 [ADD TO] - Group working methods used (for instance did your team choose a particular style of agile? what communication channels did you use?)
 
 ### GitHub Continuous Integration
+The team utilised GitHub to streamline and organise the workflow throughout the project. Each team member had a separate branch to work on which we periodically merge back into the dev branch. This meant any conflicts/errors could be managed and our progress was being saved as we went; useful for if something broke along the way.
+
+The team also utilised the Docker deployment approach. You can read more about our use of Docker [below](#deployment-details)
 [ADD TO] - Stuff on "Team use of Git, how your team used continuous integration / continuous deployment. Streamlining of workflow throughout."
 
 ## Sprints
@@ -45,15 +48,15 @@ As previously mentioned, as a team we were following an agile approach and so br
 
 By breaking the workload into manageable sprints, we were able to week-by-week slowly build up the product, adding in more features as we went. Any tasks that were not completed by the end of the sprint were noted and these were set as a priority for the next sprint (unless not pivotal). As we were working in self-organising teams (i.e. front and backend), during each sprint we often had regular, sometimes daily, standups and catch ups for each team to make sure we stayed on track. By doing this we were able to catch any potential issues early on and pivot if needed.
 
-[MARK SCHEME] - Documentation of your sprints, including both high level overview, timeline, and selected highlights that were critical points in the project (remember to show the users stories implemented in each sprint). We expect a summary of meeting logs (including for instance apologies for absence etc)
+If you are interested in seeing our meeting logs and standup notes, please [see here](../Documentation/Meeting_Log)
 
 ### Sprint 1 : Webpage Design & Initial Feedback (01.03.21-07.03.21) 
-During this week we had a reading week and a break from new content on our modules. We used this as an opportunity to come together to have our first sprint. 
+During this week we had a reading week, and a break from new content on our modules. We used this as an opportunity to come together to have our first sprint. 
 
 The goals of the first sprint were as follows:
 - Come together and brainstorm an initial webpage design.
 - Develop a paper prototype design of what we thought our Fake News quiz could look like (to read more about our design processes and ideation, please see the [System Design page](SystemDesign.md)).
-- Generate a SurveyMonkey feedback questionaire for our paper prototype ([see here](../Documentation/Paper_Prototype)).
+- Generate a SurveyMonkey feedback questionnaire for our paper prototype ([see here](../Documentation/Paper_Prototype)).
 - Familiarise ourselves with GitHub and continuous integration best practises.
 - Amalgamate some potential datasets.
 
@@ -80,6 +83,11 @@ The documented market research can be found [here](../Documentation/BackgroundRe
 
 During the research, we investigated 3 sample websites that offer fake news quizzes (or similar), like ours, and looked into the similarities between our idea and theirs. As of the time of writing, we found no web applications that offer what we have set out to create: a one-stop-shop for demystifying and educating users about fake news in a fun and engaging way. By providing a quiz that is broken down into categories e.g. Brexit, TradeWar, Coronavirus, we hope to target a wider audience.
 
+| Stakeholders            | Updated Use Case        |
+| ------------------------| ------------------------|
+| Donald (End-User)       | I have access to a website, but it does not yet show me anything about fake news, or let me take a quiz. |
+
+
 ### Sprint 3 : Prepare Backend & Additional Wireframe (29.03.21-04.04.21)
 Sprint number 3 came in the first week on Easter and the key goals related to advancing our paper prototype into a more developed wire frame and develop the backend with respect to the mongoDB containers and finalizing the dataset with sample questions, broken down by news topic. Further we set a stretch goal to prepare the data model for handling HTTP requests.
 
@@ -99,13 +107,13 @@ We currently have a DB set up in a dockerised mongoDB container, with proxy data
 
 Whilst preparing the backend, we faced some structural difficulties. We started off by writing a script, *insertDataScript.js* that constructs collections and inputs data. Since our script was targeted as storing data in a local mongoDB DB, the data was not there when we started a docker mongoDB container. We got around this problem by importing data into the dockerised mongoDB container, using mongoimport on json files we exported from our local mongoDB DB. Hence, we could then access the data in our dockerised mongoDB container. However, when we tested our solution by building the docker images on another machine, the data did not persist. Hence, we created a script, that is run when on another machine to ensure the data persists, this script is found in *deploy.sh*, and running this will build the docker images and mongoDB container, with persistent data inside it.
 
-Although this may not be the most efficient solution, we have decided to focus on the data contained within our DB for the time being, since we're still using proxy data. After consolidating across the back-end team, we will making some further changes to our data model, as we feel that some of the relationships and collections already in place are redundant (for example, the relationship between a useranswer document and quizquestion document). Full details of these changes, and the process by which we got our mongoDB docker container working are found in /Documentation/Backend/Meeting_Log.
+Although this may not be the most efficient solution, we have decided to focus on the data contained within our DB for the time being, since we're still using proxy data. After consolidating across the back-end team, we will be making some further changes to our data model, as we feel that some of the relationships and collections already in place are redundant (for example, the relationship between a useranswer document and quizquestion document). Full details of these changes, and the process by which we got our mongoDB docker container working are found in /Documentation/Backend/Meeting_Log.
 
 ### Sprint 4 : Build Frontend Webpages & Begin Linking Front and Backend (05.04.21-11.04.21)
 Sprint number 4 saw the team coming together to start bringing the frontend and backend elements together, as well as some individual advancements for each area, separate of the linking work. On the front end, work was done to start trimming down the fat on the quiz framework that we had selected to use, so that it could be ready to link up to the backend, and also we began to start adding some meat to the website. A moodboard was also drawn up in order to help design on the frontend. With the backend, work was done on finalising the data model schema and creating mongoose commands to return the correct JSON payload, ready to be used by the quiz for questions.
 
 Key goals:
-- Start stripping out undeed features from quiz framework.
+- Start stripping out unused features from quiz framework.
 - Add new pages and features to frontend, e.g. landing page, stats page, navigation.
 - Start linking up the front and backend.
 - Finalize question data model schema appropriate for integration into front end.
@@ -113,14 +121,25 @@ Key goals:
 
 This weeks sprint was a busy one with lots of movement on all fronts. There was good collaboration between the front and backend in starting to get the database linked up to the front end so that questions for the quiz wouldn't have to be hard coded.
 
-At the start of the sprint, the frontend crew got together for a pair programming session with the aim to start stripping out needed features that were not needed from the quiz framework, and to start streamline the code ready for database integration towards the end of this sprint, and hopefully finalised by the end of the following weeks sprint. However, it quickly became clear that the quiz framework that we had hoped to use was far too complicated for our use case. It was decided between us that we would need to pivot and find a new, simpler framework instead (please see the [System Design page](SystemDesign.md)) for more on this). Granted, this was a bit of a set back as we had spent some time analysing and understanding how the quiz framework functioned and obviously had to start from scratch with a new framework.
+At the start of the sprint, the frontend crew got together for a pair programming session with the aim to start stripping out features that were not needed from the quiz framework, and to start streamline the code ready for database integration towards the end of this sprint, and hopefully finalised by the end of the following weeks sprint. However, it quickly became clear that the quiz framework that we had hoped to use was far too complicated for our use case. It was decided between us that we would need to pivot and find a new, simpler framework instead (please see the [System Design page](SystemDesign.md)) for more on this). Granted, this was a bit of a set back as we had spent some time analysing and understanding how the quiz framework functioned and obviously had to start from scratch with a new framework.
 
 Setback aside, after a new framework was found, the frontend team set about understanding and stripping back any irrelevant features. Once we had an understanding of the framework, simultaneous work on adding new features, and refactoring the quiz question JSON format begun, ready for the connect with backend team later in the week. The front end team was succesfully able to decide on a HTML template to use for the non-quiz pages (see [System Design page](SystemDesign.md)) for more), adding in navigation features, social buttons and generally just starting to work on fleshing the website out. Separately, but simultaneously other members on the team worked with the backend team to refactor the quiz question JSON inputs. Here work was done on re-factoring the typescript models for the quiz and re-factoring the quiz service files that actually operated the questions in the quiz. Some difficulties arose but they were eventually ironed out (JACK TO ADD/CHECK?).
 
 With the frontend taking shape, work with the backend to get the database linked started. Sessions between the front and backend were held where discussions focussed on collaborating to get the most efficient and appropriate JSON setup in our database data schemas and frontend typescript models. As well as this, the backend team started on creating mongoose commands for JSON payload requests (VINI/NATH TO ADD).
 
+On reflection of the sprint, it was a productive week and we were in a position whereby if our stakeholders were to use the quiz, they would be able to navigate through our SPA and take a dummy quiz. We were in a position to start work in the next sprint on requesting the data from the database, and having these questions presented in the quiz.
 
-On reflection of the sprint, it was a productive week and we were in a position whereby if our stakeholders (ADD TO SYSTEM DESIGN) were to use the quiz, they would be able to navigate through our SPA and take a dummy quiz. We were in a position to start work in the next sprint on requesting the data from the database, and having these questions presented in the quiz.
+| Stakeholders            | Updated Use Case        |
+| ------------------------| ------------------------|
+| Donald (End-User)       | I can visit the website and take a generic quiz, but I cannot chose between any topic. There is also a nice welcome page to read a bit about fake news and navigate around the site from.|
+| Emma (Admin)            | The database and quiz questions are set up in our systems, we just need the front end to be able to access said data. |
+
+System implementation issues:
+
+| Stack Part  | Goal        | Issue | Fix |
+| ------------| ----------- |-------|-----|
+| Backend     | Setup data model schema | Data models were not aligned with frontend format required for quiz | Liaise with front end and reformat data |
+| Frontend    | Setup quiz framework in frontend | Quiz framework selected was too advanced | Found a new framework that was more appropriate for our ability |
 
 ### Sprint 5 : Further Front and Backend Integration (12.04.21-18.04.21)
 In this sprint, the team hoped to finally have a fully integrated front and backend by the end so that general house keeping and tidying up could begin. Further, on the front end, a quiz topic selection page we created so that the user could pick between any of the five different available quizzes. The backend team also investigated the possibility of returning a single quiz topic question set at a time, as opposed to all topics at once.
@@ -148,7 +167,7 @@ System implementation issues:
 
 | Stack Part  | Goal        | Issue | Fix |
 | ------------| ----------- |-------|-----|
-| Backend     | Admin wants to view user question stats| Mainting the state/count of number of times a question was correctly answered proved difficult. Persistence of the data kept getting lost | N/A - Dropped feature|
+| Backend     | Admin wants to view user question stats| Maintaining the state/count of number of times a question was correctly answered proved difficult. Persistence of the data kept getting lost | N/A - Dropped feature|
 | Frontend    | Linking up front and backend| Data sent through from API was not being picked up by the data service | Realized that the JSON payload from the API was being sent as an array of topics and questions. quiz.component.ts needed updating to reflect this |
 
 ### Sprint 6 : Write-up & Minor Frontend Amendments (19.04.21-07.05.21)
@@ -578,7 +597,7 @@ Eventually, we managed to link up with the back end after lengthy communication 
         },
 ```
 
-####Building up Angular features
+#### Building up Angular features
 
 After the relevant data models had been refactored, using a dummy JSON file, we were able to populate the quiz with our questions to test that it worked. Next we worked on reformatting the quiz so that it had some extra features.
 
@@ -650,7 +669,7 @@ ngOnInit() {
 ```
 allowed the quizName to be passed into the loadquiz() method and select the right quiz from the JSON payload.
 
-####Connecting To The API
+#### Connecting To The API
 
 Earlier work, mentioned above, had been done on aligning the backend data formats with the frontend quiz framework data models. As a result of this, the frontend quiz data could be retrieved from the API payload, as opposed to using a dummy JSON file.
 
@@ -792,6 +811,10 @@ Utilising continuous integration and deployment throughout the project, with an 
 
 ### Additional
 [ADD TO] - Additional elements and components e.g. authentification. Tell us about any other aspects not covered above!
+
+- [Previous Section: System Design](SystemDesign.md)
+- [Next Section: Project Evaluation](ProjectEvaluation.md)
+- [Back to Home](../README.md)
 
 # Mark Scheme Relevant Topics:
 
