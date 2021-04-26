@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="FNID-dataset">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Databases/IEEE_Dataset/FNID-dataset.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

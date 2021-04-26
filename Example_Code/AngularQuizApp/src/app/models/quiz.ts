@@ -27,9 +27,6 @@ export class Quiz {
             }
             this.questions = [];
 
-            // data.quizquestions.forEach(q => {
-            //     this.questions.push(new Question(q));
-            // });
             this.shuffle(data.quizquestions).forEach(q => {
               this.questions.push(new Question(q));
             });
@@ -38,16 +35,16 @@ export class Quiz {
 
       // @ts-ignore
       shuffle(array) {
-      let currentIndex = array.length, temp, randomIndex;
+        let currentIndex = array.length, temp, randomIndex;
 
-      while (0 !== currentIndex) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
+        while (0 !== currentIndex) {
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex -= 1;
 
-        temp = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temp;
-      }
-      return array;
+          temp = array[currentIndex];
+          array[currentIndex] = array[randomIndex];
+          array[randomIndex] = temp;
+        }
+        return array;
       }
 }

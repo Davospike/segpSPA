@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="News _dataset">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Databases/University_of_Victoria/News _dataset.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

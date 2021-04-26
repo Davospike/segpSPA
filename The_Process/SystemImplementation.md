@@ -19,7 +19,7 @@
    - [Back End : MongoDB](#back-end--mongodb)
    - [Middle Tier : Express, Node, RESTful API](#middle-tier--express-node-restful-api)
    - [Front End : Angular](#front-end--angular)
-   - [Deplyoment](#deployment)
+   - [Deployment Details](#deployment-details)
    - [Additional](#additional)
 
 ## Software Development Process
@@ -166,10 +166,10 @@ By the end of the sprint... [ADD TO]
 ### Stack Architecture & System Design
 [ADD TO] - e.g. class diagrams, sequence diagrams. Might be best place/more detail in SystemDesign.md?
 
-### <u>Back End : MongoDB</u>
-## 1. SQL vs noSQL
+### Back End : MongoDB
+### SQL vs noSQL
 
-##### Why we switched from SQL to noSQL (mongo)
+#### Why we switched from SQL to noSQL (mongo)
 
 Although we have pre-defined our DB schema, and checked for normalisation, we made the transition from an SQL schema to noSQL (mongoDB), in order to utilise the mongoose object modelling tool.
 
@@ -196,7 +196,7 @@ SQL Databases work best with schema that are long established and aren't prone t
 
 We have left the SQL DB schema in this [folder](../Documentation/Backend/DatabaseDesign/SQLDBdevelopment) for reference, and also to show our progression to our final DB design. 
 
-## 2. Design of our data model (UML, tables)
+### Design of our data model (UML, tables)
 
 Our data model was designed via the use of draw.io, in which we constructed a UML diagram to show relationships among our entities. We defined our final data model as being comprised of the following three entities:
 
@@ -299,7 +299,7 @@ With respect to constructing our mongoose models, to be used when instantiating 
 
 Note, in our quiz_question model, we also export the schema. This is to fix an issue we had in which embedded documents were being referenced by value, as oppose to referencing the actual objects themselves.
 
-## 3. Collecting data 
+### Collecting data 
 
 It's critical for a web-app in this category to have accurate and *thought-provoking* data to utilise in order to make it as educational as possible. Our initial thought was to find ready-made datasets that would have formulated all our quiz questions. We found plenty of large datasets that were filled to the brim with articles - good and bad. Most of these datasets had outdated links, broken web-pages and irrelevant material. We wanted our quiz to have proper 'punch' at every question and the datasets found were not going to help us achieve that. Furthermore, the data was not organised in a manner that was useful to us; we are aiming to have a our questions categoriesed into News Topics that the user can choose from. This focussed approach allowed the user to experience how Fake News varies from topic to topic and allows a more comfortable learning exerience as a whole.
 
@@ -309,11 +309,11 @@ It's worth mentioning that we also wanted to find **debunking** articles in rela
 
 Aside from the grind in acquiring the necessary data, we also found ways to improve other elements of our backend structure. We initially had a _Many-to-Many_ relationship between questions and news topics; however, refering to the underlying intent to make this as educational as possible for the user, we decided to alter this to a _One-to-Many_ relationship. This meant that there will no longer be multiple news topics related to a question, we intended to make each article as relevant to the news topic as possible - eradicating and vagueness.
 
-## 4. Inputting data via insertDataScript
+### Inputting data via insertDataScript
 
 The mechanism we used to get data ready for use in our application consisted of two main steps: creating the database, and seeding the data from the database into a mongoDB container.
 
-###### Creating a mongoDB database
+### Creating a mongoDB database
 
 The first step in allowing us to test our backend structure was to get the data we gathered into a MongoDB client to test how effective it was. We decided that rather than inserting our data within the MongoDB shell, we will aim to run a Javascript 'script' that would insert all this data using Mongoose commands - appropriately named [insertDataScript.js](./Example_Code/AngularQuizApp/insertDataScript.js). In short, the script injects into a MongoDB client (using a URL specified in args[0]), our data.
 
@@ -329,7 +329,7 @@ const Option = require('./models/options');
 
 It's worth noting that this script is ran privately and doesn't take part in the deployment of the docker container with [deploy.sh](./Example_Code/AngularQuizApp/deploy.sh). The script allowed us to export from a local MongoDB client into [three JSON files](./Example_Code/AngularQuizApp/blockData) that were prepared for seeding.
 
-###### Seeding
+### Seeding
 
 The docker image we create is generally read only. Therefore, for the data to be used in our server, it needs to be stored somewhere that has read/write permissions. The issue that arises is that when someone, who doesn't have the data that we store, starts the docker container when running our application, the mount point is local to that person's machine. In other words, volume is mounted from a local machine, hence data from our own machine's will not persist. Therefore, we decided to create a script that would seed all the relevant JSON data into the dockerised mongoDB container. Thus, when the server starts, all this data can be read from this container using mongoose commands. 
 
@@ -347,13 +347,12 @@ docker exec -i db sh -c 'mongoimport -u <OUR_USERNAME> -p <OUR_PASSWORD> --authe
 
 
 ### Middle Tier : Express, Node, RESTful API
-## Middle Tier
 
-#### Choosing REST
+### Choosing REST
 
 We decided to build a RESTful API to link our mongoDB database to our front-end (Angular). Generally speaking, REST is an interface between HTTP utilising systems, and it can be used to process data operations in many formats (i.e., JSON). 
 
-REST stands for Representational State Transfer, and is commplace in data exchange protocol systems used in web applications today. The REST architectural style determines how the API looks, and how it processes client requests. The main mechanism that RESTful APIs implement is that a resource, (i.e., a piece of data) is retrievable upon a client URL request. This is formally known as a response.
+REST stands for Representational State Transfer, and is commonplace in data exchange protocol systems used in web applications today. The REST architectural style determines how the API looks, and how it processes client requests. The main mechanism that RESTful APIs implement is that a resource, (i.e., a piece of data) is retrievable upon a client URL request. This is formally known as a response.
 
 Responses are the result of requests. A response is composed of two parts - the root-endpoint and the path. The root-endpoint is the starting point from where your API lives. In our project, it is where we set the API routes from server.js (localhost:4200/api) - but we will come back to this. The second part of a response is the path. This path determines the resource the client is looking for. We can distinguish between different responses based on these two parts, and implement methods in our api that map responses on to the mongoose and node.js commands that will respond with the correct data from our backend. 
 
@@ -363,7 +362,7 @@ A RESTful API allows for client-server separation. This allows for scalability, 
 
 For these reasons above, utilising the RESTful approach seemed appropriate. After making this choice, and setting up our mongoDB database, we started to think about the internals of requests, with relation to how they would interact with our database. REST APIs implement multiple operations (CRUD operations - create, read, update and delete) which are performed giving speicifc requests. We decided the main interaction with our database would come from a get request, in which our response (in the api) takes the form of a JSON payload, containing the data for all news topics (including quiz questions).
 
-#### Implementing REST
+### Implementing REST
 
 To build our API, we used Express, one of the key frameworks in the MEAN stack. We started off by creating server.js, in which we require the express dependency. We also created the file api.js, as well as a folder called server. We then require the api in server.js. 
 
@@ -392,18 +391,18 @@ router.get('/NewsTopics', async (req, res) => {
 })
 ```
 
-And the process is as follows:
+The process is as follows:
 
-- client enters the http request, which automatically requested when they choose a particular topic (i.e., when running locally: localhost:4200/api/NewsTopics) 
+- Client enters the http request, which automatically requested when they choose a particular topic (i.e., when running locally: localhost:4200/api/NewsTopics) 
   - **localhost:4200/api** is the base path of the API endpoint
   - **/NewsTopics** is the path that corresponds to the specific method in api.js 
-- this utilises the NewsTopic mongoose model that we require from ../models, and implements the mongoose method **.find**
-- since the result of this is a JSON string, it can be stored in a const
+- This utilises the NewsTopic mongoose model that we require from ../models, and implements the mongoose method **.find**
+- Since the result of this is a JSON string, it can be stored in a const
 - We look for any errors, and if everything is okay, we respond to that request with a JSON payload (as a string) 
 
 As we're exporting the router made in api.js, which is required in server.js, the output of this (when integrated with angular) is rendered on to the webpage.
 
-
+Linking up the frontend to the API is achieved by creating a data service that <i>subscribes</i> to the API and is discussed in the frontend section below.
 
 ---
 
@@ -414,10 +413,8 @@ Ideas...
 ### Creating a service 
 
 After setting up mongoDB, and importing all the data we need. We need to define a service to handle http calls. Services are great because they're injectable, and they can also have its own injected dependencies - making testing and reuse easier - a services goes and gets your data from a data source 
-
-##### Create a Service 
-
-by running 
+ 
+Create a Service by running:
 
 ```bash
 ng generate service data
@@ -430,9 +427,38 @@ ng generate service data
 ---
 
 ### Front End : Angular
+
+#### Why Angular?
+
+Our Front End infrastructure was implemented using the Angular framework. We chose this, not just because it was the framework being used for the course content, but also because of it's functionality out of the box. As a framework, it is very versatile and allows for a lot of features to be implemented without use of third-party libraries. As inexperienced developers, this seemed like a very important aspect, and thus we were happy to follow the guidance of the University and use this as our Front End, as opposed to trying something different.
+
+Some other benefits that led us to use Angular are: 
+- Typescript based language, therefore keeping our language across the full stack consistent, but also as it is a typed language, it allowed us to keep our code clean and understandable
+- Unlike React, Angular is a fully-fledged responsive web design framework. As a result, there is enhanced consistency throughout.
+- Angular provides a great deal of ready-to-use UI components and also has plenty of learning material.
+
+#### The Website Design
+
+During our design process, we had created paper prototypes and wireframes to design what we envisaged our website would look like. During this process (which you can read more about [here](/SystemDesign.md)), we had decided that our website would compose of:
+- Welcome page
+- The quiz
+- Fake news stats page
+
+To implement this, using the Angular CLI, we generated components that would allow us to build out the HTML, Typescript and CSS aspects of each page. These components formed the basis of our website and allowed us to repeat certain aspects of the website (e.g. toolbar and footer) without having duplicate code.
+
+To build out the Welcome Page, we opted to use a pre-made HTML template, provided by W3Schools.com, and added new components to the HTML for the toolbar for navigation and the social footer. Navigation between the various parts of the website was achieved using the RouterModule from Angular that allowed us to set certain components as the end point of certain urls, e.g. `/about` would take you to the fake news info component.
+
+![WelcomePage](../Documentation/Images/rsz_welcomepage.png)
+
+###**I THINK THIS WILL BE BETTER PLACED IN DESIGN**
+
+The meat of the website would be the quiz itself and to implement this we investigated building out our own quiz framework, or using a pre-made one and tailoring it to our needs.
+
 **Choice and change of Angular Quiz Framework**
 
-Once we had decided on implementing a quiz, our first front end activity involved a morning pair programming session sitting down to research and test and try different Angular quiz frameworks that might be suitable as a template for the purpose of this project.  We looked at a number of different frameworks in depth including this framework developed by Code Project  https://www.codeproject.com/Articles/1167451/Quiz-Application-in-Angular , but we decided we would use this Spotify app https://awesomeopensource.com/project/fabiandev/angular-quiz-app. Our next task was to familiarise ourselves with the Angular component structure that rendered the site, which we tried and tested for some days. This quiz app even formed the basis of one of our rounds of user feedback. However, it was not until we made more concerted attempts to build out and refactor the code on this quiz we realised that this quiz was too advanced for our still relatively nascent experience of Angular. As such, we had to make a u-turn and thus settled on this https://github.com/evagrean/quiz-app new quiz framework altogether which was less complex and more malleable for what we had in mind to achieve.  There were sufficiently less components and the code was more simple to re-work and manipulate. 
+We spoke with the teaching support on the course about how best to approach implementing a quiz in Angular. On advise from Thomas Bale, we elected to find a pre-made quiz framework and repurpose it for our needs. To do this, we had a front end get together that involved a morning pair programming session sitting down to research, test and try different Angular quiz frameworks that might be suitable as a template for the purpose of this project. We looked at a number of different frameworks in depth including: https://github.com/evagrean/quiz-app, https://www.codeproject.com/Articles/1167451/Quiz-Application-in-Angular but we decided we would use this Spotify app https://awesomeopensource.com/project/fabiandev/angular-quiz-app. The reason we chose this framework was because it was aesthetically and functionally pleasing to interact with and thought it would help keep the content of the quiz engaging. Other frameworks we found felt a bit basic, whereas the Spotify Quiz had animations and progress bars, for example. 
+
+Our next task was to familiarise ourselves with the Angular component structure that rendered the site, which we tried and tested over a few days. This quiz app even formed the basis of one of our rounds of user feedback. However, it was not until we made more concerted attempts to build out and refactor the code on this quiz we realised that this quiz was too advanced for our still relatively nascent experience of Angular. As such, we had to make a u-turn and thus settled on this https://www.codeproject.com/Articles/1167451/Quiz-Application-in-Angular new quiz framework altogether which was less complex and more malleable for what we had in mind to achieve.  There were sufficiently less components and the code was more simple to re-work and manipulate.  
 
 During our research of Angular frameworks, we also took the opportunity to brainstorm some design ideas as a team about prospective designs for our quiz. This helped us to focus in on our needs and initiate the creative process of building up the single page application front end in our minds. 
 
@@ -444,9 +470,9 @@ We created this mood board to consolidate and draw ideas from:
 
 One of the major challenges for the front end was linking with the back end to load their .json file that would render our quiz questions and answers on the website. First, we had to refactor a lot of the models, service and component code on the front end, which included the removal of a lot of unnecessary variables. 
 
-For example, the original quiz service looked as follows originally:
+For example, the original `quiz.service.ts` looked as follows originally:
 
-```javascript
+```typescript
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -461,8 +487,8 @@ export class QuizService {
 
   getAll() {
     return [
-      { id: 'data/testQuiz.json', name: 'Test Quiz' },
       { id: 'data/javascript.json', name: 'JavaScript' },
+      { id: 'data/aspnet.json', name: 'Asp.Net' },
       { id: 'data/csharp.json', name: 'C Sharp' },
       { id: 'data/designPatterns.json', name: 'Design Patterns' }
     ];
@@ -471,9 +497,11 @@ export class QuizService {
 }
 ```
 
-The three main models were all refactored also to prepare for the new json: question.ts, quiz.ts and option.ts. New option.ts:
+The three main models were all refactored also to prepare for the new JSON: `question.ts`, `quiz.ts` and `option.ts`. 
 
-```javascript
+New `option.ts`:
+
+```typescript
 export class Option {
     id: number;
     questionId: number;
@@ -550,9 +578,114 @@ Eventually, we managed to link up with the back end after lengthy communication 
         },
 ```
 
-**Building up Angular features**
+####Building up Angular features
 
----
+After the relevant data models had been refactored, using a dummy JSON file, we were able to populate the quiz with our questions to test that it worked. Next we worked on reformatting the quiz so that it had some extra features.
+
+With each question, we wanted to present an article link and snippet to inform the quiz takers decision on whether the article was real or fake. This involved adding code to quiz.component.html file:
+
+```html
+<h3 class="font-weight-normal">{{pager.index + 1}}.
+    <a href="{{question.articleURL}}" target="_blank">
+        <span [innerHTML]="question.name"></span>
+    </a>
+</h3>
+<h4 class="font-weight-normal">Article snippet:
+    <span [innerHTML]="question.articleBody"></span>
+</h4>
+```
+Further, for fake articles, the JSON payload included article links that debunked said article. After completing the quiz, we wanted to present this to the taker so that they could see why the article was deemed fake. However, for the real articles, no link was provided so we had to implement conditional statements to only present the link if the article was fake. To do this, we utilised Angulars built in ngIf feature:
+
+```html
+<div class="result-question">
+    <h5>{{index + 1}}. {{question.name}}</h5>
+    <div class="debunk" *ngIf="isRealFake(question) == 'fake'">
+        <h6>This article was fake,
+            <a href="{{question.debunkArticleUrl}}" target="_blank">click here to debunk it!</a>
+        </h6>
+    </div>
+    <div class="row">
+        <div class="col-6" *ngFor="let Option of question.options">
+            <input id="{{Option.id}}" type="checkbox" disabled="disabled" [(ngModel)]="Option.selected" /> {{Option.name}}
+        </div>
+    </div>
+    <div class="p-1 m-2 alert {{ isCorrect(question) == 'correct'? 'alert-success': 'alert-danger'}}">Your answer is {{isCorrect(question)}}. This was article was {{isRealFake(question)}}.</div>
+</div>
+```
+We also added features that shuffled the questions each time by editing the `quiz.ts` model to randomly push questions from the JSON payload into the question array that was used in the `quiz.component.ts`. Right now this wasn't a major feature, as each quiz topic only had 10 questions, but further work could include larger question databases and shuffling the questions would keep the users experience fresh.
+
+```typescript
+shuffle(array) {
+  let currentIndex = array.length, temp, randomIndex;
+
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    temp = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+```
+
+With the quiz fully operable based on our JSON formats, we then had to implement features into the HTML and Typescript that would allow the user to select which quiz they wanted to take. Having been previously made aware of the HTML Bootstrap framework, we opted to make use of the cards classes to make the topic selector page visually appealing.
+
+![TopicSelector](../Documentation/Images/rsz_topic_selector.png)
+
+To actually implement the topic selection, we created a new path in the `app-routing.module.ts`:
+```typescript
+ { path: 'quiz/:id', component: QuizComponent },
+```
+Using this path, when the user clicked on a topic, the URL would change to e.g.: `quiz/brexit` and present the quiz using Brexit questions. In order to have the quiz load the correct questions, based on the url address, the `quiz.component.ts` `ngOnInit()` `loadQuiz()` methods were re-worked.
+
+Extracting the quiz name from the URL like so:
+```typescript
+ngOnInit() {
+    this.quizzes = this.dataService.getQuizNames();
+    this.quizName = String(this.route.snapshot.paramMap.get('id'));
+    this.loadQuiz(this.quizName);
+  }
+```
+allowed the quizName to be passed into the loadquiz() method and select the right quiz from the JSON payload.
+
+####Connecting To The API
+
+Earlier work, mentioned above, had been done on aligning the backend data formats with the frontend quiz framework data models. As a result of this, the frontend quiz data could be retrieved from the API payload, as opposed to using a dummy JSON file.
+
+To retrieve the API, a new `data.service.ts` was generated using the Angular CLI. In this service, a `getAll()` method was created that utilised the HTTPClient module from Angular to make `HTTP get requests`. By using a `get` request, all the data provided on the given URL could then be returned. As mentioned earlier, the JSON payload was hosted at `http://localhost:4200/api/NewsTopics` so a HTTP request was made as such:
+```typescript
+private REST_API_SERVER = "http://localhost:4200/api/NewsTopics";
+```
+```typescript
+public getAll(){
+    return this.httpClient.get(this.REST_API_SERVER)
+  }
+```
+
+This data service could then be injected into whichever components needed access to the data. In our case, only the `quiz.component.ts` needed access to the JSON. All that was left to do was use the data service component to call the `getAll()` and `subscribe` to the data. This meant that if the data changed, or was updated, it would be updated on the frontend - a useful feature for is the questions were to change.  
+
+As the JSON was arriving as an array of quiz topic questions, to access the individual topics and present them to the user, based off what topic they had selected, a check on the quiz name is performed before loading the JSON into the quiz itself:
+```typescript
+ loadQuiz(quizName: string) {
+    this.dataService.getAll().subscribe(
+      res => {
+      if (quizName === 'Brexit') {
+        this.quiz = new Quiz(res[0]);
+        this.quiz.name = quizName;
+      } else if (quizName === 'Coronavirus') {
+        this.quiz = new Quiz(res[1]);
+        this.quiz.name = quizName;
+      }
+      ...
+```
+
+#### Additional Webpage Features
+
+As this was a <i>serious play</i> project, we also wanted to have an area of the website that would help educate the users and also have social sharing features so that awareness could be raised.
+
+To the footer we added a number of share buttons for the most common social media platforms and to the toolbar we added a link to an `About Fake News` page. On this page we talk about he history of fake news and how one can better protect themselves from it's effects.
 
 # Deployment Details
 
@@ -568,7 +701,7 @@ Generally, to implement continuous integration, consolidation between the backen
 
 ##### Effective Integration Example
 
-The issue arised since the backend team were advancing out of sync, since the frontend side of the project meant a lot of research had to be done in order to find a framework to build on. For the backend, guides were used (https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose, https://www.madetech.com/blog/migrations-seeds-and-pipelines/) that showed clear and good practices of mongoDB construction. These models built were refurbished multiple times. When the frontend team found a framework, the backend team needed to implement an Options model. Specifically, this Options model would incorporate 4 different instances, and it would be the document embedded in a particular quiz question which would allow for the user's answer to be checked against the correct_answer (boolean) field in a payload. Henceforth, files like insertDataScript, and new files in models/, needed to be changed to incorporate the need for this new model. As well as this, the backend team needed to revisit the schema diagrams, to verify the relationships that would need to be updated. The main relationship of question was between quiz_question and option. All of this was done with reference to a JSON payload that was given by the frontend, in order to get a JSON output from our API to match this. One issue was that the option document name was displaying in the output, which meant all the fields incorporated in a particular option document were not accessible by the front end. This last fix was solved (in insertDataScript.js) by including the actual fields of an option in a quiz question as opposed to embedding the actual Option document. We figured this was good practice since we are only referencing the Option documents as value. We do not need to update the fields in Option. 
+The issue arose since the backend team were advancing out of sync, since the frontend side of the project meant a lot of research had to be done in order to find a framework to build on. For the backend, guides were used (https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose, https://www.madetech.com/blog/migrations-seeds-and-pipelines/) that showed clear and good practices of mongoDB construction. These models built were refurbished multiple times. When the frontend team found a framework, the backend team needed to implement an Options model. Specifically, this Options model would incorporate 4 different instances, and it would be the document embedded in a particular quiz question which would allow for the user's answer to be checked against the correct_answer (boolean) field in a payload. Henceforth, files like insertDataScript, and new files in models/, needed to be changed to incorporate the need for this new model. As well as this, the backend team needed to revisit the schema diagrams, to verify the relationships that would need to be updated. The main relationship of question was between quiz_question and option. All of this was done with reference to a JSON payload that was given by the frontend, in order to get a JSON output from our API to match this. One issue was that the option document name was displaying in the output, which meant all the fields incorporated in a particular option document were not accessible by the front end. This last fix was solved (in insertDataScript.js) by including the actual fields of an option in a quiz question as opposed to embedding the actual Option document. We figured this was good practice since we are only referencing the Option documents as value. We do not need to update the fields in Option. 
 
 We felt this issue was solved efficiently, and was aided by the weekly stand-ups and constant communication across both teams. Additionally, members from opposing teams helped out in order to make sure the frontend needs were met by the backend for this particular issue.
 
