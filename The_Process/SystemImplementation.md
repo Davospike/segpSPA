@@ -394,10 +394,12 @@ router.get('/NewsTopics', async (req, res) => {
 
 And the process is as follows:
 
-- client enters the http request (i.e., when running locally: localhost:4200/api/NewsTopics)
+- client enters the http request, which automatically requested when they choose a particular topic (i.e., when running locally: localhost:4200/api/NewsTopics) 
+  - **localhost:4200/api** is the base path of the API endpoint
+  - **/NewsTopics** is the path that corresponds to the specific method in api.js 
 - this utilises the NewsTopic mongoose model that we require from ../models, and implements the mongoose method **.find**
 - since the result of this is a JSON string, it can be stored in a const
-- We look for ny errors, and if everything is okay, we respond to that request with a string 
+- We look for any errors, and if everything is okay, we respond to that request with a JSON payload (as a string) 
 
 As we're exporting the router made in api.js, which is required in server.js, the output of this (when integrated with angular) is rendered on to the webpage.
 
@@ -550,18 +552,66 @@ Eventually, we managed to link up with the back end after lengthy communication 
 
 **Building up Angular features**
 
+---
 
+# Deployment Details
 
-### Deployment
-**Continuous Integration**
+### **Continuous Integration**
 
 To align with agile working principles, we opted for continuous integration when developing this project. Small incremental progress in the form of frequent commits on our git repositories allowed both for a tangible goals to be realised more easily and for constant revision of our progress. Mentally, this method of working helped to compartmentalise big tasks to make the project at large seem less insurmountable.    
 
-**Deployment with Docker**
+#### Integration across FrontEnd and BackEnd
 
-Deploying our new quiz framework with Docker involved integrating what we had achieved and learnt through the Angular Demo Site with our new Angular Quiz Framework.  We had to first move across all the relevant files that supported the docker container ecosystem and the MongoDB such as 
+Generally, to implement continuous integration, consolidation between the backend team and the front end team was imperical. As highlighted above, the main integration came from pulling together files from AngularDemoSite and AngularQuizApp, which were at the time two struturally separate projects. We felt initially that it would be best for the backend team to work on AngularDemoSite (which was built upon a skeleton framework of a MEAN Stack project), and for the frontend team to work on AngularQuizApp - which was a quiz framework, focusing mostly on angular. For continuous integration to apply, team meetings were held often. We had **weekly stand-ups** (the notes for these are in ../Documentation/Meeting_Log/Standps, in which the both teams would present their work, and notes would be taken for reference to the counterpart when specialising in their own work. We feel this lead to an easier integration among the two projects. An example of when this came in to effect was creating the Options model in the MongoDB database. 
 
-deploy.sh, blockData, wait-for.sh, insertDataScript.js and others. Initially we had some difficulty in rendering the new framework with the docker container. This was for myriad reasons. We had to change some dependencies in package.json and package-lock.json which resulted in merge conflicts which were tricky to solve. Another issue we had was that originally we serving our new application with the command npm serve - which was not ideal for the docker container. As such, we installed some further dependencies to ensure the application would be rendered with ng build.  However, the application would not work still. As such, Harry and Jack set up a Teams  pair programming call to run over the changes that had been made and after a good session we realised that we had to tweek a static path in the server.js file. Once we solved this issue, we were jubilant to deploy our full stack through docker. 
+---
+
+##### Effective Integration Example
+
+The issue arised since the backend team were advancing out of sync, since the frontend side of the project meant a lot of research had to be done in order to find a framework to build on. For the backend, guides were used (https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose, https://www.madetech.com/blog/migrations-seeds-and-pipelines/) that showed clear and good practices of mongoDB construction. These models built were refurbished multiple times. When the frontend team found a framework, the backend team needed to implement an Options model. Specifically, this Options model would incorporate 4 different instances, and it would be the document embedded in a particular quiz question which would allow for the user's answer to be checked against the correct_answer (boolean) field in a payload. Henceforth, files like insertDataScript, and new files in models/, needed to be changed to incorporate the need for this new model. As well as this, the backend team needed to revisit the schema diagrams, to verify the relationships that would need to be updated. The main relationship of question was between quiz_question and option. All of this was done with reference to a JSON payload that was given by the frontend, in order to get a JSON output from our API to match this. One issue was that the option document name was displaying in the output, which meant all the fields incorporated in a particular option document were not accessible by the front end. This last fix was solved (in insertDataScript.js) by including the actual fields of an option in a quiz question as opposed to embedding the actual Option document. We figured this was good practice since we are only referencing the Option documents as value. We do not need to update the fields in Option. 
+
+We felt this issue was solved efficiently, and was aided by the weekly stand-ups and constant communication across both teams. Additionally, members from opposing teams helped out in order to make sure the frontend needs were met by the backend for this particular issue.
+
+---
+
+Another implementation of continuous integration was our project pipeline on GitHub. Details on the design of our workflow is outlined in the **Sprints & Project Management Section** of this writeup. In essence, to circumvent the common occurrence of a merge conflict, we created a branch for each team member to do work on. When splitting the team members into specialised development roles, and the backend and frontend team generally worked in two separate directories. This meant that any conflicts caused generally when working in these directories were caused by members of the same 'team'. This meant that any details left out of stand ups, specific to teams' individual tasks, were not entirely dealt with a counterparty member. 
+
+### **Deployment with Docker**
+
+Deploying our new quiz framework with Docker involved integrating what we had achieved and learnt through the Angular Demo Site with our new Angular Quiz Framework.  We had to first move across all the relevant files that supported the docker container ecosystem and the MongoDB such as deploy.sh, blockData, wait-for.sh, insertDataScript.js and others.
+
+Utilising Docker generally meant that we get a reproducible build environment, a flexible project which can migrate across operating systems, and could be tested in a clear and informative way. The files **docker-compose.yml** was included in the Docker build, which ensured the helpful features that Docker offers were implemented to the build process. The **Dockerfile** was also integral to our build process. This text document has all the commands a user can call on the command line to build an image (instance of a container). This **Dockerfile** executes multiple commands (like a script) in succession. We use these files for building our Node and MongoDB Docker containers. 
+
+We encountered some issues that continuous integration aided in the deployment of docker. Some key features of our repo in light of deployment with docker are highlighted below.
+
+##### Wait-for
+
+Since our project design meant that we needed to have two running containers: a Node one and a mongoDB one, we needed to ensure that we have a mongoDB image running before it is connected to a Node image. The solution for this was implementing a **wait for** script. We needed to download this, and our source is illustrated below:
+
+```bash
+$ wget -O wait-for.sh https://raw.githubusercontent.com/eficode/wait-for/master/wait-for
+chmod +x wait-for.sh
+```
+
+- Then, in the docker-compose.yml, we implemented the running of this wait-for script in the command section (in services)
+
+- The line is repeated below:
+
+  ```sh
+  command: ./wait-for.sh db:27017 -- /home/node/app/node_modules/.bin/nodemon server.js
+  ```
+
+- This line is for the node instance. It waits for the mongoDB container to be running (which exposes port 27017), and following this it starts up the node container.
+
+##### MongoDB Credentials
+
+Since we want our database to be secure, we needed to provide the login credentials in a way that was not exposing to the public. We created a file (which was left out of this repo for obvious reasons), which displayed our credentials. We specified the field **environment** in the db image section of the **docker-compose.yml** script, which specified where the mongoDB container can get the credentials, so we can automatically log in when running this script.
+
+
+
+##### Integrating Docker Commands and Fixing Merge Conflicts - AngularDemoSite -> AngularQuizApp
+
+Initially we had some difficulty in rendering the new framework with the docker container. This was for myriad reasons. We had to change some dependencies in package.json and package-lock.json which resulted in merge conflicts which were tricky to solve. Another issue we had was that originally we serving our new application with the command npm serve - which was not ideal for the docker container. As such, we installed some further dependencies to ensure the application would be rendered with ng build.  However, the application would not work still. As such, Harry and Jack set up a Teams  pair programming call to run over the changes that had been made and after a good session we realised that we had to tweek a static path in the server.js file. Once we solved this issue, we were jubilant to deploy our full stack through docker. 
 
 Resolving this path issue was the key to full stack deployment through Docker:
 
@@ -570,7 +620,42 @@ Resolving this path issue was the key to full stack deployment through Docker:
 app.use(express.static(path.join(__dirname, 'dist/ng6-quiz')));
 ```
 
+##### Docker Volume Fix
 
+Another docker issue, encountered by the backend, was that since Docker mounts volume locally, we needed somewhere to store the data and then import this into MongoDB. This was more of a lesson in how Docker works, but the result - *creating an InsertDataScript to get JSON files for our models, and then importing them in deploy.sh* - lead to a situation where the correct data would be in the mongoDB docker container every time we run deploy.sh. Furthermore, due to the internals of Docker, the libraries and dependencies used for mongoDB will be the same for anyone who starts our containers. This aided continuous integration and deployment as it rules out any errors that may have occurred due to discrepancies across mongoDB software versions. 
+
+##### Slow Build Process Fix
+
+We found that the build process for docker could take a while in most cases, and this slowed down development, and made pair programming techniques almost redundant as we would make small changes, and spend most of the time waiting. We consulted with senior members of staff, as highlighted in the backend meeting log, and fixed up a version of docker-build which could be run local. This process built docker in a similar way, using port 27018, and used the LOCAL fields in the **.env** file. Some other changes include:
+
+- having a check in **server.js** to see if we were running locally or not - if we were, module dotenv is used which gets the correct .env credentialy 
+- in **db.js** we created local and container URLs which gets used whether we're using the local or the container's mongoDB database.
+
+To run this local build process, we simply ran:
+
+```bash
+$ npm run local
+
+# local is a script defined in package.json 
+# it runs:
+	$ docker-compose up -d
+	$ node server.js IS_LOCAL
+	# IS_LOCAL is the flag used to signal we want to run locally - telling server.js what 		port to use
+```
+
+We agreed, to liase with continuous integration principles, we would only make small changes when running locally - for example bug fixes. This was core to using the local deployment of docker, since we felt it best that bigger changes - for example those that affected project structure, or a new feature - would be run in the full docker build version. Deploying docker in a lighter way helped improve the effectiveness of pair programming sessions.
+
+---
+
+##### When done testing, can talk about continuous deployment/delivery here
+
+- can also talk about docker logs - ie manually inserted so console.debug stuff too to get clear idea of errors 
+
+---
+
+Utilising continuous integration and deployment throughout the project, with an agreed-upon build process and error checking methodology, we felt our project development process ran smoothly. We also feel that the use of Docker would allow for further development in the future, either by us or others. This is due to the reproducible build environment and persistent storage that these principles and softwares assemble.
+
+---
 
 ### Additional
 [ADD TO] - Additional elements and components e.g. authentification. Tell us about any other aspects not covered above!
