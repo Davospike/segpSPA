@@ -135,6 +135,7 @@ Also on your Github repository, you must write a front-page document (readme.md)
   - **ethical framework**
 - Discussion of future work (in terms of design, development and evaluation)
   - **more fake news, continuous pulling of data, our own integrate fake news detection model, user accounts, different data formats ie using dataset DB in archive (and different types of quizzes), mobile app, expanding answers beyond true/false**
+  - can put here that if were to do a similar project / extend this one, would implement use of jasmine / karma tools in early stages of the process, to get live error checking etc
 
 
 

@@ -180,6 +180,74 @@ Backlog of improvements at start of sprint:
 
 By the end of the sprint... [ADD TO]
 
+---
+
+## Sprints and Project Management - Team Use of Git
+
+In order to implement continuous integration and deployment within our project, we decided to follow some of the DevOps Best Practices (https://www.atlassian.com/devops/what-is-devops/devops-best-practices), whereby developers make small frequent changes to a central repository, and test them. Imperative to aligning with these practices and our agile framework, is a source code version control system. We used GitHub. The reasons for which are best outlined below, with reference to the Agile software development approach.
+
+We needed developers in the team to tackle tasks individually (alongside some pair programming). This allows for specialisation across team members, so they can focus on specific features in efficient manour. Key to this was organising *who* builds *what*. Discussions of this sort took place in team meetings, and are generally outlined in the meeting logs (front end and back end). GitHub's utilisation of **branches** effectively allowed us to adopt this methodology in our approach.
+
+#### Branching
+
+Initially, due to inexperience using the GitHub version control system, our branch network was disorganised. We started out by commiting initial project documents to the same branch, master (by default). This resulted in many merge conflicts. It was clear we needed to outline how to design a better system for collaboration. We then decided to make individual branches, that corresponded to each team member. Thus, our branch structure looked like:
+
+```
+Origin/Master
+	Harry
+	Jack
+	Nathan
+	Vini
+	Dan
+```
+
+From this point out, we all pushed to our respective branches, and generally practiced merging into master. 
+
+Our finaly branch structure did not deviate too much from this, however, we needed to implement a **dev** branch. The reason for this, was that we wanted to have a separate branch in which we could implement tests that would mimic tests conducted by professional teams, just before deployment to live servers. This became our master branch.
+
+We then agreed on a general workflow, which was formulated in Teams chats. This workflow looked like:
+
+```
+1. Agree on a feature to implement in your respective branch 
+2. Build and test your feature by deploying the web application (either on your own or 	while pair programming)
+3. Push your changes, providing an insightful commit message.
+4. Merge your changes into dev.
+```
+
+There are some points that we're revisited throughout this process:
+
+- The second step was generally implemented by running the web application, and checking for error messages in logs. We can therefore claim that continuous integration has been met to some standard.
+- The third step was one that we all stuck to. Throughout our commit history, our messages have been insightful and have provided a clear message to other team members. This is discussed in **good practice example**, below.
+- This fourth step was the general procedure for updating the repository that all the developers in the team used to merge into their respective branches. Since we had agreed that our changes would be small and frequent, for timing purposes **pull requests** were not submitted in all commits.
+
+Generally from the outset, there were some issues. We had merge conflicts, as expected, that were not handled successfully. There was one conflict, in which the solution lead to duplicate files being created across our repository. It was clear that not everyone had been using the correct workflow. We decided to go through the git workflow practice, from a technical standpoint, all in a live session. We could visually see the improvement in our workflow process via the Network interface on GitHub. 
+
+Here is an example of the idealised git workflow in action:
+
+![Screenshot 2021-04-27 at 15.24.12](/Users/nathantaylor/Library/Application Support/typora-user-images/Screenshot 2021-04-27 at 15.24.12.png)
+
+#### Branch Naming
+
+The naming of our branches felt suitable for our application, as opposed to a branch for each feature, since our team was generally small, hence everyone would be making contributions across features. Having the branches labelled by name allowed us to speak with individual developers about commits they have made, if they had causes bugs. This proved particularly useful when merge commits occurred in dev, as the team members that were involved in the merge commit could easliy consolidate on a solution - when removing conflicting text in a file for example.
+
+
+
+#### Pull Requests
+
+As outlined above, pull requests were not commonplace for commits and merges into dev. This is a particularly useful practice in agile for teams, since other developers can discuss a particular commit, and decide whether it will merge with the current repository in a useful way. It would have been a good idea to implement this feature more frequently in our development process. Another reason we felt this was not always necessary, is that our team of 5 was split between front end and back end, and although branches were for individual developers, most tasks were done during pair programming sessions. Henceforth, the approval from other team members would be incorporated in the code.
+
+One example when a pull request was necessary, and we decided to implement it. This commit consisted of a new page implemented in our single page application, this was the **About** page. We all reviewed this commit and approved it individually. Team members that worked on the front end generally looked at the implementation in code. Back end team members were looking at the content included in the new page. This pull request was labelled "**Stats page change**". 
+
+
+
+#### Good Practice Example
+
+This section outlines where we saw good practices implemented in our workflow pay off. We had a major issue, in that the main **get** method called from the file **server/routes/api.js**. Somewhere along the commit history, this get method had been deleted. This required the use of the commit history interface on Github.com, and this issue was fixed easily via browsing through previous commit messages. As well as this, the backend team had coordinated who had done what with respect to this file. This is where our branch naming and commit messages proved very useful.
+
+As well as this, another good practice supported us in this solution. After a meeting with Marceli, we made some major changes to the backend. There was multiple commits across files. Since the commits were not as small as we first realised, we decided to make a new branch, called **updated_database** on one of our developer's local repository. We then pushed our changes, and merged with dev. We used this updated_database branch for reference when re-implementing the **get** method we had lost. We saw a very similar method in the updated_database branch, so we could be sure that this was the correct method we had lost.
+
+---
+
 ## MEAN Stack System Implementation
 
 ### Stack Architecture & System Design
@@ -432,7 +500,7 @@ Ideas...
 ### Creating a service 
 
 After setting up mongoDB, and importing all the data we need. We need to define a service to handle http calls. Services are great because they're injectable, and they can also have its own injected dependencies - making testing and reuse easier - a services goes and gets your data from a data source 
- 
+
 Create a Service by running:
 
 ```bash
