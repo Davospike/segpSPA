@@ -6,11 +6,44 @@
 
 ## The Team
 
-- [Harry](https://github.com/hs14428) 
-- [Nathan](https://github.com/nwtay) 
-- [Daniel](https://github.com/Davospike)
-- [Vincenzo](https://github.com/vinigibilaro)
-- [Jack](https://github.com/numberonepikey)
+<table style="width:100%">
+    <tr>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Role</td>
+        <td>Photo</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/Davospike" target="_blank">Daniel Davies</a></td>
+        <td>d.davies.2020@bristol.ac.uk</td>
+        <td>Front-end</td>
+        <td style="text-align: center;"><img src="https://images-na.ssl-images-amazon.com/images/I/61tbu9DtTSL._AC_SX425_.jpg" style="width: 100px"></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/numberonepikey" target="_blank">Jack Pike</a></td>
+        <td>jp13087@bristol.ac.uk</td>
+        <td>Front-end</td>
+        <td style="text-align: center;"><img src="https://images-na.ssl-images-amazon.com/images/I/61tbu9DtTSL._AC_SX425_.jpg" style="width: 100px"></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/hs14428" target="_blank">Harry Smith</a></td>
+        <td>hs14428@bristol.ac.uk</td>
+        <td>Front-end</td>
+        <td style="text-align: center;"><img src="Documentation/Images/HS%20Mugshot.jpg" style="width: 100px"></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/nwtay" target="_blank">Nathan Taylor</a></td>
+        <td>nt17118@bristol.ac.uk</td>
+        <td>Back-end</td>
+        <td style="text-align: center;"><img src="https://images-na.ssl-images-amazon.com/images/I/61tbu9DtTSL._AC_SX425_.jpg" style="width: 100px"></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/vinigibilaro" target="_blank">Vincenzo Gibilaro</a></td>
+        <td>ar20516@bristol.ac.uk</td>
+        <td>Back-end</td>
+        <td style="text-align: center;"><img src="Documentation/Images/VG%20Mugshot.png" style="width: 100px"></td>
+    </tr>
+</table>
 
 ## **The Product**
 
