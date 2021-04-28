@@ -86,13 +86,13 @@ Before the team decided on a Fake News quiz website, plenty of work was done on 
 
 ### Idea Generation
 
-##### Brainstorming Sessions and Idea Matrix
+#### Brainstorming Sessions and Idea Matrix
 
 Some of the first work that was done on coming up with the initial idea for the web app was facilitated by various techniques. Prior to carrying out any serious research or work on individual ideas, we first came together for a brainstorm session. There were no wrong answers, as the process was just about getting ideas down which we could then delve into and refine further if they were popular. Coming out of the session, we had settled on just under 20 topic ideas (view these [here](../Documentation/Archive)). With ideas on board, we were able to explore some other techniques to further refine the ideas.
 
 The most successful of these other techniques was creating a matrix of topics to merge; we were combining **Serious** [Topics] and **Play** [Games]. This method was very effective. It worked by using the column headers for one characteristic and the row headers for the other (i.e, serious topics as rows and play/games on the columns) and then combining each of the subjects together to create a **Serious Play** topic. Having 5 people in the group made this technique very robust and helped us refine our ideas settle on our choice of serious play relatively quickly.
 
-##### Miro Whiteboarding
+#### Miro Whiteboarding
 
 <p align="centre">
     <img src="../Documentation/Images/rsz_miroboard.png" alt="Miro Board">
@@ -152,6 +152,7 @@ Using UML, we can represent the main user stories in a use case diagram:
 ### Paper Prototypes & Wireframes
 
 #### Paper Prototype
+[ADD TO
 
 #### Wireframe
 
@@ -184,19 +185,3 @@ The second round of feedback incorporated more specific elements of our developm
 - [Next Section: Project Evaluation](SystemImplementation.md)
 - [Back to Top](#table-of-contents)
 - [Back to Home](../README.md)
-
-# Mark Scheme Relevant Topics:
-
-## Background and Motivation
-- Background literature. Academic research review.
-- State of the art survey. Current industry review.
-- Clear definition of the problem. How does your project relate to the above? We will be marking the ability of your team to identify a worthwhile and important problem and clearly articulate the scope and challenge of the problem.
-
-## UX Design
-- Design Process and Early prototyping and ideation (including mood boards and paper prototyping)
-- Identification of interacting users and broader stakeholders.
-- UX approach – design heuristics/approach, design methods (design fiction / heuristics)
-- Understanding of user group (questionnaires / user stories / interviews)
-- Wireframes and interaction flow diagrams for final key subsystems.
-
-Design of the prototype started with a wire frame prototype on powerpoint that was designed collabaratively on Teams. After refactoring the design, we created a  Survey Monkey to send to 20 people. This informed our following design on.....

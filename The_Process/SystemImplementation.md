@@ -37,10 +37,66 @@ To help manage workloads, we split up into separate, but closely linked, front a
 [ADD TO] - Group working methods used (for instance did your team choose a particular style of agile? what communication channels did you use?)
 
 ### GitHub Continuous Integration
-The team utilised GitHub to streamline and organise the workflow throughout the project. Each team member had a separate branch to work on which we periodically merge back into the dev branch. This meant any conflicts/errors could be managed and our progress was being saved as we went; useful for if something broke along the way.
+In order to implement continuous integration and deployment within our project, we decided to follow some of the [DevOps Best Practices](https://www.atlassian.com/devops/what-is-devops/devops-best-practices), whereby developers make small frequent changes to a central repository, and test them. Imperative to aligning with these practices and our agile framework, is a source code version control system. We used GitHub as it meant any conflicts/errors could be managed, and our progress was being saved as we went; useful for if something broke along the way. 
 
-The team also utilised the Docker deployment approach. You can read more about our use of Docker [below](#deployment-details)
-[ADD TO] - Stuff on "Team use of Git, how your team used continuous integration / continuous deployment. Streamlining of workflow throughout."
+Our reasons for using Git and GitHub, with reference to the Agile software development approach, are best outlined below.
+
+We needed developers in the team to tackle tasks individually (alongside some pair programming). This allows for specialisation across team members, so they can focus on specific features in efficient manour. Key to this was organising *who* builds *what*. Discussions of this sort took place in team meetings, and are generally outlined in the meeting logs (front end and back end). GitHub's utilisation of **branches** effectively allowed us to adopt this methodology in our approach.
+
+#### Branching
+
+Initially, due to inexperience using the GitHub version control system, our branch network was disorganised. We started out by commiting initial project documents to the same branch, master (by default). This resulted in many merge conflicts. It was clear we needed to outline how to design a better system for collaboration. We then decided to make individual branches, that corresponded to each team member. Thus, our branch structure looked like:
+
+```
+master
+dev
+harry
+jack
+nathan
+vini
+dan
+```
+
+From this point out, we all pushed to our respective branches, and generally practiced merging into master.
+
+Our final branch structure did not deviate too much from this, however, we needed to implement a **dev** branch. The reason for this, was that we wanted to have a separate branch in which we could implement tests that would mimic tests conducted by professional teams, just before deployment to live servers. This became our master branch.
+
+We then agreed on a general workflow, which was formulated in Teams chats. This workflow looked like:
+
+```
+1. Agree on a feature to implement in your respective branch 
+2. Build and test your feature by deploying the web application (either on your own or while pair programming)
+3. Push your changes, providing an insightful commit message.
+4. Merge your changes into dev.
+```
+
+There are some points that were revisited throughout this process:
+
+- The second step was generally implemented by running the web application, and checking for error messages in logs. We can therefore claim that continuous integration has been met to some standard.
+- The third step was one that we all stuck to. Throughout our commit history, our messages have been insightful and have provided a clear message to other team members. This is discussed in **good practice example**, below.
+- This fourth step was the general procedure for updating the repository that all the developers in the team used to merge into their respective branches. Since we had agreed that our changes would be small and frequent, for timing purposes **pull requests** were not submitted in all commits.
+
+Generally from the outset, there were some issues. We had merge conflicts, as expected, that were not handled successfully. There was one conflict, in which the solution lead to duplicate files being created across our repository. It was clear that not everyone had been using the correct workflow. We decided to go through the git workflow practice, from a technical standpoint, all in a live session. We could visually see the improvement in our workflow process via the Network interface on GitHub.
+
+Here is an example of the idealised git workflow in action:
+
+![Screenshot 2021-04-27 at 15.24.12](/Users/nathantaylor/Library/Application Support/typora-user-images/Screenshot 2021-04-27 at 15.24.12.png)
+
+#### Branch Naming
+
+The naming of our branches felt suitable for our application, as opposed to a branch for each feature, since our team was generally small, hence everyone would be making contributions across features. Having the branches labelled by name allowed us to speak with individual developers about commits they have made, if they had causes bugs. This proved particularly useful when merge commits occurred in dev, as the team members that were involved in the merge commit could easliy consolidate on a solution - when removing conflicting text in a file for example.
+
+#### Pull Requests
+
+As outlined above, pull requests were not commonplace for commits and merges into dev. This is a particularly useful practice in agile for teams, since other developers can discuss a particular commit, and decide whether it will merge with the current repository in a useful way. It would have been a good idea to implement this feature more frequently in our development process. Another reason we felt this was not always necessary, is that our team of 5 was split between front end and back end, and although branches were for individual developers, most tasks were done during pair programming sessions. Henceforth, the approval from other team members would be incorporated in the code.
+
+One example when a pull request was necessary, and we decided to implement it. This commit consisted of a new page implemented in our single page application, this was the **About** page. We all reviewed this commit and approved it individually. Team members that worked on the front end generally looked at the implementation in code. Back end team members were looking at the content included in the new page. This pull request was labelled "**Stats page change**".
+
+#### Good Practice Example
+
+This section outlines where we saw good practices implemented in our workflow pay off. We had a major issue, in that the main **get** method called from the file **server/routes/api.js**. Somewhere along the commit history, this get method had been deleted. This required the use of the commit history interface on Github.com, and this issue was fixed easily via browsing through previous commit messages. As well as this, the backend team had coordinated who had done what with respect to this file. This is where our branch naming and commit messages proved very useful.
+
+As well as this, another good practice supported us in this solution. After a meeting with Marceli, we made some major changes to the backend. There was multiple commits across files. Since the commits were not as small as we first realised, we decided to make a new branch, called **updated_database** on one of our developer's local repository. We then pushed our changes, and merged with dev. We used this updated_database branch for reference when re-implementing the **get** method we had lost. We saw a very similar method in the updated_database branch, so we could be sure that this was the correct method we had lost.
 
 ## Sprints
 ![Project Management Plan(1)](https://user-images.githubusercontent.com/63299377/115594606-d629ef80-a2cd-11eb-8c4d-9ca2078008c3.png)
@@ -120,13 +176,11 @@ Key goals:
 - Finalize question data model schema appropriate for integration into front end.
 - Create mongoose commands for JSON payload retrieval.
 
-At the start of the sprint, the frontend team got together for a pair programming session to start streamlining the code ready for database integration towards the end of the sprint, and hopefully finalised by the end of the following weeks sprint. However, it quickly became clear that the quiz framework that we had hoped to use was far too complicated for our use case. It was decided between us that we would need to pivot and find a new, simpler framework instead (please see the [System Design page](SystemDesign.md) for more on this). Granted, this was a bit of a set back as we had spent some time analysing and understanding how the quiz framework functioned and obviously had to start from scratch with a new framework.
+At the start of the sprint, the frontend team got together for a pair programming session to start streamlining the code ready for database integration towards the end of the sprint. However, it quickly became clear that the quiz framework that we had hoped to use was far too complicated for our use case. It was decided between us that we would need to pivot and find a new, simpler framework instead (see the [System Design page](SystemDesign.md) for more on this).
 
-Separately, but simultaneously other members on the team worked with the backend team to refactor the quiz question JSON inputs. Here work was done on re-factoring the typescript models for the quiz and re-factoring the quiz service files that actually operated the questions in the quiz. Some difficulties arose but they were eventually ironed out.
+Collaboratively, the front and backend team also worked together to refactor the typescript quiz and backend data models so that the quiz service files that operated the questions in the quiz worked. Some difficulties arose but they were eventually ironed out.
 
-With the frontend taking shape, work with the backend to get the database linked started. Sessions between the front and backend were held where discussions focussed on collaborating to get the most efficient and appropriate JSON setup in our database data schemas and frontend typescript models. As well as this, the backend team started on creating mongoose commands for JSON payload requests (VINI/NATH TO ADD).
-
-On reflection of the sprint, it was a productive week, despite the front end quiz framework setback; it was a busy one with lots of movement on all fronts. There was good collaboration between the front and backend in starting to get the database linked up to the front end so that questions for the quiz wouldn't have to be hard coded. We were now in a position to start work in the next sprint on requesting, and presenting, the data from the database in the quiz.
+On reflection of the sprint, it was a productive week, despite the front end quiz framework setback, with lots of movement on all fronts. There was good collaboration between the front and backend in starting to get the database linked up to the front end so that questions for the quiz could be dynamic. We were now in a position to start work in the next sprint on requesting, and presenting, the data from the database in the quiz.
 
 | Stakeholders            | Updated Use Case        |
 | ------------------------| ------------------------|
@@ -134,7 +188,7 @@ On reflection of the sprint, it was a productive week, despite the front end qui
 | Neil (University Professor)            | I can now share the website amongst my class for them to take the fake news quiz. This is great and will help raise awareness. |
 | Emma (Admin)            | The database and quiz questions are set up in the backend of our systems, we just need the front end to be able to access the data, as opposed to using a proxy dataset. |
 
-System implementation issues:
+#### System implementation issues:
 
 | Stack Part  | Goal        | Issue | Fix |
 | ------------| ----------- |-------|-----|
@@ -142,37 +196,37 @@ System implementation issues:
 | Frontend    | Setup quiz framework in frontend | Quiz framework selected was too advanced | Found a new framework that was more appropriate for our ability |
 
 ### Sprint 5 : Further Front and Backend Integration (12.04.21-18.04.21)
-In this sprint, the team hoped to finally have a fully integrated front and backend by the end so that general house keeping and tidying up could begin. Further, on the front end, a quiz topic selection page we created so that the user could pick between any of the five different available quizzes. The backend team also investigated the possibility of returning a single quiz topic question set at a time, as opposed to all topics at once.
+In this sprint, the team hoped to finally have a fully integrated front and backend by the end so that general housekeeping and tidying up could begin. On the front end, a quiz topic selection page was created so that the end user could pick between any of the five different set of quiz questions. The backend team also investigated the possibility of returning a single topic set of quiz questions at a time, as opposed to all questions at once.
 
 Key goals:
-- Add a data service to frontend to inject API data requests from MongoDB
-- Add a quiz topic selection page
-- Return mongoDB data topic by topic, as opposed to all at once
-- Implement method to keep track of number of times questions were answered correctly
+- Inject a data service to the frontend. 
+- Subscribe the quiz framework to the API JSON payload output.
+- Add a quiz topic selection page.
+- Return mongoDB data topic by topic, as opposed to all at once.
+- Implement method to keep track of number of times questions were answered correctly.
 
-Great progress was made during sprint number 5. During the week, the front end team were able to utilize the API that the backend team had developed in prior weeks. By using the JSON payload returned from the API, the frontend team created a data service to subscribe the front end to. With the API data now being automatically fed into the frontend, the team could then update the quiz component classes so that the individual quizzes were loaded into the quiz framework. By creating this link, the team had a fully operating MEAN stack web quiz. Success!
+Great progress was made during the sprint. During the week, the frontend team were able to utilize the API that the backend team had developed in prior weeks. By using the JSON payload returned from the API, the frontend team created a data service to subscribe the front end to. With the API data now being automatically fed into the frontend, the team could then update the quiz component classes so that the individual quizzes were loaded into the quiz framework. By creating this link, the team had a fully operating MEAN stack web quiz.
 
-After the success of finally linking up the front and backend, some minor work was required to allow the user to select which quiz topic they wanted to take. This was straight forward, but required some url redirecting to make sure the links sent the user to the correct quiz.
-
-In this sprint, the backend team also investigated upgrading the API so that it would only return the required quiz questions when a topic was selected on the topic page. The backend team were able to implement this, but upon further discussion with the wider team, we decided that the prefered method was to request all quiz topics at once and let the quiz framework decide which questions to access. Further, the backend team investigated implementing a feature we had been striving for since the first paper prototype; adding a "76% of users got this question wrong" at the end of the question. This proved to be too difficult, despite consulting with the TAs, and was ultimately dropped.
+In this sprint, the backend team also investigated upgrading the API so that it would only return the required quiz questions when a topic was selected on the topic page. The backend team were able to implement this, but upon further discussion with the wider team, we decided that the preferred method was to request all quiz topics at once and let the quiz framework decide which questions to access. Further, the backend team investigated implementing a user story we had been striving for since the first paper prototype; adding a, e.g., "76% of users got this question wrong" at the end of each question. This proved to be too difficult, despite consulting with the TAs, and was ultimately dropped.
 
 At the end of the sprint, the team were in agreement that we were all happy with the product and how it operated. The team agreed that the current state was our minimum viable product, and every improvement from here would be an added bonus!
 
 | Stakeholders            | Updated Use Case        |
 | ------------------------| ------------------------|
-| Donald (End-User)       | Success! I can now use the website to prove that I am indeed the best fake news detector the world has ever seen. I am able to select between my favourite topics (China!), share my scores and this website. Further, I can view interesting stats to see how bad fake news is. The user interface is engaging, and I enjoy visiting the site.|
+| Donald (End-User)       | Great, I can now use the website to take different fake news quizzes on 5 topic areas. Further, I can educate myself and view some interesting stats on the matter. Sadly, I cannot see how many other people got the questions right, but I can share my scores on social media.|
 | Neil (University Professor)            | There is a well formed "About Fake News" page on the website now. My students can now begin to better educate themselves on fake news. |
-| Emma (Admin)            | Unfortunately I cannot view how many of our quiz takers got each question right. This would've been helpful for deciding how hard to make future quizzes.|
+| Emma (Admin)            | Unfortunately I cannot view how many of our quiz takers got each question right. This would've been helpful for deciding how hard to make future quizzes. I can, however add new quiz topics to the website, should I wish too. |
 
-System implementation issues:
+#### System implementation issues:
 
 | Stack Part  | Goal        | Issue | Fix |
 | ------------| ----------- |-------|-----|
-| Backend     | Admin wants to view user question stats| Maintaining the state/count of number of times a question was correctly answered proved difficult. Persistence of the data kept getting lost | N/A - Dropped feature|
-| Frontend    | Linking up front and backend| Data sent through from API was not being picked up by the data service | Realized that the JSON payload from the API was being sent as an array of topics and questions. quiz.component.ts needed updating to reflect this |
+| Backend     | Admin wants to view user question stats | Maintaining the state/count of number of times a question was correctly answered proved difficult. Persistence of the data kept getting lost | N/A - Dropped feature as it was proving too difficult to maintain the count of question attempts and answers. Unfortunately, this meant we were not able to fufill two of our user stores. |
+| Frontend    | Linking up front and backend | Data sent through from API was not being picked up by the data service and thus no questions were being presented to the user. | Realized that the JSON payload from the API was being sent as an array of topics and questions. `quiz.component.ts` was refactored to access the correct array elements. |
+| Frontend    | Selecting a quiz topic | Extracting the user's quiz topic selection to use it to load the correct quiz questions.  | Redirect user to e.g. `/quiz/brexit` via the routing module and extract topic from URL to pass into `loadQuiz()` method call. |
 
 ### Sprint 6 : Write-up & Minor Frontend Amendments (19.04.21-07.05.21)
-After succesfully linking up the front and backend last sprint, the team had a minimum viable product and were ready to start focusing on writing up the project alongside attending to any remaining backlog/formatting on the code base and website. The team also undertook a final round of user feedback in order to ensure any quirks/bugs were addressed and to see if there were any finishing touches that could be made.
+After successfully linking up the front and backend last sprint, the team had a minimum viable product and were ready to start focusing on writing up the project alongside attending to any remaining backlog/formatting on the code base and website. The team also undertook a final round of user feedback in order to ensure any quirks/bugs were addressed and to see if there were any finishing touches that could be made.
 
 Backlog of improvements at start of sprint:
 - Add line chart onto fake news stats, plus any other stats ideas that arose.
@@ -183,70 +237,7 @@ By the end of the sprint... [ADD TO]
 
 ---
 
-## Sprints and Project Management - Team Use of Git
-
-In order to implement continuous integration and deployment within our project, we decided to follow some of the DevOps Best Practices (https://www.atlassian.com/devops/what-is-devops/devops-best-practices), whereby developers make small frequent changes to a central repository, and test them. Imperative to aligning with these practices and our agile framework, is a source code version control system. We used GitHub. The reasons for which are best outlined below, with reference to the Agile software development approach.
-
-We needed developers in the team to tackle tasks individually (alongside some pair programming). This allows for specialisation across team members, so they can focus on specific features in efficient manour. Key to this was organising *who* builds *what*. Discussions of this sort took place in team meetings, and are generally outlined in the meeting logs (front end and back end). GitHub's utilisation of **branches** effectively allowed us to adopt this methodology in our approach.
-
-#### Branching
-
-Initially, due to inexperience using the GitHub version control system, our branch network was disorganised. We started out by commiting initial project documents to the same branch, master (by default). This resulted in many merge conflicts. It was clear we needed to outline how to design a better system for collaboration. We then decided to make individual branches, that corresponded to each team member. Thus, our branch structure looked like:
-
-```
-Origin/Master
-	Harry
-	Jack
-	Nathan
-	Vini
-	Dan
-```
-
-From this point out, we all pushed to our respective branches, and generally practiced merging into master. 
-
-Our finaly branch structure did not deviate too much from this, however, we needed to implement a **dev** branch. The reason for this, was that we wanted to have a separate branch in which we could implement tests that would mimic tests conducted by professional teams, just before deployment to live servers. This became our master branch.
-
-We then agreed on a general workflow, which was formulated in Teams chats. This workflow looked like:
-
-```
-1. Agree on a feature to implement in your respective branch 
-2. Build and test your feature by deploying the web application (either on your own or 	while pair programming)
-3. Push your changes, providing an insightful commit message.
-4. Merge your changes into dev.
-```
-
-There are some points that we're revisited throughout this process:
-
-- The second step was generally implemented by running the web application, and checking for error messages in logs. We can therefore claim that continuous integration has been met to some standard.
-- The third step was one that we all stuck to. Throughout our commit history, our messages have been insightful and have provided a clear message to other team members. This is discussed in **good practice example**, below.
-- This fourth step was the general procedure for updating the repository that all the developers in the team used to merge into their respective branches. Since we had agreed that our changes would be small and frequent, for timing purposes **pull requests** were not submitted in all commits.
-
-Generally from the outset, there were some issues. We had merge conflicts, as expected, that were not handled successfully. There was one conflict, in which the solution lead to duplicate files being created across our repository. It was clear that not everyone had been using the correct workflow. We decided to go through the git workflow practice, from a technical standpoint, all in a live session. We could visually see the improvement in our workflow process via the Network interface on GitHub. 
-
-Here is an example of the idealised git workflow in action:
-
-![Screenshot 2021-04-27 at 15.24.12](/Users/nathantaylor/Library/Application Support/typora-user-images/Screenshot 2021-04-27 at 15.24.12.png)
-
-#### Branch Naming
-
-The naming of our branches felt suitable for our application, as opposed to a branch for each feature, since our team was generally small, hence everyone would be making contributions across features. Having the branches labelled by name allowed us to speak with individual developers about commits they have made, if they had causes bugs. This proved particularly useful when merge commits occurred in dev, as the team members that were involved in the merge commit could easliy consolidate on a solution - when removing conflicting text in a file for example.
-
-
-
-#### Pull Requests
-
-As outlined above, pull requests were not commonplace for commits and merges into dev. This is a particularly useful practice in agile for teams, since other developers can discuss a particular commit, and decide whether it will merge with the current repository in a useful way. It would have been a good idea to implement this feature more frequently in our development process. Another reason we felt this was not always necessary, is that our team of 5 was split between front end and back end, and although branches were for individual developers, most tasks were done during pair programming sessions. Henceforth, the approval from other team members would be incorporated in the code.
-
-One example when a pull request was necessary, and we decided to implement it. This commit consisted of a new page implemented in our single page application, this was the **About** page. We all reviewed this commit and approved it individually. Team members that worked on the front end generally looked at the implementation in code. Back end team members were looking at the content included in the new page. This pull request was labelled "**Stats page change**". 
-
-
-
-#### Good Practice Example
-
-This section outlines where we saw good practices implemented in our workflow pay off. We had a major issue, in that the main **get** method called from the file **server/routes/api.js**. Somewhere along the commit history, this get method had been deleted. This required the use of the commit history interface on Github.com, and this issue was fixed easily via browsing through previous commit messages. As well as this, the backend team had coordinated who had done what with respect to this file. This is where our branch naming and commit messages proved very useful.
-
-As well as this, another good practice supported us in this solution. After a meeting with Marceli, we made some major changes to the backend. There was multiple commits across files. Since the commits were not as small as we first realised, we decided to make a new branch, called **updated_database** on one of our developer's local repository. We then pushed our changes, and merged with dev. We used this updated_database branch for reference when re-implementing the **get** method we had lost. We saw a very similar method in the updated_database branch, so we could be sure that this was the correct method we had lost.
-
+## Sprints and Project Management - 
 ---
 
 ## MEAN Stack System Implementation
