@@ -98,7 +98,7 @@ Key goals:
   
 For the front end, the focus was taking onboard the feedback obtained from the SurveyMonkey questionnaire that was previously sent round based off the initial paper prototype. The feedback proved to be useful, especially points focussed around UI and UX, such as the navigation being intuitive and consistent, colour scheme and suggestions for a social sharing feature. As well as taking onboard UX and UI feedback, we also received reasurring feedback that the idea was liked by respondents and that they were interested to use the webpage and take the quiz. With this feedback, we also made our first interactive wireframe.
 
-As our first real coding sprint, we experienced some implementation issues on the backend. We were currently using proxy data for testing the backend, but now that we were trying to make the backend utilise MongoDB, storing the data caused some trouble. On reflection, however, it proved a useful learning experience.
+As our first real coding sprint, we experienced some implementation issues on the backend. We were previously using proxy data for testing the backend, but now that we were trying to make the backend utilise MongoDB, storing the data caused some trouble. On reflection, however, it proved a useful learning experience.
 
 | Stakeholders            | Updated Use Case        |
 | ------------------------| ------------------------|
@@ -111,35 +111,34 @@ As our first real coding sprint, we experienced some implementation issues on th
 | Backend     | Store persistent data in a dockerized mongoDB container | Data was not persisting when creating and running scripts to insert data and deploy docker | Trial and error, Googling and a deep dive into the scripts to ascertain root of the bugs |
 
 ### Sprint 4 : Build Frontend Webpages & Begin Linking Front and Backend (05.04.21-11.04.21)
-Sprint number 4 saw the team coming together to start bringing the frontend and backend elements together, as well as some individual advancements for each area, separate of the linking work. On the front end, work was done to start trimming down the fat on the quiz framework that we had selected to use, so that it could be ready to link up to the backend, and also we began to start adding some meat to the website. A moodboard was also drawn up in order to help design on the frontend. With the backend, work was done on finalising the data model schema and creating mongoose commands to return the correct JSON payload, ready to be used by the quiz for questions.
+Sprint number 4 saw the team coming together to start linking the frontend and backend. On the front end, work was done on highlighting what was, and what wasn't, needed from our selected quiz framework, in order to ascertain how we would tailor it to our liking. New pages and navigation were also added to the website. On the backend, the team finalised the data model schema and created mongoose commands to return the correct JSON payload, ready to be used by the quiz for questions.
 
 Key goals:
 - Start stripping out unused features from quiz framework.
-- Add new pages and features to frontend, e.g. landing page, stats page, navigation.
+- Add new pages and features to frontend, e.g. landing page, stats page, navigation, social sharing.
 - Start linking up the front and backend.
 - Finalize question data model schema appropriate for integration into front end.
 - Create mongoose commands for JSON payload retrieval.
 
-This weeks sprint was a busy one with lots of movement on all fronts. There was good collaboration between the front and backend in starting to get the database linked up to the front end so that questions for the quiz wouldn't have to be hard coded.
+At the start of the sprint, the frontend team got together for a pair programming session to start streamlining the code ready for database integration towards the end of the sprint, and hopefully finalised by the end of the following weeks sprint. However, it quickly became clear that the quiz framework that we had hoped to use was far too complicated for our use case. It was decided between us that we would need to pivot and find a new, simpler framework instead (please see the [System Design page](SystemDesign.md) for more on this). Granted, this was a bit of a set back as we had spent some time analysing and understanding how the quiz framework functioned and obviously had to start from scratch with a new framework.
 
-At the start of the sprint, the frontend crew got together for a pair programming session with the aim to start stripping out features that were not needed from the quiz framework, and to start streamline the code ready for database integration towards the end of this sprint, and hopefully finalised by the end of the following weeks sprint. However, it quickly became clear that the quiz framework that we had hoped to use was far too complicated for our use case. It was decided between us that we would need to pivot and find a new, simpler framework instead (please see the [System Design page](SystemDesign.md)) for more on this). Granted, this was a bit of a set back as we had spent some time analysing and understanding how the quiz framework functioned and obviously had to start from scratch with a new framework.
-
-Setback aside, after a new framework was found, the frontend team set about understanding and stripping back any irrelevant features. Once we had an understanding of the framework, simultaneous work on adding new features, and refactoring the quiz question JSON format begun, ready for the connect with backend team later in the week. The front end team was succesfully able to decide on a HTML template to use for the non-quiz pages (see [System Design page](SystemDesign.md)) for more), adding in navigation features, social buttons and generally just starting to work on fleshing the website out. Separately, but simultaneously other members on the team worked with the backend team to refactor the quiz question JSON inputs. Here work was done on re-factoring the typescript models for the quiz and re-factoring the quiz service files that actually operated the questions in the quiz. Some difficulties arose but they were eventually ironed out (JACK TO ADD/CHECK?).
+Separately, but simultaneously other members on the team worked with the backend team to refactor the quiz question JSON inputs. Here work was done on re-factoring the typescript models for the quiz and re-factoring the quiz service files that actually operated the questions in the quiz. Some difficulties arose but they were eventually ironed out.
 
 With the frontend taking shape, work with the backend to get the database linked started. Sessions between the front and backend were held where discussions focussed on collaborating to get the most efficient and appropriate JSON setup in our database data schemas and frontend typescript models. As well as this, the backend team started on creating mongoose commands for JSON payload requests (VINI/NATH TO ADD).
 
-On reflection of the sprint, it was a productive week and we were in a position whereby if our stakeholders were to use the quiz, they would be able to navigate through our SPA and take a dummy quiz. We were in a position to start work in the next sprint on requesting the data from the database, and having these questions presented in the quiz.
+On reflection of the sprint, it was a productive week, despite the front end quiz framework setback; it was a busy one with lots of movement on all fronts. There was good collaboration between the front and backend in starting to get the database linked up to the front end so that questions for the quiz wouldn't have to be hard coded. We were now in a position to start work in the next sprint on requesting, and presenting, the data from the database in the quiz.
 
 | Stakeholders            | Updated Use Case        |
 | ------------------------| ------------------------|
-| Donald (End-User)       | I can visit the website and take a generic quiz, but I cannot chose between any topic. There is also a nice welcome page to read a bit about fake news and navigate around the site from.|
-| Emma (Admin)            | The database and quiz questions are set up in our systems, we just need the front end to be able to access said data. |
+| Donald (End-User)       | I can visit the website and take a generic quiz, but I cannot chose between any topic. There is also a nice welcome page to read a bit about fake news on and navigate around the site from.|
+| Neil (University Professor)            | I can now share the website amongst my class for them to take the fake news quiz. This is great and will help raise awareness. |
+| Emma (Admin)            | The database and quiz questions are set up in the backend of our systems, we just need the front end to be able to access the data, as opposed to using a proxy dataset. |
 
 System implementation issues:
 
 | Stack Part  | Goal        | Issue | Fix |
 | ------------| ----------- |-------|-----|
-| Backend     | Setup data model schema | Data models were not aligned with frontend format required for quiz | Liaise with front end and reformat data |
+| Backend     | Setup data model schema | Data models were not aligned with frontend format required for quiz | Liaised with front end to reformat data |
 | Frontend    | Setup quiz framework in frontend | Quiz framework selected was too advanced | Found a new framework that was more appropriate for our ability |
 
 ### Sprint 5 : Further Front and Backend Integration (12.04.21-18.04.21)
@@ -162,6 +161,7 @@ At the end of the sprint, the team were in agreement that we were all happy with
 | Stakeholders            | Updated Use Case        |
 | ------------------------| ------------------------|
 | Donald (End-User)       | Success! I can now use the website to prove that I am indeed the best fake news detector the world has ever seen. I am able to select between my favourite topics (China!), share my scores and this website. Further, I can view interesting stats to see how bad fake news is. The user interface is engaging, and I enjoy visiting the site.|
+| Neil (University Professor)            | There is a well formed "About Fake News" page on the website now. My students can now begin to better educate themselves on fake news. |
 | Emma (Admin)            | Unfortunately I cannot view how many of our quiz takers got each question right. This would've been helpful for deciding how hard to make future quizzes.|
 
 System implementation issues:
@@ -255,9 +255,7 @@ As well as this, another good practice supported us in this solution. After a me
 [ADD TO] - e.g. class diagrams, sequence diagrams. Might be best place/more detail in SystemDesign.md?
 
 ### Back End : MongoDB
-### SQL vs noSQL
-
-#### Why we switched from SQL to noSQL (mongo)
+#### SQL vs noSQL
 
 Although we have pre-defined our DB schema, and checked for normalisation, we made the transition from an SQL schema to noSQL (mongoDB), in order to utilise the mongoose object modelling tool.
 
@@ -284,7 +282,7 @@ SQL Databases work best with schema that are long established and aren't prone t
 
 We have left the SQL DB schema in this [folder](../Documentation/Backend/DatabaseDesign/SQLDBdevelopment) for reference, and also to show our progression to our final DB design. 
 
-### Design of our data model (UML, tables)
+#### Design of our data model (UML, tables)
 
 Our data model was designed via the use of draw.io, in which we constructed a UML diagram to show relationships among our entities. We defined our final data model as being comprised of the following three entities:
 
@@ -309,8 +307,6 @@ Options are the entities that determine whether a user has answered a particular
 - name - a String that is used to refer to that option object
 - isCorrectAnswer - a boolean, where for each quiz question, for a particular option, true is selected if this option is the correct answer for this quiz question
 - selected - this is set to false by default. If a user selects this option for a quiz question, selected becomes true.
-
-
 
 The way we verify the user's response in terms of it being correct was conceptually quite difficult. Our design lead to a situation in which 4 option documents were created:
 
@@ -345,8 +341,6 @@ OPTION<FAKE>_<**TRUE**>
 
 Therefore, for a user's answer to be logged as correct, they need to select the option in which the second element is **true**.
 
-
-
 Our third entity is News Topic. This includes the following documents:
 
 - news_topic - a string, that defines the news topic, i.e., "Brexit". These strings are used in the landing page, when a user chooses a topic to do a quiz one. 
@@ -366,13 +360,9 @@ The relationship between quiz question and news topic was clearly a 1 to many re
 
 The relationship between quiz question was decided to be a 1 to many relationship. For each quiz question, there are 2 options, so this seemed fitting. There was difficulty in deciding the opposing relationship - since each option may be mapped on to multiple quiz questions. However, we decided that if it comes to a point where we need to access a quiz question from an option object, it may prove difficult. We therefore decided that each option should come from one quiz question, in order to isolate the question an option came from.
 
-
-
 Following the construction of our UML diagram, we decided to make a spreadsheet to initiate ideas on what data we will be collecting, and to get a more solid understanding of the relationships between our entities. The spreadsheet is as shown below:
 
 ![Screenshot 2021-04-21 at 15.51.03](/Users/nathantaylor/Library/Application Support/typora-user-images/Screenshot 2021-04-21 at 15.51.03.png)
-
-
 
 Throughout this data model design process, we adhered to conform to good data model design practices. Our previous model, which utilised SQL and its best practices (normalisation), was used to aid the design of our current noSQL model. Via this, we achieved a data model that did not unnecessarily repeat data. 
 
@@ -387,7 +377,7 @@ With respect to constructing our mongoose models, to be used when instantiating 
 
 Note, in our quiz_question model, we also export the schema. This is to fix an issue we had in which embedded documents were being referenced by value, as oppose to referencing the actual objects themselves.
 
-### Collecting data 
+#### Collecting data 
 
 It's critical for a web-app in this category to have accurate and *thought-provoking* data to utilise in order to make it as educational as possible. Our initial thought was to find ready-made datasets that would have formulated all our quiz questions. We found plenty of large datasets that were filled to the brim with articles - good and bad. Most of these datasets had outdated links, broken web-pages and irrelevant material. We wanted our quiz to have proper 'punch' at every question and the datasets found were not going to help us achieve that. Furthermore, the data was not organised in a manner that was useful to us; we are aiming to have a our questions categoriesed into News Topics that the user can choose from. This focussed approach allowed the user to experience how Fake News varies from topic to topic and allows a more comfortable learning exerience as a whole.
 
@@ -397,11 +387,11 @@ It's worth mentioning that we also wanted to find **debunking** articles in rela
 
 Aside from the grind in acquiring the necessary data, we also found ways to improve other elements of our backend structure. We initially had a _Many-to-Many_ relationship between questions and news topics; however, refering to the underlying intent to make this as educational as possible for the user, we decided to alter this to a _One-to-Many_ relationship. This meant that there will no longer be multiple news topics related to a question, we intended to make each article as relevant to the news topic as possible - eradicating and vagueness.
 
-### Inputting data via insertDataScript
+#### Inputting data via insertDataScript
 
 The mechanism we used to get data ready for use in our application consisted of two main steps: creating the database, and seeding the data from the database into a mongoDB container.
 
-### Creating a mongoDB database
+#### Creating a mongoDB database
 
 The first step in allowing us to test our backend structure was to get the data we gathered into a MongoDB client to test how effective it was. We decided that rather than inserting our data within the MongoDB shell, we will aim to run a Javascript 'script' that would insert all this data using Mongoose commands - appropriately named [insertDataScript.js](./Example_Code/AngularQuizApp/insertDataScript.js). In short, the script injects into a MongoDB client (using a URL specified in args[0]), our data.
 
@@ -417,7 +407,7 @@ const Option = require('./models/options');
 
 It's worth noting that this script is ran privately and doesn't take part in the deployment of the docker container with [deploy.sh](./Example_Code/AngularQuizApp/deploy.sh). The script allowed us to export from a local MongoDB client into [three JSON files](./Example_Code/AngularQuizApp/blockData) that were prepared for seeding.
 
-### Seeding
+#### Seeding
 
 The docker image we create is generally read only. Therefore, for the data to be used in our server, it needs to be stored somewhere that has read/write permissions. The issue that arises is that when someone, who doesn't have the data that we store, starts the docker container when running our application, the mount point is local to that person's machine. In other words, volume is mounted from a local machine, hence data from our own machine's will not persist. Therefore, we decided to create a script that would seed all the relevant JSON data into the dockerised mongoDB container. Thus, when the server starts, all this data can be read from this container using mongoose commands. 
 
@@ -432,11 +422,9 @@ docker exec -i db sh -c 'mongoimport -u <OUR_USERNAME> -p <OUR_PASSWORD> --authe
 
 ```
 
-
-
 ### Middle Tier : Express, Node, RESTful API
 
-### Choosing REST
+#### Choosing REST
 
 We decided to build a RESTful API to link our mongoDB database to our front-end (Angular). Generally speaking, REST is an interface between HTTP utilising systems, and it can be used to process data operations in many formats (i.e., JSON). 
 
@@ -450,7 +438,7 @@ A RESTful API allows for client-server separation. This allows for scalability, 
 
 For these reasons above, utilising the RESTful approach seemed appropriate. After making this choice, and setting up our mongoDB database, we started to think about the internals of requests, with relation to how they would interact with our database. REST APIs implement multiple operations (CRUD operations - create, read, update and delete) which are performed giving speicifc requests. We decided the main interaction with our database would come from a get request, in which our response (in the api) takes the form of a JSON payload, containing the data for all news topics (including quiz questions).
 
-### Implementing REST
+#### Implementing REST
 
 To build our API, we used Express, one of the key frameworks in the MEAN stack. We started off by creating server.js, in which we require the express dependency. We also created the file api.js, as well as a folder called server. We then require the api in server.js. 
 
@@ -492,23 +480,6 @@ As we're exporting the router made in api.js, which is required in server.js, th
 
 Linking up the frontend to the API is achieved by creating a data service that <i>subscribes</i> to the API and is discussed in the frontend section below.
 
-Ideas...
-
-### Creating a service 
-
-After setting up mongoDB, and importing all the data we need. We need to define a service to handle http calls. Services are great because they're injectable, and they can also have its own injected dependencies - making testing and reuse easier - a services goes and gets your data from a data source 
-
-Create a Service by running:
-
-```bash
-ng generate service data
-```
-
-- creates a data.service.ts in the src/app directory
-
-
----
-
 ### Front End : Angular
 
 #### Why Angular?
@@ -535,15 +506,13 @@ To build out the Welcome Page, we opted to use a pre-made HTML template, provide
   <img src="../Documentation/Images/rsz_welcomepage.png" alt="welcomepage" height="80%">
 </p>
 
-###**I THINK THIS WILL BE BETTER PLACED IN DESIGN**
-
 The meat of the website would be the quiz itself and to implement this we investigated building out our own quiz framework, or using a pre-made one and tailoring it to our needs.
 
 **Choice and change of Angular Quiz Framework**
 
-We spoke with the teaching support on the course about how best to approach implementing a quiz in Angular. On advise from Thomas Bale, we elected to find a pre-made quiz framework and repurpose it for our needs. To do this, we had a front end get together that involved a morning pair programming session sitting down to research, test and try different Angular quiz frameworks that might be suitable as a template for the purpose of this project. We looked at a number of different frameworks in depth including: https://github.com/evagrean/quiz-app, https://www.codeproject.com/Articles/1167451/Quiz-Application-in-Angular but we decided we would use this Spotify app https://awesomeopensource.com/project/fabiandev/angular-quiz-app. The reason we chose this framework was because it was aesthetically and functionally pleasing to interact with and thought it would help keep the content of the quiz engaging. Other frameworks we found felt a bit basic, whereas the Spotify Quiz had animations and progress bars, for example. 
+We spoke with the teaching support on the course about how best to approach implementing a quiz in Angular. On advise from Thomas Bale, we elected to find a pre-made quiz framework and repurpose it for our needs. To do this, we had a front end get together that involved a morning pair programming session sitting down to research, test and try different Angular quiz frameworks that might be suitable as a template for the purpose of this project. We looked at a number of different frameworks in depth including: [Eva Grean's](https://github.com/evagrean/quiz-app) and [Anurag Gandhi's](https://www.codeproject.com/Articles/1167451/Quiz-Application-in-Angular). We eventually decided we would use a fancy looking [Spotify app](https://awesomeopensource.com/project/fabiandev/angular-quiz-app). The reason we chose this framework was because it was aesthetically and functionally pleasing to interact with and thought it would help keep the content of the quiz engaging. Other frameworks we found felt a bit basic, whereas the Spotify Quiz had animations and progress bars, for example. 
 
-Our next task was to familiarise ourselves with the Angular component structure that rendered the site, which we tried and tested over a few days. This quiz app even formed the basis of one of our rounds of user feedback. However, it was not until we made more concerted attempts to build out and refactor the code on this quiz we realised that this quiz was too advanced for our still relatively nascent experience of Angular. As such, we had to make a u-turn and thus settled on this https://www.codeproject.com/Articles/1167451/Quiz-Application-in-Angular new quiz framework altogether which was less complex and more malleable for what we had in mind to achieve.  There were sufficiently less components and the code was more simple to re-work and manipulate.  
+Our next task was to familiarise ourselves with the Angular component structure that rendered the site, which we tried and tested over a few days. This quiz app even formed the basis of one of our rounds of user feedback. However, it was not until we made more concerted attempts to build out and refactor the code on this quiz we realised that this quiz was too advanced for our still relatively nascent experience of Angular. As such, we had to make a u-turn and thus settled on [Anurag Gandhi's](https://www.codeproject.com/Articles/1167451/Quiz-Application-in-Angular) quiz framework. Altogether it was much less complex and more malleable for what we had in mind to achieve.  There were sufficiently less components and the code was more simple to re-work and manipulate.  
 
 During our research of Angular frameworks, we also took the opportunity to brainstorm some design ideas as a team about prospective designs for our quiz. This helped us to focus in on our needs and initiate the creative process of building up the single page application front end in our minds. 
 
@@ -892,19 +861,3 @@ Utilising continuous integration and deployment throughout the project, with an 
 - [Next Section: Project Evaluation](ProjectEvaluation.md)
 - [Back to Top](#table-of-contents)
 - [Back to Home](../README.md)
-
-# Mark Scheme Relevant Topics:
-
-## System Implementation
-- Stack architecture and system design (e.g. class diagrams, sequence diagrams).
-- Back End - MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams).
-- Middle Tier - Express, Node, the RESTful API
-- Front End - Angular. Details of implementation.
-- Additional elements and components e.g. authentification. Tell us about any other aspects not covered above!
-- Deployment details (including Docker), include how you have been achieving continuous integration and deployment.
-
-## Sprints & Project Management
-- Group working methods used (for instance did your team choose a particular style of agile? what communication channels did you use?)
-- Discussion of team roles (specialisation is ok!). A summary of individual contributions (note: this is for reference, your team will all receive the same grade!).
-- Documentation of your sprints, including both high level overview, timeline, and selected highlights that were critical points in the project (remember to show the users stories implemented in each sprint). We expect a summary of meeting logs (including for instance apologies for absence etc)
-- Team use of Git, how your team used continuous integration / continuous deployment. Streamlining of workflow throughout.
