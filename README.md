@@ -17,31 +17,31 @@
         <td><a href="https://github.com/Davospike" target="_blank">Daniel Davies</a></td>
         <td>d.davies.2020@bristol.ac.uk</td>
         <td>Front-end</td>
-        <td style="text-align: center;"><img src="https://images-na.ssl-images-amazon.com/images/I/61tbu9DtTSL._AC_SX425_.jpg" style="width: 10px"></td>
+        <td><img src="Documentation/Images/FakeNews.png" width="50"></td>
     </tr>
     <tr>
         <td><a href="https://github.com/numberonepikey" target="_blank">Jack Pike</a></td>
         <td>jp13087@bristol.ac.uk</td>
         <td>Front-end</td>
-        <td style="text-align: center;"><img src="https://images-na.ssl-images-amazon.com/images/I/61tbu9DtTSL._AC_SX425_.jpg" style="width: 10px"></td>
+        <td><img src="Documentation/Images/FakeNews.png" width="50"></td>
     </tr>
     <tr>
         <td><a href="https://github.com/hs14428" target="_blank">Harry Smith</a></td>
         <td>hs14428@bristol.ac.uk</td>
         <td>Front-end</td>
-        <td style="text-align: center;"><img src="Documentation/Images/HS%20Mugshot.jpg" style="width: 10px"></td>
+        <td><img src="Documentation/Images/HS%20Mugshot.jpg" width="50"></td>
     </tr>
     <tr>
         <td><a href="https://github.com/nwtay" target="_blank">Nathan Taylor</a></td>
         <td>nt17118@bristol.ac.uk</td>
         <td>Back-end</td>
-        <td style="text-align: center;"><img src="https://images-na.ssl-images-amazon.com/images/I/61tbu9DtTSL._AC_SX425_.jpg" style="width: 10px"></td>
+        <td><img src="Documentation/Images/FakeNews.png" width="50"></td>
     </tr>
     <tr>
         <td><a href="https://github.com/vinigibilaro" target="_blank">Vincenzo Gibilaro</a></td>
         <td>ar20516@bristol.ac.uk</td>
         <td>Back-end</td>
-        <td style="text-align: center;"><img src="Documentation/Images/VG%20Mugshot.png" style="width: 10px"></td>
+        <td><img src="Documentation/Images/VG%20Mugshot.png" width="50"></td>
     </tr>
 </table>
 
