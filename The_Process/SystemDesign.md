@@ -21,7 +21,11 @@
    - [Sequence Flow Diagram](#sequence-flow-diagram)
 
 ## Introduction
-Fake news consists of false stories that appear to be news, which are spread on the internet and social media. In the last five years there has been an explosion in the amount of fake news being spread and due to much of it being believable it has become more difficult for people to detect. Whilst there are numerous sources explaining the danger of fake news and how to spot it, there are fewer that provide a way for people to check whether they are susceptible to it, and even fewer that combine the two. Thus, we not only aimed to create a site that would educate people about fake news in terms of what it is, its history, the dangers, and how to recognise it, but one that would also allow users to test whether they can detect fake news based on an article presented to them. The crux of the site is a quiz with various topics that have been popular targets for fake news. Users select a topic and are presented with several questions and articles, they are then tasked with identifying the articles as real news, or fake news. Upon answering all the questions and completing the quiz, the user is presented with their final score and they are offered a chance to visit the site where the article originated.
+Fake news consists of false stories that appear to be news, which are spread on the internet and social media. In the last five years there has been an explosion in the amount of fake news being spread and due to much of it being believable it has become more difficult for people to detect. Whilst there are numerous sources explaining the danger of fake news and how to spot it, there are fewer that provide a way for people to check whether they are susceptible to it, and even fewer that combine the two. 
+
+Thus, we not only aimed to create a site that would educate people about fake news in terms of what it is, its history, the dangers, and how to recognise it, but one that would also allow users to test whether they can detect fake news based on an article presented to them. 
+
+The crux of the site is a quiz with various topics that have been popular targets for fake news. Users select a topic and are presented with several questions and articles, they are then tasked with identifying the articles as real news, or fake news. Upon answering all the questions and completing the quiz, the user is presented with their final score and they are offered a chance to visit the site where the article originated.
 
 Our project objectives were established early on in our [group scoping discussion](https://github.com/Davospike/segpSPA/blob/dan/Documentation/Scoping/GroupScopingDiscussion.md) and are set out as follows:
 
@@ -29,9 +33,9 @@ Our project objectives were established early on in our [group scoping discussio
 
 - Develop an educational quiz, tasking users with identifying fake news
 
-- Use the web-page to inform users about fake news; what it is, its history, the dangers of it, and how to recognise it
+- Use the webpage to inform users about fake news; what it is, its history, the dangers of it, and how to recognise it
 
-- Create a static database that holds a hand-picked selection of news articles that are identified as being fact or fiction
+- Create a static database that holds a handpicked selection of news articles that are identified as being fact or fiction
 
 **Secondary Objectives:**
 
@@ -43,15 +47,38 @@ Our project objectives were established early on in our [group scoping discussio
 
 [ADD VIDEO]
 
-[ADD TO] - Dan
+[ADD TO] - DAN
 
 ## Background & Motivation
+Fake news is a false narrative that is published and promoted as if it were true. Historically, fake news was usually propaganda put out by those in power to promote a certain belief or support a certain position, even if it was completely false. Social media has now created an environment where anyone with an agenda can publish falsehoods as if they were truths. People can be paid to post fake news on behalf of someone else or automated programs, often called bots, can publish auto-generated fake news.
+
+### Academic Research Review
+The term "fake news" has its origins in the 19th century, yet it has really only come back into the public mind in the last 5 years, with Collins Dictionary announcing it as their word of the year in 2017 ([Collins, 2017](https://blog.collinsdictionary.com/language-lovers/collins-2017-word-of-the-year-shortlist/)). There has been a proliferation of falsehoods and misinformation throughout time, but the difference today is that the speed at which information can spread and thus its global reach has increased drastically ([Niklewicz, 2017](https://www.msb.se/RibData/Filer/pdf/28697.pdf)). This, combined with the increased complexity and scale of disinformation along with increased forms of communication, has led to a growth in the amount of fake news circulating ([Blumler, 2015](http://commres.net/wiki/_media/comt12077.pdf)). The rapid adoption and growth of social media has given many the ability to not only create but spread information that is factually incorrect through decentralised platforms ([Benkler et al., 2018](https://oxford.universitypressscholarship.com/view/10.1093/oso/9780190923624.001.0001/oso-9780190923624)). This growth of fake news has led us into an era of information warfare, with social media being utilised as a weapon to run direct campaigns of disinformation, and the effects of this spread has the potential to have a devastating impact on everyday life ([Zannettou et al, 2019](https://arxiv.org/pdf/1804.03461.pdf)), with politics, societal issues, science, and economics all coming under threat from fake news. 
+
+Some such as Alex Gelfert and Bente Kalsnes state this rise in fake news, both as a term and the disinformation itself, is due to the Brexit referendum and the 2016 US presidential election ([Gelfert, 2018](https://www.erudit.org/en/journals/informallogic/1900-v1-n1-informallogic04379/1057034ar/abstract/); [Kalsnes, 2018](https://oxfordre.com/communication/communication/view/10.1093/acrefore/9780190228613.001.0001/acrefore-9780190228613-e-809)). During the 2016 election, fake news was spread across the internet and gained wide attention, with social media playing a leading role in the dissemination of fake news. It was found that in general, fake news outperformed real news on Facebook, with the most popular fake news election stories generating more engagement than the top real stories from 19 mainstream news outlets combined ([Silverman, 2016](https://www.buzzfeednews.com/article/craigsilverman/viral-fake-election-news-outperformed-real-news-on-facebook)). Three fake news stories gained two million Facebook engagements, whilst at the same time, the most popular New York Times piece only gained 370,000 ([Ritchie, 2016](https://www.cnbc.com/2016/12/30/read-all-about-it-the-biggest-fake-news-stories-of-2016.html)). Similar studies in Israel ([Yaron, 2018](https://www.haaretz.com/israel-news/.premium.MAGAZINE-the-online-dangers-threatening-fair-elections-in-israel-1.6455522)), Nigeria ([Kazeem, 2018](https://qz.com/africa/1478737/fake-news-media-collaborate-ahead-of-nigeria-2019-election/)), Australia ([Kušen & Strembeck, 2018](https://www.sciencedirect.com/science/article/pii/S2468696417301088)) and Italy ([Serhan, 2018](https://www.theatlantic.com/international/archive/2018/02/europe-fake-news/551972/)) have all recognised the impact that fake news could have had on their elections. 
+
+SOCIETAL ISSUES:
 [ADD TO] - Dan
+
+SCIENCE:
+[ADD TO] - Dan
+
+ECONOMICS:
+[ADD TO] - Dan
+
 
 ### Current State of Industry
 [ADD TO] - Dan
 
 ### Why Does Fake News Education Matter
+The spread of fake news should be a worry for all and people should take an active role not only in teaching themselves about fake news, but how to recognise it. 
+
+Many publishers who create and share these stories are simply in it for "the clicks", as the more traffic their websites gain,         the more money they can make. This is known as "clickbait" and it appeals to many due to sensationalised headlines. Some are more insidious and want to sway public opinion by spreading news that appeals to certain beliefs. This is especially poignant during the US elections, especially in 2016, when fake news about certain candidates was spread and potentially impacted the way people voted. Some politicians and influential individuals began to call legitimate news fake, which can lead people to be confused about what is true and in turn can lead to the proliferation of actual fake news.
+
+One major problem with fake news is that despite many of these stories not being fact-checked, they are still shared by individuals and organisations who believe they are true. If they have a large following these falsehoods can often be taken more seriously and spread further, leading to the wider dissemination of fake news. This has been especially poignant during the COVID-19 pandemic, as conspiracy theorists have used the opportunity to spread false information about the virus. One such example, is 5G. Despite there being no links between 5G and coronavirus, there have been multiple attacks on 5G masts and the UK government has been forced to address the issue, with the theories being called "dangerous nonsense". Whilst much of this fake news was initially spread via social media between non-influential individuals, there have been numerous celebrities with a reach of millions who have furthered such unsubstantiated claims. The problem with this is that what these influential  individuals say is often believed by their followers without any second guessing and herein lies the problem; many are willing take the information offered to them at face value.
+
+Technology has played a major role in making the spread of fake news much easier. What was once thought of as a relatively reliable source of news, due to the difficulties people had faking them, was video. Yet, due to the creation of a new technology, <i>deepfakes</i>, the reliability of video sources is now more easily questioned. A deepfake is a video that has been generated by computer software. Many current examples of deepfakes involve placing the head of someone famous onto another's body. Whilst many  simply involve having the [deepfake sing](https://www.youtube.com/watch?v=-DysigzGQvU), as the technology becomes more developed and understood, it could lead to a new generation of fake news in which "deepfaked" politicians are made to say whatever the creator wants and the fakes will become harder to detect. 
+
 [ADD TO] - Dan
 
 ## Product Requirements
