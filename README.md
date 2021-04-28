@@ -50,7 +50,13 @@ In order to improve, evaluation is critical. Key areas:
 - Reflection on the project and our working practices
 - Discussion of further work
 
-### 4. [Prototypes, notes et. al](Documentation)
+### 4. [Deploying The SPA](Example_Code/AngularQuizApp)
+Our website ecosystem is contained the AngularQuizApp folder in the Example_Code directory. To run and deploy the application in Docker:
+
+- Run the `deploy.sh` script or
+- `docker-compose up --build -d` on your command line
+
+### 5. [Prototypes, notes et. al](Documentation)
 Here you can view our initial paper prototype and latest wireframe representations as well as being able to view lots of our early ideas, notes, logs and images.
 ## Built with the MEAN Stack
 
