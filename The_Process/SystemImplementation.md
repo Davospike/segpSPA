@@ -535,8 +535,6 @@ To implement this, using the Angular CLI, we generated components that would all
 
 To build out the Welcome Page, we opted to use a pre-made HTML template, provided by W3Schools.com, and added new components to the HTML for the toolbar for navigation and the social footer. Navigation between the various parts of the website was achieved using the RouterModule from Angular that allowed us to set certain components as the end point of certain urls, e.g. `/about` would take you to the fake news info component.
 
-[comment]: <> (![WelcomePage]&#40;../Documentation/Images/rsz_welcomepage.png&#41;)
-
 <p align="centre">
   <img src="../Documentation/Images/rsz_welcomepage.png" alt="welcomepage">
 </p>
@@ -723,7 +721,9 @@ shuffle(array) {
 
 With the quiz fully operable based on our JSON formats, we then had to implement features into the HTML and Typescript that would allow the user to select which quiz they wanted to take. Having been previously made aware of the HTML Bootstrap framework, we opted to make use of the cards classes to make the topic selector page visually appealing.
 
-![TopicSelector](../Documentation/Images/rsz_topic_selector.png)
+<p align="centre">
+  <img src="../Documentation/Images/rsz_topic_selector.png" alt="welcomepage">
+</p>
 
 To actually implement the topic selection, we created a new path in the `app-routing.module.ts`:
 ```typescript
