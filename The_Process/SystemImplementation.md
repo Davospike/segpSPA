@@ -531,7 +531,7 @@ To implement this, using the Angular CLI, we generated components that would all
 To build out the Welcome Page, we opted to use a pre-made HTML template, provided by W3Schools.com, and added new components to the HTML for the toolbar for navigation and the social footer. Navigation between the various parts of the website was achieved using the RouterModule from Angular that allowed us to set certain components as the end point of certain urls, e.g. `/about` would take you to the fake news info component.
 
 <p align="center">
-  <img src="../Documentation/Images/rsz_welcomepage.png" alt="welcomepage">
+  <img src="../Documentation/Images/rsz_welcomepage.png" alt="welcomepage" height="80%">
 </p>
 
 ###**I THINK THIS WILL BE BETTER PLACED IN DESIGN**
@@ -548,7 +548,9 @@ During our research of Angular frameworks, we also took the opportunity to brain
 
 We created this mood board to consolidate and draw ideas from:
 
-![My Post(1)](https://user-images.githubusercontent.com/63299377/115616380-09797800-a2e8-11eb-9224-32af6db66aae.jpg)
+<p align="center">
+  <img src="../Documentation/Images/MoodBoard.jpg" alt="MoodBoard" height="60%">
+</p>
 
 **Refactoring and restructuring to prepare for back-end code**
 
@@ -717,7 +719,7 @@ shuffle(array) {
 With the quiz fully operable based on our JSON formats, we then had to implement features into the HTML and Typescript that would allow the user to select which quiz they wanted to take. Having been previously made aware of the HTML Bootstrap framework, we opted to make use of the cards classes to make the topic selector page visually appealing.
 
 <p align="center">
-  <img src="../Documentation/Images/rsz_topic_selector.png" alt="welcomepage" height=80%>
+  <img src="../Documentation/Images/rsz_topic_selector.png" alt="welcomepage" height=100%>
 </p>
 
 To actually implement the topic selection, we created a new path in the `app-routing.module.ts`:
@@ -770,7 +772,7 @@ As the JSON was arriving as an array of quiz topic questions, to access the indi
 The end product looked as follows:
 
 <p align="center">
-  <img src="../Documentation/Images/Quiz_Example.PNG" width="60%" height="60%">
+  <img src="../Documentation/Images/Quiz_Example.PNG" width="100%" height="80%">
 </p>
 
 #### Additional Webpage Features
