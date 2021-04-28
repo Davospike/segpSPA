@@ -549,7 +549,7 @@ During our research of Angular frameworks, we also took the opportunity to brain
 We created this mood board to consolidate and draw ideas from:
 
 <p align="center">
-  <img src="../Documentation/Images/MoodBoard.jpg" alt="MoodBoard" height="60%">
+  <img src="../Documentation/Images/MoodBoard.jpg" alt="MoodBoard">
 </p>
 
 **Refactoring and restructuring to prepare for back-end code**
@@ -772,7 +772,7 @@ As the JSON was arriving as an array of quiz topic questions, to access the indi
 The end product looked as follows:
 
 <p align="center">
-  <img src="../Documentation/Images/Quiz_Example.PNG" width="100%" height="80%">
+  <img src="../Documentation/Images/Quiz_Example.PNG" width="80%" height="80%">
 </p>
 
 #### Additional Webpage Features
