@@ -29,7 +29,7 @@
         <td><a href="https://github.com/numberonepikey" target="_blank">Jack Pike</a></td>
         <td>jp13087@bristol.ac.uk</td>
         <td>Front-end</td>
-        <td><img src="Documentation/Images/FakeNews.png" width="100" height="100"></td>
+        <td><img src="Documentation/Images/JP_Mugshot.png" width="100" height="100"></td>
     </tr>
     <tr>
         <td><a href="https://github.com/hs14428" target="_blank">Harry Smith</a></td>
