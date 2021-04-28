@@ -23,7 +23,27 @@ CONTENTS SUBJECT TO CHANGE
    - [Sequence Flow Diagram](#sequence-flow-diagram)
 
 ## Introduction
-[ADD TO]
+Fake news consists of false stories that appear to be news, which are spread on the internet and social media. In the last five years there has been an explosion in the amount of fake news being spread and due to much of it being believable it has become more difficult for people to detect. Whilst there are numerous sources explaining the danger of fake news and how to spot it, there are fewer that provide a way for people to check whether they are susceptible to it, and even fewer that combine the two. Thus, we not only aimed to create a site that would educate people about fake news in terms of what it is, its history, the dangers, and how to recognise it, but one that would also allow users to test whether they can detect fake news based on an article presented to them. The crux of the site is a quiz with various topics that have been popular targets for fake news. Users select a topic and are presented with several questions and articles, they are then tasked with identifying the articles as real news, or fake news. Upon answering all the questions and completing the quiz, the user is presented with their final score and they are offered a chance to visit the site where the article originated.
+
+Our project objectives were established early on in our [group scoping discussion](Documentation/Scoping/GroupScopingDiscussion.md) and are set out as follows:
+
+**Primary Objectives:**
+
+- Develop an educational quiz, tasking users with identifying fake news
+
+- Use the web-page to inform users about fake news; what it is, its history, the dangers of it, and how to recognise it
+
+- Create a static database that holds a hand-picked selection of news articles that are identified as being fact or fiction
+
+**Secondary Objectives:**
+
+- Collect and store user data, such as their quiz score and where they obtain their news from
+
+- Create a login function for the site so users are encouraged to revisit and compare previous scores
+
+- Create a function that allows users to share their score via social media
+
+[ADD VIDEO]
 
 ## Background & Motivation
 [ADD TO]
