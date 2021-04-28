@@ -493,7 +493,7 @@ Linking up the frontend to the API is achieved by creating a data service that <
 
 ---
 
-<NT and Harry>
+[comment]: <> (<NT and Harry>)
 
 Ideas...
 
@@ -535,7 +535,11 @@ To implement this, using the Angular CLI, we generated components that would all
 
 To build out the Welcome Page, we opted to use a pre-made HTML template, provided by W3Schools.com, and added new components to the HTML for the toolbar for navigation and the social footer. Navigation between the various parts of the website was achieved using the RouterModule from Angular that allowed us to set certain components as the end point of certain urls, e.g. `/about` would take you to the fake news info component.
 
-![WelcomePage](../Documentation/Images/rsz_welcomepage.png)
+[comment]: <> (![WelcomePage]&#40;../Documentation/Images/rsz_welcomepage.png&#41;)
+
+<p align="centre">
+  <img src="../Documentation/Images/rsz_welcomepage.png" alt="welcomepage">
+</p>
 
 ###**I THINK THIS WILL BE BETTER PLACED IN DESIGN**
 

@@ -81,6 +81,12 @@ Finally, an Admin stakeholder also needs to be involved in the project creating.
 - The Admin wants to be able to update, add new questions and add new topics to the quiz framework.
 - The Admin wants to be able to see how many quiz takers are getting each quiz question correct so that they can tailor the difficulty of future quizzes.
 
+#### Use Case Diagram
+
+<p align="center">
+<img src="../Documentation/Images/Would_They_Lie_To_You_Use_Case_Diagram.png" alt="Use Case Diagram" width=60%>
+</p>
+
 ## Design Process & Early Prototyping
 [ADD TO]
 
