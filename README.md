@@ -17,7 +17,7 @@
         <td><a href="https://github.com/Davospike" target="_blank">Daniel Davies</a></td>
         <td>d.davies.2020@bristol.ac.uk</td>
         <td>Front-end</td>
-        <td style="text-align: center;"><img src="https://images-na.ssl-images-amazon.com/images/I/61tbu9DtTSL._AC_SX425_.jpg" style="width: 50px"></td>
+        <td style="text-align: center;"><img src="https://images-na.ssl-images-amazon.com/images/I/61tbu9DtTSL._AC_SX425_.jpg" style="width: 10px;height: 10px"></td>
     </tr>
     <tr>
         <td><a href="https://github.com/numberonepikey" target="_blank">Jack Pike</a></td>
