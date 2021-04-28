@@ -10,8 +10,9 @@ CONTENTS SUBJECT TO CHANGE
    - [Why Does Fake News Education Matter](#why-does-fake-news-education-matter)
 - [Product Requirements](#product-requirements)
    - [Idea Generation](#idea-generation)
-   - [Stakeholders](#stakeholders)
+   - [Stakeholders & User Stories](#stakeholders--user-stories)
       - [End User](#end-user)
+      - [University Professor](#university-professor)
       - [Admin](#admin)
 - [Design Process & Early Prototyping](#design-process--early-prototyping)
    - [Design Methods](#design-methods)
@@ -46,14 +47,39 @@ There were elements that stuck throughout our time on the project, such as a pun
 
 Prior to this, coming up with the initial idea for the web app was facilitated by various techniques. The most successful was creating a matrix of topics to merge; we were combining **Serious** [Topics] and **Play** so this method was very effective. It works by using the column headers for one characteristic and the row headers for the other (I.e serious topics on as rows and 'play' on the columns) and then combining each of the subjects together to create a **Serious Play** topic. Having 5 people in the group made this technique very robust and gave us just the right amount of choices to come up with our idea relatively quickly.
 
-### Stakeholders
-[ADD TO]
+### Stakeholders & User Stories
+As is standard practice with the agile way of working, for our project to be effective and hit the goals that we desired, we elected to create some theoretical stakeholders for our SPA quiz app. First, we had to think about what a stakeholder actually is; someone outside the team who frequently interacts with, and has a direct interest in, the projects outcome. This set a good starting point for thinking about who our stakeholders could and should be.
+
+To come up with appropriate stakeholders, we, as a team, had to put ourselves in the shoes of the end user and think about who would be engaging with the project throughout the journey. After some discussion, the three obvious choices that came to mind were:
+
+- **Quiz Taker/End User**
+- **University Professor**
+- **Admin**.
+
+With power (stakeholders), comes great responsibility (user stories)... 
+
+Why user stories? "A user story is an informal, general explanation of a software feature written from the perspective of the end user. Its purpose is to articular how a software feature will provide value to the customers" - Atlassian Agile Coach
+
+As such, user stories are a great way to really put the users first and make sure that throughout the software development process, sight of the end goal is never lost. They make up a core component of agile and help drive collaboration and creativity.  
 
 #### End User
-[ADD TO]
+Our first set of user stories relates to the most obvious stakeholder in the project; the End-User. Who are they, and what are they hoping to get out of the end product? These are the people who visit the website and take the quiz to help educate themselves about the dangers of fake news, and how to help combat it. They might be a fake news expert and want to test their own perceived knowledge, or they could be a complete novice who has fallen fowl of fake news before wanting to make sure it doesn't happen again! Their exact use case can vary, but the general user stories are as follows:
+
+- The End User wants to take a quiz on fake news to see how good they are at distinguishing fake news stories with real news.
+- The End User has taken the first quiz. Now they want to be able to test their knowledge against a variety of other different topics to really challenge themselves.
+- The End User wants to compare themselves to other people taking the quiz. How many other people got those questions right?
+
+#### University Professor
+The next stakeholder could really relate to anyone who advocates education in the fake news setting. We elected for a University Professor who is teaching a module in fake news and propaganda. This stakeholder's use case will be a little different, with more focus on education and awareness.
+
+- The University Professor wants to set their class some reading on: the history of fake news and what it is, the dangers of fake news, why it is a problem, with some statistics and finally what can be done to combat it.
+- The University Professor also wants to be able to share the website on social media channels to help raise awareness.
 
 #### Admin
-[ADD TO]
+Finally, an Admin stakeholder also needs to be involved in the project creating. A fake news quiz website will lose its effect on people if it doesn't have a returnability factor. As such things must be kept upto date a present
+
+- The Admin wants to be able to update, add new questions and add new topics to the quiz framework.
+- The Admin wants to be able to see how many quiz takers are getting each quiz question correct so that they can tailor the difficulty of future quizzes.
 
 ## Design Process & Early Prototyping
 [ADD TO]
