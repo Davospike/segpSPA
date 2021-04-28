@@ -1,7 +1,5 @@
 <h1 align="center"> System Design </h1>
 
-CONTENTS SUBJECT TO CHANGE
-
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -23,34 +21,42 @@ CONTENTS SUBJECT TO CHANGE
    - [Sequence Flow Diagram](#sequence-flow-diagram)
 
 ## Introduction
-[ADD TO]
+[ADD TO] - Dan
 
 ## Background & Motivation
-[ADD TO]
+[ADD TO] - Dan
 
 ### Current State of Industry
-[ADD TO]
+[ADD TO] - Dan
 
 ### Why Does Fake News Education Matter
-[ADD TO]
+[ADD TO] - Dan
 
 ## Product Requirements
+Before the team decided on a Fake News quiz website, plenty of work was done on generating ideas that satisfied the "Serious Play" requirements of the project. As a team, we tried out a variety of industry standard techniques which you can read about below.
 
 ### Idea Generation
+
+##### Brainstorming Sessions and Idea Matrix
+
+Some of the first work that was done on coming up with the initial idea for the web app was facilitated by various techniques. Prior to carrying out any serious research or work on individual ideas, we first came together for a brainstorm session. There were no wrong answers, as the process was just about getting ideas down which we could then delve into and refine further if they were popular. Coming out of the session, we had settled on just under 20 topic ideas (view these [here](../Documentation/Archive)). With ideas on board, we were able to explore some other techniques to further refine the ideas.
+
+The most successful of these other techniques was creating a matrix of topics to merge; we were combining **Serious** [Topics] and **Play** [Games]. This method was very effective. It worked by using the column headers for one characteristic and the row headers for the other (i.e, serious topics as rows and play/games on the columns) and then combining each of the subjects together to create a **Serious Play** topic. Having 5 people in the group made this technique very robust and helped us refine our ideas settle on our choice of serious play relatively quickly.
+
 ##### <u>Miro</u>
 
-With no absolute process on how to begin our project, we decided to map out ideas as 'visually' as possible. Using **Miro**, a collborative whiteboard platform which we could unload our ideas into to begin with. To view our board, follow [this link](https://miro.com/app/board/o9J_lUwgzKw=/), or view the [pdf](./Documentation/DesignChoices/Woke-apedia.pdf) within this repo. As mentioned previously, the visualisation was key here, we ended up formulating a 'timeline' of sorts - the long, vertical strip of post-its beginning from the top. The timeline demonstrated a rough idea on the web-app's 'narrative'; the first thing the user will see and how they will manoever through the web app to get to certain sections. Obviously, going all out with all of our ideas, some more reasonable than others allowed us at _this_ moment in time to learn from how to plan things in a suitable manner. We can see from this old Miro board which ideas came through to the end and which were ignored/forgotten. 
+<p align="centre">
+    <img src="../Documentation/Images/rsz_miroboard.png" alt="Miro Board">
+</p>
 
-There were elements that stuck throughout our time on the project, such as a punchy landing page that gives the user a full background and overview of the topic, giving precise statistics that the user can base our info on. In the same way, ideas such as storing user data didn't make it into the final product. We were planning on questioning the users on 'why they got the question wrong' - was it because they were misinformed? Or did they genuinely not know anything about the topic. As much as this would be interesting for us to observe; for the user on the other hand, we didn't think this would be as compelling to them. We have branded this web app to allow users to test themselves on how well *they* can spot fake news so we aimed for the focus to be on that rather than comparing with other users.
+After deciding we would be going with the Fake News idea, with no absolute process on how to begin our project, we decided to map out the concept as 'visually' as possible. Using **Miro**, a collaborative whiteboard platform that allowed us to unload our ideas onto to begin with. To view our board, follow [this link](https://miro.com/app/board/o9J_lUwgzKw=/), or view the [pdf](./Documentation/DesignChoices/Woke-apedia.pdf) within this repo. As mentioned previously, the visualisation was key here, we ended up formulating a 'timeline' of sorts - the long, vertical strip of post-its beginning from the top. The timeline demonstrated a rough idea on the web-app's 'narrative'; the first thing the user will see and how they will manoeuvre through the web app to get to certain sections. Obviously, going all out with all of our ideas, some more reasonable than others, allowed us at _this_ moment in time to learn from how to plan things in a suitable manner. We can see from this old Miro boards which ideas came through to the end and which were ignored/forgotten. 
 
-##### <u>Idea Matrix</u>
-
-Prior to this, coming up with the initial idea for the web app was facilitated by various techniques. The most successful was creating a matrix of topics to merge; we were combining **Serious** [Topics] and **Play** so this method was very effective. It works by using the column headers for one characteristic and the row headers for the other (I.e serious topics on as rows and 'play' on the columns) and then combining each of the subjects together to create a **Serious Play** topic. Having 5 people in the group made this technique very robust and gave us just the right amount of choices to come up with our idea relatively quickly.
+There were elements that stuck throughout our time on the project, such as a punchy landing page that gives the user a full background and overview of the topic, giving precise statistics that the user can base our info on. In the same way, ideas such as storing user data didn't make it into the final product. We were planning on questioning the users on 'why they got the question wrong' - was it because they were misinformed? Or did they genuinely not know anything about the topic. As much as this would be interesting for us to observe; for the user on the other hand, we didn't think this would be as compelling to them. We have branded this web app to allow users to test themselves on how well *they* can spot fake news, so we aimed for the focus to be on that rather than comparing with other users.
 
 ### Stakeholders & User Stories
-As is standard practice with the agile way of working, for our project to be effective and hit the goals that we desired, we elected to create some theoretical stakeholders for our SPA quiz app. First, we had to think about what a stakeholder actually is; someone outside the team who frequently interacts with, and has a direct interest in, the projects outcome. This set a good starting point for thinking about who our stakeholders could and should be.
+As is standard practice with the agile way of working, for our project to be effective and hit the goals that we desired, we elected to create some theoretical stakeholders for our Fake News quiz app. First, we had to think about what a stakeholder actually is; someone outside the team who frequently interacts with, and has a direct interest in, the projects' outcome. This set a good starting point for thinking about who our stakeholders could and should be.
 
-To come up with appropriate stakeholders, we, as a team, had to put ourselves in the shoes of the end user and think about who would be engaging with the project throughout the journey. After some discussion, the three obvious choices that came to mind were:
+To come up with appropriate stakeholders, we had to put ourselves in the shoes of the end user and think about who would be engaging with the project throughout the journey. After some discussion, the three obvious choices that came to mind were:
 
 - **Quiz Taker/End User**
 - **University Professor**
@@ -82,6 +88,7 @@ Finally, an Admin stakeholder also needs to be involved in the project creating.
 - The Admin wants to be able to see how many quiz takers are getting each quiz question correct so that they can tailor the difficulty of future quizzes.
 
 #### Use Case Diagram
+Using UML, we can represent the main user stories in a use case diagram:
 
 <p align="center">
 <img src="../Documentation/Images/Would_They_Lie_To_You_Use_Case_Diagram.png" alt="Use Case Diagram" width=60%>
@@ -107,6 +114,10 @@ Finally, an Admin stakeholder also needs to be involved in the project creating.
 
 ### Sequence Flow Diagram
 [ADD TO]
+
+- [Next Section: Project Evaluation](SystemImplementation.md)
+- [Back to Top](#table-of-contents)
+- [Back to Home](../README.md)
 
 # Mark Scheme Relevant Topics:
 
