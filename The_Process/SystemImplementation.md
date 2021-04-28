@@ -491,10 +491,6 @@ As we're exporting the router made in api.js, which is required in server.js, th
 
 Linking up the frontend to the API is achieved by creating a data service that <i>subscribes</i> to the API and is discussed in the frontend section below.
 
----
-
-[comment]: <> (<NT and Harry>)
-
 Ideas...
 
 ### Creating a service 
@@ -509,7 +505,6 @@ ng generate service data
 
 - creates a data.service.ts in the src/app directory
 
-...
 
 ---
 
@@ -535,7 +530,7 @@ To implement this, using the Angular CLI, we generated components that would all
 
 To build out the Welcome Page, we opted to use a pre-made HTML template, provided by W3Schools.com, and added new components to the HTML for the toolbar for navigation and the social footer. Navigation between the various parts of the website was achieved using the RouterModule from Angular that allowed us to set certain components as the end point of certain urls, e.g. `/about` would take you to the fake news info component.
 
-<p align="centre">
+<p align="center">
   <img src="../Documentation/Images/rsz_welcomepage.png" alt="welcomepage">
 </p>
 
@@ -721,8 +716,8 @@ shuffle(array) {
 
 With the quiz fully operable based on our JSON formats, we then had to implement features into the HTML and Typescript that would allow the user to select which quiz they wanted to take. Having been previously made aware of the HTML Bootstrap framework, we opted to make use of the cards classes to make the topic selector page visually appealing.
 
-<p align="centre">
-  <img src="../Documentation/Images/rsz_topic_selector.png" alt="welcomepage">
+<p align="center">
+  <img src="../Documentation/Images/rsz_topic_selector.png" alt="welcomepage" height=80%>
 </p>
 
 To actually implement the topic selection, we created a new path in the `app-routing.module.ts`:
@@ -771,6 +766,12 @@ As the JSON was arriving as an array of quiz topic questions, to access the indi
       }
       ...
 ```
+
+The end product looked as follows:
+
+<p align="center">
+  <img src="../Documentation/Images/Quiz_Example.PNG" width="60%" height="60%">
+</p>
 
 #### Additional Webpage Features
 

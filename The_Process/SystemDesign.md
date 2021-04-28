@@ -65,7 +65,7 @@ Some of the first work that was done on coming up with the initial idea for the 
 
 The most successful of these other techniques was creating a matrix of topics to merge; we were combining **Serious** [Topics] and **Play** [Games]. This method was very effective. It worked by using the column headers for one characteristic and the row headers for the other (i.e, serious topics as rows and play/games on the columns) and then combining each of the subjects together to create a **Serious Play** topic. Having 5 people in the group made this technique very robust and helped us refine our ideas settle on our choice of serious play relatively quickly.
 
-##### <u>Miro</u>
+##### Miro Whiteboarding
 
 <p align="centre">
     <img src="../Documentation/Images/rsz_miroboard.png" alt="Miro Board">
@@ -113,7 +113,7 @@ Finally, an Admin stakeholder also needs to be involved in the project creating.
 Using UML, we can represent the main user stories in a use case diagram:
 
 <p align="center">
-<img src="../Documentation/Images/Would_They_Lie_To_You_Use_Case_Diagram.png" alt="Use Case Diagram" width=60%>
+    <img src="../Documentation/Images/Would_They_Lie_To_You_Use_Case_Diagram.png" alt="Use Case Diagram" width=80%>
 </p>
 
 ## Design Process & Early Prototyping
@@ -123,12 +123,23 @@ Using UML, we can represent the main user stories in a use case diagram:
 [ADD TO]
 
 ### Paper Prototypes & Wireframes
-[ADD TO] Flow Diagrams?
+
+#### Paper Prototype
+
+#### Wireframe
+
+<p align="center">
+    <img src="../Documentation/Images/Wireframe_question.PNG" width=80%>
+</p>
+
+One of the reasons we wanted to create a wireframe was that the idea behind a wireframe is to demonstrate the functionality of an idea before the build stage. It is beneficial because it allows you to visualize and simulate the user experience of your idea; one can consider the users' needs and journey through the webpage more effectively. We developed a wireframe that we thought would represent our final product more closely after carrying out market research, taking user feedback, and having thought about the design more. This meant that we were able to begin building the front end based off the wireframe with more confidence that the design is good. However, as noted in the System Implementation section, our end design still had to change from the wireframe in the end.
+
+To build our wireframe, we used a software called "MarvelApp" to make the wireframe interactive and more engaging, allowing the users to click and play around with the latest design ideas. We updated our first Survey Monkey questionnaire to ask people to scale their answers based on whether they "Strongly Agree", "Strong Disagree" etc, as opposed to: "Do you like this?". Allowing for some variation in the responses gave us more granularity in gauging whether things were well-received. By sending out a new revised feedback form during the front end build, we were able to take on feedback about the design and functionality as we built, allowing us to keep the user feedback loop and adaptation cycle short. This idea of having a short feedback loop and adaptation cycle is a key concept of agile and was something we were keen to do given the short time frame we had to design and build the website.
 
 ### User Feedback & Questionnaires
 As an educational device, our web-app had to be as user-friendly as possible. It made sense to get feedback on more than one occasion throughout development. 
 
-Our first round of user feedback came early on, where we had users view our [paper prototype](./Documentation/Paper_Prototype/Paper Prototype.ppt). This was effective as it allowed us to get our design choices; colour scheme, layout, navigation around menus etc, solidified before actual development began. It ratified some aspects of our prototype such as the title and strap-line but also pointed us in the right direction of more unpopular aspects of our design such as colour scheme (50%/50% split) and finding better ways to get users to return to the app; i.e by updating the quiz regularly. A *feature* came from this feedback also; in order to entice users to spread the word about this web-app so it can gain popularity, there were some suggestions to add social media links to the bottom of certain pages so they can be shared with followers/friends alike. Finally, the actual premace of the web-app was affirmed and was widely recieved by all users as a fun and educational application. (So the most crucial box is ***ticked***).
+Our first round of user feedback came early on, where we had users view our [paper prototype](../Documentation/Paper_Prototype/Paper_Prototype.pptx). This was effective as it allowed us to get our design choices; colour scheme, layout, navigation around menus etc, solidified before actual development began. It ratified some aspects of our prototype such as the title and strap-line but also pointed us in the right direction of more unpopular aspects of our design such as colour scheme (50%/50% split) and finding better ways to get users to return to the app; i.e by updating the quiz regularly. A *feature* came from this feedback also; in order to entice users to spread the word about this web-app so it can gain popularity, there were some suggestions to add social media links to the bottom of certain pages so they can be shared with followers/friends alike. Finally, the actual premace of the web-app was affirmed and was widely recieved by all users as a fun and educational application. (So the most crucial box is ***ticked***).
 
 The second round of feedback incorporated more specific elements of our development and design. Beginning with the colour scheme, a big issue in our last set of feedback, there was now a majority (43.75%) of people liking the colours in comparison with the disagree-ers (37.50%). We quickly realised that colour scheme is painfully subjective so as long as this colour scheme was in the right majority and gave off the right mood of the topic, it would be an acceptable choice. Our overall mix of *serious and play* was semi-proved over this feedback also with agreeing majorities in "This quiz looks fun" and "I would like to take this quiz". We were however pushed to include more information on what fake news is and the damage it can cause, leading to more research and facts being made about fake news. Finally, we were able to refine some aethetics of our visual themes such as logos to include on the page with users picking one logo over the other. The second round was overall more positive than the first.
 
