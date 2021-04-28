@@ -41,7 +41,7 @@
         <td><a href="https://github.com/nwtay" target="_blank">Nathan Taylor</a></td>
         <td>nt17118@bristol.ac.uk</td>
         <td>Back-end</td>
-        <td><img src="Documentation/Images/FakeNews.png" width="100" height="100"></td>
+        <td><img src="Documentation/Images/NT_Mugshot.png" width="100" height="100"></td>
     </tr>
 </table>
 

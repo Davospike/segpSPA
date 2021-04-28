@@ -54,7 +54,7 @@ If you are interested in seeing our meeting logs and standup notes, please [see 
 During this week we had a reading week, and a break from new content on our modules. We used this as an opportunity to come together to have our first sprint. 
 
 The goals of the first sprint were as follows:
-- Come together and brainstorm an initial webpage design.
+- Brainstorm an initial webpage design.
 - Develop a paper prototype design of what we thought our Fake News quiz could look like (to read more about our design processes and ideation, please see the [System Design page](SystemDesign.md)).
 - Generate a SurveyMonkey feedback questionnaire for our paper prototype ([see here](../Documentation/Paper_Prototype)).
 - Familiarise ourselves with GitHub and continuous integration best practises.
@@ -79,35 +79,36 @@ Key goals:
 
 As this was also deadline week for another assignment, this sprint was deliberately brief, but was decided with good intentions. Having all teams members at the same level of understanding, regarding the full stack deployment, going into 3 weeks of sprints where we expected to achieve a lot, in terms of advancing the front and backend, would be hugely beneficial. With everyone at the same level, it would mean that if additional resources were required at either end, we would be able to pivot and share the load better amongsts ourselves. Further, with a fully working dashboard up on the GitHub repo, we would be in good stead to hit the ground running for further development on the quiz for the first sprint of Easter.
 
-The documented market research can be found [here](../Documentation/BackgroundResearch/Market+Field_Research.md). Here, we looked into the surrounding field, and our motivations for our web application. In summary, the section explains how fake news can contribute to the detriment of social health, and cost to companies that are the burden of fake news stories.
-
-During the research, we investigated 3 sample websites that offer fake news quizzes (or similar), like ours, and looked into the similarities between our idea and theirs. As of the time of writing, we found no web applications that offer what we have set out to create: a one-stop-shop for demystifying and educating users about fake news in a fun and engaging way. By providing a quiz that is broken down into categories e.g. Brexit, TradeWar, Coronavirus, we hope to target a wider audience.
+The documented market research can be found [here](../Documentation/BackgroundResearch/Market+Field_Research.md). Here, we looked into the surrounding field, and our motivations for our web application. In summary, the section explains how fake news can contribute to the detriment of social health, and cost to companies that are the burden of fake news stories. Further, we found no web applications that offer what we have set out to create.
 
 | Stakeholders            | Updated Use Case        |
 | ------------------------| ------------------------|
 | Donald (End-User)       | I have access to a website, but it does not yet show me anything about fake news, or let me take a quiz. |
-
+| Neil (University Professor)       | It doesn't look like there are too many websites out there that let visitors learn about and test themselves on fake news. |
+| Emma (Admin)       | With the market research done, I have a better idea of what quiz topics to give users the option of taking. |
 
 ### Sprint 3 : Prepare Backend & Additional Wireframe (29.03.21-04.04.21)
-Sprint number 3 came in the first week on Easter and the key goals related to advancing our paper prototype into a more developed wire frame and develop the backend with respect to the mongoDB containers and finalizing the dataset with sample questions, broken down by news topic. Further we set a stretch goal to prepare the data model for handling HTTP requests.
+Sprint number 3 came in the first week on Easter and the key goals related to advancing our paper prototype into a more developed wireframe and develop the backend with respect to the mongoDB containers and finalizing the dataset with sample questions, broken down by news topic. Further we set a stretch goal to prepare the data model for handling HTTP requests.
 
 Key goals:
 - Finish hand-made quiz dataset, broken down into various topics ready for linking to the front end.
 - Prepare mongoDB container ready for HTTP requests.
-- Create a more developed wire frame, implementing the feedback from the initial paper prototype SurveyMonkey questionnaire.
+- Create a more developed wireframe, implementing the feedback from the initial paper prototype SurveyMonkey questionnaire.
 - Send out new wire frame and questionnaire for further front end feedback.
+  
+For the front end, the focus was taking onboard the feedback obtained from the SurveyMonkey questionnaire that was previously sent round based off the initial paper prototype. The feedback proved to be useful, especially points focussed around UI and UX, such as the navigation being intuitive and consistent, colour scheme and suggestions for a social sharing feature. As well as taking onboard UX and UI feedback, we also received reasurring feedback that the idea was liked by respondents and that they were interested to use the webpage and take the quiz. With this feedback, we also made our first interactive wireframe.
 
-For the front end, the focus was taking onboard the feedback obtained from the SurveyMonkey questionnaire that was previously sent round based off the initial paper prototype. The feedback proved to be useful, especially points focussed around UI and UX, such as the navigation being intuitive and consistent, colour scheme and suggestions for a social sharing feature. As well as taking onboard UX and UI feedback, we also received reasurring feedback that the idea was liked by respondents and that they were interested to use the webpage and take the quiz.
+As our first real coding sprint, we experienced some implementation issues on the backend. We were currently using proxy data for testing the backend, but now that we were trying to make the backend utilise MongoDB, storing the data caused some trouble. On reflection, however, it proved a useful learning experience.
 
-With the feedback onboard, we set out on making a more robust wire frame that would better represent the end product. We used a software called "MarvelApp" to make the wire frame interactive and more engaging, allowing the users to click and play around with the latest design ideas. We updated the Survey Money to ask people to scale their answers based on whether they "Strongly Agree", "Strong Disagree" etc.
+| Stakeholders            | Updated Use Case        |
+| ------------------------| ------------------------|
+| Emma (Admin)       | Thanks to the user feedback, I have a better feel for what users want from their experience on Would They Lie To You? allowing me to create appropriate quizzes. |
 
-With the backend, the aim of the sprint was to prepare our mongoDB containers to the point where we could start calling methods that correspond to HTTP requests. The current state of our backend is as follows:
+#### System implementation issues:
 
-We currently have a DB set up in a dockerised mongoDB container, with proxy data used for testing purposes. The DB is structured with collections, with relationships represented in our data. For example, in our news topic collection, we have multiple quizquestion references, therefore we are in a place where we can access all the quiz questions related to a particular topic via a mongoDB command. 
-
-Whilst preparing the backend, we faced some structural difficulties. We started off by writing a script, *insertDataScript.js* that constructs collections and inputs data. Since our script was targeted as storing data in a local mongoDB DB, the data was not there when we started a docker mongoDB container. We got around this problem by importing data into the dockerised mongoDB container, using mongoimport on json files we exported from our local mongoDB DB. Hence, we could then access the data in our dockerised mongoDB container. However, when we tested our solution by building the docker images on another machine, the data did not persist. Hence, we created a script, that is run when on another machine to ensure the data persists, this script is found in *deploy.sh*, and running this will build the docker images and mongoDB container, with persistent data inside it.
-
-Although this may not be the most efficient solution, we have decided to focus on the data contained within our DB for the time being, since we're still using proxy data. After consolidating across the back-end team, we will be making some further changes to our data model, as we feel that some of the relationships and collections already in place are redundant (for example, the relationship between a useranswer document and quizquestion document). Full details of these changes, and the process by which we got our mongoDB docker container working are found in /Documentation/Backend/Meeting_Log.
+| Stack Part  | Goal        | Issue | Fix |
+| ------------| ----------- |-------|-----|
+| Backend     | Store persistent data in a dockerized mongoDB container | Data was not persisting when creating and running scripts to insert data and deploy docker | Trial and error, Googling and a deep dive into the scripts to ascertain root of the bugs |
 
 ### Sprint 4 : Build Frontend Webpages & Begin Linking Front and Backend (05.04.21-11.04.21)
 Sprint number 4 saw the team coming together to start bringing the frontend and backend elements together, as well as some individual advancements for each area, separate of the linking work. On the front end, work was done to start trimming down the fat on the quiz framework that we had selected to use, so that it could be ready to link up to the backend, and also we began to start adding some meat to the website. A moodboard was also drawn up in order to help design on the frontend. With the backend, work was done on finalising the data model schema and creating mongoose commands to return the correct JSON payload, ready to be used by the quiz for questions.
