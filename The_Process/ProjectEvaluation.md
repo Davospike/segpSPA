@@ -19,11 +19,9 @@ With this framework in place, we sat down together for an ethical workshop and r
 
 **Data privacy** 
 
+We discussed data privacy as the pertinent ethical issue concerning this project. We first identified the stakeholders as our users and considered potential outcomes of holding their data.  During this process, we amassed a series of questions that we thought would be important to investigate, including: Would we be prepared for a data breach? Would we be able to ensure the privacy and security of our users' data? Would we have the right mechanisms in place to destroy or delete data if requested to do so? Due to the nature of our social-political quiz topics and the theme of fake news, user data that we collect by way of the quiz could be sensitive. For example, the responses a user inputs into the quiz could reveal an apparent alignment accord with racist stereotypes or prejudices relating to Brexit. It is plausible that this data could be harmful or libellous if publicised.   
 
-
-**Article sources** 
-
-**Accuracy of data** 
+Having considered the data privacy of our users
 
 
 
