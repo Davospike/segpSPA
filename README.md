@@ -17,31 +17,31 @@
         <td><a href="https://github.com/Davospike" target="_blank">Daniel Davies</a></td>
         <td>d.davies.2020@bristol.ac.uk</td>
         <td>Front-end</td>
-        <td><img src="Documentation/Images/DD_Mugshot.png" width="100"></td>
-    </tr>
-    <tr>
-        <td><a href="https://github.com/numberonepikey" target="_blank">Jack Pike</a></td>
-        <td>jp13087@bristol.ac.uk</td>
-        <td>Front-end</td>
-        <td><img src="Documentation/Images/FakeNews.png" width="100"></td>
-    </tr>
-    <tr>
-        <td><a href="https://github.com/hs14428" target="_blank">Harry Smith</a></td>
-        <td>hs14428@bristol.ac.uk</td>
-        <td>Front-end</td>
-        <td><img src="Documentation/Images/HS_Mugshot.jpg" width="100"></td>
-    </tr>
-    <tr>
-        <td><a href="https://github.com/nwtay" target="_blank">Nathan Taylor</a></td>
-        <td>nt17118@bristol.ac.uk</td>
-        <td>Back-end</td>
-        <td><img src="Documentation/Images/FakeNews.png" width="100"></td>
+        <td><img src="Documentation/Images/DD_Mugshot.png" width="100" height="100"></td>
     </tr>
     <tr>
         <td><a href="https://github.com/vinigibilaro" target="_blank">Vincenzo Gibilaro</a></td>
         <td>ar20516@bristol.ac.uk</td>
         <td>Back-end</td>
-        <td><img src="Documentation/Images/VG_Mugshot.png" width="100"></td>
+        <td><img src="Documentation/Images/VG_Mugshot.png" width="100" height="100"></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/numberonepikey" target="_blank">Jack Pike</a></td>
+        <td>jp13087@bristol.ac.uk</td>
+        <td>Front-end</td>
+        <td><img src="Documentation/Images/FakeNews.png" width="100" height="100"></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/hs14428" target="_blank">Harry Smith</a></td>
+        <td>hs14428@bristol.ac.uk</td>
+        <td>Front-end</td>
+        <td><img src="Documentation/Images/HS_Mugshot.jpg" width="100" height="100"></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/nwtay" target="_blank">Nathan Taylor</a></td>
+        <td>nt17118@bristol.ac.uk</td>
+        <td>Back-end</td>
+        <td><img src="Documentation/Images/FakeNews.png" width="100" height="100"></td>
     </tr>
 </table>
 
