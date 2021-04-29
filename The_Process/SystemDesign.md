@@ -150,7 +150,29 @@ Using UML, we can represent the main user stories in a use case diagram:
 ### Paper Prototypes & Wireframes
 
 #### Paper Prototype
-[ADD TO
+We began the visualisation of our web-app through a [paper prototype](./Documentation/Paper_Prototype/Paper_Prototype.pptx), put together in Microsoft Powerpoint. Paper prototypes do not necessarily need to be super *pretty* or perfectly assembled; it's more to allow the whole team to work towards a defined skeleton. We made sure that our paper prototype displayed:
+
+- Layout and Placement of features/buttons
+- Navigation through each section of the web-app
+- Colour scheme
+
+This is useful for all members of the team to refer to during the development of the app, assuring that everyone is heading in the same direction and there's no wayward development at any point. 
+
+As with any new idea, *creativity requires influence* amongst other things. We were made aware of a website called [Gapminder](https://www.gapminder.org) which we eventually took influence from for our design and the overal semantics of our work. Gapminder is a well polished website that takes global, notable topics and asks though provoking questions about them. We wanted to do the same with *'Would They Lie to You?'* displaying an array of topics for the user to choose from. Below is how our paper prototype took influence from Gapminder.
+
+<img src="/Users/vinigibilaro/Desktop/segp/sepgSPA/Documentation/Images/Gapminder_Topic_Choices.png" style="float: left; margin-right: 10px;" />
+
+##### ABOVE: Gapminder's Topic Selection.
+
+##### BELOW: Our proposed Topic selection menu from the paper prototype.
+
+<img src="/Users/vinigibilaro/Desktop/segp/sepgSPA/Documentation/Images/Paper_Prototype_Landing.png" style="float: left; margin-right: 10px;" />
+
+
+
+Gapminder is great fun to visit and test yourself on global topics but there is also heavy emphasis on education and factual branches around its site. Building on this, we proposed a lot of areas to display fake news facts and statistics. Such as as comprehensive landing page and further sections to learn about the history and influence on fake news, giving a holistic experience for the viewer.
+
+It's worth noting that the paper prototype didn't get completely fulfilled, that wasn't its purpose. It was invaluable for allowing the team to begin development with a web-app design in mind and progress at a more effective rate.
 
 #### Wireframe
 
