@@ -14,7 +14,7 @@ import { QuizComponent } from './quiz/quiz.component';
       <app-social></app-social>
     </div>`
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   constructor () {}
   ngOnInit () {}
 }
