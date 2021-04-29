@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DataService} from './data.service';
 
@@ -13,10 +13,10 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { SocialComponent } from './social/social.component';
-import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { TopicsComponent } from './topics/topics.component';
 
 @NgModule({
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   declarations: [
     AppComponent,
     QuizComponent,
@@ -24,7 +24,6 @@ import { TopicsComponent } from './topics/topics.component';
     ToolbarComponent,
     StatisticsComponent,
     SocialComponent,
-    BarChartComponent,
     TopicsComponent,
   ],
   imports: [

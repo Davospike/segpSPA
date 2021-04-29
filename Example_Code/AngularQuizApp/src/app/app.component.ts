@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 import { QuizComponent } from './quiz/quiz.component';
 
 @Component({
@@ -15,5 +14,7 @@ import { QuizComponent } from './quiz/quiz.component';
       <app-social></app-social>
     </div>`
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+  constructor () {}
+  ngOnInit () {}
 }
