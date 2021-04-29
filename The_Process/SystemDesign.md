@@ -96,7 +96,7 @@ The most successful of these other techniques was creating a matrix of topics to
     <img src="../Documentation/Images/rsz_miroboard.png" alt="Miro Board">
 </p>
 
-After deciding we would be going with the Fake News idea, with no absolute process on how to begin our project, we decided to map out the concept as 'visually' as possible. Using **Miro**, a collaborative whiteboard platform that allowed us to unload our ideas onto to begin with. To view our board, follow [this link](https://miro.com/app/board/o9J_lUwgzKw=/), or view the [pdf](./Documentation/DesignChoices/Woke-apedia.pdf) within this repo. As mentioned previously, the visualisation was key here, we ended up formulating a 'timeline' of sorts - the long, vertical strip of post-its beginning from the top. The timeline demonstrated a rough idea on the web-app's 'narrative'; the first thing the user will see and how they will manoeuvre through the web app to get to certain sections. Obviously, going all out with all of our ideas, some more reasonable than others, allowed us at _this_ moment in time to learn from how to plan things in a suitable manner. We can see from this old Miro boards which ideas came through to the end and which were ignored/forgotten. 
+After deciding we would be going with the Fake News idea, with no absolute process on how to begin our project, we decided to map out the concept as 'visually' as possible. Using **Miro**, a collaborative whiteboard platform that allowed us to unload our ideas onto to begin with. To view our board, follow [this link](https://miro.com/app/board/o9J_lUwgzKw=/), or view the [pdf](../Documentation/DesignChoices/Woke-apedia.pdf) within this repo. As mentioned previously, the visualisation was key here, we ended up formulating a 'timeline' of sorts - the long, vertical strip of post-its beginning from the top. The timeline demonstrated a rough idea on the web-app's 'narrative'; the first thing the user will see and how they will manoeuvre through the web app to get to certain sections. Obviously, going all out with all of our ideas, some more reasonable than others, allowed us at _this_ moment in time to learn from how to plan things in a suitable manner. We can see from this old Miro boards which ideas came through to the end and which were ignored/forgotten. 
 
 There were elements that stuck throughout our time on the project, such as a punchy landing page that gives the user a full background and overview of the topic, giving precise statistics that the user can base our info on. In the same way, ideas such as storing user data didn't make it into the final product. We were planning on questioning the users on 'why they got the question wrong' - was it because they were misinformed? Or did they genuinely not know anything about the topic. As much as this would be interesting for us to observe; for the user on the other hand, we didn't think this would be as compelling to them. We have branded this web app to allow users to test themselves on how well *they* can spot fake news, so we aimed for the focus to be on that rather than comparing with other users.
 
@@ -150,7 +150,29 @@ Using UML, we can represent the main user stories in a use case diagram:
 ### Paper Prototypes & Wireframes
 
 #### Paper Prototype
-[ADD TO
+We began the visualisation of our web-app through a [paper prototype](../Documentation/Paper_Prototype/Paper_Prototype.pptx), put together in Microsoft Powerpoint. Paper prototypes do not necessarily need to be super *pretty* or perfectly assembled; it's more to allow the whole team to work towards a defined skeleton. We made sure that our paper prototype displayed:
+
+- Layout and Placement of features/buttons
+- Navigation through each section of the web-app
+- Colour scheme
+
+This is useful for all members of the team to refer to during the development of the app, assuring that everyone is heading in the same direction and there's no wayward development at any point. 
+
+As with any new idea, *creativity requires influence* amongst other things. We were made aware of a website called [Gapminder](https://www.gapminder.org) which we eventually took influence from for our design and the overal semantics of our work. Gapminder is a well polished website that takes global, notable topics and asks though provoking questions about them. We wanted to do the same with *'Would They Lie to You?'* displaying an array of topics for the user to choose from. Below is how our paper prototype took influence from Gapminder.
+
+<img src="../Documentation/Images/Gapminder_Topic_Choices.png" style="float: left; margin-right: 10px;" />
+
+##### ABOVE: Gapminder's Topic Selection.
+
+##### BELOW: Our proposed Topic selection menu from the paper prototype.
+
+<img src="../Documentation/Images/Paper_Prototype_Landing.png" style="float: left; margin-right: 10px;" />
+
+
+
+Gapminder is great fun to visit and test yourself on global topics but there is also heavy emphasis on education and factual branches around its site. Building on this, we proposed a lot of areas to display fake news facts and statistics. Such as as comprehensive landing page and further sections to learn about the history and influence on fake news, giving a holistic experience for the viewer.
+
+It's worth noting that the paper prototype didn't get completely fulfilled, that wasn't its purpose. It was invaluable for allowing the team to begin development with a web-app design in mind and progress at a more effective rate.
 
 #### Wireframe
 

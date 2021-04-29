@@ -33,7 +33,18 @@ To help manage workloads, we split up into separate, but closely linked, front a
 [ADD TO/REMOVE] - Discuss SDLC framework/ideas etc. 
 
 ### Agile
-[ADD TO] - Discuss agile and benefits vs Waterfall and why we chose it.
+In line with the suggestion from our lecturers, we made the decision to follow agile working principles where possible for the development of this application. In particular, we used the [twelve principles of agile development](https://agilemanifesto.org/principles.html) in the agile manifesto as a guideline to follow. We chose this in order to implement continual and flexible ways of working. To do this, frequent communication and a non-hierarchical structure in the team was paramount to progress. As we have outlined in our system implementation, we used sprints and weekly stand-ups to generate and maintain a steady workflow and to iron out any issues that occurred during development as they cropped up. Every Monday morning at 10 am, each team member was given 60 seconds to answer the following three questions: 
+
+1. What did you do the previous week, and did you encountered any issues?
+2. What does next week have install for you?
+3. Do you have any blockers?
+
+This served to encourage communication in the team, create small incremental progress, address any problems early, be reflective about our work and ultimately deliver working software.  
+
+It is important to note that agile working is not the only way of working we could have used to develop this application. We could have opted for a linear-sequential life cycle model such as the [Waterfall Model](https://www.tutorialspoint.com/sdlc/sdlc_waterfall_model.htm), whereby the next phase of development would only start once the previous is finished. Typically, these steps would involve: Requirement Analysis, System Design, Implementation, Testing, Deployment and Maintenance. 
+
+However, we believe that an agile approach has offered us more flexibility to develop the application together. 
+
 [ADD TO] - Group working methods used (for instance did your team choose a particular style of agile? what communication channels did you use?)
 
 ### GitHub Continuous Integration
@@ -152,6 +163,7 @@ Key goals:
 - Create a more developed wireframe, implementing the feedback from the initial paper prototype SurveyMonkey questionnaire.
 - Send out new wire frame and questionnaire for further front end feedback.
   
+
 For the front end, the focus was taking onboard the feedback obtained from the SurveyMonkey questionnaire that was previously sent round based off the initial paper prototype. The feedback proved to be useful, especially points focussed around UI and UX, such as the navigation being intuitive and consistent, colour scheme and suggestions for a social sharing feature. As well as taking onboard UX and UI feedback, we also received reasurring feedback that the idea was liked by respondents and that they were interested to use the webpage and take the quiz. With this feedback, we also made our first interactive wireframe.
 
 As our first real coding sprint, we experienced some implementation issues on the backend. We were previously using proxy data for testing the backend, but now that we were trying to make the backend utilise MongoDB, storing the data caused some trouble. On reflection, however, it proved a useful learning experience.
