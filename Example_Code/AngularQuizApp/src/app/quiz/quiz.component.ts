@@ -1,17 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
-import { QuizService } from '../services/quiz.service';
-// import { HelperService } from '../services/helper.service';
 import { Option, Question, Quiz, QuizConfig } from '../models/index';
 import {DataService} from '../data.service';
 import {ActivatedRoute} from '@angular/router';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.css'],
-  providers: [QuizService]
+  providers: [DataService]
 })
 export class QuizComponent implements OnInit {
   quizzes: any[];
@@ -45,7 +42,7 @@ export class QuizComponent implements OnInit {
   ellapsedTime = '00:00';
   duration = '';
 
-  constructor(private quizService: QuizService, private dataService: DataService, private route: ActivatedRoute) { }
+  constructor(private dataService: DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.quizzes = this.dataService.getQuizNames();
