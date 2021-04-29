@@ -6,6 +6,7 @@ import { Option, Question, Quiz, QuizConfig } from '../models/index';
 import {DataService} from '../data.service';
 import {ActivatedRoute} from '@angular/router';
 import { Location } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-quiz',
