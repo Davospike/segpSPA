@@ -160,13 +160,13 @@ This is useful for all members of the team to refer to during the development of
 
 As with any new idea, *creativity requires influence* amongst other things. We were made aware of a website called [Gapminder](https://www.gapminder.org) which we eventually took influence from for our design and the overal semantics of our work. Gapminder is a well polished website that takes global, notable topics and asks though provoking questions about them. We wanted to do the same with *'Would They Lie to You?'* displaying an array of topics for the user to choose from. Below is how our paper prototype took influence from Gapminder.
 
-<img src="/Users/vinigibilaro/Desktop/segp/sepgSPA/Documentation/Images/Gapminder_Topic_Choices.png" style="float: left; margin-right: 10px;" />
+<img src="../Documentation/Images/Gapminder_Topic_Choices.png" style="float: left; margin-right: 10px;" />
 
 ##### ABOVE: Gapminder's Topic Selection.
 
 ##### BELOW: Our proposed Topic selection menu from the paper prototype.
 
-<img src="/Users/vinigibilaro/Desktop/segp/sepgSPA/Documentation/Images/Paper_Prototype_Landing.png" style="float: left; margin-right: 10px;" />
+<img src="../Documentation/Images/Paper_Prototype_Landing.png" style="float: left; margin-right: 10px;" />
 
 
 
