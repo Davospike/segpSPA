@@ -255,7 +255,15 @@ By the end of the sprint... [ADD TO]
 ## MEAN Stack System Implementation
 
 ### Stack Architecture & System Design
-[ADD TO] - e.g. class diagrams, sequence diagrams. Might be best place/more detail in SystemDesign.md?
+As a MEAN stack single page application, our system architecture and design revolved around MongoDB, Express, Node.js and Angular. To aid the understandability of our implementation walkthrough below, we have created some UML diagrams to visually display how the SPA works.
+
+<p align="center">
+  <img src="../Documentation/Images/WTLTY_Sequence_Diagram.png" alt="Sequence Flow Diagram" width="100%">
+</p>
+
+To explain the sequence flow diagram succinctly, when someone visits the website, this will cause the JavaScript code to be run, calling on the `AppRoutingModule` to direct the user to the `http://localhost:4200/welcome`. Should the user navigate to the quiz topic selection page and choose a quiz topic, a similar series of events will happen; the user will be directed to, e.g., `http://localhost:4200/quiz/brexit`, but this time a call to the `QuizComponent` will occur. Calling the `QuizComponent` will in turn load the `DataService` component, as this is the QuizComponent's dependency injection and the component is subscribed to the data being provided. This DataService is responsible for handling and creating the HTTP requests to the backend infrastructure, making use of a router, controller and model to process the request and query the database. The database will then process the query and retrieve the data, sending it back to the API as JSON. The resulting JSON payload is the retrieved, and sent back to the frontend, via the HTTP `get` requests originally called by the DataService. 
+
+We go into more detail on all this below.       
 
 ### Back End : MongoDB
 #### SQL vs noSQL
