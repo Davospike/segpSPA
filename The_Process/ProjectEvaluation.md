@@ -35,18 +35,7 @@ Overall, the backend development was a success. We used innovative methods to in
 
 We also made sure that our web-app was as secure as possible, especially during deployment. We wanted to avoid hard-coding usernames, passwords, local and container Mongo ports, and the same for App ports. Our `.env` file held this information and we wanted to reference those values correctly. To be able to access MongoDB and various commands, you need to authenticate yourself beforehand; to prevent any malicious intent from other individuals that could compromise our data.
 
-- What went well:
-  - 
-  - 
-  - 
-  - 
-  - 
-    - 
-- What didnt go as well:
-  - Couldnt update fields in MongoDB through mongoose commands
-    - Via a request to the api
-  - Tried using `put` methods to do the same thing but didn't work
-    - Frontend <-> backend link was very fragile
+We didn't manage fo fulfil our extension of being able to update fields in MongoDB from frontend requests. We wanted to store two parameters per question: the number of users that had attempted the question and the number of users that had got the answer correct, hoping to display this data to the user afterwards. To implement this, we initially experimented using HTTP `get` methods but we were unable to utilise these and call `.save` on Mongoose models to update the appropriate fields. Also, we tried using HTTP `put` methods which we couldn't get to work with our models either. We felt this didn't make a significant difference to the user experience so we decided to focus on other aspects of the web-app instead. The methods that we tried to implement can be found in Api.js (Comments stating `FUTURE DEVELOPMENT CODE`), we would like to implement these features in future developments which we will go into more detail later on. 
 
 ###### Frontend
 
