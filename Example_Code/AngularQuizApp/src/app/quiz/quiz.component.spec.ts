@@ -31,6 +31,7 @@ describe('QuizComponent', () => {
     .compileComponents().then(() => { 
       fixture = TestBed.createComponent(QuizComponent);
       component = fixture.componentInstance;
+
       html = fixture.debugElement;
       fixture.detectChanges();
     });
@@ -48,7 +49,7 @@ describe('QuizComponent', () => {
 
   it ('should select the selected option', fakeAsync(() => {
     spyOn(component, 'onSelect');
-    const selectLink = fixture.debugElement.query(By.css('{{option.id}}'));
+    const selectLink = fixture.debugElement.query(By.css('.onselectbutton'));
     selectLink.triggerEventHandler('click', null);
     tick();
     fixture.detectChanges();
