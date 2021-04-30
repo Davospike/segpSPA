@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -11,6 +11,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 describe('QuizComponent', () => {
   let component: QuizComponent;
   let fixture: ComponentFixture<QuizComponent>;
+  let html: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -27,7 +28,12 @@ describe('QuizComponent', () => {
       imports: [ FormsModule, HttpClientTestingModule, RouterTestingModule ],
       declarations: [ QuizComponent ]
     })
-    .compileComponents();
+    .compileComponents().then(() => { 
+      fixture = TestBed.createComponent(QuizComponent);
+      component = fixture.componentInstance;
+      html = fixture.debugElement;
+      fixture.detectChanges();
+    });
   }));
 
   beforeEach(() => {
@@ -39,4 +45,32 @@ describe('QuizComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it ('should select the selected option', fakeAsync(() => {
+    spyOn(component, 'onSelect');
+    const selectLink = fixture.debugElement.query(By.css('{{option.id}}'));
+    selectLink.triggerEventHandler('click', null);
+    tick();
+    fixture.detectChanges();
+    expect(component.onSelect).toHaveBeenCalled();
+  })) 
+
+  it('should submit quiz answers', fakeAsync(() => {
+    spyOn(component, 'onSubmit');
+    const submitLink = fixture.debugElement.query(By.css('#submit'));
+    submitLink.triggerEventHandler('click', null);
+    tick();
+    fixture.detectChanges();
+    expect(component.onSubmit).toHaveBeenCalled();
+  }))
+
+  it('should go to next question', fakeAsync(() => {
+    spyOn(component, 'goTo');
+    const goToLink = fixture.debugElement.query(By.css('#goto'));
+    goToLink.triggerEventHandler('click', null);
+    tick();
+    fixture.detectChanges();
+    expect(component.goTo).toHaveBeenCalled();
+  }))
+
 });

@@ -36,7 +36,7 @@
           <div class="text-center">
             <button class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(0);">First</button>
             <button class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(pager.index - 1);">Prev</button>
-            <button class="btn btn-primary" (click)="goTo(pager.index + 1);">Next</button>
+            <button class="btn btn-primary" id="goto" (click)="goTo(pager.index + 1);">Next</button>
             <button class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(pager.count - 1);">Last</button>
             </div>
         </div>
@@ -72,7 +72,7 @@
         <div *ngIf="mode!='result'">
           <button class="btn btn-warning" (click)="mode = 'quiz'">Quiz</button>
           <button class="btn btn-info" (click)="mode = 'review'">Review</button>
-          <button class="btn btn-primary" (click)="onSubmit();">Submit Quiz</button>
+          <button class="btn btn-primary" id="submit" (click)="onSubmit();">Submit Quiz</button>
         </div>
       </div>
     </div>
