@@ -33,14 +33,6 @@ describe('TopicsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should move to to Coronavirus quiz path', () => {
-    spyOn(component, null);
-    const CoronaLink = html.query(By.css('CoronaLink'));
-    CoronaLink.triggerEventHandler('Take the Coronavirus quiz', null);
-    tick();
-    fixture.detectChanges();
-    expect(component.ngOnInit).toHaveBeenCalled();
-  });
 });
 
 
