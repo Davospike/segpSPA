@@ -6,11 +6,8 @@ export class QuizConfig {
     pageSize: number;
     requiredAll: boolean;  // indicates if you must answer all the questions before submitting.
     richText: boolean;
-    shuffleQuestions: boolean;
-    shuffleOptions: boolean;
     showClock: boolean;
     showPager: boolean;
-    theme: string;
 
     constructor(data: any) {
         data = data || {};
@@ -21,8 +18,6 @@ export class QuizConfig {
         this.pageSize = data.pageSize;
         this.requiredAll = data.requiredAll;
         this.richText = data.richText;
-        this.shuffleQuestions = data.shuffleQuestions;
-        this.shuffleOptions = data.shuffleOptions;
         this.showClock = data.showClock;
         this.showPager = data.showPager;
     }
