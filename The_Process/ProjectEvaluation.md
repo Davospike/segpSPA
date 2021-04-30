@@ -1,4 +1,6 @@
-<h1 align="center"> Project Evaluation </h1>
+<h1 align="center"> Project Conclusion </h1>
+
+### Ethical Framework
 
 **Code of ethics** 
 
@@ -23,7 +25,34 @@ The third perspective involved in our ethical framework allowed us to consider d
 
 This framework for ethical thinking directly impacted our thinking for the design of our website. We originally thought to enable the collection of user-specific data, which would therefore allow users to compare scores with each other and also offer them the opportunity to improve on previous performances. However, having taken into account the ethical issue of data privacy from a Consequentialist, Deontic and Virtue-based persective, we decided not to include user-specific features in our application because of the issues around housing sensitive personal data that we discussed. 
 
+### Project Success
 
+###### Backend
+
+Overall, the backend development was a success. We used innovative methods to inject our data into our database using [insertDataScript.js](../Example_Code/AngularQuizApp/insertDataScript.js). This, combined with `mongoimport`s and `mongoexport`s allowed us to inject the data into the *docker container*. It was a effective solution to the problem by which the Mongo container mounts its volume locally. I.e We couldn't assume that users composing the docker environment had the data locally.
+
+[insertDataScript.js](../Example_Code/AngularQuizApp/insertDataScript.js) alongside the Mongoose models successfully populated the schemas that reflected our data model design. This was evident when exporting into JSON files and being fully compatitible with the frontend's requests. The linking of the backend and the frontend required some backend configuration; the frontend relied on a schema `Options` that referred to the answer choices the user had to take. At first this wasn't part of our backend data structure, but was crucial in making the whole web-app functional. We made sure these schemas were working correctly when testing the quiz ourselves - cross-referencing the result on the page to the data we stored.
+
+We also made sure that our web-app was as secure as possible, especially during deployment. We wanted to avoid hard-coding usernames, passwords, local and container Mongo ports, and the same for App ports. Our `.env` file held this information and we wanted to reference those values correctly. To be able to access MongoDB and various commands, you need to authenticate yourself beforehand; to prevent any malicious intent from other individuals that could compromise our data.
+
+- What went well:
+  - 
+  - 
+  - 
+  - 
+  - 
+    - 
+- What didnt go as well:
+  - Couldnt update fields in MongoDB through mongoose commands
+    - Via a request to the api
+  - Tried using `put` methods to do the same thing but didn't work
+    - Frontend <-> backend link was very fragile
+
+###### Frontend
+
+
+
+###### Overall
 
 # Mark Scheme Relevant Topics:
 
@@ -32,10 +61,19 @@ This framework for ethical thinking directly impacted our thinking for the desig
 - Details of how you evaluated your designs (techniques used & awareness of their limitations). Description of techniques suitable for your particular design. A timeline of evaluation of your design.
 - Unit testing / Functional testing.
 - User acceptance testing. Evaluation of your design with users – methods undertaken, findings, implications.
+- Refer to the detchment between the frontend and backend
+  - Some features could not be completed 
+    - due to lack of javascript knowledge and a proper synergy between the front and back end structures
+  - Next time it would be better to communicate more and make the front end frame work more compatible with the back end **and vice versa**.
 
 ## Conclusion
 - Reflect on the working practices of your group, how well they did or did not work, e.g, management of issues, communication, Agile (etc).
 - Reflective discussion of the success of the project. How well did your project fulfil the brief? Were all of your own objectives met
+  - **not being able to implement statistics (num_correct)**
 - This is a chance to reflect on how coronavirus has affected your project (remote working practices etc)
+  - **difficulties in brainstorming, pair programming technologies, **
 - Discussion of Social and Ethical implications of your work.
+  - **ethical framework**
 - Discussion of future work (in terms of design, development and evaluation)
+  - **more fake news, continuous pulling of data, our own integrate fake news detection model, user accounts, different data formats ie using dataset DB in archive (and different types of quizzes), mobile app, expanding answers beyond true/false**
+  - can put here that if were to do a similar project / extend this one, would implement use of jasmine / karma tools in early stages of the process, to get live error checking etc

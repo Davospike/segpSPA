@@ -359,11 +359,11 @@ When filling in dataset:
   Exported output from local mongoDB as before, into JSON files found in blockData:
 
   ```bash
-$ mongoexport -d test -c quizquestions -o quizQuestionsOutput.json --jsonArray
+  $ mongoexport -d test -c quizquestions -o quizQuestionsOutput.json --jsonArray
   ```
   
   ```bash
-$ mongoexport -d test -c newstopics -o newsTopicsOutput.json --jsonArray
+  $ mongoexport -d test -c newstopics -o newsTopicsOutput.json --jsonArray
   ```
   
   Now imported into dockerised mongoDB DB via the [deploy.sh](../../Example_Code/AngularQuizApp/deploy.sh) script.
@@ -831,7 +831,4 @@ Plan Today:
 - [Api.js](../../Example_Code/AngularQuizApp/server/routes/api.js):
   - Decided to leave in individual `get` methods individual quiz topics
     - Reason being, be may in the future build a database of questions getting to a size where it'll be more efficient to retrieve individual questions rather than a large JSON payload.
-    - SEE `FUTURE DEVELOPMENT CODE` - `CODE SECTION 1` etc.
-
-------
-
+    - SEE `FUTURE DEVELOPMENT CODE` - `CODE SECTION 1` in [Api.js](../../Example_Code/AngularQuizApp/server/routes/api.js) etc.

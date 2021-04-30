@@ -162,7 +162,6 @@ Key goals:
 - Prepare mongoDB container ready for HTTP requests.
 - Create a more developed wireframe, implementing the feedback from the initial paper prototype SurveyMonkey questionnaire.
 - Send out new wire frame and questionnaire for further front end feedback.
-  
 
 For the front end, the focus was taking onboard the feedback obtained from the SurveyMonkey questionnaire that was previously sent round based off the initial paper prototype. The feedback proved to be useful, especially points focussed around UI and UX, such as the navigation being intuitive and consistent, colour scheme and suggestions for a social sharing feature. As well as taking onboard UX and UI feedback, we also received reasurring feedback that the idea was liked by respondents and that they were interested to use the webpage and take the quiz. With this feedback, we also made our first interactive wireframe.
 
@@ -377,9 +376,7 @@ Following the construction of our UML diagram, we decided to make a spreadsheet 
 
 Throughout this data model design process, we adhered to conform to good data model design practices. Our previous model, which utilised SQL and its best practices (normalisation), was used to aid the design of our current noSQL model. Via this, we achieved a data model that did not unnecessarily repeat data. 
 
-We also followed this guide, to cater our design choices to best practices:
-
-https://developer.mongodb.com/article/mongodb-schema-design-best-practices/
+We also followed [this guide](https://developer.mongodb.com/article/mongodb-schema-design-best-practices/), to cater our design choices to best practices:
 
 - our data model is clearly one that uses an embedded design. This allows us to retrieve the necessary data we need for a larger data entity, like a news topic, with a single query. We also found it would be easy to access individual elements within this data type.
 - rule number 5 in this guide also solidified our choice in catering out design to our application's data access patterns.
@@ -443,7 +440,7 @@ REST stands for Representational State Transfer, and is commonplace in data exch
 
 Responses are the result of requests. A response is composed of two parts - the root-endpoint and the path. The root-endpoint is the starting point from where your API lives. In our project, it is where we set the API routes from server.js (localhost:4200/api) - but we will come back to this. The second part of a response is the path. This path determines the resource the client is looking for. We can distinguish between different responses based on these two parts, and implement methods in our api that map responses on to the mongoose and node.js commands that will respond with the correct data from our backend. 
 
-The main advantages of using a RESTful API is that each HTTP has all the information needed. In other words, neither the client nor the server need to remember any previous status to satisfy it (https://www.bbvaapimarket.com/en/api-world/rest-api-what-it-and-what-are-its-advantages-project-development/#:~:text=The%20REST%20API%20is%20always,%2C%20Java%2C%20Python%20or%20Node.). This means that we have a stateless client/server protocol. 
+The main advantages of using a RESTful API is that each HTTP has all the information needed. In other words, neither the client nor the server need to remember any previous status to satisfy it (see this [website](https://www.bbvaapimarket.com/en/api-world/rest-api-what-it-and-what-are-its-advantages-project-development/#:~:text=The%20REST%20API%20is%20always,%2C%20Java%2C%20Python%20or%20Node.)). This means that we have a stateless client/server protocol. 
 
 A RESTful API allows for client-server separation. This allows for scalability, since development teams can scale up the application without having to take down the server. Developers can work on the server side of the application, without the client side being affected.
 
