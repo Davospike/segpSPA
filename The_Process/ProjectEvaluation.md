@@ -25,14 +25,25 @@
 
 ### Testing
 
+In order to help continually assess and improve our project, various methods of testing were carried out throughout the project. As a team, we felt it was important to carry out multiple types of testing as it meant we would be able to test different aspects of the project, as opposed to just focussing on, for example, the code base. Please see below to read about what we did and why.
+
 #### Functional Testing
 
->>>>>>> jack
+User journey tests are ways to test a certain path a *user* could take through a system. They're considered a 'BusinessFacingTest' and are conducted by putting the developer into the user's shoes. They are well detailed documents that present a set of steps (including setup and teardown) on what to engage with and what to expect on the screen in order to make sure that the program acts as expected.
+
+We created three user journey tests:
+
+- [Getting to the info page and to a quiz](User_Journey_Testing/User_Journey_1)
+- [Taking a quiz](User_Journey_Testing/User_Journey_2)
+- [Sharing the web-app on social media](User_Journey_Testing/User_Journey_3)
+
+The general structure we used for each was: to conduct the user's intention during the test, how to set up the environment, how to tear down the environment after testing, and a list of tests to actually carry out (with a step-by-step list for each one). User journey 1 directed the user to the main two features of our web-app - the 'about Fake News' page and the 'Take the quiz' page. User journey 2 made sure that completing the quiz was as expected, the set up was starting the 'China' quiz from the selection page; the test consisted of selecting answers and submitting the quiz, as well as making sure that the answer page was properly presented. User journey 3 focussed on sharing the quiz on social media, involving scrolling to the necessary selection of buttons and clicking 'Twitter'.
+
+These tests were useful as they compelled us to take a closer look at our web-app and document every feature that the user should expect to see - it made us consider errors that may not have been obvious at first.
 
 #### Unit Testing
 
 #### User Acceptance Testing
-
 
 The final set of testing that we carried out was in-person user acceptance testing. For this, we sat down with housemates and family at the end of our website build process and let them play around, and interact, with it. After the testers felt they were done with the website, they had to fill out a Survey Monkey questionairre, allowing them to voice their opinions and thoughts. As a result, this meant the testers were interacting with the website in its most complete state throughout the whole project. By letting them interact with a complete state meant that they could be critical about what we deemed a finished state and thus help provoke improvements, and/or validate whether we achieved our project goals. 
 
@@ -44,21 +55,6 @@ Some feedback is as follows:
 - Another tested thought that there was too much content to read in the 5 minute time cap and as a result didn't end up reading everything. They also suggested extra context to help gauge the article, e.g. dates.
 
 As a team, we believe that all the feedback could be implemented to improve the user experience on the website and so are grateful that we carried out the testing. It was able to highlight things that we thought we had done, but had not noticed due to us interacting with it daily and thus having a bias to knowing how it works and what to expect. By allowing testers to interact with it and feedback these irks will be helpful for further work.
-=======
-#### Non-Automated Testing
-
-User journey tests are ways to test a certain path a *user* could take through a system. They're considered a 'BusinessFacingTest' and are conducted by putting the devloper into the user's shoes. They are well detailed documents that present a set of steps (including setup and teardown) on what to engage with and what to expect on the screen in order to make sure that the program acts as expected. 
-
-We created three user journey tests:
-
-- [Getting to the info page and to a quiz](User_Journey_Testing/User_Journey_1)
-- [Taking a quiz](User_Journey_Testing/User_Journey_2)
-- [Sharing the web-app on social media](User_Journey_Testing/User_Journey_3)
-
-The general structure we used for each was: to conduct the user's intention during the test, how to set up the environment, how to tear down the environment after testing and a list of tests to actually carry out (with a step-by-step list for each one). User journey 1 directed the user to the main two features of our web-app - the 'about Fake News' page and the 'Take the quiz' page. User journey 2 made sure that completing the quiz was as expected, the set up was starting the 'China' quiz from the selection page; the test consisted of selecting answers and submitting the quiz, as well as making sure that the answer page was properly presented. User journey 3 focussed on sharing the quiz on social media, involving scrolling to the necessary selection of buttons and clicking 'Twitter'.
-
-These tests were useful as they compelled us to take a closer look at our web-app and document every feature that the user should expect to see - it made us consider errors that may not have been obvious at first.
->>>>>>> vini
 
 ## Conclusion
 
@@ -90,9 +86,27 @@ Feedback from the user acceptance testing showed some flaws/suggested potential 
 
 #### Overall
 
-If we think about overall success as the extent to which the website achieves the primary and secondary objectives set out at the start of the project, we believe we can deem the project successful.
+PROBS NEEDS IMPROVEMENT - BIT SHIT AT THE MOMENT (FROM HARRY (dw i wrote this so far so can say that lol))
 
-[ADD TO] - talk about objectives met etc
+If we think about overall success as the extent to which the website achieves the primary and secondary objectives set out at the start of the project, we believe we can deem the project to be mostly successful.
+
+Towards the start of the project, we set out key objectives to strive towards achieving. These objectives were highlighted in the [System Design](SystemDesign.md) section. Looking at the primary objectives first:
+
+- Develop an educational quiz, tasking users with identifying fake news
+- Use the webpage to inform users about fake news; what it is, its history, the dangers of it, and how to recognise it
+- Create a static database that holds a handpicked selection of news articles that are identified as being fact or fiction
+
+We believe that we completed all three with good success. Feedback from the user acceptance testing showed that the quiz was easy to do and engaging. The website has an in-depth page on the history of fake news, what it is and how to handle it. Feedback also suggested that testers found that after engaging with the website, they felt more comfortable with their ability to recognise and deal with fake news, thus implying that the page does what it set out to do. The database went through a solid design process and successfully holds the various quiz topic question sets. [VINI/NATH TO ADD]
+
+Whilst the primary objectives were a good indicator to overall success at the base level, further secondary objectives were set in order to stretch and challenger ourselves during the project. These were:
+
+- Collect and store user data, such as their quiz score and where they obtain their news from
+- Create a login function for the site so users are encouraged to revisit and compare previous scores
+- Create a function that allows users to share their score via social media
+
+For the secondary objectives, we were not able to achieve success in all of them, like the primary ones. Difficulties arose when trying to implement features in the database to collect and store data. Extensive work was done in attempts to achieve the goal, but unfortunately we had to take the executive decision to drop the feature. The difficulties were well documented in the [System Implementation](SystemImplementation.md). Implementation of login functionality was also a failed objective; this was not down to unsuccessful attempts, but rather down to running out of time. As a team, at some point we had to decide when to stop working on adding features, and focus on the write-up and improvements of the current state. As an advanced feature, when it got round to be able to start attempting implementation, we felt that time would not have allowed a successful attempt and thus agreed to drop the feature. Fortunately the final secondary objective was a success. A social footer was placed at the bottom of each page to allow users to share the site on their favourite social platforms.  
+
+Given a success rate of 4/6 objectives, with all three primary objectives passing with good feedback on multiple user testing rounds, we believe we can say with confidence that overall the project was a success. 
 
 ### Covid-19 Implications
 
