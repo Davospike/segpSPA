@@ -25,6 +25,18 @@ The third perspective involved in our ethical framework allowed us to consider d
 
 This framework for ethical thinking directly impacted our thinking for the design of our website. We originally thought to enable the collection of user-specific data, which would therefore allow users to compare scores with each other and also offer them the opportunity to improve on previous performances. However, having taken into account the ethical issue of data privacy from a Consequentialist, Deontic and Virtue-based persective, we decided not to include user-specific features in our application because of the issues around housing sensitive personal data that we discussed. 
 
+**Data Collection**
+
+We used several rounds of user testing in the development of this single page application for varying stages of the project. We had to consider collecting qualitative, personalised data or quantitative data for this user evaluation process. We thought a quantitative data collection approach would be more useful for the purpose of this project because we would be able to measure the success of our design decisions and our feedback would be less subjective. In particular, we used a 5-point Likert scale, named after inventor, psychologist Resins Likert, for the majority of the questions on our questionnaires. This facilitated the collection of easy-to-interpret data as shown below.
+
+
+
+![Screenshot from 2021-05-03 09-38-50](https://user-images.githubusercontent.com/63299377/116856633-66800280-abf3-11eb-9819-431b7e526aa9.png)
+
+
+
+However, we are aware that in the future, we may want to combine the collection of quantitative and qualitative data to continue the development of this application. This may include interview transcripts, audio recordings, product reviews, customer testimonials and other observations and descriptions. This type of research might provide us with rich, in-depth insight about our application. In order to collect this personal data, we acknowledge that we will need informed consent from our users. 
+
 ### Project Success
 
 ###### Backend

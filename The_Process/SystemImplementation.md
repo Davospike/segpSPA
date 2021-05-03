@@ -41,11 +41,9 @@ In line with the suggestion from our lecturers, we made the decision to follow a
 
 This served to encourage communication in the team, create small incremental progress, address any problems early, be reflective about our work and ultimately deliver working software.  
 
-It is important to note that agile working is not the only way of working we could have used to develop this application. We could have opted for a linear-sequential life cycle model such as the [Waterfall Model](https://www.tutorialspoint.com/sdlc/sdlc_waterfall_model.htm), whereby the next phase of development would only start once the previous is finished. Typically, these steps would involve: Requirement Analysis, System Design, Implementation, Testing, Deployment and Maintenance. 
+It is important to note that agile working is not the only way of working we could have used to develop this application. We could have opted for a linear-sequential life cycle model such as the [Waterfall Model](https://www.tutorialspoint.com/sdlc/sdlc_waterfall_model.htm), whereby the next phase of development would only start once the previous is finished. Typically, these steps would involve: Requirement Analysis, System Design, Implementation, Testing, Deployment and Maintenance. However, we believe that an agile approach has offered us more flexibility to develop the application together. 
 
-However, we believe that an agile approach has offered us more flexibility to develop the application together. 
-
-[ADD TO] - Group working methods used (for instance did your team choose a particular style of agile? what communication channels did you use?)
+We also had to adapt our communication channels in response to the pandemic.  In addition to our weekly stand-ups, we were in constant communication through the instant messaging platform Discord, and video calls on Teams.
 
 ### GitHub Continuous Integration
 In order to implement continuous integration and deployment within our project, we decided to follow some of the [DevOps Best Practices](https://www.atlassian.com/devops/what-is-devops/devops-best-practices), whereby developers make small frequent changes to a central repository, and test them. Imperative to aligning with these practices and our agile framework, is a source code version control system. We used GitHub as it meant any conflicts/errors could be managed, and our progress was being saved as we went; useful for if something broke along the way. 
