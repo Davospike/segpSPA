@@ -32,6 +32,17 @@
 
 #### User Acceptance Testing
 
+The final set of testing that we carried out was in-person user acceptance testing. For this, we sat down with housemates and family at the end of our website build process and let them play around, and interact, with it. After the testers felt they were done with the website, they had to fill out a Survey Monkey questionairre, allowing them to voice their opinions and thoughts. As a result, this meant the testers were interacting with the website in its most complete state throughout the whole project. By letting them interact with a complete state meant that they could be critical about what we deemed a finished state and thus help provoke improvements, and/or validate whether we achieved our project goals. 
+
+Overall, feedback was positive and confirmed that the website was easy and intuitive to interact with. Further, testers left good feedback for improvements that could be implemented in any further work done on the project. 
+
+Some of the feedback is as follows:
+- Some users found at the end of the quiz it wasn't entirely clear that you needed to select `Submit Quiz` and assumed clicking `Next` at the end would finish and submit the quiz. 
+- Others suggested showing your total score at the end; this was something that we thought we had done, but clearly hadn't, thus showing the importance of carrying out these tests.
+- Another tested thought that there was too much content to read in the 5 minute time cap and as a result didn't end up reading everything. They also suggested extra context to help gauge the article, e.g. dates.
+
+As a team, we believe that all the feedback could be implemented to improve the user experience on the website and so are grateful that we carried out the testing. It was able to highlight things that we thought we had done, but had not noticed due to us interacting with it daily and thus having a bias to knowing how it works and what to expect. By allowing testers to interact with it and feedback these irks will be helpful for further work.
+
 ## Conclusion
 
 ### Reflection on Working Practices
@@ -52,9 +63,17 @@ We didn't manage fo fulfil our extension of being able to update fields in Mongo
 
 #### Frontend
 
+For the frontend, we also believe we had success with our design and implementation. We started out with thorough sessions for early design conceptualizeation and put time and effort into paper prototypes and wireframes. Throughout the process we were constantly reviewing the design, remembering to put ourselves in the users shoes and always referring to the user stories. During the design process, we were carrying out the aforementioned surveys to help steer the direction of our work, keeping us aligned to what the end user wanted. 
+
+On the implementation side, we picked up on the relevant technologies quickly in order to effectively implement a pre-made quiz framework into our base site, allowing us to spend more time focused on the educational aspects of the site; arguably the most important part. Using bootstrap and custom HTML design templates allowed us to make the site visually appealing, something that the final round of user acceptance testing confirmed.
+
+There were, however, some aspects of the frontend that did not go quite to plan/weren't executed perfectly. Initially we had overestimated our ability to deconstruct an advanced Spotify quiz and thus failed in implementing that quiz framework, wasting valuable sprint time. It wasn't all bad news, however, as we were able to learn more about how Angular web applications are set-up and executed. It could be said that we bite off more than we could chew with this framework. Despite the setback we were able to quickly pivot and find a more appropriate framework to use. With this one, we were able to tailor it to our needs, e.g. adding shuffle questions features and adding more detail to the question presented, and produce a well functioning fake news quiz and educational website. 
+
+Feedback from the user acceptance testing showed some flaws/suggested potential improvements in the design. You can read about this in the earlier [User Acceptance Testing](#user-acceptance-testing) section.
 
 #### Overall
 
+If we think about overall success as the extent to which the website achieves the primary and secondary objectives set out at the start of the project, we believe we can deem the project successful.
 
 ### Covid-19 Implications
 
