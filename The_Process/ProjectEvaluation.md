@@ -36,7 +36,7 @@ The final set of testing that we carried out was in-person user acceptance testi
 
 Overall, feedback was positive and confirmed that the website was easy and intuitive to interact with. Further, testers left good feedback for improvements that could be implemented in any further work done on the project. 
 
-Some of the feedback is as follows:
+Some feedback is as follows:
 - Some users found at the end of the quiz it wasn't entirely clear that you needed to select `Submit Quiz` and assumed clicking `Next` at the end would finish and submit the quiz. 
 - Others suggested showing your total score at the end; this was something that we thought we had done, but clearly hadn't, thus showing the importance of carrying out these tests.
 - Another tested thought that there was too much content to read in the 5 minute time cap and as a result didn't end up reading everything. They also suggested extra context to help gauge the article, e.g. dates.
@@ -74,6 +74,8 @@ Feedback from the user acceptance testing showed some flaws/suggested potential 
 #### Overall
 
 If we think about overall success as the extent to which the website achieves the primary and secondary objectives set out at the start of the project, we believe we can deem the project successful.
+
+[ADD TO] - talk about objectives met etc
 
 ### Covid-19 Implications
 
