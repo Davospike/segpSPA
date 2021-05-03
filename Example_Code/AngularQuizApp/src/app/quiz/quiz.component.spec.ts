@@ -7,6 +7,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { QuizComponent } from './quiz.component';
 import {RouterTestingModule} from '@angular/router/testing';
+import {Option} from "../models";
 
 describe('QuizComponent', () => {
   let component: QuizComponent;
@@ -28,7 +29,7 @@ describe('QuizComponent', () => {
       imports: [ FormsModule, HttpClientTestingModule, RouterTestingModule ],
       declarations: [ QuizComponent ]
     })
-    .compileComponents().then(() => { 
+    .compileComponents().then(() => {
       fixture = TestBed.createComponent(QuizComponent);
       component = fixture.componentInstance;
 
@@ -48,30 +49,55 @@ describe('QuizComponent', () => {
   });
 
   it ('should select the selected option', fakeAsync(() => {
+    // Define a sample question to ensure that the `ngFor` renders the necessary option components.
+    component.quiz.questions = [
+      {
+        id: '123',
+        name: 'First question',
+        articleBody: 'Article body.',
+        articleURL: 'http://article.url/',
+        debunkArticleUrl: 'http://debunk.article.url/',
+        questionTypeId: 1,
+        options: [{
+          id: 1,
+          questionId: 123,
+          name: 'first option',
+          isAnswer: false,
+          selected: false,
+        }, {
+          id: 2,
+          questionId: 123,
+          name: 'first option',
+          isAnswer: true,
+          selected: false,
+        }],
+        answered: false,
+        num_correct: 1,
+        num_attempted: 2,
+      }
+    ];
+    fixture.detectChanges();
     spyOn(component, 'onSelect');
     const selectLink = fixture.debugElement.query(By.css('.onselectbutton'));
     selectLink.triggerEventHandler('click', null);
     tick();
-    fixture.detectChanges();
     expect(component.onSelect).toHaveBeenCalled();
-  })) 
+  }));
 
   it('should submit quiz answers', fakeAsync(() => {
     spyOn(component, 'onSubmit');
     const submitLink = fixture.debugElement.query(By.css('#submit'));
     submitLink.triggerEventHandler('click', null);
     tick();
-    fixture.detectChanges();
     expect(component.onSubmit).toHaveBeenCalled();
-  }))
+  }));
 
   it('should go to next question', fakeAsync(() => {
     spyOn(component, 'goTo');
     const goToLink = fixture.debugElement.query(By.css('#goto'));
     goToLink.triggerEventHandler('click', null);
     tick();
-    fixture.detectChanges();
     expect(component.goTo).toHaveBeenCalled();
-  }))
+  }));
 
 });
