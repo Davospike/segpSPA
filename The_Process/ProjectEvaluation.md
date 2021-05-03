@@ -91,9 +91,7 @@ it('should go to next question', fakeAsync(() => {
 
 
 
-All three of these tests can be found within quiz.component.spec.ts and all of them test specific functions in quiz.component.ts file. In addition to these tests, there are 8 other tests that were already created when developing the app. This was our first exposure to both Jasmine and Karma and as a result, a number of issues arose in the writing of these tests that we were thankfully able to solve. Most notably, 
-
-
+All three of these tests can be found within quiz.component.spec.ts and all of them test functions outlined within quiz.component.ts file. In addition to these tests, there are 8 other tests that were already created when developing the app. This was our first exposure to both Jasmine and Karma and as a result, a number of issues arose in the writing of these tests that we were thankfully able to solve. Most notably, Test 2 above would not pass because the type of event that was used to trigger the checkbox input selection was using 'onChange' as opposed to 'onClick'. In the end, the fix was just changing the function used on that part of the html from 'onChange' to 'onClick'.
 
 #### Unit Testing
 
