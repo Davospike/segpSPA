@@ -56,15 +56,6 @@ describe('QuizComponent', () => {
     expect(component.onSelect).toHaveBeenCalled();
   })) 
 
-  it('should submit quiz answers', fakeAsync(() => {
-    spyOn(component, 'onSubmit');
-    const submitLink = fixture.debugElement.query(By.css('#submit'));
-    submitLink.triggerEventHandler('click', null);
-    tick();
-    fixture.detectChanges();
-    expect(component.onSubmit).toHaveBeenCalled();
-  }))
-
   it('should go to next question', fakeAsync(() => {
     spyOn(component, 'goTo');
     const goToLink = fixture.debugElement.query(By.css('#goto'));
@@ -74,4 +65,12 @@ describe('QuizComponent', () => {
     expect(component.goTo).toHaveBeenCalled();
   }))
 
+  it('should submit quiz answers', fakeAsync(() => {
+    spyOn(component, 'onSubmit');
+    const submitLink = fixture.debugElement.query(By.css('#submit'));
+    submitLink.triggerEventHandler('click', null);
+    tick();
+    fixture.detectChanges();
+    expect(component.onSubmit).toHaveBeenCalled();
+  }))
 });
