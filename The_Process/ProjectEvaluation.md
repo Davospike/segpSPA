@@ -29,7 +29,7 @@ In order to help continually assess and improve our project, various methods of 
 
 #### Functional Testing
 
-User journey tests are ways to test a certain path a *user* could take through a system. They're considered a 'BusinessFacingTest' and are conducted by putting the developer into the user's shoes. They are well detailed documents that present a set of steps (including setup and teardown) on what to engage with and what to expect on the screen in order to make sure that the program acts as expected.
+#### User journey tests are ways to test a certain path a *user* could take through a system. They're considered a 'BusinessFacingTest' and are conducted by putting the developer into the user's shoes. They are well detailed documents that present a set of steps (including setup and teardown) on what to engage with and what to expect on the screen in order to make sure that the program acts as expected.
 
 We created three user journey tests:
 
@@ -40,8 +40,78 @@ We created three user journey tests:
 The general structure we used for each was: to conduct the user's intention during the test, how to set up the environment, how to tear down the environment after testing, and a list of tests to actually carry out (with a step-by-step list for each one). User journey 1 directed the user to the main two features of our web-app - the 'about Fake News' page and the 'Take the quiz' page. User journey 2 made sure that completing the quiz was as expected, the set up was starting the 'China' quiz from the selection page; the test consisted of selecting answers and submitting the quiz, as well as making sure that the answer page was properly presented. User journey 3 focussed on sharing the quiz on social media, involving scrolling to the necessary selection of buttons and clicking 'Twitter'.
 
 These tests were useful as they compelled us to take a closer look at our web-app and document every feature that the user should expect to see - it made us consider errors that may not have been obvious at first.
+=======
+
+>>>>>>> jack
 
 #### Unit Testing
+
+In order to verify that our quiz was working exactly in the way that we intended it to, we devised unit tests using Karma and Jasmine. We all agreed that the most essential part of the application is navigating through the actual quiz: Do the buttons on our quiz page function correctly? Is the user able to move to the next question? Can the user select answers for the questions? Can the user submit answers to the quiz?
+
+Our quiz is central to our application, and we need to be able to ensure at all times that this user journey functions properly; the brief for the project was to develop a single page application that is based around the subject of “serious play”. As our quiz represents the playful aspect of our application, first and foremost, we must be able to rely on our software to do its job in rendering the quiz on a page and to update the page with new questions in response to a click of buttons. As such, we wrote the following test case to correspond to this user story:
+
+“As a user, I want to be able to move through different quiz questions, select my appropriate responses and submit answers to my quiz at the end.”
+
+1. **Test a user can select next question**
+
+- Start on a questionnaire page
+- Select ‘next question’
+- Application page should render following question
+- Ensure the design of the page looks correct
+
+```javascript
+it('should go to next question', fakeAsync(() => {
+    spyOn(component, 'goTo');
+    const goToLink = fixture.debugElement.query(By.css('#goto'));
+    goToLink.triggerEventHandler('click', null);
+    tick();
+    fixture.detectChanges();
+    expect(component.goTo).toHaveBeenCalled();
+  }))
+```
+
+2. **Test a user can select answer**
+
+- Start where Test A finished
+
+- Select ‘Fake’ or ‘True’ in response to question
+
+- Box should fill with a tick on the screen
+
+  ```javascript
+  it ('should select the selected option', fakeAsync(() => {
+      spyOn(component, 'onSelect');
+      const selectLink = fixture.debugElement.query(By.css('.onselectbutton'));
+      selectLink.triggerEventHandler('click', null);
+      tick();
+      fixture.detectChanges();
+      expect(component.onSelect).toHaveBeenCalled();
+    })) 
+  
+  ```
+
+3. **Test a user can submit answers**
+
+- Start where Test B finished
+
+- Select ‘Submit Answers’
+
+- Answer page should render correctly
+
+  ```javascript
+  it('should submit quiz answers', fakeAsync(() => {
+      spyOn(component, 'onSubmit');
+      const submitLink = fixture.debugElement.query(By.css('#submit'));
+      submitLink.triggerEventHandler('click', null);
+      tick();
+      fixture.detectChanges();
+      expect(component.onSubmit).toHaveBeenCalled();
+    }))
+  ```
+
+
+
+All three of these tests can be found within quiz.component.spec.ts and all of them test functions outlined within quiz.component.ts file. In addition to these tests, there are 8 other tests that were already created when developing the app. This was our first exposure to both Jasmine and Karma and as a result, a number of issues arose in the writing of these tests that we were thankfully able to solve. Most notably, Test 2 above would not pass because the type of event that was used to trigger the checkbox input selection was using 'onChange' as opposed to 'onClick'. In the end, the fix was just changing the function used on that part of the html from 'onChange' to 'onClick'.
 
 #### User Acceptance Testing
 
