@@ -5,9 +5,10 @@
 - [Evaluation](#evaluation)
   - [Evaluation Techniques & Timeline](#evaluation-techniques--timeline)
   - [Testing](#testing)
-    - [Functional Testng](#functional-testing)
+    - [Functional Testing](#functional-testing)
     - [Unit Testing](#unit-testing)
     - [User Acceptance Testing](#user-acceptance-testing)
+    - [Non-Automated Testing](#Non-Automated-Testing)
 - [Conclusion](#conclusion)
   - [Reflection on Working Practices](#reflection-on-working-practices)
   - [Project Success](#project-success)
@@ -31,6 +32,20 @@
 #### Unit Testing
 
 #### User Acceptance Testing
+
+#### Non-Automated Testing
+
+User journey tests are ways to test a certain path a *user* could take through a system. They're considered a 'BusinessFacingTest' and are conducted by putting the devloper into the user's shoes. They are well detailed documents that present a set of steps (including setup and teardown) on what to engage with and what to expect on the screen in order to make sure that the program acts as expected. 
+
+We created three user journey tests:
+
+- [Getting to the info page and to a quiz](User_Journey_Testing/User_Journey_1)
+- [Taking a quiz](User_Journey_Testing/User_Journey_2)
+- [Sharing the web-app on social media](User_Journey_Testing/User_Journey_3)
+
+The general structure we used for each was: to conduct the user's intention during the test, how to set up the environment, how to tear down the environment after testing and a list of tests to actually carry out (with a step-by-step list for each one). User journey 1 directed the user to the main two features of our web-app - the 'about Fake News' page and the 'Take the quiz' page. User journey 2 made sure that completing the quiz was as expected, the set up was starting the 'China' quiz from the selection page; the test consisted of selecting answers and submitting the quiz, as well as making sure that the answer page was properly presented. User journey 3 focussed on sharing the quiz on social media, involving scrolling to the necessary selection of buttons and clicking 'Twitter'.
+
+These tests were useful as they compelled us to take a closer look at our web-app and document every feature that the user should expect to see - it made us consider errors that may not have been obvious at first.
 
 ## Conclusion
 
@@ -93,7 +108,7 @@ In the future, we would like to be able to add extra functionality to our applic
 
 However, it is clear that we would need stronger security in our database before we could consider rolling out this added functionality. We would therefore look for consultation on best database practices to evaluate our security further. As multinational technology company [IBM states](https://www.ibm.com/cloud/learn/database-security#toc-best-pract-v7bPIzDi), this may include physical security, administrative and network access controls, end user account/ device security, encryption, database software security, application/ web server security, backup security and auditing. 
 
-**Data Collection**
+**User Data Collection**
 
 We used several rounds of user testing for varying stages of development of this project. We had to consider collecting qualitative data or quantitative data for this user evaluation process. We thought a quantitative data collection approach would be more useful for the purpose of this project because we would be able to measure the success of our design decisions and our feedback would be less subjective. In particular, we used a 5-point Likert scale, named after inventor, psychologist Resins Likert, for the majority of the questions on our questionnaires. This facilitated the collection of easy-to-interpret data as shown below.
 
@@ -101,7 +116,7 @@ We used several rounds of user testing for varying stages of development of this
 
 We also included options within many of our questions for some anonymous personalised feedback, should the Likert scale not adequately reflect the opinion of the user. This helped to curtail any shortfalls in the simplicity of the five-point answers and to provide more meaningful and considered responses when required. We were careful not to ensure these responses were always entirely anonymous. 
 
-**Future Data Collection**
+**Future User Data Collection**
 
 However, we are aware that in the future, the combination of deeper quantitative and qualitative research would aid the development of this application. We would like to sit down with our end users to perform in depth interviews, audio recordings, product reviews, customer testimonials and other observations and descriptions about our application. We believe that the more we know and understand about our users, the more we can cater our application to their needs and desires. This type of research would provide us with rich, in-depth insight from our users about using our fake news quiz, areas of room for improvement, thoughts on the design of the application, further opportunities to share with friends, enhancement of game play, new subjects, and much more. These insights would be crucial for adding new features and taking further steps in the development of this application.  
 
@@ -111,7 +126,15 @@ In order to collect and draw on this personal data, we acknowledge that we will 
 
 ### Future Work
 
+###### Backend
 
+When we were collecting data, the articles that we read mostly referenced facebook and twitter posts when discussing fake stories - fake news is rife on these platforms. We found this difficult as the search engines that we used were aiming to [filter out](https://www.nytimes.com/2016/11/15/technology/google-will-ban-websites-that-host-fake-news-from-using-its-ad-service.html) any websites that commonly posted fake news. Therefore in the future, we aim to scrape data from facebook and twitter in order to acquire these news items. In fact, Twitter has a [tool](https://blog.twitter.com/en_us/topics/product/2020/updating-our-approach-to-misleading-information.html) that labels tweets as containing fake or misleading news, this could be a good data source that we can incorporate into our database in the future.
+
+Furthermore, in order to improve our database we aim to transition from a **static** database to a **dynamic** one. This would involve pulling data from various sources at a predetermined rate, one example would be the aforementioned web-scraping of social media websites. Another could be importing large datasets from sources such as [Kaggle](https://www.kaggle.com) in order to create more variety in our data. In order to extract data from multiple sources, and utilise it in our database, we will have to conduct ETL data management and analysis (extract, transform, load). Data will need to be transformed in ways that all data items share common fields. As well as this, the data must be transformed so it can be loaded into our mongoDB database uniformly. This would require the use of data warehousing. An example of when this will be useful is pulling sources that label fake news in different ways. One source may call a data item "fake", and another may call it "biased". Agreeing on a model to amend to this problem would be one of the first steps of this process.
+
+The final element that we would like to imoprove for our app is the way that API functions. Firstly we would want to implement multiple News Topic `get` methods (for each topic) rather than sending one JSON payload for all our data. In order to implement some form of scalability into our project, this is an important step; as our database grows, this will be crucial as system performance could be comprimised by heavier network requests from our API. 
+
+We also aim to create bi-directional communication between the frontend and the backend via our API. We were unable to achieve this with the `num_attempted` and `num_correct` fieldsin our schemas. After implementing this correctly, we could provide users with relative performance (in comparison with other users) on particular quiz questions. It would also be useful to collect more data about specific topics for fake news research.
 
 #### Technologies Used
 
