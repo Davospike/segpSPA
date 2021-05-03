@@ -23,7 +23,7 @@ Teardown
 - close browser
 - docker-compose down.
 
-3 Tests
+2 Tests
 
 A. Navigating to link
 

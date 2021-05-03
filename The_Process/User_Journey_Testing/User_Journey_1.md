@@ -32,7 +32,7 @@ B. User navigates to a Quiz
 1. Can see page of Fake News Test. Scroll to bottom
 2. Select "Take the quiz" link at the bottom of the page
 3. Ensure all quizzes are shown with buttons underneath
-	- General, Brexit, Coronavirus, Climate Change, "Have you enjoyed our   quiz?"
+	- General, Brexit, Coronavirus, Climate Change, "Have you enjoyed our quiz?"
 	- with their respective logos and some explanation
 4. Select 'General' quiz from list
 5. Ensure all elements of Quiz Questions are shown
