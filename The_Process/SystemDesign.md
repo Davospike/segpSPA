@@ -243,6 +243,6 @@ The second round of feedback incorporated more specific elements of our developm
 ### Sequence Flow Diagram
 [ADD TO]
 
-- [Next Section: Project Evaluation](SystemImplementation.md)
+- [Next Section: Project Implementation](SystemImplementation.md)
 - [Back to Top](#table-of-contents)
 - [Back to Home](../README.md)
