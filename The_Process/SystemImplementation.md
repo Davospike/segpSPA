@@ -23,27 +23,42 @@
    - [Additional](#additional)
 
 ## Software Development Process
-A software development process can be seen as the application of divide and conquer whereby the development process is divided into smaller, parallel steps or subprocesses. Doing so helps improve the design and management of a project. Given that we, as university students, had other commitments and modules, we were aware that we would have to manage the project development in a flexible manner, and in a fixed amount of time. Unlike in the professional world, we could not get extensions. 
+A software development process can be seen as the application of divide and conquer whereby the development process is divided into smaller, parallel steps or sub-processes. Doing so helps improve the design and management of a project. Given that we, as university students, had other commitments and modules, we were aware that we would have to manage the project development in a flexible manner, and in a fixed amount of time. Unlike in the professional world, we could not get extensions. 
 
 Due to these constraints, we first sought out a strategy to apply to our work approach. We knew little and often would be beneficial, ensuring a smoother journey towards a minimal viable product. For that reason we set out to compare and contrast the industry standard software development life cycle methods in order to find our approach.
 
 To help manage workloads, we split up into separate, but closely linked, front and backend teams. Daniel Davies, Jack Pike and Harry Smith made up the frontend and Nathan Taylor and Vincenzo Gibliaro on the backend team.
 
-### Software Development Life Cycle
-[ADD TO/REMOVE] - Discuss SDLC framework/ideas etc. 
+In order to help the team flourish under agile principles (see below), we also gave team members different roles when required to fit the needs of the project. Jack took up the role of Product Owner, and was therefore responsible for the stakeholders in the project. He assumed this responsibility particularly for the development of our user stories during user testing such as our Likert scale questionnaires. Harry was Scrum Master, and in this way, he took charge of developing our sprints and stand-ups. This included documentation, planning and coordinating the team effectively. The remaining team members assumed their roles as development team members. As our team was small, we were all able to provide opinion and input at any stage, but these loosely defined roles helped navigate the team through different stages of the project. 
 
-### Agile
-In line with the suggestion from our lecturers, we made the decision to follow agile working principles where possible for the development of this application. In particular, we used the [twelve principles of agile development](https://agilemanifesto.org/principles.html) in the agile manifesto as a guideline to follow. We chose this in order to implement continual and flexible ways of working. To do this, frequent communication and a non-hierarchical structure in the team was paramount to progress. As we have outlined in our system implementation, we used sprints and weekly stand-ups to generate and maintain a steady workflow and to iron out any issues that occurred during development as they cropped up. Every Monday morning at 10 am, each team member was given 60 seconds to answer the following three questions: 
+### Why Agile?
+We made the decision to follow agile working principles where possible for the development of this application. In particular, we used the [twelve principles of agile development](https://agilemanifesto.org/principles.html) in the agile manifesto as a guideline to follow. We chose this in order to implement continual and flexible ways of working. To do this, frequent communication and a non-hierarchical structure in the team was paramount to progress. As we have outlined in our system implementation, we used sprints and weekly stand-ups to generate and maintain a steady workflow and to iron out any issues that occurred during development as they cropped up. 
+
+First and foremost, our Agile working methods allowed us to deliver software frequently. As our git commit history demonstrates, as a team our commits were 'small and often' as opposed to 'large and infrequent'. For us as a team, this continuous delivery method is closely linked and enables many of the other principles in the Agile manifesto such as reflection at regular intervals on our work. This approach helped us to interrogate every small piece of the larger jigsaw to ensure that our work was the highest quality it could be. Additionally, this iterative approach to delivering software and developing our single page application helped to sustain good morale amongst the team and a productive working environment. We have all learnt that it is important to compartmentalise large projects into small pieces to maintain the feeling of progression at all times. A different approach might have been demotivating for individuals and the group and we are thankful that we maintained a great work ethic for the duration of the project. 
+
+Secondly, another agile working principle that we followed keenly was to work together daily. Close communication was essential for us in developing this project. Despite having to adapt in the face of the pandemic, we in constant communication through our weekly stand-ups, additional meetings on Teams and through the instant messaging platform Discord. The effects of this cannot be understated. This allowed for each team member to assist and offer advice to other members of the group whenever required, and for more complex design decisions, we could draw on five opinions instead of one. For example, the back-end team sought the advice of the front end early on in the project when devising ER diagrams for our database. Considering that many of our team had not met before collaborating on this project, we could have easily taken another path in our communication, which we believe would not have enabled us to ultimately achieve a project to at the same level as this application. It is important to note also that our weekly stand-ups set the tone each week for effective communication about our project. Every Monday morning at 10 am, each team member was given 60 seconds to answer the following three questions: 
 
 1. What did you do the previous week, and did you encountered any issues?
 2. What does next week have install for you?
 3. Do you have any blockers?
 
-This served to encourage communication in the team, create small incremental progress, address any problems early, be reflective about our work and ultimately deliver working software.  
+This served to encourage communication in the team, create small incremental progress, address any problems early, be reflective about our work and ultimately deliver working software. 
 
-It is important to note that agile working is not the only way of working we could have used to develop this application. We could have opted for a linear-sequential life cycle model such as the [Waterfall Model](https://www.tutorialspoint.com/sdlc/sdlc_waterfall_model.htm), whereby the next phase of development would only start once the previous is finished. Typically, these steps would involve: Requirement Analysis, System Design, Implementation, Testing, Deployment and Maintenance. However, we believe that an agile approach has offered us more flexibility to develop the application together. 
+Constant communication encouraged many other of the agile principles also such as continuous attention to technical excellence and constant reflection of our work. We were able to share work with the team often and talk through what we had were planning to build or what we had built. We do not think this would have been possible without agile ways of working. For example, our back end team reflected often about how best to export their data in json format to link up with the front end. Although we achieved a working format reasonably quickly, upon reflection, we were able to simplify the json payload to link well with the front end. There is a lot that can go wrong when developing software and by being reflective, we were able to solve problems more dynamically using these agile principles. 
 
-We also had to adapt our communication channels in response to the pandemic.  In addition to our weekly stand-ups, we were in constant communication through the instant messaging platform Discord, and video calls on Teams.
+
+
+![Screenshot from 2021-05-04 16-49-32](https://user-images.githubusercontent.com/63299377/117031747-cad8ba00-acf8-11eb-906a-d5ff70630570.png)
+
+
+
+**Waterfall Method**
+
+It is important to note that agile working is not the only way of working we could have used to develop this application. We could have opted for a linear-sequential life cycle model such as the [Waterfall Model](https://www.tutorialspoint.com/sdlc/sdlc_waterfall_model.htm), whereby the next phase of development would only start once the previous is finished. Typically, these steps would involve: System engineering, Analysis, Design, Code, Testing and Maintenance. However, we believe that an agile approach has offered us more flexibility to develop the application together for the aforementioned reasons. 
+
+![image](https://user-images.githubusercontent.com/63299377/117031984-05425700-acf9-11eb-963c-3d6201f9f819.png)
+
+
 
 ### GitHub Continuous Integration
 In order to implement continuous integration and deployment within our project, we decided to follow some of the [DevOps Best Practices](https://www.atlassian.com/devops/what-is-devops/devops-best-practices), whereby developers make small frequent changes to a central repository, and test them. Imperative to aligning with these practices and our agile framework, is a source code version control system. We used GitHub as it meant any conflicts/errors could be managed, and our progress was being saved as we went; useful for if something broke along the way. 
