@@ -294,36 +294,37 @@ We have left the SQL DB schema in this [folder](../Documentation/Backend/Databas
 
 #### Design of our data model (UML, tables)
 
-Our data model was designed via the use of draw.io, in which we constructed a UML diagram to show relationships among our entities. We defined our final data model as being comprised of the following three entities:
+Our data model was designed via the use of `draw.io` (link!!), in which we constructed a UML diagram to show relationships among our entities. We defined our final data model as being comprised of the following three entities:
 
 - News Topics
 - Quiz Questions
 - Options
 
-Quiz Questions are the entities which hold the core of our data for our web application. Each quiz question has the following elements:
+Quiz Questions are the entities that hold the core of our data for our web application. Each quiz question has the following elements:
 
-- Headline - this is presented to the user, and is the headline of the fake news article.
-- web_url - this is the web url of the news article. It is used in the answers section so users can view the fake news article.
-- postData - this is the data in which the article was written. It is presented to the user with the question.
-- text_body - this is a snippet from the article, in which the user can expand on their judgement of the news headline, in order to give their answer.
-- correct_answer_url - this document can be null, and is given when an article is a fake news article. It is an article that either directly or indirectly debunks the fake news article in question
-- Num_correct - this is one of the two statistics used to calculate the average number of users that got this quiz question correct
-- Num_attempted - this is the other statstic 
-  - note, we constructed these two statistics, and various methods to implement them in the answers section of our web application. We had the idea of making them dynamic, so that each time a question is answered, they are updated
+- `Headline` - this is presented to the user, and is the headline of the fake news article.
+- `web_url` - this is the web URL of the news article. It is used in the answers section so users can view the fake news article.
+- `postData` - this is the date that the article was written. It is presented to the user with the question.
+- `text_body` - this is a snippet from the article, in which the user can expand on their judgement of the news headline, in order to give their answer.
+- `correct_answer_url` - this document can be null, and is given when an article is a fake news article. It is an article that either directly or indirectly debunks the fake news article in question
+- `Num_correct` - this is one of the two statistics used to calculate the average number of users that got this quiz question correct
+- `Num_attempted` - this is the other statistic
+  - note, we constructed these two statistics, and various methods to implement them in the answers section of our web application. We had the idea of making them dynamic so that each time a question is answered, they are updated
 - Options - this is an array of options (2 options for each quiz question)
 
-Options are the entities that determine whether a user has answered a particular quiz question correctly. They hold:
+- Options are the entities that determine whether a user has answered a particular quiz question correctly. They hold:
+  - `name` - a String that is used to refer to that option object
+  - `isCorrectAnswer` - a boolean, where for each quiz question, for a particular option, true is selected if this option is the correct answer for this quiz question
+  - `selected` - this is set to false by default. If a user selects this option for a quiz question, selected becomes true - this field is dynamic and changes based on user input
 
-- name - a String that is used to refer to that option object
-- isCorrectAnswer - a boolean, where for each quiz question, for a particular option, true is selected if this option is the correct answer for this quiz question
-- selected - this is set to false by default. If a user selects this option for a quiz question, selected becomes true.
+The way we verify the user's response in terms of it being correct was conceptually quite difficult. Our design leads to a situation in which 4 option documents were created:
 
-The way we verify the user's response in terms of it being correct was conceptually quite difficult. Our design lead to a situation in which 4 option documents were created:
-
-1. Option 1, name = "R_F"
-2. Option 2, name = "R_T"
-3. Option 3, name = "F_F"
-4. Option 4, name = "F_T"
+1. ```
+   1. Option 1, name = "R_F"
+   2. Option 2, name = "R_T"
+   3. Option 3, name = "F_F"
+   4. Option 4, name = "F_T"
+   ```
 
 The syntax is described as follows:
 
@@ -331,7 +332,7 @@ The syntax is described as follows:
 OPTION <REAL/FAKE>_<FALSE/TRUE>
 ```
 
-So, for each quiz question, there will be 2 options - 
+So, for each quiz question, we choose 2 Options from the 4 Options available - 
 
 ```
 OPTION<REAL>_<FALSE/TRUE>
@@ -341,35 +342,33 @@ OPTION<REAL>_<FALSE/TRUE>
 OPTION<FAKE>_<FALSE/TRUE>
 ```
 
-- if the quiz question is from a `real` news article, the 2 options for this quiz question will be as follows:
+- If the quiz question is from a `real` news article, the 2 options for this quiz question will be as follows:
 
 ```
-OPTION<REAL>_<TRUE>
+OPTION<REAL>_<TRUE>	-- i.e., Option 2, name = "R_T"
+```
+```
+OPTION<FAKE>_<FALSE>	-- i.e., Option 3, name = "F_F"
 ```
 
-```
-OPTION<FAKE>_<FALSE>
-```
-
-- if the quiz question is from a `fake` news article, the 2 options for this quiz question will be as follows:
+- If the quiz question is from a `fake` news article, the 2 options for this quiz question will be as follows:
 
 ```
-OPTION<REAL>_<FALSE>
+OPTION<REAL>_<FALSE>    -- i.e., Option 1, name = "R_F"
 ```
-
 ```
-OPTION<FAKE>_<TRUE>
+OPTION<FAKE>_<TRUE>	-- i.e., Option 4, name = "F_T"
 ```
 Therefore, for a user's answer to be logged as correct, they need to select the option in which the second element is `true`
 
-Our third entity is News Topic. This includes the following documents:
+Our third entity is `News Topic`. This includes the following documents:
 
-- news_topic - a string, that defines the news topic, i.e., "Brexit". These strings are used in the landing page, when a user chooses a topic to do a quiz one. 
-- Quiz_question - this is an array of quiz questions, that are related to this particular news topic.
+- `news_topic` - a string, that defines the news topic, i.e., "Brexit". These strings are used in the landing page when a user chooses a topic to do a quiz one. 
+- `Quiz_question` - this is an array of quiz questions, that are related to this particular news topic.
 
 News Topic is the entity that includes all the data we need, and it is from this we stem out and retrieve all our object and quiz question data. 
 
-Our data model was designed from the idea of how the pipeline may look for a user's choice of news topic, to the data being presented to them on which they could see how many responses they got correct. From a high level view, the user chooses a news topic. From this, we can retrieve all of this quiz questions needed to do the quiz for the topic, along with their respective options - which will give them back data based on how they did in the quiz. 
+Our data model was designed from the idea of how the pipeline may look for a user's choice of a quiz on a particular news topic, to the data being presented to them on which they could see how many responses they got correct. From a high-level view, the user chooses a news topic. From this, we can retrieve all of the quiz questions needed to do the quiz for the topic, along with their respective options - which will give them back data based on how they did in the quiz. 
 
 We constructed the following UML diagram to visualise our data model:
 
@@ -381,24 +380,24 @@ From this, we can talk about the relationships we deemed necessary for our entit
 
 The relationship between quiz question and news topic was clearly a 1 to many relationship. For each quiz question, there was one news topic it stemmed from. In light of one of our project aims, to educate user's about fake news surrounding particular global topics, we seemed it fitting that quiz questions did not overlap across news topics. We did this by keeping in mind the data we were going to collect. We wanted quiz questions that were clearly associated with a particular topic. The opposing relationship was clear too. For each news topic, there are multiple, and more than 1, quiz questions.
 
-The relationship between quiz question was decided to be a 1 to many relationship. For each quiz question, there are 2 options, so this seemed fitting. There was difficulty in deciding the opposing relationship - since each option may be mapped on to multiple quiz questions. However, we decided that if it comes to a point where we need to access a quiz question from an option object, it may prove difficult. We therefore decided that each option should come from one quiz question, in order to isolate the question an option came from.
+The relationship between quiz question and Option was decided to be a 1 to many relationship. For each quiz question, there are 2 options, so this seemed fitting. There was difficulty in deciding the opposing relationship - since each option may be mapped onto multiple quiz questions. However, we decided that if it comes to a point where we need to access a quiz question from an Option object, it may prove difficult. We, therefore, decided that each option should come from one quiz question, in order to isolate the question an option came from.
 
-Following the construction of our UML diagram, we decided to make a spreadsheet to initiate ideas on what data we will be collecting, and to get a more solid understanding of the relationships between our entities. The spreadsheet is as shown below:
+Following the construction of our UML diagram, we decided to make a spreadsheet to initiate ideas on what data we will be collecting and to get a more solid understanding of the relationships between our entities. The spreadsheet is as shown below:
 
 ### NATH TO UPLOAD SCREENSHOT TO IMAGES FOLDER
 
 ![Screenshot 2021-04-21 at 15.51.03](/Users/nathantaylor/Library/Application Support/typora-user-images/Screenshot 2021-04-21 at 15.51.03.png)
 
-Throughout this data model design process, we adhered to conform to good data model design practices. Our previous model, which utilised SQL and its best practices (normalisation), was used to aid the design of our current noSQL model. Via this, we achieved a data model that did not unnecessarily repeat data. 
+Throughout this data model design process, we adhered to conform to good data model design practices. Our previous model, which utilised SQL and its best practices (normalisation), was used to aid the design of our current NoSQL model. Via this, we achieved a data model that did not unnecessarily repeat data. 
 
 We also followed [this guide](https://developer.mongodb.com/article/mongodb-schema-design-best-practices/), to cater our design choices to best practices:
 
 - our data model is clearly one that uses an embedded design. This allows us to retrieve the necessary data we need for a larger data entity, like a news topic, with a single query. We also found it would be easy to access individual elements within this data type.
-- rule number 5 in this guide also solidified our choice in catering out design to our application's data access patterns.
+- rule number 5 (*"You want to structure your data to match the ways that your application queries and updates it."*) in this guide also solidified our choice in catering out design to our application's data access patterns.
 
-With respect to constructing our mongoose models, to be used when instantiating and loading collections, we created these [three models](../Example_Code/AngularQuizApp/models) that correspond to our three entities. These will be the three collections in our mongoDB database. We start by creating a mongoose schema, which defines all of the data entries for each collection. We then export these as a mongoose model. This is so they can be used with mongoose commands, for example finding a particular object in our database.
+With respect to constructing our mongoose models, to be used when instantiating and loading collections, we created these [three models](../Example_Code/AngularQuizApp/models) that correspond to our three entities. These will be the three collections in our MongoDB database. We start by creating a mongoose schema, which defines all of the data entries for each collection. We then export these as a mongoose model. This is so they can be used with mongoose commands, for example finding a particular object in our database.
 
-Note, in our quiz_question model, we also export the schema. This is to fix an issue we had in which embedded documents were being referenced by value, as oppose to referencing the actual objects themselves.
+Note, in our quiz_question model, we also export the schema. This is to fix an issue we had in which embedded documents were being referenced by value, as opposed to referencing the actual objects themselves.
 
 #### Collecting data 
 
