@@ -1,0 +1,52 @@
+
+    {
+    "topicName": "JavaScript Quiz",
+    "quizquestions": [
+        {
+            "id": 1010,
+            "headline": "A first fake news headline",
+            "web_url": "www.fakenewswebsite.com",
+            "postData": "2021-04-08",
+            "text_body": "......fake text.......", 
+            "correct_answer_url": "<leave me blank for true headline questions>",
+            "num_correct": 10,
+            "num_attempted": 20,
+            "questionTypeId": 1,
+            "options": [
+                {
+                    "id": 1055,
+                    "name": "Real",
+                    "isCorrectAnswer": false				
+                },
+                {
+                    "id": 1056,
+                    "name": "Fake",
+                    "isCorrectAnswer": true					
+                }
+            ]
+        },
+      {
+            "id": 1010,
+            "headline": "Another real news headline",
+        		"web_url": "www.trustednewswebsite.com",
+        		"postData": "2021-04-08",
+            "text_body": "......fake text.......",
+            "correct_answer_url": "<leave me blank for true headline questions>",
+            "num_correct": 15,
+            "num_attempted": 30,
+            "questionTypeId": 1,
+            "options": [
+                {
+                    "id": 1055,
+                    "name": "Real",
+                    "isCorrectAnswer": true				
+                },
+                {
+                    "id": 1056,
+                    "name": "Fake",
+                    "isCorrectAnswer": false				
+                }
+            ]
+        }
+      ]
+}   
