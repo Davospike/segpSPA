@@ -13,12 +13,8 @@
       - [University Professor](#university-professor)
       - [Admin](#admin)
 - [Design Process & Early Prototyping](#design-process--early-prototyping)
-   - [Design Methods](#design-methods)
    - [Paper Prototypes & Wireframes](#paper-prototypes--wireframes)
    - [User Feedback & Questionnaires](#user-feedback--questionnaires)
-- [System Architecture & Design](#system-architecture--design)
-   - [Class Diagram](#class-diagram)
-   - [Sequence Flow Diagram](#sequence-flow-diagram)
 
 ## Introduction
 Fake news consists of false stories that appear to be news, which are spread on the internet and social media. In the last five years there has been an explosion in the amount of fake news being spread and due to much of it being believable, it has become more difficult for people to detect. Whilst there are numerous sites explaining the danger of fake news and how to spot it, there are fewer that provide a way for people to check whether they are susceptible to it, and even fewer that combine the two aims.
@@ -29,7 +25,7 @@ The crux of the site is a quiz with various topics that have been popular target
 
 Our project objectives were established early on in our [group scoping discussion](https://github.com/Davospike/segpSPA/blob/dan/Documentation/Scoping/GroupScopingDiscussion.md) and were set out as follows:
 
-**Primary Objectives:**
+#### Primary Objectives:
 
 - Develop an educational quiz, tasking users with identifying fake news
 
@@ -37,15 +33,13 @@ Our project objectives were established early on in our [group scoping discussio
 
 - Create a static database that holds a handpicked selection of news articles that are identified as being fact or fiction
 
-**Secondary Objectives:**
+#### Secondary Objectives:
 
 - Collect and store user data, such as their quiz score and where they obtain their news from
 
 - Create a login function for the site so users are encouraged to revisit and compare previous scores
 
 - Create a function that allows users to share their score via social media
-
-[ADD VIDEO]
 
 ## Background & Motivation
 Fake news is a false narrative that is published and promoted as if it were true. Historically, fake news was usually propaganda put out by those in power to promote a certain belief or support a certain position, even if it was completely false. Social media has now created an environment where anyone with an agenda can publish falsehoods as if they were truths. People can be paid to post fake news on behalf of someone else or automated programs, often called bots, can publish auto-generated fake news.
@@ -129,7 +123,11 @@ Before the team decided on a Fake News quiz website, plenty of work was done on 
 
 Some of the first work that was done on coming up with the initial idea for the web app was facilitated by various techniques. Prior to carrying out any serious research or work on individual ideas, we first came together for a brainstorm session. There were no wrong answers, as the process was just about getting ideas down which we could then delve into and refine further if they were popular. Coming out of the session, we had settled on just under 20 topic ideas (view these [here](../Documentation/Archive)). With ideas on board, we were able to explore some other techniques to further refine the ideas.
 
-The most successful of these other techniques was creating a matrix of topics to merge; we were combining **Serious** [Topics] and **Play** [Games]. This method was very effective. It worked by using the column headers for one characteristic and the row headers for the other (i.e, serious topics as rows and play/games on the columns) and then combining each of the subjects together to create a **Serious Play** topic. Having 5 people in the group made this technique very robust and helped us refine our ideas settle on our choice of serious play relatively quickly.
+The most successful of these other techniques was creating a [matrix](/Documentation/DesignChoices/11_02_21_ideaMatrix.xlsx) of topics to merge; we were combining **Serious** [Topics] and **Play** [Games]. This method was very effective. It worked by using the column headers for one characteristic and the row headers for the other (i.e, serious topics as rows and play/games on the columns) and then combining each of the subjects together to create a **Serious Play** topic. Having 5 people in the group made this technique very robust and helped us refine our ideas settle on our choice of serious play relatively quickly.
+
+<p align="centre">
+    <img src="../Documentation/Images/IdeaMatrix.PNG" alt="Idea Matrix">
+</p>
 
 #### Miro Whiteboarding
 
@@ -176,17 +174,15 @@ Finally, an Admin stakeholder also needs to be involved in the project creating.
 - The Admin wants to be able to see how many quiz takers are getting each quiz question correct so that they can tailor the difficulty of future quizzes.
 
 #### Use Case Diagram
-Using UML, we can represent the main user stories in a use case diagram:
+Using UML, we can visually represent the main user stories in a use case diagram:
 
 <p align="center">
     <img src="../Documentation/Images/Would_They_Lie_To_You_Use_Case_Diagram.png" alt="Use Case Diagram" width=80%>
 </p>
 
-## Design Process & Early Prototyping
-[ADD TO]
+Having a visual representation was useful for quickly seeing the links between the different actors.
 
-### Design Methods
-[ADD TO]
+## Design Process & Early Prototyping
 
 ### Paper Prototypes & Wireframes
 
@@ -201,15 +197,17 @@ This is useful for all members of the team to refer to during the development of
 
 As with any new idea, *creativity requires influence* amongst other things. We were made aware of a website called [Gapminder](https://www.gapminder.org) which we eventually took influence from for our design and the overal semantics of our work. Gapminder is a well polished website that takes global, notable topics and asks though provoking questions about them. We wanted to do the same with *'Would They Lie to You?'* displaying an array of topics for the user to choose from. Below is how our paper prototype took influence from Gapminder.
 
-<img src="../Documentation/Images/Gapminder_Topic_Choices.png" style="float: left; margin-right: 10px;" />
+<p align="center">
+    <img src="../Documentation/Images/Gapminder_Topic_Choices.png" style="float: left; margin-right: 10px;" />
+</p>
 
-##### ABOVE: Gapminder's Topic Selection.
+#### ABOVE: Gapminder's Topic Selection.
 
-##### BELOW: Our proposed Topic selection menu from the paper prototype.
+#### BELOW: Our proposed Topic selection menu from the paper prototype.
 
-<img src="../Documentation/Images/Paper_Prototype_Landing.png" style="float: left; margin-right: 10px;" />
-
-
+<p align="center">
+    <img src="../Documentation/Images/Paper_Prototype_Landing.png" style="float: left; margin-right: 10px;" />
+</p>
 
 Gapminder is great fun to visit and test yourself on global topics but there is also heavy emphasis on education and factual branches around its site. Building on this, we proposed a lot of areas to display fake news facts and statistics. Such as as comprehensive landing page and further sections to learn about the history and influence on fake news, giving a holistic experience for the viewer.
 

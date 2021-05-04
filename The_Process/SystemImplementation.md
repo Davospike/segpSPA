@@ -319,12 +319,12 @@ Quiz Questions are the entities that hold the core of our data for our web appli
 
 The way we verify the user's response in terms of it being correct was conceptually quite difficult. Our design leads to a situation in which 4 option documents were created:
 
-1. ```
+```
    1. Option 1, name = "R_F"
    2. Option 2, name = "R_T"
    3. Option 3, name = "F_F"
    4. Option 4, name = "F_T"
-   ```
+```
 
 The syntax is described as follows:
 
@@ -359,7 +359,7 @@ OPTION<REAL>_<FALSE>    -- i.e., Option 1, name = "R_F"
 ```
 OPTION<FAKE>_<TRUE>	-- i.e., Option 4, name = "F_T"
 ```
-Therefore, for a user's answer to be logged as correct, they need to select the option in which the second element is `true`
+Therefore, for a user's answer to be logged as correct, they need to select the option in which the second element is `true`.
 
 Our third entity is `News Topic`. This includes the following documents:
 
