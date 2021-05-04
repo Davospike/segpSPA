@@ -57,7 +57,6 @@ https://user-images.githubusercontent.com/72808876/116984108-cbeef480-acc2-11eb-
 
 ## The Process
 Throughout the journey we have been documenting the process as we go to help drive the project creating. As such you can read about our journey by following the links below.
-View our design process and documentation [here](The_Process/SystemDesign.md)
 
 ### 1. [System Design](The_Process/SystemDesign.md)
 View our system design page to find out about:
