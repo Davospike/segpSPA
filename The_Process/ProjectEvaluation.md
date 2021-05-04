@@ -8,7 +8,6 @@
     - [Functional Testing](#functional-testing)
     - [Unit Testing](#unit-testing)
     - [User Acceptance Testing](#user-acceptance-testing)
-    - [Non-Automated Testing](#Non-Automated-Testing)
 - [Conclusion](#conclusion)
   - [Reflection on Working Practices](#reflection-on-working-practices)
   - [Project Success](#project-success)
@@ -29,7 +28,7 @@ In order to help continually assess and improve our project, various methods of 
 
 #### Functional Testing
 
-#### User journey tests are ways to test a certain path a *user* could take through a system. They're considered a 'BusinessFacingTest' and are conducted by putting the developer into the user's shoes. They are well detailed documents that present a set of steps (including setup and teardown) on what to engage with and what to expect on the screen in order to make sure that the program acts as expected.
+User journey tests are ways to test a certain path a *user* could take through a system. They're considered a 'BusinessFacingTest' and are conducted by putting the developer into the user's shoes. They are well detailed documents that present a set of steps (including setup and teardown) on what to engage with and what to expect on the screen in order to make sure that the program acts as expected.
 
 We created three user journey tests:
 
@@ -40,9 +39,6 @@ We created three user journey tests:
 The general structure we used for each was: to conduct the user's intention during the test, how to set up the environment, how to tear down the environment after testing, and a list of tests to actually carry out (with a step-by-step list for each one). User journey 1 directed the user to the main two features of our web-app - the 'about Fake News' page and the 'Take the quiz' page. User journey 2 made sure that completing the quiz was as expected, the set up was starting the 'China' quiz from the selection page; the test consisted of selecting answers and submitting the quiz, as well as making sure that the answer page was properly presented. User journey 3 focussed on sharing the quiz on social media, involving scrolling to the necessary selection of buttons and clicking 'Twitter'.
 
 These tests were useful as they compelled us to take a closer look at our web-app and document every feature that the user should expect to see - it made us consider errors that may not have been obvious at first.
-=======
-
->>>>>>> jack
 
 #### Unit Testing
 
@@ -51,8 +47,8 @@ In order to verify that our quiz was working exactly in the way that we intended
 Our quiz is central to our application, and we need to be able to ensure at all times that this user journey functions properly; the brief for the project was to develop a single page application that is based around the subject of “serious play”. As our quiz represents the playful aspect of our application, first and foremost, we must be able to rely on our software to do its job in rendering the quiz on a page and to update the page with new questions in response to a click of buttons. As such, we wrote the following test case to correspond to this user story:
 
 “As a user, I want to be able to move through different quiz questions, select my appropriate responses and submit answers to my quiz at the end.”
-
-1. **Test a user can select next question**
+ 
+##### 1. Test a user can select next question
 
 - Start on a questionnaire page
 - Select ‘next question’
@@ -70,7 +66,7 @@ it('should go to next question', fakeAsync(() => {
   }))
 ```
 
-2. **Test a user can select answer**
+##### 2. Test a user can select answer
 
 - Start where Test A finished
 
@@ -90,7 +86,7 @@ it('should go to next question', fakeAsync(() => {
   
   ```
 
-3. **Test a user can submit answers**
+#### 3. Test a user can submit answers
 
 - Start where Test B finished
 
@@ -108,8 +104,6 @@ it('should go to next question', fakeAsync(() => {
       expect(component.onSubmit).toHaveBeenCalled();
     }))
   ```
-
-
 
 All three of these tests can be found within quiz.component.spec.ts and all of them test functions outlined within quiz.component.ts file. In addition to these tests, there are 8 other tests that were already created when developing the app. This was our first exposure to both Jasmine and Karma and as a result, a number of issues arose in the writing of these tests that we were thankfully able to solve. Most notably, Test 2 above would not pass because the type of event that was used to trigger the checkbox input selection was using 'onChange' as opposed to 'onClick'. In the end, the fix was just changing the function used on that part of the html from 'onChange' to 'onClick'.
 
@@ -156,7 +150,7 @@ Feedback from the user acceptance testing showed some flaws/suggested potential 
 
 #### Overall
 
-PROBS NEEDS IMPROVEMENT - BIT SHIT AT THE MOMENT (FROM HARRY (dw i wrote this so far so can say that lol))
+### PROBS NEEDS IMPROVEMENT - BIT SHIT AT THE MOMENT (FROM HARRY (dw i wrote this so far so can say that lol))
 
 If we think about overall success as the extent to which the website achieves the primary and secondary objectives set out at the start of the project, we believe we can deem the project to be mostly successful.
 
@@ -168,13 +162,13 @@ Towards the start of the project, we set out key objectives to strive towards ac
 
 We believe that we completed all three with good success. Feedback from the user acceptance testing showed that the quiz was easy to do and engaging. The website has an in-depth page on the history of fake news, what it is and how to handle it. Feedback also suggested that testers found that after engaging with the website, they felt more comfortable with their ability to recognise and deal with fake news, thus implying that the page does what it set out to do. The database went through a solid design process and successfully holds the various quiz topic question sets. [VINI/NATH TO ADD]
 
-Whilst the primary objectives were a good indicator to overall success at the base level, further secondary objectives were set in order to stretch and challenger ourselves during the project. These were:
+Whilst the primary objectives were a good indicator to overall success at the base level, further secondary objectives were set in order to stretch and challenge ourselves during the project. These were:
 
 - Collect and store user data, such as their quiz score and where they obtain their news from
 - Create a login function for the site so users are encouraged to revisit and compare previous scores
 - Create a function that allows users to share their score via social media
 
-For the secondary objectives, we were not able to achieve success in all of them, like the primary ones. Difficulties arose when trying to implement features in the database to collect and store data. Extensive work was done in attempts to achieve the goal, but unfortunately we had to take the executive decision to drop the feature. The difficulties were well documented in the [System Implementation](SystemImplementation.md). Implementation of login functionality was also a failed objective; this was not down to unsuccessful attempts, but rather down to running out of time. As a team, at some point we had to decide when to stop working on adding features, and focus on the write-up and improvements of the current state. As an advanced feature, when it got round to be able to start attempting implementation, we felt that time would not have allowed a successful attempt and thus agreed to drop the feature. Fortunately the final secondary objective was a success. A social footer was placed at the bottom of each page to allow users to share the site on their favourite social platforms.  
+For the secondary objectives, unfortunately we were not able to achieve the same success as with the primary objectives. Difficulties arose when trying to implement features in the database to collect and store data. Extensive work was done in attempts to achieve the goal, but unfortunately we had to take the executive decision to drop the feature. The difficulties were well documented in the [System Implementation](SystemImplementation.md). Implementation of login functionality was also a failed objective; this was not down to unsuccessful attempts, but rather down to running out of time. As a team, at some point we had to decide when to stop working on adding features, and focus on the write-up and improvements of the current state. As an advanced feature, when it got round to being able to start attempting implementation, we felt that time would not have allowed a successful attempt and thus agreed to drop the feature. Fortunately the final secondary objective was a success. A social footer was placed at the bottom of each page to allow users to share the site on their favourite social platforms. 
 
 Given a success rate of 4/6 objectives, with all three primary objectives passing with good feedback on multiple user testing rounds, we believe we can say with confidence that overall the project was a success. 
 
@@ -182,9 +176,9 @@ Given a success rate of 4/6 objectives, with all three primary objectives passin
 
 Aside from finding some interesting fake news surrounding Covid-19, the pandemic has given us some more serious issues to overcome. It is worth noting that the developers contributing to this project are new to the technologies used, and this, alongside Covid-19, has lead to multiple brainstorming and many "Teams" meetings. It was clear that since we would not be meeting in person, a clear structure to meetings was needed, and the frequency of them was imperative. Furthermore, it meant that we would need to get used to using technologies that aid virtual collaboration. In light of this, this section starts by discussing our meeting structure, the success of that structure and technologies we feel were useful, and are worth considering for future use.
 
-In the earlier development days of "*Would They Lie To You?"*, we would meet once a week, over Microsoft Teams. Meetings were booked in advance, at a time and date agreed on in the previous meeting. It was clear, after a few meetings, that we needed to utilise the time we had in these meetings more efficiently. We then decided to call our meetings *Stand-Ups*, in which each member would present what they had done in the previous week, what they want to do in the coming week and their general progress on their current sprint. In an environment without a pandemic, discussions of this sort would probably happen in person, with a less formal structure. In the front-end and back-end teams, we also implemented meeting logs in respective directories. This meant that members in the other team could refresh themselves on what the counterparty team was up to. This meant that, if team members were unavailable, for Covid-19 related issues, for example, they could get up to date, with sufficient detail. Our full processes were documented [../Documentation/The_Process/SystemImplementation](here, (front end, see **sprints**)), and [../Documentation/Backend/README.md](here, back end).
+In the earlier development days of "*Would They Lie To You?"*, we would meet once a week, over Microsoft Teams. Meetings were booked in advance, at a time and date agreed on in the previous meeting. It was clear, after a few meetings, that we needed to utilise the time we had in these meetings more efficiently. We then decided to call our meetings *Stand-Ups*, in which each member would present what they had done in the previous week, what they want to do in the coming week and their general progress on their current sprint. In an environment without a pandemic, discussions of this sort would probably happen in person, with a less formal structure. In the front-end and back-end teams, we also implemented meeting logs in respective directories, alongside the general [team meeting logs](../Documentation/Meeting_Log). This meant that members in the other team could refresh themselves on what the counterparty team was up to. This meant that, if team members were unavailable, for Covid-19 related issues, for example, they could get up to date, with sufficient detail. Our full processes were documented [here](SystemImplementation.md/#sprints) under the **sprints** section, and [here](../Documentation/Backend/README.md) for back end specific meeting logs.
 
-###### Technologies Used
+#### Technologies Used
 
 We used multiple technologies that allowed for collaboration throughout the project. Without these technologies, we would probably have a much less sophisticated project, and a lot more merge conflicts. From the outset of the project, screen sharing was the extent to our collaboration in IDE's and other technical work. The first technology we found that came to our aid was in the system design process. Aside from using our idea matrix in Excel, we used Miro, to generate ideas for our project. *Post-it notes* were put down on the interface in a random fashion, and after some time we started grouping similar ideas into sections. This allowed us to map out our project ideas, in a way that would probably not be possible over a group call. 
 
@@ -217,13 +211,13 @@ The third perspective involved in our ethical framework allowed us to consider d
 
 This framework for ethical thinking directly impacted our thinking for the design of our website. We originally thought to enable the collection of user-specific data, which would therefore allow users to compare scores with each other and also offer them the opportunity to improve on previous performances. However, having taken into account the ethical issue of data privacy from a Consequentialist, Deontic and Virtue-based persective, we decided not to include user-specific features in our application because of the issues around housing sensitive personal data that we discussed.
 
-**Future Data Privacy**
+#### Future Data Privacy
 
 In the future, we would like to be able to add extra functionality to our application for our users by allowing them to create usernames and share their scores. To enable the comparison of test scores, we would need to collect user-specific data. We believe this would improve the user experience and increase the likelihood of return users as they would be able to benchmark their scores with their friends and against their previous attempts. This would serve to make our application both more competitive and social for our users, thereby increasing the amount of traffic our application receives. 
 
 However, it is clear that we would need stronger security in our database before we could consider rolling out this added functionality. We would therefore look for consultation on best database practices to evaluate our security further. As multinational technology company [IBM states](https://www.ibm.com/cloud/learn/database-security#toc-best-pract-v7bPIzDi), this may include physical security, administrative and network access controls, end user account/ device security, encryption, database software security, application/ web server security, backup security and auditing. 
 
-**User Data Collection**
+#### User Data Collection
 
 We used several rounds of user testing for varying stages of development of this project. We had to consider collecting qualitative data or quantitative data for this user evaluation process. We thought a quantitative data collection approach would be more useful for the purpose of this project because we would be able to measure the success of our design decisions and our feedback would be less subjective. In particular, we used a 5-point Likert scale, named after inventor, psychologist Resins Likert, for the majority of the questions on our questionnaires. This facilitated the collection of easy-to-interpret data as shown below.
 
@@ -231,17 +225,15 @@ We used several rounds of user testing for varying stages of development of this
 
 We also included options within many of our questions for some anonymous personalised feedback, should the Likert scale not adequately reflect the opinion of the user. This helped to curtail any shortfalls in the simplicity of the five-point answers and to provide more meaningful and considered responses when required. We were careful not to ensure these responses were always entirely anonymous. 
 
-**Future User Data Collection**
+#### Future User Data Collection
 
 However, we are aware that in the future, the combination of deeper quantitative and qualitative research would aid the development of this application. We would like to sit down with our end users to perform in depth interviews, audio recordings, product reviews, customer testimonials and other observations and descriptions about our application. We believe that the more we know and understand about our users, the more we can cater our application to their needs and desires. This type of research would provide us with rich, in-depth insight from our users about using our fake news quiz, areas of room for improvement, thoughts on the design of the application, further opportunities to share with friends, enhancement of game play, new subjects, and much more. These insights would be crucial for adding new features and taking further steps in the development of this application.  
 
 In order to collect and draw on this personal data, we acknowledge that we will need informed consent from our users. 
 
-
-
 ### Future Work
 
-###### Backend
+#### Backend
 
 When we were collecting data, the articles that we read mostly referenced facebook and twitter posts when discussing fake stories - fake news is rife on these platforms. We found this difficult as the search engines that we used were aiming to [filter out](https://www.nytimes.com/2016/11/15/technology/google-will-ban-websites-that-host-fake-news-from-using-its-ad-service.html) any websites that commonly posted fake news. Therefore in the future, we aim to scrape data from facebook and twitter in order to acquire these news items. In fact, Twitter has a [tool](https://blog.twitter.com/en_us/topics/product/2020/updating-our-approach-to-misleading-information.html) that labels tweets as containing fake or misleading news, this could be a good data source that we can incorporate into our database in the future.
 

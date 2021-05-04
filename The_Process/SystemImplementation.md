@@ -30,13 +30,13 @@ Due to these constraints, we first sought out a strategy to apply to our work ap
 To help manage workloads, we split up into separate, but closely linked, front and backend teams. Daniel Davies, Jack Pike and Harry Smith made up the frontend and Nathan Taylor and Vincenzo Gibliaro on the backend team.
 
 ### Software Development Life Cycle
-[ADD TO/REMOVE] - Discuss SDLC framework/ideas etc. 
+[ADD TO/REMOVE] - Discuss SDLC framework/ideas etc. - JACK
 
 ### Agile
 In line with the suggestion from our lecturers, we made the decision to follow agile working principles where possible for the development of this application. In particular, we used the [twelve principles of agile development](https://agilemanifesto.org/principles.html) in the agile manifesto as a guideline to follow. We chose this in order to implement continual and flexible ways of working. To do this, frequent communication and a non-hierarchical structure in the team was paramount to progress. As we have outlined in our system implementation, we used sprints and weekly stand-ups to generate and maintain a steady workflow and to iron out any issues that occurred during development as they cropped up. Every Monday morning at 10 am, each team member was given 60 seconds to answer the following three questions: 
 
 1. What did you do the previous week, and did you encountered any issues?
-2. What does next week have install for you?
+2. What does next week have installed for you?
 3. Do you have any blockers?
 
 This served to encourage communication in the team, create small incremental progress, address any problems early, be reflective about our work and ultimately deliver working software.  
@@ -48,7 +48,7 @@ We also had to adapt our communication channels in response to the pandemic.  In
 ### GitHub Continuous Integration
 To implement continuous integration and deployment within our project, we decided to follow some of the [DevOps Best Practices](https://www.atlassian.com/devops/what-is-devops/devops-best-practices), whereby developers make small frequent changes to a central repository, and test them. Imperative to aligning with these practices and our agile framework, is a source code version control system. We used GitHub as it meant any conflicts/errors could be managed, and our progress was being saved as we went; useful for if something broke along the way. 
 
-Our reasons for using Git and GitHub, concenring the Agile software development approach, are best outlined below.
+Our reasons for using Git and GitHub, concerning the Agile software development approach, are best outlined below.
 
 We needed developers in the team to tackle tasks individually (alongside some pair programming). This allows for specialisation across team members, so they can focus on specific features in efficient manour. Key to this was organising *who* builds *what*. Discussions of this sort took place in team meetings, and are generally outlined in the meeting logs (front end and back end). GitHub's utilisation of **branches** effectively allowed us to adopt this methodology in our approach.
 
@@ -244,11 +244,6 @@ Backlog of improvements at start of sprint:
 
 By the end of the sprint... [ADD TO]
 
----
-
-## Sprints and Project Management - 
----
-
 ## MEAN Stack System Implementation
 
 ### Stack Architecture & System Design
@@ -269,7 +264,6 @@ The UML class diagram shows the structure and relationships between the various 
   <img src="../Documentation/Images/WTLTY_UML_Class_Diagram.png" alt="UML Class diagram" width="100%">
 </p>
 
-
 ### Back End : MongoDB
 #### SQL vs noSQL
 
@@ -286,13 +280,13 @@ The relative advantages of using SQL at this point were not so apparent, and we 
 
 We vouched for switching to noSQL for the following reasons:
 
-- usable 
-  - we feel it would be easier to amend the data scheme using the mongoose object modelling tool. We feel that utilising a framework that resolves around using objects, as opposed to just pure data, would be more suited to the skills of the back-end team in this project.
-  - this was supported by Purewal (Learning Web App Development, 2014), who stated that NoSQL data stores use the trade-off of storing some redundant information in "exchange for increased ease-of-use from a programming perspective". As well as this, Purewal discusses how NoSQL data stores are more useful for this reason in applications where "data reading needs to be more efficient than writing data". Since our application tends to read our mongo data a lot more than writing to mongo, we deemed this was a valid reason for utilising a NoSQL DB.
-- scalable 
-  - we read that  SQL struggles to cope with big data processing requirements (https://www.geeksforgeeks.org/sql-vs-nosql-which-one-is-better-to-use/). Although our SPA does not come close to utilising *big data*, we find that to future-proof our SPA, it would be wise to adopt a back-end that incorporates scalability.
-- performance / speed 
-  - although we do not necessarily avoid data duplication with NoSQL, performing queries on single entities is generally faster than SQL. SQL is more suited to doing quick complicated queries on multiple entities, for example, joins / sub-selects (https://www.geeksforgeeks.org/sql-vs-nosql-which-one-is-better-to-use/)
+- Usable 
+  - We feel it would be easier to amend the data scheme using the mongoose object modelling tool. We feel that utilising a framework that resolves around using objects, as opposed to just pure data, would be more suited to the skills of the back-end team in this project.
+  - This was supported by Purewal (Learning Web App Development, 2014), who stated that NoSQL data stores use the trade-off of storing some redundant information in "exchange for increased ease-of-use from a programming perspective". As well as this, Purewal discusses how NoSQL data stores are more useful for this reason in applications where "data reading needs to be more efficient than writing data". Since our application tends to read our mongo data a lot more than writing to mongo, we deemed this was a valid reason for utilising a NoSQL DB.
+- Scalable 
+  - We read that  SQL struggles to cope with big data processing requirements (https://www.geeksforgeeks.org/sql-vs-nosql-which-one-is-better-to-use/). Although our SPA does not come close to utilising *big data*, we find that to future-proof our SPA, it would be wise to adopt a back-end that incorporates scalability.
+- Performance / speed 
+  - Although we do not necessarily avoid data duplication with NoSQL, performing queries on single entities is generally faster than SQL. SQL is more suited to doing quick complicated queries on multiple entities, for example, joins / sub-selects (https://www.geeksforgeeks.org/sql-vs-nosql-which-one-is-better-to-use/)
 
 SQL Databases work best with schemas that are long-established and aren't prone to change - NoSQL benefits our project as there is scope for further development. As a single-page application, there is always the potential for improvements and new features. Therefore using a more dynamic, scalable database with NoSQL can benefit our project in the long term.
 
@@ -325,12 +319,12 @@ Quiz Questions are the entities that hold the core of our data for our web appli
 
 The way we verify the user's response in terms of it being correct was conceptually quite difficult. Our design leads to a situation in which 4 option documents were created:
 
-1. ```
+```
    1. Option 1, name = "R_F"
    2. Option 2, name = "R_T"
    3. Option 3, name = "F_F"
    4. Option 4, name = "F_T"
-   ```
+```
 
 The syntax is described as follows:
 
@@ -340,33 +334,32 @@ OPTION <REAL/FAKE>_<FALSE/TRUE>
 
 So, for each quiz question, we choose 2 Options from the 4 Options available - 
 
+```
 OPTION<REAL>_<FALSE/TRUE>
+```
 
+```
 OPTION<FAKE>_<FALSE/TRUE>
-
-
-
-- if the quiz question is from a **real** news article, the 2 options for this quiz question will be as follows:
-
-```
-OPTION<REAL>_<TRUE>						 -- i.e., Option 2, name = "R_T"
-
-OPTION<FAKE>_<FALSE>					 -- i.e., Option 3, name = "F_F"
 ```
 
-
-
-- if the quiz question is from a **fake** news article, the 2 options for this quiz question will be as follows:
+- If the quiz question is from a `real` news article, the 2 options for this quiz question will be as follows:
 
 ```
-OPTION<REAL>_<FALSE>					-- i.e., Option 1, name = "R_F"
-
-OPTION<FAKE>_<TRUE>						-- i.e., Option 4, name = "F_T"
+OPTION<REAL>_<TRUE>	-- i.e., Option 2, name = "R_T"
+```
+```
+OPTION<FAKE>_<FALSE>	-- i.e., Option 3, name = "F_F"
 ```
 
-Therefore, for a user's answer to be logged as correct, they need to select the option in which the second element is **true**.
+- If the quiz question is from a `fake` news article, the 2 options for this quiz question will be as follows:
 
-
+```
+OPTION<REAL>_<FALSE>    -- i.e., Option 1, name = "R_F"
+```
+```
+OPTION<FAKE>_<TRUE>	-- i.e., Option 4, name = "F_T"
+```
+Therefore, for a user's answer to be logged as correct, they need to select the option in which the second element is `true`.
 
 Our third entity is `News Topic`. This includes the following documents:
 
@@ -379,6 +372,8 @@ Our data model was designed from the idea of how the pipeline may look for a use
 
 We constructed the following UML diagram to visualise our data model:
 
+### NATH TO UPLOAD SCREENSHOT TO IMAGES FOLDER
+
 ![Screenshot 2021-04-21 at 15.16.39](/Users/nathantaylor/Library/Application Support/typora-user-images/Screenshot 2021-04-21 at 15.16.39.png)
 
 From this, we can talk about the relationships we deemed necessary for our entities. 
@@ -388,6 +383,8 @@ The relationship between quiz question and news topic was clearly a 1 to many re
 The relationship between quiz question and Option was decided to be a 1 to many relationship. For each quiz question, there are 2 options, so this seemed fitting. There was difficulty in deciding the opposing relationship - since each option may be mapped onto multiple quiz questions. However, we decided that if it comes to a point where we need to access a quiz question from an Option object, it may prove difficult. We, therefore, decided that each option should come from one quiz question, in order to isolate the question an option came from.
 
 Following the construction of our UML diagram, we decided to make a spreadsheet to initiate ideas on what data we will be collecting and to get a more solid understanding of the relationships between our entities. The spreadsheet is as shown below:
+
+### NATH TO UPLOAD SCREENSHOT TO IMAGES FOLDER
 
 ![Screenshot 2021-04-21 at 15.51.03](/Users/nathantaylor/Library/Application Support/typora-user-images/Screenshot 2021-04-21 at 15.51.03.png)
 
@@ -418,7 +415,7 @@ The mechanism we used to get data ready for use in our application consisted of 
 
 #### Creating a mongoDB database
 
-The first step in allowing us to test our backend structure was to get the data we gathered into a MongoDB client to test how effective it was. We decided that rather than inserting our data within the MongoDB shell, we will aim to run a Javascript 'script' that would insert all this data using Mongoose commands - appropriately named [insertDataScript.js](./Example_Code/AngularQuizApp/insertDataScript.js). In short, the script injects into a MongoDB client (using a URL specified in args[0]), our data.
+The first step in allowing us to test our backend structure was to get the data we gathered into a MongoDB client to test how effective it was. We decided that rather than inserting our data within the MongoDB shell, we will aim to run a Javascript 'script' that would insert all this data using Mongoose commands - appropriately named [insertDataScript.js](../Example_Code/AngularQuizApp/insertDataScript.js). In short, the script injects into a MongoDB client (using a URL specified in args[0]), our data.
 
 This script underwent many changes depending on our evolving decisions regarding backend structure but this final script allows us to unload our data into MongoDB ready for use. A reason why we decided to use import our data in this way because it makes it easier to add more data at a later date; i.e, the structure is there and it is set out into `createOption`, `createNewsTopic` and `createQuizQuestion` methods (amongst others). A simple '*copy + paste*' and '*fill in the blanks*' allows us to add more data whenever we need to. 
 
@@ -430,7 +427,7 @@ const NewsTopic = require('./models/news_topic');
 const Option = require('./models/options');
 ```
 
-It's worth noting that this script is ran privately and doesn't take part in the deployment of the docker container with [deploy.sh](./Example_Code/AngularQuizApp/deploy.sh). The script allowed us to export from a local MongoDB client into [three JSON files](./Example_Code/AngularQuizApp/blockData) that were prepared for seeding.
+It's worth noting that this script is ran privately and doesn't take part in the deployment of the docker container with [deploy.sh](../Example_Code/AngularQuizApp/deploy.sh). The script allowed us to export from a local MongoDB client into [three JSON files](../Example_Code/AngularQuizApp/blockData) that were prepared for seeding.
 
 #### Seeding
 
@@ -450,25 +447,25 @@ docker exec -i db sh -c "mongoimport -u "$username" -p "$password" --authenticat
 
 #### Choosing REST
 
-We decided to build a RESTful API to link our mongoDB database to our front-end (Angular). Generally speaking, REST is an interface between HTTP utilising systems, and it can be used to process data operations in many formats (i.e., JSON). 
+We decided to build a RESTful API to link our MongoDB database to our front-end (Angular). Generally speaking, REST is an interface between HTTP utilising systems, and it can be used to process data operations in many formats (i.e., JSON). 
 
-REST stands for Representational State Transfer, and is commonplace in data exchange protocol systems used in web applications today. The REST architectural style determines how the API looks, and how it processes client requests. The main mechanism that RESTful APIs implement is that a resource, (i.e., a piece of data) is retrievable upon a client URL request. This is formally known as a response.
+REST stands for Representational State Transfer and is commonplace in data exchange protocol systems used in web applications today. The REST architectural style determines how the API looks, and how it processes client requests. The main mechanism that RESTful APIs implement is that a resource, (i.e., a piece of data) is retrievable upon a client URL request. This is formally known as a response.
 
-Responses are the result of requests. A response is composed of two parts - the root-endpoint and the path. The root-endpoint is the starting point from where your API lives. In our project, it is where we set the API routes from server.js (localhost:4200/api) - but we will come back to this. The second part of a response is the path. This path determines the resource the client is looking for. We can distinguish between different responses based on these two parts, and implement methods in our api that map responses on to the mongoose and node.js commands that will respond with the correct data from our backend. 
+Responses are the result of requests. A response is composed of two parts - the root-endpoint and the path. The root-endpoint is the starting point from where your API lives. In our project, it is where we set the API routes from server.js (localhost:4200/api) - but we will come back to this. The second part of a response is the path. This path determines the resource the client is looking for. We can distinguish between different responses based on these two parts, and implement methods in our API that map responses onto the mongoose and node.js commands that will respond with the correct data from our backend. 
 
-The main advantages of using a RESTful API is that each HTTP has all the information needed. In other words, neither the client nor the server need to remember any previous status to satisfy it (see this [website](https://www.bbvaapimarket.com/en/api-world/rest-api-what-it-and-what-are-its-advantages-project-development/#:~:text=The%20REST%20API%20is%20always,%2C%20Java%2C%20Python%20or%20Node.)). This means that we have a stateless client/server protocol. 
+The main advantage of using a RESTful API is that each HTTP has all the information needed. In other words, neither the client nor the server needs to remember any previous status to satisfy it (see this [website](https://www.bbvaapimarket.com/en/api-world/rest-api-what-it-and-what-are-its-advantages-project-development/#:~:text=The%20REST%20API%20is%20always,%2C%20Java%2C%20Python%20or%20Node.)). This means that we have a stateless client/server protocol. 
 
-A RESTful API allows for client-server separation. This allows for scalability, since development teams can scale up the application without having to take down the server. Developers can work on the server side of the application, without the client side being affected.
+A RESTful API allows for client-server separation. This allows for scalability since development teams can scale up the application without having to take down the server. Developers can work on the server-side of the application, without the client-side being affected.
 
-For these reasons above, utilising the RESTful approach seemed appropriate. After making this choice, and setting up our mongoDB database, we started to think about the internals of requests, with relation to how they would interact with our database. REST APIs implement multiple operations (CRUD operations - create, read, update and delete) which are performed giving speicifc requests. We decided the main interaction with our database would come from a get request, in which our response (in the api) takes the form of a JSON payload, containing the data for all news topics (including quiz questions).
+For these reasons above, utilising the RESTful approach seemed appropriate. After making this choice, and setting up our MongoDB database, we started to think about the internals of requests, in relation to how they would interact with our database. REST APIs implement multiple operations (CRUD operations - create, read, update and delete) which are performed giving specific requests. We decided the main interaction with our database would come from a get request, in which our response (in the API) takes the form of a JSON payload, containing the data for all news topics (including quiz questions).
 
 #### Implementing REST
 
-To build our API, we used Express, one of the key frameworks in the MEAN stack. We started off by creating server.js, in which we require the express dependency. We also created the file api.js, as well as a folder called server. We then require the api in server.js. 
+To build our API, we used Express, one of the key frameworks in the MEAN stack. We started by creating server.js, in which we require the express dependency. We also created the file api.js, inside a routes folder in a folder called server. We then require the API (which is exported in api.js) in server.js. 
 
-The whole point of this is that server.js which has all the server code that points to the server folder. Server.js also utilises POST data parsers from express. 
+The whole point of this is that server.js has all the server code that points to the server folder. Server.js also utilises POST data parsers from express. 
 
-In api.js, we export the routes used by the router required. We creat an express router here, and we implement our main get command. The router is then exported and it's used by server.js. This allows the api to respond to client requests made on the server, from which are fed through to the api. 
+In api.js, we export the routes used by the router required. To do this, we create an express router api.js and we implement our main get command. The router is then exported and it's used by server.js. This allows the API to respond to client requests made on the server, from which are fed through to the API. 
 
 Our main get method is as follows:
 
@@ -493,14 +490,14 @@ router.get('/NewsTopics', async (req, res) => {
 
 The process is as follows:
 
-- Client enters the http request, which automatically requested when they choose a particular topic (i.e., when running locally: localhost:4200/api/NewsTopics) 
-  - **localhost:4200/api** is the base path of the API endpoint
-  - **/NewsTopics** is the path that corresponds to the specific method in api.js 
-- This utilises the NewsTopic mongoose model that we require from ../models, and implements the mongoose method **.find**
+- Client enters the http request, which automatically requested when they choose a particular topic (i.e., when running locally: `localhost:4200/api/NewsTopics`) 
+  - `localhost:4200/api` is the base path of the API endpoint
+  - `/NewsTopics` is the path that corresponds to the specific method in api.js 
+- This utilises the NewsTopic mongoose model that we require from `../models`, and implements the mongoose method `.find`
 - Since the result of this is a JSON string, it can be stored in a const
 - We look for any errors, and if everything is okay, we respond to that request with a JSON payload (as a string) 
 
-As we're exporting the router made in api.js, which is required in server.js, the output of this (when integrated with angular) is rendered on to the webpage.
+As we're exporting the router made in api.js, which is required in server.js, the output of this (when integrated with angular) is rendered onto the webpage.
 
 Linking up the frontend to the API is achieved by creating a data service that <i>subscribes</i> to the API and is discussed in the frontend section below.
 
@@ -532,11 +529,11 @@ To build out the Welcome Page, we opted to use a pre-made HTML template, provide
 
 The meat of the website would be the quiz itself and to implement this we investigated building out our own quiz framework, or using a pre-made one and tailoring it to our needs.
 
-**Choice and change of Angular Quiz Framework**
+#### Choice and change of Angular Quiz Framework
 
 We spoke with the teaching support on the course about how best to approach implementing a quiz in Angular. On advise from Thomas Bale, we elected to find a pre-made quiz framework and repurpose it for our needs. To do this, we had a front end get together that involved a morning pair programming session sitting down to research, test and try different Angular quiz frameworks that might be suitable as a template for the purpose of this project. We looked at a number of different frameworks in depth including: [Eva Grean's](https://github.com/evagrean/quiz-app) and [Anurag Gandhi's](https://www.codeproject.com/Articles/1167451/Quiz-Application-in-Angular). We eventually decided we would use a fancy looking [Spotify app](https://awesomeopensource.com/project/fabiandev/angular-quiz-app). The reason we chose this framework was because it was aesthetically and functionally pleasing to interact with and thought it would help keep the content of the quiz engaging. Other frameworks we found felt a bit basic, whereas the Spotify Quiz had animations and progress bars, for example. 
 
-Our next task was to familiarise ourselves with the Angular component structure that rendered the site, which we tried and tested over a few days. This quiz app even formed the basis of one of our rounds of user feedback. However, it was not until we made more concerted attempts to build out and refactor the code on this quiz we realised that this quiz was too advanced for our still relatively nascent experience of Angular. As such, we had to make a u-turn and thus settled on [Anurag Gandhi's](https://www.codeproject.com/Articles/1167451/Quiz-Application-in-Angular) quiz framework. Altogether it was much less complex and more malleable for what we had in mind to achieve.  There were sufficiently less components and the code was more simple to re-work and manipulate.  
+Our next task was to familiarise ourselves with the Angular component structure that rendered the site, which we tried and tested over a few days. This quiz app even formed the basis of one of our rounds of user feedback. However, it was not until we made more concerted attempts to build out and refactor the code on this quiz we realised that this quiz was too advanced for our still relatively nascent experience of Angular. As such, we had to make a u-turn and thus settled on [Anurag Gandhi's](https://www.codeproject.com/Articles/1167451/Quiz-Application-in-Angular) quiz framework. Altogether it was much less complex and more malleable for what we had in mind to achieve.  There were sufficiently fewer components, and the code was more simple to re-work and manipulate.  
 
 During our research of Angular frameworks, we also took the opportunity to brainstorm some design ideas as a team about prospective designs for our quiz. This helped us to focus in on our needs and initiate the creative process of building up the single page application front end in our minds. 
 
@@ -546,9 +543,9 @@ We created this mood board to consolidate and draw ideas from:
   <img src="../Documentation/Images/MoodBoard.jpg" alt="MoodBoard">
 </p>
 
-**Refactoring and restructuring to prepare for back-end code**
+#### Refactoring and restructuring to prepare for back-end code
 
-One of the major challenges for the front end was linking with the back end to load their .json file that would render our quiz questions and answers on the website. First, we had to refactor a lot of the models, service and component code on the front end, which included the removal of a lot of unnecessary variables. 
+One of the major challenges for the front end was linking with the back end to load their `.json` file that would render our quiz questions and answers on the website. First, we had to refactor a lot of the models, service and component code on the front end, which included the removal of a lot of unnecessary variables. 
 
 For example, the original `quiz.service.ts` looked as follows originally:
 
@@ -601,7 +598,7 @@ export class Option {
 }
 ```
 
-At the beginning, we could not link the back end json file with the front end. This was due to an extra variable within the "options" called "optionR_F" or "optionF_T" that made it very hard to access the data. As shown below:
+At the beginning, we could not link the back end JSON file with the front end. This was due to an extra variable within the `options` called `optionR_F` or `optionF_T` that made it very hard to access the data. As shown below:
 
 ```typescript
 "options":
@@ -730,7 +727,7 @@ ngOnInit() {
     this.loadQuiz(this.quizName);
   }
 ```
-allowed the quizName to be passed into the loadquiz() method and select the right quiz from the JSON payload.
+allowed the quizName to be passed into the `loadQuiz()` method and select the right quiz from the JSON payload.
 
 #### Connecting To The API
 
@@ -775,37 +772,33 @@ As this was a <i>serious play</i> project, we also wanted to have an area of the
 
 To the footer we added a number of share buttons for the most common social media platforms and to the toolbar we added a link to an `About Fake News` page. On this page we talk about he history of fake news and how one can better protect themselves from it's effects.
 
-# Deployment Details
+### Deployment Details
 
-### **Continuous Integration**
+#### Continuous Integration
 
 To align with agile working principles, we opted for continuous integration when developing this project. Small incremental progress in the form of frequent commits on our git repositories allowed both for tangible goals to be realised more easily and for constant revision of our progress. Mentally, this method of working helped to compartmentalise big tasks to make the project at large seem less insurmountable. 
 
 #### Integration across FrontEnd and BackEnd
 
-Generally, to implement continuous integration, consolidation between the backend team and the front end team was imperative. The main integration came from pulling together files from AngularDemoSite and AngularQuizApp, which were at the time two structurally separate projects. We felt initially that it would be best for the backend team to work on AngularDemoSite (which was built upon a skeleton framework of a MEAN Stack project), and for the frontend team to work on AngularQuizApp - which was a quiz framework, focusing mostly on angular. For continuous integration to apply, team meetings were held often. We had **weekly stand-ups** (the notes for these are in ../Documentation/Meeting_Log/Standps, in which both teams would present their work, and notes would be taken for reference for the counterparty when specialising in their own work. We feel this lead to an easier integration among the two projects. An example of when this came into effect was creating the Options model in the MongoDB database. 
+Generally, to implement continuous integration, consolidation between the backend team, and the front end team was imperative. The main integration came from pulling together files from AngularDemoSite and AngularQuizApp, which were at the time two structurally separate projects. We felt initially that it would be best for the backend team to work on AngularDemoSite (which was built upon a skeleton framework of a MEAN Stack project), and for the frontend team to work on AngularQuizApp - which was a quiz framework, focusing mostly on Angular. For continuous integration to apply, team meetings were held often. We had **weekly stand-ups** (the notes for these are [here](../Documentation/Meeting_Log/Standups)), in which the both teams would present their work, and notes would be taken for reference to the counterpart when specialising in their own work. We feel this lead to an easier integration among the two projects. An example of when this came in to effect was creating the `Options` model in the MongoDB database. 
 
----
+#### Effective Integration Example
 
-##### Effective Integration Example
-
-The issue arose since the backend team was advancing out of sync since the frontend development of the project meant a lot of research had to be done in order to find a framework to build on. For the backend, guides were used (https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose, https://www.madetech.com/blog/migrations-seeds-and-pipelines/) that showed clear and good practices of MongoDB construction and utilisation. The models built were refurbished multiple times. When the frontend team found a framework, the backend team needed to implement an Options model, in order to be compatible with the framework. Specifically, this Options model would incorporate 4 different instances, and it would be the document embedded in a particular quiz question which would allow for the user's answer to be checked against the correct_answer (boolean) field in a payload. Henceforth, files like insertDataScript, and new files in the models folder, needed to be changed to incorporate the need for this new model. As well as this, the backend team needed to revisit the schema diagrams, to verify if the relationships that would need to be updated. The main relationship in question was between quiz_question and option. All of this was done with reference to a JSON payload that was shown to the backend team by the frontend team, in order to get a JSON output from the API to match this. One issue was that the Option mongo document name was displayed in the JSON output, which meant all the fields incorporated in a particular option document were not accessible by the front end. This last fix was solved (in insertDataScript.js) by including the actual fields of an option in a quiz question as opposed to embedding the actual Option document. We figured this was good practice since we are only referencing the Option documents as value. We, therefore, did not need to update the fields in Option. 
+The issue arose since the backend team was advancing out of sync since the frontend development of the project meant a lot of research had to be done in order to find a framework to build on. For the backend, guides were used ([Mongoose guide](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose), [Seeds and pipelines](https://www.madetech.com/blog/migrations-seeds-and-pipelines/)) that showed clear and good practices of MongoDB construction and utilisation. The models built were refurbished multiple times. When the frontend team found a framework, the backend team needed to implement an Options model, in order to be compatible with the framework. Specifically, this Options model would incorporate 4 different instances, and it would be the document embedded in a particular quiz question which would allow for the user's answer to be checked against the correct_answer (boolean) field in a payload. Henceforth, files like `insertDataScript.ts`, and new files in the `models` directory, needed to be changed to incorporate the need for this new model. As well as this, the backend team needed to revisit the schema diagrams, to verify if the relationships that would need to be updated. The main relationship in question was between quiz_question and option. All of this was done with reference to a JSON payload that was shown to the backend team by the frontend team, in order to get a JSON output from the API to match this. One issue was that the Option mongo document name was displayed in the JSON output, which meant all the fields incorporated in a particular option document were not accessible by the front end. This last fix was solved (in `insertDataScript.js`) by including the actual fields of an option in a quiz question as opposed to embedding the actual Option document. We figured this was good practice since we are only referencing the Option documents as value. We, therefore, did not need to update the fields in Option. 
 
 We felt this issue was solved efficiently and was aided by the weekly stand-ups and constant communication across both teams. Additionally, members from opposing teams helped out in order to make sure the frontend needs were met by the backend for this particular issue.
 
----
-
 Another implementation of continuous integration was our project pipeline on GitHub. Details on the design of our workflow are outlined in the **Sprints & Project Management Section** of this writeup. In essence, to circumvent the common occurrence of a merge conflict, we created a branch for each team member to do work on. We split the team members into specialised development roles, and the backend and frontend team generally worked in two separate directories. This meant that any conflicts caused generally when working in these directories were caused by members of the same team. This meant that any details left out of stand-ups, specific to teams' individual tasks, were not entirely dealt with by a counterparty member. 
 
-### **Deployment with Docker**
+#### Deployment with Docker
 
-Deploying our new quiz framework with Docker involved integrating what we had achieved and learned through the Angular Demo Site with our new Angular Quiz Framework. We had to first move across all the relevant files that supported the docker container ecosystem and the MongoDB such as deploy.sh, blockData, wait-for.sh, insertDataScript.js and others.
+Deploying our new quiz framework with Docker involved integrating what we had achieved and learnt through the Angular Demo Site with our new Angular Quiz Framework.  We had to first move across all the relevant files that supported the docker container ecosystem, and the MongoDB such as `deploy.sh`, `blockData`, `wait-for.sh`, `insertDataScript.js` and others.
 
-Utilising Docker generally meant that we get a reproducible build environment, a flexible project which can migrate across operating systems, and could be tested in a clear and informative way. The file **docker-compose.yml** was included in the Docker build, which ensured the helpful features that Docker offers were implemented to the build process. The **Dockerfile** was also integral to our build process. This text document has all the commands a user can call on the command line to build an image (instance of a container). This **Dockerfile** executes multiple commands (like a script) in succession. We use these files for building our Node and MongoDB Docker containers.
+Utilising Docker generally meant that we get a reproducible build environment, a flexible project which can migrate across operating systems, and could be tested in a clear and informative way. The files `docker-compose.yml` was included in the Docker build, which ensured the helpful features that Docker offers were implemented to the build process. The `Dockerfile` was also integral to our build process. This text document has all the commands a user can call on the command line to build an image (instance of a container). This `Dockerfile` executes multiple commands (like a script) in succession. We use these files for building our Node and MongoDB Docker containers. 
 
 We encountered some issues that continuous integration aided in the deployment of docker. Some key features of our repo in light of deployment with docker are highlighted below.
 
-##### Wait-for
+#### Wait-for
 
 Since our project design meant that we needed to have two running containers: a Node one and a MongoDB one, we needed to ensure that we have a MongoDB image running before our Node image connects to it. The solution for this was implementing a **wait for** script. We needed to download this, and our source is illustrated below:
 
@@ -814,7 +807,7 @@ $ wget -O wait-for.sh https://raw.githubusercontent.com/eficode/wait-for/master/
 chmod +x wait-for.sh
 ```
 
-- Then, in the docker-compose.yml, we implemented the running of this wait-for script in the command section (in services)
+- Then, in the `docker-compose.yml`, we implemented the running of this `wait-for.sh` script in the command section (in services)
 
 - The line is repeated below:
 
@@ -824,15 +817,12 @@ chmod +x wait-for.sh
 
 - This line is for the node instance. It waits for the MongoDB container to be running (which exposes port 27017), and following this it starts up the node container.
 
-##### MongoDB Credentials
+#### MongoDB Credentials
+Since we want our database to be secure, we needed to provide the login credentials in a way that was not exposing to the public. We created a file (which was left out of this repo for obvious reasons), which displayed our credentials. We specified the field **environment** in the db image section of the `docker-compose.yml` script, which specified where the mongoDB container can get the credentials, so we can automatically log in when running this script.
 
-Since we want our database to be secure, we needed to provide the login credentials in a way that was not exposed to the public. We created a file (which was left out of this repo for obvious reasons), which displayed our credentials. We specified the field **environment** in the db image section of the **docker-compose.yml** script, which specified where the MongoDB container can get the credentials, so we can automatically log in when running this script.
+#### Integrating Docker Commands and Fixing Merge Conflicts - AngularDemoSite -> AngularQuizApp
 
-
-
-##### Integrating Docker Commands and Fixing Merge Conflicts - AngularDemoSite -> AngularQuizApp
-
-Initially we had some difficulty in rendering the new framework with the docker container. This was for myriad reasons. We had to change some dependencies in package.json and package-lock.json which resulted in merge conflicts which were tricky to solve. Another issue we had was that originally we serving our new application with the command npm serve - which was not ideal for the docker container. As such, we installed some further dependencies to ensure the application would be rendered with ng build.  However, the application would not work still. As such, Harry and Jack set up a Teams  pair programming call to run over the changes that had been made and after a good session we realised that we had to tweek a static path in the server.js file. Once we solved this issue, we were jubilant to deploy our full stack through docker. 
+Initially we had some difficulty in rendering the new framework with the docker container. This was for myriad reasons. We had to change some dependencies in `package.json` and `package-lock.json` which resulted in merge conflicts which were tricky to solve. Another issue we had was that originally we serving our new application with the command npm serve - which was not ideal for the docker container. As such, we installed some further dependencies to ensure the application would be rendered with ng build.  However, the application would not work still. As such, Harry and Jack set up a Teams  pair programming call to run over the changes that had been made and after a good session we realised that we had to tweak a static path in the `server.js` file. Once we solved this issue, we were jubilant to deploy our full stack through docker. 
 
 Resolving this path issue was the key to full stack deployment through Docker:
 
@@ -843,14 +833,13 @@ app.use(express.static(path.join(__dirname, 'dist/ng6-quiz')));
 
 ##### Docker Volume Fix
 
-Another docker issue, encountered by the backend, was that since Docker mounts volume locally, we needed somewhere to store the data and then import this into MongoDB. This was more of a lesson in how Docker works, but the result - *creating an InsertDataScript to get JSON files for our models, and then importing them in deploy.sh* - lead to a situation where the correct data would be in the MongoDB docker container every time we run `deploy.sh`. Furthermore, due to the internals of Docker, the libraries and dependencies used for MongoDB will be the same for anyone who starts our containers. This aided continuous integration and deployment as it rules out any errors that may have occurred due to discrepancies across MongoDB software versions. 
+Another docker issue, encountered by the backend, was that since Docker mounts volume locally, we needed somewhere to store the data and then import this into MongoDB. This was more of a lesson in how Docker works, but the result - *creating an `insertDataScript.ts` to get JSON files for our models, and then importing them in `deploy.sh`* - lead to a situation where the correct data would be in the mongoDB docker container every time we run `deploy.sh`. Furthermore, due to the internals of Docker, the libraries and dependencies used for mongoDB will be the same for anyone who starts our containers. This aided continuous integration and deployment as it rules out any errors that may have occurred due to discrepancies across mongoDB software versions. 
 
-##### Slow Build Process Fix
+#### Slow Build Process Fix
+We found that the build process for Docker could take a while in most cases, and this slowed down development and made pair programming techniques almost redundant as we would make small changes, and spend most of the time waiting for the build process to complete. We consulted with senior members of staff, as highlighted in the backend meeting log, and fixed up a version of docker-build which could be run locally. This process built docker in a similar way, using port 27018, and used the LOCAL fields in the `.env` file. Some other changes include:
 
-We found that the build process for docker could take a while in most cases, and this slowed down development and made pair programming techniques almost redundant as we would make small changes, and spend most of the time waiting for the build process to complete. We consulted with senior members of staff, as highlighted in the backend meeting log, and fixed up a version of docker-build which could be run locally. This process built docker in a similar way, using port 27018, and used the LOCAL fields in the **.env** file. Some other changes include:
-
-- having a check in **server.js** to see if we were running locally or not - if we were, module `dotenv` is used which gets the correct .env credentials
-- in **db.js** we created local and container URLs which gets used whether we're using the local or the container's MongoDB database.
+- Having a check in `server.js` to see if we were running locally or not - if we were, module dotenv is used which gets the correct .env credentialy
+- In `db.js` we created local and container URLs which gets used whether we're using the local or the container's mongoDB database.
 
 To run this local build process, we simply ran:
 
@@ -864,22 +853,21 @@ $ npm run local
 	# IS_LOCAL is the flag used to signal we want to run locally - telling server.js what 		port to use
 ```
 
-We agreed, to adhere to effective continuous integration principles, we would only make small changes when running locally - for example, bug fixes. This was core to using the local deployment of docker since we felt it best that bigger changes - for example, those that affected project structure, or a new feature - would be run in the full `docker build` version. Deploying docker in a lighter way helped improve the effectiveness of pair programming sessions.
+## TO DO:
+#### When done testing, can talk about continuous deployment/delivery here
 
----
+- Can also talk about docker logs - ie manually inserted so console.debug stuff too to get clear idea of errors 
+
+We agreed, to adhere to effective continuous integration principles, we would only make small changes when running locally - for example, bug fixes. This was core to using the local deployment of docker since we felt it best that bigger changes - for example, those that affected project structure, or a new feature - would be run in the full `docker build` version. Deploying docker in a lighter way helped improve the effectiveness of pair programming sessions.
 
 As part of the CI/CD pipeline, relevant testing at particular stages in the development cycle is important. Tests that needed to be run automatically with each build were incorporated into Docker, the use of `catch` statements in our code, and the use of the command `docker logs` proved useful. This command could be run to look a the error/warning logs for both of our docker images (MongoDB and Node) when they are running. If there is an error, and it is ambiguous which container it came from, the separation of logs helped debug the error with greater efficacy. 
 
 Another advantage of our system design, with respect to testing for continuous delivery principles, was the fact that the web framework we used, Angular, builds `spec` files along the way. Using these spec files allowed us to conduct unit tests on our angular components towards the end of our development process. This meant that we could deploy strict unit tests at the end of the development process in the dev branch. This means to represent final tests before releasing a software version to the public. Using these unit tests meant that we could check that components were successfully being built, and generally our code didn't contain un-used components. In future development, we feel it would be useful to utilise the spec files whilst developing, or in fact even before we start writing new code. Passing these unit tests could be seen as a benchmark to pass, before submitting a pull request.
 
----
-
 By utilising continuous integration and deployment throughout the project, with an agreed-upon build process and error checking methodology, we felt our project development process ran smoothly. We also feel that the use of Docker would allow for further development in the future, either by us or others, that is easy to pick up. This is due to the reproducible build environment and persistent storage that these principles and software assemble.
 
----
-
-### Additional
-[ADD TO] - Additional elements and components e.g. authentification. Tell us about any other aspects not covered above!
+### Additional????
+[ADD TO] - Additional elements and components e.g. authentication. Tell us about any other aspects not covered above!
 
 - [Previous Section: System Design](SystemDesign.md)
 - [Next Section: Project Evaluation](ProjectEvaluation.md)

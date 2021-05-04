@@ -13,12 +13,8 @@
       - [University Professor](#university-professor)
       - [Admin](#admin)
 - [Design Process & Early Prototyping](#design-process--early-prototyping)
-   - [Design Methods](#design-methods)
    - [Paper Prototypes & Wireframes](#paper-prototypes--wireframes)
    - [User Feedback & Questionnaires](#user-feedback--questionnaires)
-- [System Architecture & Design](#system-architecture--design)
-   - [Class Diagram](#class-diagram)
-   - [Sequence Flow Diagram](#sequence-flow-diagram)
 
 ## Introduction
 Fake news consists of false stories that appear to be news, which are spread on the internet and social media. In the last five years there has been an explosion in the amount of fake news being spread and due to much of it being believable, it has become more difficult for people to detect. Whilst there are numerous sites explaining the danger of fake news and how to spot it, there are fewer that provide a way for people to check whether they are susceptible to it, and even fewer that combine the two aims.
@@ -29,7 +25,7 @@ The crux of the site is a quiz with various topics that have been popular target
 
 Our project objectives were established early on in our [group scoping discussion](https://github.com/Davospike/segpSPA/blob/dan/Documentation/Scoping/GroupScopingDiscussion.md) and were set out as follows:
 
-**Primary Objectives:**
+#### Primary Objectives:
 
 - Develop an educational quiz, tasking users with identifying fake news
 
@@ -37,15 +33,13 @@ Our project objectives were established early on in our [group scoping discussio
 
 - Create a static database that holds a handpicked selection of news articles that are identified as being fact or fiction
 
-**Secondary Objectives:**
+#### Secondary Objectives:
 
 - Collect and store user data, such as their quiz score and where they obtain their news from
 
 - Create a login function for the site so users are encouraged to revisit and compare previous scores
 
 - Create a function that allows users to share their score via social media
-
-[ADD VIDEO]
 
 ## Background & Motivation
 Fake news is a false narrative that is published and promoted as if it were true. Historically, fake news was usually propaganda put out by those in power to promote a certain belief or support a certain position, even if it was completely false. Social media has now created an environment where anyone with an agenda can publish falsehoods as if they were truths. People can be paid to post fake news on behalf of someone else or automated programs, often called bots, can publish auto-generated fake news.
@@ -61,8 +55,7 @@ Some major consequences of the spread of disinformation is the rise of fear, hat
 
 The spread of pseudoscience through fake news can have an immense impact on people's lives and can exacerbate disasters. One such example arose during the COVID-19 pandemic, which has been the target of an immense amount of fake news, so much that the head of WHO said "We're not just fighting an epidemic; we're fighting an infodemic" ([Brennen & Nielsen, 2020](https://reutersinstitute.politics.ox.ac.uk/risj-review/covid-19-has-intensified-concerns-about-misinformation-heres-what-our-past-research)). Due to fake news, some people believe that the effects of the virus, along with the death rates caused by it, have been inflated. This led to many believing that there was no reason to adhere to social distancing or lockdown measures which were intended to reduce the impact of the virus, ultimately leading to a higher death toll ([Lynas, 2020](https://allianceforscience.cornell.edu/blog/2020/04/covid-top-10-current-conspiracy-theories/)). Disinformation surrounding climate change can have a negative impact on environmental policies. Bob Ward argues that the failure of the mainstream press in ensuring only the most accurate information is published has numerous consequences, such as harming the public interest and placing people at greater risk from the impact of climate change ([Ward, 2018](https://www.lse.ac.uk/GranthamInstitute/news/another-failure-to-tackle-fake-news-about-climate-change/)). 
 
-Not only can fake news compromise public economic growth, but also invidiuals' benefits. One major target of disinformation  has been 5G, with Reuters claiming that there have been arson attacks and assaults on 5G masts in at least 10 European countries ([Chell, 2020](https://www.reuters.com/article/us-eu-telecoms-5g/combat-5g-covid-19-fake-news-urges-europe-idUSKBN2392N8)) as people believe they spread coronavirus. This has led to need for the World Health Organisation to publish articles that contradict fake news, with the WHO stating that "viruses cannot travel on radio waves" ([WHO, 2021](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters)). Fake news also impacts businesses and consumers, as fake reviews can and do increase confusion and distrust in the business owner and negatively affect the purchasing process ([Valant, 2015](https://www.eesc.europa.eu/resources/docs/online-consumer-reviews---the-case-of-misleading-or-fake-reviews.pdf); [Fornaciari et al., 2014](https://core.ac.uk/download/pdf/74372819.pdf)) 
-
+Not only can fake news compromise public economic growth, but also invidiuals' benefits. One major target of disinformation  has been 5G, with Reuters claiming that there have been arson attacks and assaults on 5G masts in at least 10 European countries ([Chell, 2020](https://www.reuters.com/article/us-eu-telecoms-5g/combat-5g-covid-19-fake-news-urges-europe-idUSKBN2392N8)) as people believe they spread coronavirus. This has led to need for the World Health Organisation to publish articles that contradict fake news, with the WHO stating that "viruses cannot travel on radio waves" ([WHO, 2021](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters)). Fake news also impacts businesses and consumers, as fake reviews can and do increase confusion and distrust in the business owner and negatively affect the purchasing process ([Valant, 2015](https://www.eesc.europa.eu/resources/docs/online-consumer-reviews---the-case-of-misleading-or-fake-reviews.pdf); [Fornaciari et al., 2014](https://core.ac.uk/download/pdf/74372819.pdf))
 
 ### Current State of Industry
 [ADD TO] - Dan
@@ -129,7 +122,11 @@ Before the team decided on a Fake News quiz website, plenty of work was done on 
 
 Some of the first work that was done on coming up with the initial idea for the web app was facilitated by various techniques. Prior to carrying out any serious research or work on individual ideas, we first came together for a brainstorm session. There were no wrong answers, as the process was just about getting ideas down which we could then delve into and refine further if they were popular. Coming out of the session, we had settled on just under 20 topic ideas (view these [here](../Documentation/Archive)). With ideas on board, we were able to explore some other techniques to further refine the ideas.
 
-The most successful of these other techniques was creating a matrix of topics to merge; we were combining **Serious** [Topics] and **Play** [Games]. This method was very effective. It worked by using the column headers for one characteristic and the row headers for the other (i.e, serious topics as rows and play/games on the columns) and then combining each of the subjects together to create a **Serious Play** topic. Having 5 people in the group made this technique very robust and helped us refine our ideas settle on our choice of serious play relatively quickly.
+The most successful of these other techniques was creating a [matrix](/Documentation/DesignChoices/11_02_21_ideaMatrix.xlsx) of topics to merge; we were combining **Serious** [Topics] and **Play** [Games]. This method was very effective. It worked by using the column headers for one characteristic and the row headers for the other (i.e, serious topics as rows and play/games on the columns) and then combining each of the subjects together to create a **Serious Play** topic. Having 5 people in the group made this technique very robust and helped us refine our ideas settle on our choice of serious play relatively quickly.
+
+<p align="centre">
+    <img src="../Documentation/Images/IdeaMatrix.PNG" alt="Idea Matrix">
+</p>
 
 #### Miro Whiteboarding
 
@@ -176,22 +173,20 @@ Finally, an Admin stakeholder also needs to be involved in the project creating.
 - The Admin wants to be able to see how many quiz takers are getting each quiz question correct so that they can tailor the difficulty of future quizzes.
 
 #### Use Case Diagram
-Using UML, we can represent the main user stories in a use case diagram:
+Using UML, we can visually represent the main user stories in a use case diagram:
 
 <p align="center">
     <img src="../Documentation/Images/Would_They_Lie_To_You_Use_Case_Diagram.png" alt="Use Case Diagram" width=80%>
 </p>
 
-## Design Process & Early Prototyping
-[ADD TO]
+Having a visual representation was useful for quickly seeing the links between the different actors.
 
-### Design Methods
-[ADD TO]
+## Design Process & Early Prototyping
 
 ### Paper Prototypes & Wireframes
 
 #### Paper Prototype
-We began the visualisation of our web-app through a [paper prototype](../Documentation/Paper_Prototype/Paper_Prototype.pptx), put together in Microsoft Powerpoint. Paper prototypes do not necessarily need to be super *pretty* or perfectly assembled; it's more to allow the whole team to work towards a defined skeleton. We made sure that our paper prototype displayed:
+We began the visualisation of our web-app through a [paper prototype](../Documentation/Paper_Prototype), put together in Microsoft Powerpoint. Paper prototypes do not necessarily need to be super *pretty* or perfectly assembled; it's more to allow the whole team to work towards a defined skeleton. We made sure that our paper prototype displayed:
 
 - Layout and Placement of features/buttons
 - Navigation through each section of the web-app
@@ -201,15 +196,17 @@ This is useful for all members of the team to refer to during the development of
 
 As with any new idea, *creativity requires influence* amongst other things. We were made aware of a website called [Gapminder](https://www.gapminder.org) which we eventually took influence from for our design and the overal semantics of our work. Gapminder is a well polished website that takes global, notable topics and asks though provoking questions about them. We wanted to do the same with *'Would They Lie to You?'* displaying an array of topics for the user to choose from. Below is how our paper prototype took influence from Gapminder.
 
-<img src="../Documentation/Images/Gapminder_Topic_Choices.png" style="float: left; margin-right: 10px;" />
+<p align="center">
+    <img src="../Documentation/Images/Gapminder_Topic_Choices.png" style="float: left; margin-right: 10px;" />
+</p>
 
-##### ABOVE: Gapminder's Topic Selection.
+#### ABOVE: Gapminder's Topic Selection.
 
-##### BELOW: Our proposed Topic selection menu from the paper prototype.
+#### BELOW: Our proposed Topic selection menu from the paper prototype.
 
-<img src="../Documentation/Images/Paper_Prototype_Landing.png" style="float: left; margin-right: 10px;" />
-
-
+<p align="center">
+    <img src="../Documentation/Images/Paper_Prototype_Landing.png" style="float: left; margin-right: 10px;" />
+</p>
 
 Gapminder is great fun to visit and test yourself on global topics but there is also heavy emphasis on education and factual branches around its site. Building on this, we proposed a lot of areas to display fake news facts and statistics. Such as as comprehensive landing page and further sections to learn about the history and influence on fake news, giving a holistic experience for the viewer.
 
@@ -223,25 +220,20 @@ One of the reasons we wanted to create a wireframe was that the idea behind a wi
     <img src="../Documentation/Images/Wireframe_question.PNG" width=80%>
 </p>
 
-To build our wireframe, we used a software called "MarvelApp" to make the wireframe interactive and more engaging, allowing the users to click and play around with the latest design ideas. We updated our first Survey Monkey questionnaire to ask people to scale their answers based on whether they "Strongly Agree", "Strong Disagree" etc, as opposed to: "Do you like this?". Allowing for some variation in the responses gave us more granularity in gauging whether things were well-received. By sending out a new revised feedback form during the front end build, we were able to take on feedback about the design and functionality as we built, allowing us to keep the user feedback loop and adaptation cycle short. This idea of having a short feedback loop and adaptation cycle is a key concept of agile and was something we were keen to do given the short time frame we had to design and build the website.
+To build our [wireframe](https://marvelapp.com/prototype/704j440/screen/78198096), we used a software called "MarvelApp" to make the wireframe interactive and more engaging, allowing the users to click and play around with the latest design ideas. We updated our first Survey Monkey questionnaire to ask people to scale their answers based on whether they "Strongly Agree", "Strong Disagree" etc, as opposed to: "Do you like this?". Allowing for some variation in the responses gave us more granularity in gauging whether things were well-received. By sending out a new revised feedback form during the front end build, we were able to take on feedback about the design and functionality as we built, allowing us to keep the user feedback loop and adaptation cycle short. This idea of having a short feedback loop and adaptation cycle is a key concept of agile and was something we were keen to do given the short time frame we had to design and build the website.
 
 ### User Feedback & Questionnaires
 As an educational device, our web-app had to be as user-friendly as possible. It made sense to get feedback on more than one occasion throughout development. 
 
-Our first round of user feedback came early on, where we had users view our [paper prototype](../Documentation/Paper_Prototype/Paper_Prototype.pptx). This was effective as it allowed us to get our design choices; colour scheme, layout, navigation around menus etc, solidified before actual development began. It ratified some aspects of our prototype such as the title and strap-line but also pointed us in the right direction of more unpopular aspects of our design such as colour scheme (50%/50% split) and finding better ways to get users to return to the app; i.e by updating the quiz regularly. A *feature* came from this feedback also; in order to entice users to spread the word about this web-app so it can gain popularity, there were some suggestions to add social media links to the bottom of certain pages so they can be shared with followers/friends alike. Finally, the actual premace of the web-app was affirmed and was widely recieved by all users as a fun and educational application. (So the most crucial box is ***ticked***).
+Our [first round of user feedback](../Documentation/Paper_Prototype/PP%20Survey%20Monkey%20Notes.docx) came early on, where we had users view our [paper prototype](../Documentation/Paper_Prototype/Paper_Prototype.pptx). This was effective as it allowed us to get our design choices; colour scheme, layout, navigation around menus etc, solidified before actual development began. It ratified some aspects of our prototype such as the title and strap-line but also pointed us in the right direction of more unpopular aspects of our design such as colour scheme (50%/50% split) and finding better ways to get users to return to the app; i.e by updating the quiz regularly. A *feature* came from this feedback also; in order to entice users to spread the word about this web-app so it can gain popularity, there were some suggestions to add social media links to the bottom of certain pages so they can be shared with followers/friends alike. Finally, the actual premace of the web-app was affirmed and was widely recieved by all users as a fun and educational application. (So the most crucial box is ***ticked***).
 
-The second round of feedback incorporated more specific elements of our development and design. Beginning with the colour scheme, a big issue in our last set of feedback, there was now a majority (43.75%) of people liking the colours in comparison with the disagree-ers (37.50%). We quickly realised that colour scheme is painfully subjective so as long as this colour scheme was in the right majority and gave off the right mood of the topic, it would be an acceptable choice. Our overall mix of *serious and play* was semi-proved over this feedback also with agreeing majorities in "This quiz looks fun" and "I would like to take this quiz". We were however pushed to include more information on what fake news is and the damage it can cause, leading to more research and facts being made about fake news. Finally, we were able to refine some aethetics of our visual themes such as logos to include on the page with users picking one logo over the other. The second round was overall more positive than the first.
+The [second round of feedback](../Documentation/Paper_Prototype/PP%20Survey%20Monkey%20v2%20Notes.docx) incorporated more specific elements of our development and design. Beginning with the colour scheme, a big issue in our last set of feedback, there was now a majority (43.75%) of people liking the colours in comparison with the disagree-ers (37.50%). We quickly realised that colour scheme is painfully subjective so as long as this colour scheme was in the right majority and gave off the right mood of the topic, it would be an acceptable choice. Our overall mix of *serious and play* was semi-proved over this feedback also with agreeing majorities in "This quiz looks fun" and "I would like to take this quiz". We were however pushed to include more information on what fake news is and the damage it can cause, leading to more research and facts being made about fake news. Finally, we were able to refine some aethetics of our visual themes such as logos to include on the page with users picking one logo over the other. The second round was overall more positive than the first.
 
-## **[ADD FINAL ROUND OF USER TESTING]**
+Our final round of user testing came after the completion of the build process for the project. For this round, we decided to adopt the familiar service of SurveyMonkey, but this time incorporate real website interaction for the testing. Due to the ongoing Covid-19 pandemic, this meant that we had to do it with just our housemates/family in person, as opposed to going into university and testing with people there. The round of testing involved letting the tester have free rein of their interaction and experience with the website. It was on them to work out what the website was and how to use it. By giving no guidance, we ensured that the responses would be organic and not forced. After the tester had felt they were finished with the website (which was usually after completing one quiz topic and reading the About Fake News page), we provided them with another likert scale SurveyMonkey. 
 
-## System Architecture & Design
-[ADD TO]
+Our aim with the round was to help validate our own personal belief that we had achieved success with meeting our objectives, and also to help highlight any areas of improvement, or bugs/features we might have missed. Overall, the responses were reassuring and brought a great feeling of joy to the team. Whilst we were unable to test with as many people as the first two rounds, from the tests we were able to run, generally speaking the responses were positive. Testers found the website easy to use and navigate, the quiz engaging and interesting, and most felt they were better educated about fake news and equipped to combat it. These were all things we had set out to achieve so having the feedback to back it up was a nice feeling. Further, by adding a final question to the survey asking for any additional comments yielded good responses for overall improvements for future work.
 
-### Class Diagram
-[ADD TO]
-
-### Sequence Flow Diagram
-[ADD TO]
+# ADD ROUND 3 SURVEY MONKEY NOTES AND TING TO DOCUMENTS AFTER COMPLETE
 
 - [Next Section: Project Implementation](SystemImplementation.md)
 - [Back to Top](#table-of-contents)
