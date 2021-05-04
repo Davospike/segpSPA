@@ -439,25 +439,25 @@ docker exec -i db sh -c "mongoimport -u "$username" -p "$password" --authenticat
 
 #### Choosing REST
 
-We decided to build a RESTful API to link our mongoDB database to our front-end (Angular). Generally speaking, REST is an interface between HTTP utilising systems, and it can be used to process data operations in many formats (i.e., JSON). 
+We decided to build a RESTful API to link our MongoDB database to our front-end (Angular). Generally speaking, REST is an interface between HTTP utilising systems, and it can be used to process data operations in many formats (i.e., JSON). 
 
-REST stands for Representational State Transfer, and is commonplace in data exchange protocol systems used in web applications today. The REST architectural style determines how the API looks, and how it processes client requests. The main mechanism that RESTful APIs implement is that a resource, (i.e., a piece of data) is retrievable upon a client URL request. This is formally known as a response.
+REST stands for Representational State Transfer and is commonplace in data exchange protocol systems used in web applications today. The REST architectural style determines how the API looks, and how it processes client requests. The main mechanism that RESTful APIs implement is that a resource, (i.e., a piece of data) is retrievable upon a client URL request. This is formally known as a response.
 
-Responses are the result of requests. A response is composed of two parts - the root-endpoint and the path. The root-endpoint is the starting point from where your API lives. In our project, it is where we set the API routes from server.js (localhost:4200/api) - but we will come back to this. The second part of a response is the path. This path determines the resource the client is looking for. We can distinguish between different responses based on these two parts, and implement methods in our api that map responses on to the mongoose and node.js commands that will respond with the correct data from our backend. 
+Responses are the result of requests. A response is composed of two parts - the root-endpoint and the path. The root-endpoint is the starting point from where your API lives. In our project, it is where we set the API routes from server.js (localhost:4200/api) - but we will come back to this. The second part of a response is the path. This path determines the resource the client is looking for. We can distinguish between different responses based on these two parts, and implement methods in our API that map responses onto the mongoose and node.js commands that will respond with the correct data from our backend. 
 
-The main advantages of using a RESTful API is that each HTTP has all the information needed. In other words, neither the client nor the server need to remember any previous status to satisfy it (see this [website](https://www.bbvaapimarket.com/en/api-world/rest-api-what-it-and-what-are-its-advantages-project-development/#:~:text=The%20REST%20API%20is%20always,%2C%20Java%2C%20Python%20or%20Node.)). This means that we have a stateless client/server protocol. 
+The main advantage of using a RESTful API is that each HTTP has all the information needed. In other words, neither the client nor the server needs to remember any previous status to satisfy it (see this [website](https://www.bbvaapimarket.com/en/api-world/rest-api-what-it-and-what-are-its-advantages-project-development/#:~:text=The%20REST%20API%20is%20always,%2C%20Java%2C%20Python%20or%20Node.)). This means that we have a stateless client/server protocol. 
 
-A RESTful API allows for client-server separation. This allows for scalability, since development teams can scale up the application without having to take down the server. Developers can work on the server side of the application, without the client side being affected.
+A RESTful API allows for client-server separation. This allows for scalability since development teams can scale up the application without having to take down the server. Developers can work on the server-side of the application, without the client-side being affected.
 
-For these reasons above, utilising the RESTful approach seemed appropriate. After making this choice, and setting up our mongoDB database, we started to think about the internals of requests, with relation to how they would interact with our database. REST APIs implement multiple operations (CRUD operations - create, read, update and delete) which are performed giving speicifc requests. We decided the main interaction with our database would come from a get request, in which our response (in the api) takes the form of a JSON payload, containing the data for all news topics (including quiz questions).
+For these reasons above, utilising the RESTful approach seemed appropriate. After making this choice, and setting up our MongoDB database, we started to think about the internals of requests, in relation to how they would interact with our database. REST APIs implement multiple operations (CRUD operations - create, read, update and delete) which are performed giving specific requests. We decided the main interaction with our database would come from a get request, in which our response (in the API) takes the form of a JSON payload, containing the data for all news topics (including quiz questions).
 
 #### Implementing REST
 
-To build our API, we used Express, one of the key frameworks in the MEAN stack. We started off by creating server.js, in which we require the express dependency. We also created the file api.js, as well as a folder called server. We then require the api in server.js. 
+To build our API, we used Express, one of the key frameworks in the MEAN stack. We started by creating server.js, in which we require the express dependency. We also created the file api.js, inside a routes folder in a folder called server. We then require the API (which is exported in api.js) in server.js. 
 
-The whole point of this is that server.js which has all the server code that points to the server folder. Server.js also utilises POST data parsers from express. 
+The whole point of this is that server.js has all the server code that points to the server folder. Server.js also utilises POST data parsers from express. 
 
-In api.js, we export the routes used by the router required. We creat an express router here, and we implement our main get command. The router is then exported and it's used by server.js. This allows the api to respond to client requests made on the server, from which are fed through to the api. 
+In api.js, we export the routes used by the router required. To do this, we create an express router api.js and we implement our main get command. The router is then exported and it's used by server.js. This allows the API to respond to client requests made on the server, from which are fed through to the API. 
 
 Our main get method is as follows:
 
@@ -482,14 +482,14 @@ router.get('/NewsTopics', async (req, res) => {
 
 The process is as follows:
 
-- Client enters the http request, which automatically requested when they choose a particular topic (i.e., when running locally: localhost:4200/api/NewsTopics) 
+- Client enters the HTTP request, which is automatically requested when they choose a particular topic (i.e., when running locally: localhost:4200/api/NewsTopics) 
   - **localhost:4200/api** is the base path of the API endpoint
   - **/NewsTopics** is the path that corresponds to the specific method in api.js 
 - This utilises the NewsTopic mongoose model that we require from ../models, and implements the mongoose method **.find**
 - Since the result of this is a JSON string, it can be stored in a const
 - We look for any errors, and if everything is okay, we respond to that request with a JSON payload (as a string) 
 
-As we're exporting the router made in api.js, which is required in server.js, the output of this (when integrated with angular) is rendered on to the webpage.
+As we're exporting the router made in api.js, which is required in server.js, the output of this (when integrated with angular) is rendered onto the webpage.
 
 Linking up the frontend to the API is achieved by creating a data service that <i>subscribes</i> to the API and is discussed in the frontend section below.
 
