@@ -273,7 +273,7 @@ The UML class diagram shows the structure and relationships between the various 
 ### Back End : MongoDB
 #### SQL vs noSQL
 
-Although we have pre-defined our DB schema, and checked for normalisation, we made the transition from an SQL schema to noSQL (mongoDB), in order to utilise the mongoose object modelling tool.
+Although we have pre-defined our DB schema, and checked for normalisation, we made the transition from an SQL schema to noSQL (mongoDB), to utilise the mongoose object modelling tool.
 
 Initially, we ventured out designing a relational database for SQL because ...
 
@@ -290,11 +290,11 @@ We vouched for switching to noSQL for the following reasons:
   - we feel it would be easier to amend the data scheme using the mongoose object modelling tool. We feel that utilising a framework that resolves around using objects, as opposed to just pure data, would be more suited to the skills of the back-end team in this project.
   - this was supported by Purewal (Learning Web App Development, 2014), who stated that NoSQL data stores use the trade-off of storing some redundant information in "exchange for increased ease-of-use from a programming perspective". As well as this, Purewal discusses how NoSQL data stores are more useful for this reason in applications where "data reading needs to be more efficient than writing data". Since our application tends to read our mongo data a lot more than writing to mongo, we deemed this was a valid reason for utilising a NoSQL DB.
 - scalable 
-  - we read that  SQL struggles to cope with big data processing requirements (https://www.geeksforgeeks.org/sql-vs-nosql-which-one-is-better-to-use/). Although our SPA does not come close to utilising *big data*, we find that to future-proof our SPA, it would be wise to adopt a back-end which incorporates scalability.
+  - we read that  SQL struggles to cope with big data processing requirements (https://www.geeksforgeeks.org/sql-vs-nosql-which-one-is-better-to-use/). Although our SPA does not come close to utilising *big data*, we find that to future-proof our SPA, it would be wise to adopt a back-end that incorporates scalability.
 - performance / speed 
-  - although we do not necessarily avoid data duplication with noSQL, performing queries on single entities is generally faster than SQL. SQL is more suited to doing quick complicated queries on multiple entities, for example joins / sub-selects (https://www.geeksforgeeks.org/sql-vs-nosql-which-one-is-better-to-use/)
+  - although we do not necessarily avoid data duplication with NoSQL, performing queries on single entities is generally faster than SQL. SQL is more suited to doing quick complicated queries on multiple entities, for example, joins / sub-selects (https://www.geeksforgeeks.org/sql-vs-nosql-which-one-is-better-to-use/)
 
-SQL Databases work best with schema that are long established and aren't prone to change - NoSQL benefits our project as there is scope for further development. As a single page application, there is always potential for improvements and new features. Therefore using a more dynamic, scalable database with NoSQL can benefit our project in the long term.
+SQL Databases work best with schemas that are long-established and aren't prone to change - NoSQL benefits our project as there is scope for further development. As a single-page application, there is always the potential for improvements and new features. Therefore using a more dynamic, scalable database with NoSQL can benefit our project in the long term.
 
 We have left the SQL DB schema in this [folder](../Documentation/Backend/DatabaseDesign/SQLDBdevelopment) for reference, and also to show our progression to our final DB design. 
 
@@ -423,17 +423,16 @@ It's worth noting that this script is ran privately and doesn't take part in the
 
 #### Seeding
 
-The docker image we create is generally read only. Therefore, for the data to be used in our server, it needs to be stored somewhere that has read/write permissions. The issue that arises is that when someone, who doesn't have the data that we store, starts the docker container when running our application, the mount point is local to that person's machine. In other words, volume is mounted from a local machine, hence data from our own machine's will not persist. Therefore, we decided to create a script that would seed all the relevant JSON data into the dockerised mongoDB container. Thus, when the server starts, all this data can be read from this container using mongoose commands. 
+The docker image we create is generally read-only. Therefore, for the data to be used in our server, it needs to be stored somewhere that has read/write permissions. The issue that arises is that when someone, who doesn't have the data that we store, starts the docker container when running our application, the mount point is local to that person's machine. In other words, volume is mounted from a local machine, hence data from our own machines will not persist. Therefore, we decided to create a script that would seed all the relevant JSON data into the dockerised MongoDB container. Thus, when the server starts, all this data can be read from this container using mongoose commands. 
 
 We implemented seeding by issuing the three following commands in our script used to start up our application:
 
 ```bash
-docker exec -i db sh -c 'mongoimport -u <OUR_USERNAME> -p <OUR_PASSWORD> --authenticationDatabase "admin" -c options -d db --upsert --jsonArray' < blockData/optionsOutput.json
+docker exec -i db sh -c "mongoimport -u "$username" -p "$password" --authenticationDatabase admin -c options -d db --upsert --jsonArray" < blockData/optionsOutput.json
 
-docker exec -i db sh -c 'mongoimport -u <OUR_USERNAME> -p <OUR_PASSWORD> --authenticationDatabase "admin" -c newstopics -d db --upsert --jsonArray' < blockData/newsTopicsOutput.json
+docker exec -i db sh -c "mongoimport -u "$username" -p "$password" --authenticationDatabase admin -c newstopics -d db --upsert --jsonArray" < blockData/newsTopicsOutput.json
 
-docker exec -i db sh -c 'mongoimport -u <OUR_USERNAME> -p <OUR_PASSWORD> --authenticationDatabase "admin" -c quizquestions -d db --upsert --jsonArray' < blockData/quizQuestionsOutput.json
-
+docker exec -i db sh -c "mongoimport -u "$username" -p "$password" --authenticationDatabase admin -c quizquestions -d db --upsert --jsonArray" < blockData/quizQuestionsOutput.json
 ```
 
 ### Middle Tier : Express, Node, RESTful API
