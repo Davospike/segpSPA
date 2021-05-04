@@ -380,8 +380,6 @@ Our data model was designed from the idea of how the pipeline may look for a use
 
 We constructed the following UML diagram to visualise our data model:
 
-### NATH TO UPLOAD SCREENSHOT TO IMAGES FOLDER
-
 <p align="center">
   <img src="../Documentation/Images/UMLDiagram.png" alt="UML Diagram" width="100%">
 </p>
@@ -863,11 +861,6 @@ $ npm run local
 	# IS_LOCAL is the flag used to signal we want to run locally - telling server.js what 		port to use
 ```
 
-## TO DO:
-#### When done testing, can talk about continuous deployment/delivery here
-
-- Can also talk about docker logs - ie manually inserted so console.debug stuff too to get clear idea of errors 
-
 We agreed, to adhere to effective continuous integration principles, we would only make small changes when running locally - for example, bug fixes. This was core to using the local deployment of docker since we felt it best that bigger changes - for example, those that affected project structure, or a new feature - would be run in the full `docker build` version. Deploying docker in a lighter way helped improve the effectiveness of pair programming sessions.
 
 As part of the CI/CD pipeline, relevant testing at particular stages in the development cycle is important. Tests that needed to be run automatically with each build were incorporated into Docker, the use of `catch` statements in our code, and the use of the command `docker logs` proved useful. This command could be run to look a the error/warning logs for both of our docker images (MongoDB and Node) when they are running. If there is an error, and it is ambiguous which container it came from, the separation of logs helped debug the error with greater efficacy. 
@@ -875,9 +868,6 @@ As part of the CI/CD pipeline, relevant testing at particular stages in the deve
 Another advantage of our system design, with respect to testing for continuous delivery principles, was the fact that the web framework we used, Angular, builds [`spec`](../Application/AngularQuizApp/spec) files along the way. Using these spec files allowed us to conduct unit tests on our angular components towards the end of our development process. This meant that we could deploy strict unit tests at the end of the development process in the dev branch. This means to represent final tests before releasing a software version to the public. Using these unit tests meant that we could check that components were successfully being built, and generally our code didn't contain un-used components. In future development, we feel it would be useful to utilise the spec files whilst developing, or in fact even before we start writing new code. Passing these unit tests could be seen as a benchmark to pass, before submitting a pull request.
 
 By utilising continuous integration and deployment throughout the project, with an agreed-upon build process and error checking methodology, we felt our project development process ran smoothly. We also feel that the use of Docker would allow for further development in the future, either by us or others, that is easy to pick up. This is due to the reproducible build environment and persistent storage that these principles and software assemble.
-
-### Additional????
-[ADD TO] - Additional elements and components e.g. authentication. Tell us about any other aspects not covered above!
 
 - [Previous Section: System Design](SystemDesign.md)
 - [Next Section: Project Evaluation](ProjectEvaluation.md)
