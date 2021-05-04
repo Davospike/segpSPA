@@ -235,14 +235,20 @@ At the end of the sprint, the team were in agreement that we were all happy with
 | Frontend    | Selecting a quiz topic | Extracting the user's quiz topic selection to use it to load the correct quiz questions.  | Redirect user to e.g. `/quiz/brexit` via the routing module and extract topic from URL to pass into `loadQuiz()` method call. |
 
 ### Sprint 6 : Write-up & Minor Frontend Amendments (19.04.21-07.05.21)
-After successfully linking up the front and backend last sprint, the team had a minimum viable product and were ready to start focusing on writing up the project alongside attending to any remaining backlog/formatting on the code base and website. The team also undertook a final round of user feedback in order to ensure any quirks/bugs were addressed and to see if there were any finishing touches that could be made.
+After successfully linking up the front and backend last sprint, the team had a minimum viable product and were ready to start focusing on writing up the project alongside attending to any minor amendments required for on the code base and website. Further, the team also undertook a final round of user feedback, allowing the tester to directly interact with the website, and added some functional and unit testing to increase the robustness of the website.
 
-Backlog of improvements at start of sprint:
-- Add line chart onto fake news stats, plus any other stats ideas that arose.
+Key goals:
 - Code base tidy up; removing unused code and add comments.
 - Minor frontend formatting.
+- Implement Jasmin automated unit testing for the front-end.
+- Add functional testing user journeys.
+- Finish write-up, with a focus on conclusion and evaluation.
 
-By the end of the sprint... [ADD TO]
+Throughout the sprint, ad-hoc code clean occurred and minor formatting changes were carried as we regularly went through reviewing content. The front-end team also met, on the back of a workshop on testing, to implement the automated testing framework for the JavaScript aspects of the code. We were confident in the code bases stability and robustness, but felt it was still a good idea to add a few unit tests to help highlight if some obvious errors had occurred. Additionally, whilst unit testing is one form, the team also came together to produce some functional testing in the form of user journeys, outlining what should happen if you were to follow a set of instructions. By adding this, if anyone new to the project wasn't sure what was meant to happen, by following the user journeys, they could ascertain if things were working correctly.  
+
+Further, the team also came together to discuss the final round of user testing. On the back of this, some minor bugs and quirks were highlighted and suggestions for improvement given. We decided to address these in the future work section of the evaluation.
+
+By the end of the sprint the team had fully written up the project, just in time for the deadline. After having spent such a long time working on the project, it was a relief to see the end product in a good state, backed up by positive feedback, and the whole process documented in detail. Just before the hand in, the team also got together to reflect on the past few months and agreed it had been a blast. 
 
 ## MEAN Stack System Implementation
 
@@ -831,7 +837,7 @@ Resolving this path issue was the key to full stack deployment through Docker:
 app.use(express.static(path.join(__dirname, 'dist/ng6-quiz')));
 ```
 
-##### Docker Volume Fix
+#### Docker Volume Fix
 
 Another docker issue, encountered by the backend, was that since Docker mounts volume locally, we needed somewhere to store the data and then import this into MongoDB. This was more of a lesson in how Docker works, but the result - *creating an `insertDataScript.ts` to get JSON files for our models, and then importing them in `deploy.sh`* - lead to a situation where the correct data would be in the mongoDB docker container every time we run `deploy.sh`. Furthermore, due to the internals of Docker, the libraries and dependencies used for mongoDB will be the same for anyone who starts our containers. This aided continuous integration and deployment as it rules out any errors that may have occurred due to discrepancies across mongoDB software versions. 
 
