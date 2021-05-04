@@ -232,16 +232,7 @@ Our first round of user feedback came early on, where we had users view our [pap
 
 The second round of feedback incorporated more specific elements of our development and design. Beginning with the colour scheme, a big issue in our last set of feedback, there was now a majority (43.75%) of people liking the colours in comparison with the disagree-ers (37.50%). We quickly realised that colour scheme is painfully subjective so as long as this colour scheme was in the right majority and gave off the right mood of the topic, it would be an acceptable choice. Our overall mix of *serious and play* was semi-proved over this feedback also with agreeing majorities in "This quiz looks fun" and "I would like to take this quiz". We were however pushed to include more information on what fake news is and the damage it can cause, leading to more research and facts being made about fake news. Finally, we were able to refine some aethetics of our visual themes such as logos to include on the page with users picking one logo over the other. The second round was overall more positive than the first.
 
-## **[ADD FINAL ROUND OF USER TESTING]**
-
-## System Architecture & Design
-[ADD TO]
-
-### Class Diagram
-[ADD TO]
-
-### Sequence Flow Diagram
-[ADD TO]
+## ADD FINAL ROUND OF USER TESTING
 
 - [Next Section: Project Implementation](SystemImplementation.md)
 - [Back to Top](#table-of-contents)
