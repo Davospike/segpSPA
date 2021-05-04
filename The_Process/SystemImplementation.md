@@ -46,15 +46,15 @@ It is important to note that agile working is not the only way of working we cou
 We also had to adapt our communication channels in response to the pandemic.  In addition to our weekly stand-ups, we were in constant communication through the instant messaging platform Discord, and video calls on Teams.
 
 ### GitHub Continuous Integration
-In order to implement continuous integration and deployment within our project, we decided to follow some of the [DevOps Best Practices](https://www.atlassian.com/devops/what-is-devops/devops-best-practices), whereby developers make small frequent changes to a central repository, and test them. Imperative to aligning with these practices and our agile framework, is a source code version control system. We used GitHub as it meant any conflicts/errors could be managed, and our progress was being saved as we went; useful for if something broke along the way. 
+To implement continuous integration and deployment within our project, we decided to follow some of the [DevOps Best Practices](https://www.atlassian.com/devops/what-is-devops/devops-best-practices), whereby developers make small frequent changes to a central repository, and test them. Imperative to aligning with these practices and our agile framework, is a source code version control system. We used GitHub as it meant any conflicts/errors could be managed, and our progress was being saved as we went; useful for if something broke along the way. 
 
-Our reasons for using Git and GitHub, with reference to the Agile software development approach, are best outlined below.
+Our reasons for using Git and GitHub, concenring the Agile software development approach, are best outlined below.
 
 We needed developers in the team to tackle tasks individually (alongside some pair programming). This allows for specialisation across team members, so they can focus on specific features in efficient manour. Key to this was organising *who* builds *what*. Discussions of this sort took place in team meetings, and are generally outlined in the meeting logs (front end and back end). GitHub's utilisation of **branches** effectively allowed us to adopt this methodology in our approach.
 
 #### Branching
 
-Initially, due to inexperience using the GitHub version control system, our branch network was disorganised. We started out by commiting initial project documents to the same branch, master (by default). This resulted in many merge conflicts. It was clear we needed to outline how to design a better system for collaboration. We then decided to make individual branches, that corresponded to each team member. Thus, our branch structure looked like:
+Initially, due to inexperience using the GitHub version control system, our branch network was disorganised. We started by commiting initial project documents to the same branch, master (by default). This resulted in many merge conflicts. It was clear we needed to outline how to design a better system for collaboration. We then decided to make individual branches, that corresponded to each team member. Thus, our branch structure looked like:
 
 ```
 master
@@ -68,7 +68,7 @@ dan
 
 From this point out, we all pushed to our respective branches, and generally practiced merging into master.
 
-Our final branch structure did not deviate too much from this, however, we needed to implement a **dev** branch. The reason for this, was that we wanted to have a separate branch in which we could implement tests that would mimic tests conducted by professional teams, just before deployment to live servers. This became our master branch.
+Our final branch structure did not deviate too much from this. Initially, we did not have a **dev** branch, but soon enough we created one. The reason for this, was that we wanted to have a separate branch in which we could implement tests that would mimic tests conducted by professional teams, just before deployment to live servers.
 
 We then agreed on a general workflow, which was formulated in Teams chats. This workflow looked like:
 
@@ -79,7 +79,7 @@ We then agreed on a general workflow, which was formulated in Teams chats. This 
 4. Merge your changes into dev.
 ```
 
-There are some points that were revisited throughout this process:
+Some points were revisited throughout this process:
 
 - The second step was generally implemented by running the web application, and checking for error messages in logs. We can therefore claim that continuous integration has been met to some standard.
 - The third step was one that we all stuck to. Throughout our commit history, our messages have been insightful and have provided a clear message to other team members. This is discussed in **good practice example**, below.
@@ -93,13 +93,13 @@ Here is an example of the idealised git workflow in action:
 
 #### Branch Naming
 
-The naming of our branches felt suitable for our application, as opposed to a branch for each feature, since our team was generally small, hence everyone would be making contributions across features. Having the branches labelled by name allowed us to speak with individual developers about commits they have made, if they had causes bugs. This proved particularly useful when merge commits occurred in dev, as the team members that were involved in the merge commit could easliy consolidate on a solution - when removing conflicting text in a file for example.
+The naming of our branches felt suitable for our application, as opposed to a branch for each feature, since our team was generally small, hence everyone would be making multiple contributions across features. Having the branches labelled by name allowed us to speak with individual developers about commits they have made, if they had causes bugs. This proved particularly useful when merge commits occurred in dev, as the team members that were involved in the merge commit could easliy consolidate on a solution - when removing conflicting text in a file for example.
 
 #### Pull Requests
 
 As outlined above, pull requests were not commonplace for commits and merges into dev. This is a particularly useful practice in agile for teams, since other developers can discuss a particular commit, and decide whether it will merge with the current repository in a useful way. It would have been a good idea to implement this feature more frequently in our development process. Another reason we felt this was not always necessary, is that our team of 5 was split between front end and back end, and although branches were for individual developers, most tasks were done during pair programming sessions. Henceforth, the approval from other team members would be incorporated in the code.
 
-One example when a pull request was necessary, and we decided to implement it. This commit consisted of a new page implemented in our single page application, this was the **About** page. We all reviewed this commit and approved it individually. Team members that worked on the front end generally looked at the implementation in code. Back end team members were looking at the content included in the new page. This pull request was labelled "**Stats page change**".
+There were a few commits in which a pull request was necessary, and we decided to implement it. A particular commit consisted of a new page implemented in our single page application, this was the **About** page. We all reviewed this commit and approved it individually. Team members that worked on the front end generally looked at the implementation in code. Back end team members were looking at the content included in the new page. This pull request was labelled "**Stats page change**".
 
 #### Good Practice Example
 
