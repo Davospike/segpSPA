@@ -89,7 +89,9 @@ Generally from the outset, there were some issues. We had merge conflicts, as ex
 
 Here is an example of the idealised git workflow in action:
 
-![Screenshot 2021-04-27 at 15.24.12](/Users/nathantaylor/Library/Application Support/typora-user-images/Screenshot 2021-04-27 at 15.24.12.png)
+<p align="center">
+  <img src="../Documentation/Images/GitWorkflowImage.png" alt="Git Workflow Example" width="100%">
+</p>
 
 #### Branch Naming
 
@@ -374,7 +376,9 @@ We constructed the following UML diagram to visualise our data model:
 
 ### NATH TO UPLOAD SCREENSHOT TO IMAGES FOLDER
 
-![Screenshot 2021-04-21 at 15.16.39](/Users/nathantaylor/Library/Application Support/typora-user-images/Screenshot 2021-04-21 at 15.16.39.png)
+<p align="center">
+  <img src="../Documentation/Images/UMLDiagram.png" alt="UML Diagram" width="100%">
+</p>
 
 From this, we can talk about the relationships we deemed necessary for our entities. 
 
@@ -386,7 +390,9 @@ Following the construction of our UML diagram, we decided to make a spreadsheet 
 
 ### NATH TO UPLOAD SCREENSHOT TO IMAGES FOLDER
 
-![Screenshot 2021-04-21 at 15.51.03](/Users/nathantaylor/Library/Application Support/typora-user-images/Screenshot 2021-04-21 at 15.51.03.png)
+<p align="center">
+  <img src="../Documentation/Images/DatabaseSpreadsheetExample.png" alt="Database Spreadsheet Prototype" width="100%">
+</p>
 
 Throughout this data model design process, we adhered to conform to good data model design practices. Our previous model, which utilised SQL and its best practices (normalisation), was used to aid the design of our current NoSQL model. Via this, we achieved a data model that did not unnecessarily repeat data. 
 
