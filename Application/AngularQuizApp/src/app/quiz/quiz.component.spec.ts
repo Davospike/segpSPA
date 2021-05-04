@@ -7,7 +7,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { QuizComponent } from './quiz.component';
 import {RouterTestingModule} from '@angular/router/testing';
-import {Option} from "../models";
+import {Option} from '../models';
 
 describe('QuizComponent', () => {
   let component: QuizComponent;
@@ -84,7 +84,6 @@ describe('QuizComponent', () => {
     expect(component.onSelect).toHaveBeenCalled();
   }));
 
-<<<<<<< HEAD
   it('should submit quiz answers', fakeAsync(() => {
     spyOn(component, 'onSubmit');
     const submitLink = fixture.debugElement.query(By.css('#submit'));
@@ -93,8 +92,6 @@ describe('QuizComponent', () => {
     expect(component.onSubmit).toHaveBeenCalled();
   }));
 
-=======
->>>>>>> jack
   it('should go to next question', fakeAsync(() => {
     spyOn(component, 'goTo');
     const goToLink = fixture.debugElement.query(By.css('#goto'));

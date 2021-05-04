@@ -40,8 +40,7 @@ Also on your Github repository, you must write a front-page document (readme.md)
 - Design Process and Early prototyping and ideation (including mood boards and paper prototyping)
   - **Paper prototype**
   - **Mood boards**
-- Identification of interacting users and broader stakeholders.
-  - **Backdate Stakeholders** - see stakeholders section here: https://github.com/Team-Jag/Do-or-die-fitness-tracker/blob/develop/Portfolio/SystemDesign.md#end-user
+- Identification of interacting users and broader stakeholders
 - UX approach – design heuristics/approach, design methods (design fiction / heuristics)
   - **Miro board**
   - **Matrix in teams**
