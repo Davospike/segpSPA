@@ -23,7 +23,7 @@ Thus, we not only aimed to create a site that would educate people about fake ne
 
 The crux of the site is a quiz with various topics that have been popular targets for fake news. Users select a topic and are presented with several questions and articles, they are then tasked with identifying the articles as real news, or fake news. Upon answering all the questions and completing the quiz, the user is presented with their final score and they are offered a chance to visit the site where the article originated.
 
-Our project objectives were established early on in our [group scoping discussion](https://github.com/Davospike/segpSPA/blob/dan/Documentation/Scoping/GroupScopingDiscussion.md) and were set out as follows:
+Our project objectives were established early on in our [group scoping discussion](https://github.com/Davospike/segpSPA/blob/dev/Documentation/Scoping/GroupScopingDiscussion.md) and were set out as follows:
 
 **Primary Objectives:**
 
@@ -40,8 +40,6 @@ Our project objectives were established early on in our [group scoping discussio
 - Create a login function for the site so users are encouraged to revisit and compare previous scores
 
 - Create a function that allows users to share their score via social media
-
-[ADD VIDEO]
 
 ## Background & Motivation
 Fake news is a false narrative that is published and promoted as if it were true. Historically, fake news was usually propaganda put out by those in power to promote a certain belief or support a certain position, even if it was completely false. Social media has now created an environment where anyone with an agenda can publish falsehoods as if they were truths. People can be paid to post fake news on behalf of someone else or automated programs, often called bots, can publish auto-generated fake news.
