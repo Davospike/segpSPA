@@ -1,5 +1,5 @@
 <h1 align="center"> Would They Lie to You? </h1>
-<p align="center"><b> Think you can spot fake news? Get woke. </p></b>
+<p align="center"><b> Think you can spot fake news? Get woke. </b></p>
 
 <p align="center"><img src="Documentation/Images/FakeNews.png"width=80%>
 </p>
@@ -84,17 +84,22 @@ In order to improve, evaluation is critical. Key areas:
 - Reflection on the project and our working practices
 - Discussion of further work
 
-### 4. [Deploying The SPA](Example_Code/AngularQuizApp)
-Our website ecosystem is contained the AngularQuizApp folder in the Example_Code directory. To run and deploy the application in Docker:
+### 4. [Deploying The SPA](Application/AngularQuizApp)
+Our website ecosystem is contained the AngularQuizApp folder in the Application directory. To run and deploy the application in Docker:
 
 - Run the `deploy.sh` script or
 - `docker-compose up --build -d` on your command line
 
 ### 5. [Prototypes, notes et. al](Documentation)
 Here you can view our initial paper prototype and latest wireframe representations as well as being able to view lots of our early ideas, notes, logs and images.
+
 ## Built with the MEAN Stack
 
 - **M**ongoDB document-oriented database program
 - **E**xpress backend web application framework
 - **A**ngular frontend web application framework
 - **N**ode.js backend JS runtime environment
+
+## Acknowledgments
+
+The whole team wants to extend a huge thank you to the entire teaching staff for their time, care and help along the way for this project.

@@ -156,8 +156,6 @@ Feedback from the user acceptance testing showed some flaws/suggested potential 
 
 #### Overall
 
-### PROBS NEEDS IMPROVEMENT - BIT SHIT AT THE MOMENT (FROM HARRY (dw i wrote this so far so can say that lol))
-
 If we think about overall success as the extent to which the website achieves the primary and secondary objectives set out at the start of the project, we believe we can deem the project to be mostly successful.
 
 Towards the start of the project, we set out key objectives to strive towards achieving. These objectives were highlighted in the [System Design](SystemDesign.md) section. Looking at the primary objectives first:
@@ -166,8 +164,7 @@ Towards the start of the project, we set out key objectives to strive towards ac
 - Use the webpage to inform users about fake news; what it is, its history, the dangers of it, and how to recognise it
 - Create a static database that holds a handpicked selection of news articles that are identified as being fact or fiction
 
-We believe that we completed all three with good success. Feedback from the user acceptance testing showed that the quiz was easy to do and engaging. The website has an in-depth page on the history of fake news, what it is and how to handle it. Feedback also suggested that testers found that after engaging with the website, they felt more comfortable with their ability to recognise and deal with fake news, thus implying that the page does what it set out to do. The database went through a solid design process and successfully holds the various quiz topic question sets. 
-###[VINI/NATH TO ADD on DB design]
+We believe that we completed all three with good success. Feedback from the user acceptance testing showed that the quiz was easy to do and engaging. The website has an in-depth page on the history of fake news, what it is and how to handle it. Feedback also suggested that testers found that after engaging with the website, they felt more comfortable with their ability to recognise and deal with fake news, thus implying that the page does what it set out to do. The database went through a solid design process and successfully holds the various quiz topic question sets.
 
 Whilst the primary objectives were a good indicator to overall success at the base level, further secondary objectives were set in order to stretch and challenge ourselves during the project. These were:
 
@@ -258,33 +255,22 @@ Furthermore, in order to improve our database we aim to transition from a **stat
 
 The final element that we would like to improve for our app is the way that API functions. Firstly we would want to implement multiple News Topic `get` methods (for each topic) rather than sending one JSON payload for all our data. In order to implement some form of scalability into our project, this is an important step; as our database grows, this will be crucial as system performance could be comprimised by heavier network requests from our API. 
 
-We also aim to create bi-directional communication between the frontend and the backend via our API. We were unable to achieve this with the `num_attempted` and `num_correct` fieldsin our schemas. After implementing this correctly, we could provide users with relative performance (in comparison with other users) on particular quiz questions. It would also be useful to collect more data about specific topics for fake news research.
+We also aim to create bi-directional communication between the frontend and the backend via our API. We were unable to achieve this with the `num_attempted` and `num_correct` fields in our schemas. After implementing this correctly, we could provide users with relative performance (in comparison with other users) on particular quiz questions. It would also be useful to collect more data about specific topics for fake news research. This data collection could also be combined with the addition of user accounts. Over time, with constantly updated and dynamic quiz datasets, users could track and record their score history on their personal accounts, allowing for better comparison and competition between fake news enthusiasts. Further, it could be better place to fulfil the University Professor user story by increasing the functionality as an educational service.
+
+#### Frontend
+
+Throughout the development process, the frontend user experience was driven by the ongoing user feedback that we ran, taking onboard feedback as we went to influence our design choices. Our final round of user feedback was able to highlight some points for further work. In hindsight, a few areas of further work were quite obvious, e.g. presenting the total score at the end of the quiz, as opposed to just stating whether individual questions were correct, and a table of contents for the reading heavy About Fake News page. Whilst there are no doubt plenty of potential UX improvements that could be implemented over time with more feedback being taken, we have also identified some more substantial areas.
+
+Firstly, we have identified more diverse questions as one area of improvement. Whilst real or fake provides a to the point quiz experience, introducing datasets and questions which allow the users to guess/workout to what degree a news article is real or fake. As mentioned above, we identified datasets at the start of our project that did indeed categorise news as: bias, conspiracy, half true etc. Adding additional options to the frontend quiz experience would encourage returnability and keep the experience fresh and engaging.
+
+Second, the team had previously discussed the idea of a more playful fake news game at the start of the project, during the ideation stage, in the form of a graphical or text based fake news RPG. As further work goes, this would be a more substantial piece of work and the limitations of Angular for games would probably mean that it would be better placed as a simple text adventure game. For this, the ideas was that it would be more playful and engaging if the user played through a text based game as a journalist trying to make their break into the industry. The user would be able to make decisions on whether they "wrote" real or fakes news throughout their career with each decision having consequences and highlighting the dangers of fake news.
+
+Finally, the team thought that adding more interactive educational aspects would serve the project brief well. Rather than just educating the user through quizzes and a information page, the information page could be refactored to present the information in a more interactive manner. Similar to educational picture books, attention grabbing headlines or images could be shown on the page, drawing the user to interact and reveal fake news information "under" the headline/image. Further, for the history of fake news, the team thought that incorporating an interactive dyanmic timeline, highlighting significant events/news/tweets, through time, whilst also presenting information about the origins and life of fake news, would have been an interesting aspect.
+
+### Fin
+
+Thank you for taking the time to read through our project report. We hope you enjoyed it and learnt something new about fake news along the way.
 
 - [Previous Section: System Implementation](SystemImplementation.md)
 - [Back to Top](#table-of-contents)
 - [Back to Home](../README.md)
-
-
-# Mark Scheme Relevant Topics:
-
-## Evaluatio 
-
-- Details of how you evaluated your designs (techniques used & awareness of their limitations). Description of techniques suitable for your particular design. A timeline of evaluation of your design.
-- Unit testing / Functional testing.
-- User acceptance testing. Evaluation of your design with users – methods undertaken, findings, implications.
-- Refer to the detchment between the frontend and backend
-  - Some features could not be completed 
-    - due to lack of javascript knowledge and a proper synergy between the front and back end structures
-  - Next time it would be better to communicate more and make the front end frame work more compatible with the back end **and vice versa**.
-
-## Conclusion
-- Reflect on the working practices of your group, how well they did or did not work, e.g, management of issues, communication, Agile (etc).
-- Reflective discussion of the success of the project. How well did your project fulfil the brief? Were all of your own objectives met
-  - **not being able to implement statistics (num_correct)**
-- This is a chance to reflect on how coronavirus has affected your project (remote working practices etc)
-  - **difficulties in brainstorming, pair programming technologies, **
-- Discussion of Social and Ethical implications of your work.
-  - **ethical framework**
-- Discussion of future work (in terms of design, development and evaluation)
-  - **more fake news, continuous pulling of data, our own integrate fake news detection model, user accounts, different data formats ie using dataset DB in archive (and different types of quizzes), mobile app, expanding answers beyond true/false**
-  - can put here that if were to do a similar project / extend this one, would implement use of jasmine / karma tools in early stages of the process, to get live error checking etc
