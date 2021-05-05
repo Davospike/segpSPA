@@ -17,15 +17,15 @@
    - [User Feedback & Questionnaires](#user-feedback--questionnaires)
 
 ## Introduction
-Fake news consists of false stories that appear to be news, which are spread on the internet and social media. In the last five years there has been an explosion in the amount of fake news being spread and due to much of it being believable, it has become more difficult for people to detect. Whilst there are numerous sites explaining the danger of fake news and how to spot it, there are fewer that provide a way for people to check whether they are susceptible to it, and even fewer that combine the two aims.
+Fake news consists of false stories that appear to be news, which are spread on the internet and social media. In the last five years there has been an explosion in the amount of fake news being spread and due to much of it being believable, it has become more difficult for people to detect. Whilst there are numerous sites explaining the danger of fake news and how to spot it, there are fewer that provide a way for people to check whether they are susceptible to it, and even fewer that combine the two.
 
-Thus, we not only aimed to create a site that would educate people about fake news in terms of what it is, its history, the dangers, and how to recognise it, but one that would also allow users to test whether they can detect fake news based on an article presented to them. 
+Thus, we not only aimed to create a site that would educate people about fake news in terms of what it is, its history, the dangers, and how to recognise it, but one that would also allow users to test whether they can detect fake news based on an article presented to them, in a fun way.
 
 The crux of the site is a quiz with various topics that have been popular targets for fake news. Users select a topic and are presented with several questions and articles, they are then tasked with identifying the articles as real news, or fake news. Upon answering all the questions and completing the quiz, the user is presented with their final score and they are offered a chance to visit the site where the article originated.
 
 Our project objectives were established early on in our [group scoping discussion](https://github.com/Davospike/segpSPA/blob/dan/Documentation/Scoping/GroupScopingDiscussion.md) and were set out as follows:
 
-#### Primary Objectives:
+**Primary Objectives:**
 
 - Develop an educational quiz, tasking users with identifying fake news
 
@@ -33,13 +33,15 @@ Our project objectives were established early on in our [group scoping discussio
 
 - Create a static database that holds a handpicked selection of news articles that are identified as being fact or fiction
 
-#### Secondary Objectives:
+**Secondary Objectives:**
 
 - Collect and store user data, such as their quiz score and where they obtain their news from
 
 - Create a login function for the site so users are encouraged to revisit and compare previous scores
 
 - Create a function that allows users to share their score via social media
+
+[ADD VIDEO]
 
 ## Background & Motivation
 Fake news is a false narrative that is published and promoted as if it were true. Historically, fake news was usually propaganda put out by those in power to promote a certain belief or support a certain position, even if it was completely false. Social media has now created an environment where anyone with an agenda can publish falsehoods as if they were truths. People can be paid to post fake news on behalf of someone else or automated programs, often called bots, can publish auto-generated fake news.
@@ -55,10 +57,34 @@ Some major consequences of the spread of disinformation is the rise of fear, hat
 
 The spread of pseudoscience through fake news can have an immense impact on people's lives and can exacerbate disasters. One such example arose during the COVID-19 pandemic, which has been the target of an immense amount of fake news, so much that the head of WHO said "We're not just fighting an epidemic; we're fighting an infodemic" ([Brennen & Nielsen, 2020](https://reutersinstitute.politics.ox.ac.uk/risj-review/covid-19-has-intensified-concerns-about-misinformation-heres-what-our-past-research)). Due to fake news, some people believe that the effects of the virus, along with the death rates caused by it, have been inflated. This led to many believing that there was no reason to adhere to social distancing or lockdown measures which were intended to reduce the impact of the virus, ultimately leading to a higher death toll ([Lynas, 2020](https://allianceforscience.cornell.edu/blog/2020/04/covid-top-10-current-conspiracy-theories/)). Disinformation surrounding climate change can have a negative impact on environmental policies. Bob Ward argues that the failure of the mainstream press in ensuring only the most accurate information is published has numerous consequences, such as harming the public interest and placing people at greater risk from the impact of climate change ([Ward, 2018](https://www.lse.ac.uk/GranthamInstitute/news/another-failure-to-tackle-fake-news-about-climate-change/)). 
 
-Not only can fake news compromise public economic growth, but also invidiuals' benefits. One major target of disinformation  has been 5G, with Reuters claiming that there have been arson attacks and assaults on 5G masts in at least 10 European countries ([Chell, 2020](https://www.reuters.com/article/us-eu-telecoms-5g/combat-5g-covid-19-fake-news-urges-europe-idUSKBN2392N8)) as people believe they spread coronavirus. This has led to need for the World Health Organisation to publish articles that contradict fake news, with the WHO stating that "viruses cannot travel on radio waves" ([WHO, 2021](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters)). Fake news also impacts businesses and consumers, as fake reviews can and do increase confusion and distrust in the business owner and negatively affect the purchasing process ([Valant, 2015](https://www.eesc.europa.eu/resources/docs/online-consumer-reviews---the-case-of-misleading-or-fake-reviews.pdf); [Fornaciari et al., 2014](https://core.ac.uk/download/pdf/74372819.pdf))
+Not only can fake news compromise public economic growth, but also invidiuals' benefits. One major target of disinformation  has been 5G, with Reuters claiming that there have been arson attacks and assaults on 5G masts in at least 10 European countries ([Chell, 2020](https://www.reuters.com/article/us-eu-telecoms-5g/combat-5g-covid-19-fake-news-urges-europe-idUSKBN2392N8)) as people believe they spread coronavirus. This has led to need for the World Health Organisation to publish articles that contradict fake news, with the WHO stating that "viruses cannot travel on radio waves" ([WHO, 2021](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters)). Fake news also impacts businesses and consumers, as fake reviews can and do increase confusion and distrust in the business owner and negatively affect the purchasing process ([Valant, 2015](https://www.eesc.europa.eu/resources/docs/online-consumer-reviews---the-case-of-misleading-or-fake-reviews.pdf); [Fornaciari et al., 2014](https://core.ac.uk/download/pdf/74372819.pdf)) 
+
 
 ### Current State of Industry
-[ADD TO] - Dan
+As stated previously, the motivation for this project was to create a site that would combine two elements; education and enjoyment. Whilst there are many sites out there that do offer information on what fake news is and its dangers, and those that test a users ability tohave quizzes on spotting fake news, there are few that combine the two. 
+
+#### [Snopes](https://www.snopes.com/) and [Full Fact](https://fullfact.org/):
+
+#### Summary: 
+Snopes and Full Fact are probably the most well known fact-checking websites in the world and they do well at educating and informing users. Both provide a wealth of information on validity surrounding current affairs and internet rumours, with Snopes giving particular focus to the US, whereas Full Fact focusses on the UK. Both of their fact-checking methods and reliability are paramount, with their judgements backed up by numerous sources.  
+
+#### Weaknesses:
+Despite their strengths, the sites are text heavy, and it can be difficult to navigate and find specific articles or information. There is also the distinct lack of a fun element, such as a way for the user to test the knowledge imparted on them, in both, and the short engagement time, at just 2 minutes 22 seconds for Snopes ([Alexa.com, 2020](https://www.alexa.com/siteinfo/snopes.com)) and 2 minutes 3 seconds for Full Fact ([Alexa.com, 2020](https://www.alexa.com/siteinfo/fullfact.org)) could be reflective of this. One improvement that Full Fact does offer over Snopes is providing information on how to spot mis/disinformation and how to combat it.
+
+#### How we solve it:
+
+Despite both Snopes and Full Fact providing fact-checking services and some information on fake news, "Would They Lie to You?" aims to encourage engagement and thus further education by providing users with a playful element. By building a quiz we are allowing the the user to test the knowledge we are attempting to impart on on them. In order to appeal to a wider audience, we have created a series of specific and general topics that have been targets of fake news. This could encourage engagement with the site, and judging from sites such as [Gapminder](https://www.gapminder.org/) which has an engagement time of ~5 minutes ([Alexa.com](https://www.alexa.com/siteinfo/gapminder.org)) we could expect an engagement ~2x that of Snopes and Full Fact. 
+
+### [BBC](https://www.bbc.co.uk/cbbc/quizzes/real-or-fake-news-quiz)
+
+#### Summary: 
+If you were to enter "fake news quiz" into google, this site would be the first result. It's created by the BBC and is a part of their CBBC section. It is a quiz formed of 5 questions that presents a news headline and asks the user whether it is real or fake. 
+
+#### Weaknesses:
+This BBC quiz only has the one general topic and just 5 questions and each time the quiz is run the same questions appear in the same order. This is most likely an intentional design choice as the page is directed at children, however therein exists another problem with the site, it is too playful; there are suggestions for other quizzes in the sidebar such as "Which dog are you?". Also, there is no prior information on anything to do with fake news such as what it is or how to recognise it, with users simply placed directly into the quiz. 
+
+#### How we solve it:
+When designing our project we knew that we wanted to have a varied selection of topics for users to choose from, each with a substantial amount of questions so that they could truly test their knowledge. We have therefore doubled the amount of questions and randomised the order each time the quiz is run. With future work we would endeavour to have a larger pool of questions with those in the quiz being selected at random. We also saw fake news as an ever present issue and believed it deserves to be treated more seriously and was something that people should learn about in depth. This is why we elected to include key information about fake news on the site landing page and a more in depth look at it on another page, so that users can educate themselves and <i>then</i> go on to test their knowledge. 
 
 ### Why Does Fake News Education Matter
 The spread of fake news should be a worry for all and people should take an active role in teaching themselves how to recognise it. In one studiy it was found that humans are only 4% better than chance (50%) at distinguishing fact from fiction ([Bond & DePaulo, 2006](https://journals.sagepub.com/doi/pdf/10.1207/s15327957pspr1003_2)). It is important to try and increase those chances so people are less susceptible to fake news and the best way to achieve this is to educate. 
