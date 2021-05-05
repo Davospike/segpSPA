@@ -417,7 +417,7 @@ We also followed [this guide](https://developer.mongodb.com/article/mongodb-sche
 - our data model is clearly one that uses an embedded design. This allows us to retrieve the necessary data we need for a larger data entity, like a news topic, with a single query. We also found it would be easy to access individual elements within this data type.
 - rule number 5 (*"You want to structure your data to match the ways that your application queries and updates it."*) in this guide also solidified our choice in catering out design to our application's data access patterns.
 
-With respect to constructing our mongoose models, to be used when instantiating and loading collections, we created these [three models](../Example_Code/AngularQuizApp/models) that correspond to our three entities. These will be the three collections in our MongoDB database. We start by creating a mongoose schema, which defines all of the data entries for each collection. We then export these as a mongoose model. This is so they can be used with mongoose commands, for example finding a particular object in our database.
+With respect to constructing our mongoose models, to be used when instantiating and loading collections, we created these [three models](../Application/AngularQuizApp/models) that correspond to our three entities. These will be the three collections in our MongoDB database. We start by creating a mongoose schema, which defines all of the data entries for each collection. We then export these as a mongoose model. This is so they can be used with mongoose commands, for example finding a particular object in our database.
 
 Note, in our quiz_question model, we also export the schema. This is to fix an issue we had in which embedded documents were being referenced by value, as opposed to referencing the actual objects themselves.
 
@@ -437,7 +437,7 @@ The mechanism we used to get data ready for use in our application consisted of 
 
 #### Creating a mongoDB database
 
-The first step in allowing us to test our backend structure was to get the data we gathered into a MongoDB client to test how effective it was. We decided that rather than inserting our data within the MongoDB shell, we will aim to run a Javascript 'script' that would insert all this data using Mongoose commands - appropriately named [insertDataScript.js](../Example_Code/AngularQuizApp/insertDataScript.js). In short, the script injects into a MongoDB client (using a URL specified in args[0]), our data.
+The first step in allowing us to test our backend structure was to get the data we gathered into a MongoDB client to test how effective it was. We decided that rather than inserting our data within the MongoDB shell, we will aim to run a Javascript 'script' that would insert all this data using Mongoose commands - appropriately named [insertDataScript.js](../Application/AngularQuizApp/insertDataScript.js). In short, the script injects into a MongoDB client (using a URL specified in args[0]), our data.
 
 This script underwent many changes depending on our evolving decisions regarding backend structure but this final script allows us to unload our data into MongoDB ready for use. A reason why we decided to use import our data in this way because it makes it easier to add more data at a later date; i.e, the structure is there and it is set out into `createOption`, `createNewsTopic` and `createQuizQuestion` methods (amongst others). A simple '*copy + paste*' and '*fill in the blanks*' allows us to add more data whenever we need to. 
 
@@ -449,7 +449,7 @@ const NewsTopic = require('./models/news_topic');
 const Option = require('./models/options');
 ```
 
-It's worth noting that this script is ran privately and doesn't take part in the deployment of the docker container with [deploy.sh](../Example_Code/AngularQuizApp/deploy.sh). The script allowed us to export from a local MongoDB client into [three JSON files](../Example_Code/AngularQuizApp/blockData) that were prepared for seeding.
+It's worth noting that this script is ran privately and doesn't take part in the deployment of the docker container with [deploy.sh](../Application/AngularQuizApp/deploy.sh). The script allowed us to export from a local MongoDB client into [three JSON files](../Application/AngularQuizApp/blockData) that were prepared for seeding.
 
 #### Seeding
 
