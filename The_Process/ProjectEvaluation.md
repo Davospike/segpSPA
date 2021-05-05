@@ -47,7 +47,7 @@ In order to verify that our quiz was working exactly in the way that we intended
 Our quiz is central to our application, and we need to be able to ensure at all times that this user journey functions properly; the brief for the project was to develop a single page application that is based around the subject of “serious play”. As our quiz represents the playful aspect of our application, first and foremost, we must be able to rely on our software to do its job in rendering the quiz on a page and to update the page with new questions in response to a click of buttons. As such, we wrote the following test case to correspond to this user story:
 
 “As a user, I want to be able to move through different quiz questions, select my appropriate responses and submit answers to my quiz at the end.”
- 
+
 ##### 1. Test a user can select next question
 
 - Start on a questionnaire page
@@ -124,7 +124,13 @@ As a team, we believe that all the feedback could be implemented to improve the 
 
 ### Reflection on Working Practices
 
+As mentioned in the System Implementation, we used an agile methodology when developing this application, sticking as closely as possible to the agile manifesto. Due to the nature of the write up of this whole project taking place when the application was in the final throngs of development, albeit from copious notes, agendas, reports on meetings etc., we have already reflected on our decision to follow agile principles to a large extent within that section. However, it cannot be harmful to briefly reiterate here the success of our working methods with some further reflection on how we can improve for the future. 
 
+The core practices that we took on board during this project concern constant communication, reflection of our work and continuous delivery of our project. These three working methods are all referenced within the twelve principles of agile, and we believe that they served to enable collaboration to flourish within our team, maintain a high level of motivation among individuals within the team, deliver working software frequently, solve issues quickly and ultimately deliver a project that we take pride in. If there was one working method that we would prize above the rest it would have to be constant communication. Working together was essential for this project and it provided an environment for us all to deliver on an individual level also. 
+
+Upon reflection, given the circumstances of a global pandemic we are thankful for the technology platforms that enabled us to adapt our communication channels. As team members, we have not all met each other in person, indeed many of us have been collaborating on this project from different cities across the UK. Our Monday morning stand-ups set the precedent for communication every week, which continued after our lectures and whenever we saw fit. Indeed, as this project drew to a close, we started to meet every morning to ensure that all our targets were being achieved and so we could reflect more deeply on our project. This would not have been possible without modern technology platforms such as Discord and Teams and it shows that in our modern world, you do not need face-to-face interaction to collaborate successfully in a working environment. 
+
+That said, there is always room for improvement. The agile manifesto states that 'the most efficient and effective method of conveying information to and within a development team is face-to-face conversation'. While this was not possible this year, we look forward to a time in the future where we can engage in pair programming sessions in the same room and take meetings in person. We believe that closer collaboration would lead to an even better working environment and cohesive project. 
 
 ### Project Success
 
@@ -136,7 +142,7 @@ Overall, the backend development was a success. We used innovative methods to in
 
 We also made sure that our web-app was as secure as possible, especially during deployment. We wanted to avoid hard-coding usernames, passwords, local and container Mongo ports, and the same for App ports. Our `.env` file held this information and we wanted to reference those values correctly. To be able to access MongoDB and various commands, you need to authenticate yourself beforehand; to prevent any malicious intent from other individuals that could compromise our data.
 
-We didn't manage fo fulfil our extension of being able to update fields in MongoDB from frontend requests. We wanted to store two parameters per question: the number of users that had attempted the question and the number of users that had got the answer correct, hoping to display this data to the user afterwards. To implement this, we initially experimented using HTTP `get` methods but we were unable to utilise these and call `.save` on Mongoose models to update the appropriate fields. Also, we tried using HTTP `put` methods which we couldn't get to work with our models either. We felt this didn't make a significant difference to the user experience so we decided to focus on other aspects of the web-app instead. The methods that we tried to implement can be found in Api.js (Comments stating `FUTURE DEVELOPMENT CODE`), we would like to implement these features in future developments which we will go into more detail later on.
+We didn't manage to fulfil our extension of being able to update fields in MongoDB from frontend requests. We wanted to store two parameters per question: the number of users that had attempted the question and the number of users that had got the answer correct, hoping to display this data to the user afterwards. To implement this, we initially experimented using HTTP `get` methods but we were unable to utilise these and call `.save` on Mongoose models to update the appropriate fields. Also, we tried using HTTP `put` methods which we couldn't get to work with our models either. We felt this didn't make a significant difference to the user experience so we decided to focus on other aspects of the web-app instead. The methods that we tried to implement can be found in Api.js (Comments stating `FUTURE DEVELOPMENT CODE`), we would like to implement these features in future developments which we will go into more detail later on.
 
 #### Frontend
 
