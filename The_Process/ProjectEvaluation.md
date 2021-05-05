@@ -271,7 +271,7 @@ We also aim to create bi-directional communication between the frontend and the 
     - due to lack of javascript knowledge and a proper synergy between the front and back end structures
   - Next time it would be better to communicate more and make the front end frame work more compatible with the back end **and vice versa**.
 
-## Conclusio
+## Conclusion
 - Reflect on the working practices of your group, how well they did or did not work, e.g, management of issues, communication, Agile (etc).
 - Reflective discussion of the success of the project. How well did your project fulfil the brief? Were all of your own objectives met
   - **not being able to implement statistics (num_correct)**
