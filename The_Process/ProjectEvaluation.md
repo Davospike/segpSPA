@@ -111,14 +111,16 @@ In addition to these tests, there are 8 other tests that were already created wh
 
 #### User Acceptance Testing
 
-The final set of testing that we carried out was in-person user acceptance testing. For this, we sat down with housemates and family at the end of our website build process and let them interact with the application. After the testers felt they were done with the website, they had to fill out a Survey Monkey questionnaire, allowing them to voice their opinions and thoughts. As a result, this meant the testers were interacting with the website in its most complete state throughout the whole project. By letting them interact with a complete state meant that they could be critical about what we deemed a finished state and thus help provoke improvements, and/or validate whether we achieved our project goals. 
+The final set of testing that we carried out was in-person user acceptance testing. For this, we sat down with housemates and family at the end of our website build process and let them interact with our application. After the testers felt they were done with the website, they had to fill out a Survey Monkey questionnaire, allowing them to voice their opinions and thoughts. As a result, this meant the testers were interacting with the website in its most complete state throughout the whole project. This meant that they could be critical about what we deemed a finished state and thus help provoke improvements, and/or validate whether we achieved our project goals. 
 
-Overall, feedback was positive and confirmed that the website was easy and intuitive to interact with. Further, testers left good feedback for improvements that could be implemented in any further work done on the project. 
+Overall, feedback was positive and confirmed that the website was easy and intuitive to interact with. With this round of feedback, we were after deeper, more qualitative feedback. Although we kept no personal record of the users who took part; they remained anonymous. We asked them for some final comments on how they thought the application could be improved for the future which brought back a series of responses. We decided it would be best to perform a thematic analysis around some of the areas that our users thought we could improve on. As such, we created the following Affinity Diagram to try and organise the nature of the feedback that we received: 
 
-Some feedback is as follows:
-- Some users found at the end of the quiz it wasn't entirely clear that you needed to select `Submit Quiz` and assumed clicking `Next` at the end would finish and submit the quiz. 
+![AffinityDiagram](https://user-images.githubusercontent.com/63299377/117336810-841fc700-ae94-11eb-9cd9-49117ddcd7a3.jpg)
+
+As you can see, the feedback was clustered around the following areas:
+- Some users thought that at the end of the quiz it wasn't entirely clear that you needed to select `Submit Quiz` and assumed clicking `Next` at the end would finish and submit the quiz. 
 - Others suggested showing your total score at the end; this was something that we thought we had done, but clearly hadn't, thus showing the importance of carrying out these tests.
-- Another tested thought that there was too much content to read in the 5 minute time cap and as a result didn't end up reading everything. They also suggested extra context to help gauge the article, e.g. dates.
+- Another user thought that there was too much content to read in the 5 minute time cap, and as a result didn't end up reading everything. This matched other users who thought there should be an option to add more time. They also suggested extra context to help gauge the article, e.g. dates.
 
 As a team, we believe that all the feedback could be implemented to improve the user experience on the website and so are grateful that we carried out the testing. It was able to highlight things that we thought we had done, but had not noticed due to us interacting with it daily and thus having a bias to knowing how it works and what to expect. By allowing testers to interact with it and feedback these irks will be helpful for further work.
 
