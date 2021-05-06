@@ -32,9 +32,9 @@ User journey tests are ways to test a certain path a *user* could take through a
 
 We created three user journey tests:
 
-- [Getting to the info page and to a quiz](User_Journey_Testing/User_Journey_1)
-- [Taking a quiz](User_Journey_Testing/User_Journey_2)
-- [Sharing the web-app on social media](User_Journey_Testing/User_Journey_3)
+- [Getting to the info page and to a quiz](User_Journey_Testing/User_Journey_1.md)
+- [Taking a quiz](User_Journey_Testing/User_Journey_2.md)
+- [Sharing the web-app on social media](User_Journey_Testing/User_Journey_3.md)
 
 The general structure we used for each was: to conduct the user's intention during the test, how to set up the environment, how to tear down the environment after testing, and a list of tests to actually carry out (with a step-by-step list for each one). User journey 1 directed the user to the main two features of our web-app - the 'about Fake News' page and the 'Take the quiz' page. User journey 2 made sure that completing the quiz was as expected, the set up was starting the 'China' quiz from the selection page; the test consisted of selecting answers and submitting the quiz, as well as making sure that the answer page was properly presented. User journey 3 focussed on sharing the quiz on social media, involving scrolling to the necessary selection of buttons and clicking 'Twitter'.
 
