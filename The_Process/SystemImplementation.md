@@ -3,31 +3,31 @@
 ## Table of Contents
 
 - [Software Development Process](#software-development-process)
-   - [Software Development Lifecycle](#software-development-life-cycle)
-   - [Agile](#agile)
+   - [Software Development Process](#software-development-process)
+   - [Why Agile?](#why-agile)
+   - [Waterfall Method](#waterfall-method)
    - [GitHub Continuous Integration](#gitHub-continuous-integration)
 - [Sprints](#sprints)
    - [Sprint 1 : Webpage Design & Initial Feedback (01.03.21-07.03.21)](#sprint-1--webpage-design--initial-feedback-010321-070321)
    - [No Sprints : Continue Working On Workbooks (08.03.21-21.03.21)](#no-sprints--continue-working-on-workbooks-080321-210321)
    - [Sprint 2 : Market Research & Deploying Boilerplate (22.03.21-28.03.21)](#sprint-2--market-research--deploying-boilerplate-220321-280321)
-   - [Sprint 3 : Prepare Back-end & Additional Wireframe (29.03.21-04.04.21)](#sprint-3--prepare-back--end--additional-wireframe-290321-040421)
-   - [Sprint 4 : Build Front-end Webpages & Begin Linking Front and Back-end (05.04.21-11.04.21)](#sprint-4--build-front--end-webpages--begin-linking-front-and-back--end-050421-110421)
-   - [Sprint 5 : Further Front and Back-end Integration (12.04.21-18.04.21)](#sprint-5--further-front-and-back--end-integration-120421-180421)
-   - [Sprint 6 : Write-up & Minor Front-end Amendments (19.04.21-07.05.21)](#sprint-6--write-up--minor-front--end-amendments-190421-070521)
+   - [Sprint 3 : Prepare Back-end & Additional Wireframe (29.03.21-04.04.21)](#sprint-3--prepare-back-end--additional-wireframe-290321-040421)
+   - [Sprint 4 : Build Front-end Webpages & Begin Linking Front and Back-end (05.04.21-11.04.21)](#sprint-4--build-frontend-webpages--begin-linking-front-and-backend-050421-110421)
+   - [Sprint 5 : Further Front and Back-end Integration (12.04.21-18.04.21)](#sprint-5--further-front-and-back-end-integration-120421-180421)
+   - [Sprint 6 : Write-up & Minor Front-end Amendments (19.04.21-07.05.21)](#sprint-6--write-up--minor-frontend-amendments-190421-070521)
 - [MEAN Stack System Implementation](#mean-stack-system-implementation)
    - [Stack Architecture & System Design](#stack-architecture--system-design)
-   - [Back-end : MongoDB](#back--end--mongodb)
+   - [Back-end : MongoDB](#back-end--mongodb)
    - [Middle Tier : Express, Node, RESTful API](#middle-tier--express-node-restful-api)
-   - [Front-end : Angular](#front--end--angular)
+   - [Front-end : Angular](#front-end--angular)
    - [Deployment Details](#deployment-details)
-   - [Additional](#additional)
 
 ## Software Development Process
 A software development process can be seen as the application of divide and conquer whereby the development process is divided into smaller, parallel steps or sub-processes. Doing so helps improve the design and management of a project. Given that we, as university students, had other commitments and modules, we were aware that we would have to manage the project development in a flexible manner, and in a fixed amount of time. Unlike in the professional world, we could not get extensions. 
 
 Due to these constraints, we first sought out a strategy to apply to our work approach. We knew little and often would be beneficial, ensuring a smoother journey towards a minimal viable product. For that reason we set out to compare and contrast the industry standard software development life cycle methods in order to find our approach.
 
-To help manage workloads, we split up into separate, but closely linked, front and back-end teams. Daniel Davies, Jack Pike and Harry Smith made up the front-end and Nathan Taylor and Vincenzo Gibliaro on the back-end team.
+To help manage workloads, we split up into separate, but closely linked, front and back-end teams. Daniel Davies, Jack Pike and Harry Smith made up the front-end and Nathan Taylor and Vincenzo Gibilaro on the back-end team.
 
 In order to help the team flourish under agile principles (see below), we also gave team members different roles when required to fit the needs of the project. Jack took up the role of Product Owner, and was therefore responsible for the stakeholders in the project. He assumed this responsibility particularly for the development of our user stories during user testing such as our Likert scale questionnaires. Harry was Scrum Master, and in this way, he took charge of developing our sprints and stand-ups. This included documentation, planning and coordinating the team effectively. The remaining team members assumed their roles as development team members. As our team was small, we were all able to provide opinion and input at any stage, but these loosely defined roles helped navigate the team through different stages of the project. 
 ### Why Agile?
@@ -43,7 +43,7 @@ Secondly, another agile working principle that we followed keenly was to work to
 
 This served to encourage communication in the team, create small incremental progress, address any problems early, be reflective about our work and ultimately deliver working software. 
 
-Constant communication encouraged many other of the agile principles also such as continuous attention to technical excellence and constant reflection of our work. We were able to share work with the team often and talk through what we had were planning to build or what we had built. We do not think this would have been possible without agile ways of working. For example, our back-end team reflected often about how best to export their data in json format to link up with the front-end. Although we achieved a working format reasonably quickly, upon reflection, we were able to simplify the json payload to link well with the front-end. There is a lot that can go wrong when developing software and by being reflective, we were able to solve problems more dynamically using these agile principles. 
+Constant communication encouraged many other of the agile principles also such as continuous attention to technical excellence and constant reflection of our work. We were able to share work with the team often and talk through what we had were planning to build or what we had built. We do not think this would have been possible without agile ways of working. For example, our back-end team often reflected about how best to export their data in json format to link up with the front-end. Although we achieved a working format reasonably quickly, upon reflection, we were able to simplify the json payload to link well with the front-end. There is a lot that can go wrong when developing software and by being reflective, we were able to solve problems more dynamically using these agile principles. 
 
 
 
@@ -51,7 +51,7 @@ Constant communication encouraged many other of the agile principles also such a
 
 
 
-**Waterfall Method**
+### Waterfall Method
 
 It is important to note that agile working is not the only way of working we could have used to develop this application. We could have opted for a linear-sequential life cycle model such as the [Waterfall Model](https://www.tutorialspoint.com/sdlc/sdlc_waterfall_model.htm), whereby the next phase of development would only start once the previous is finished. Typically, these steps would involve: System engineering, Analysis, Design, Code, Testing and Maintenance. However, we believe that an agile approach has offered us more flexibility to develop the application together for the aforementioned reasons. 
 
@@ -113,15 +113,15 @@ The naming of our branches felt suitable for our application, as opposed to a br
 
 #### Pull Requests
 
-As outlined above, pull requests were not commonplace for commits and merges into dev. This is a particularly useful practice in agile for teams, since other developers can discuss a particular commit, and decide whether it will merge with the current repository in a useful way. It would have been a good idea to implement this feature more frequently in our development process. Another reason we felt this was not always necessary, is that our team of 5 was split between front end and back end, and although branches were for individual developers, most tasks were done during pair programming sessions. Henceforth, the approval from other team members would be incorporated in the code.
+As outlined above, pull requests were not commonplace for commits and merges into dev. This is a particularly useful practice in agile for teams, since other developers can discuss a particular commit, and decide whether it will merge with the current repository in a useful way. It would have been a good idea to implement this feature more frequently in our development process. Another reason we felt this was not always necessary, is that our team of 5 was split between front-end and back-end, and although branches were for individual developers, most tasks were done during pair programming sessions. Henceforth, the approval from other team members would be incorporated in the code.
 
-There were a few commits in which a pull request was necessary, and we decided to implement it. A particular commit consisted of a new page implemented in our single page application, this was the **About** page. We all reviewed this commit and approved it individually. Team members that worked on the front end generally looked at the implementation in code. Back end team members were looking at the content included in the new page. This pull request was labelled "**Stats page change**".
+There were a few commits in which a pull request was necessary, and we decided to implement it. A particular commit consisted of a new page implemented in our single page application, this was the **About** page. We all reviewed this commit and approved it individually. Team members that worked on the front-end generally looked at the implementation in code. Back end team members were looking at the content included in the new page. This pull request was labelled "**Stats page change**".
 
 #### Good Practice Example
 
-This section outlines where we saw good practices implemented in our workflow pay off. We had a major issue, in that the main **get** method called from the file [api.js](../Application/AngularQuizApp/server/routes/api.js). Somewhere along the commit history, this get method had been deleted. This required the use of the commit history interface on Github.com, and this issue was fixed easily via browsing through previous commit messages. As well as this, the backend team had coordinated who had done what with respect to this file. This is where our branch naming and commit messages proved very useful.
+This section outlines where we saw good practices implemented in our workflow pay off. We had a major issue, in that the main **get** method called from the file [api.js](../Application/AngularQuizApp/server/routes/api.js). Somewhere along the commit history, this get method had been deleted. This required the use of the commit history interface on Github.com, and this issue was fixed easily via browsing through previous commit messages. As well as this, the back-end team had coordinated who had done what with respect to this file. This is where our branch naming and commit messages proved very useful.
 
-As well as this, another good practice supported us in this solution. After a meeting with Marceli, we made some major changes to the backend. There was multiple commits across files. Since the commits were not as small as we first realised, we decided to make a new branch, called **updated_database** on one of our developer's local repository. We then pushed our changes, and merged with dev. We used this updated_database branch for reference when re-implementing the **get** method we had lost. We saw a very similar method in the updated_database branch, so we could be sure that this was the correct method we had lost.
+As well as this, another good practice supported us in this solution. After a meeting with Marceli, we made some major changes to the back-end. There was multiple commits across files. Since the commits were not as small as we first realised, we decided to make a new branch, called **updated_database** on one of our developer's local repository. We then pushed our changes, and merged with dev. We used this updated_database branch for reference when re-implementing the **get** method we had lost. We saw a very similar method in the updated_database branch, so we could be sure that this was the correct method we had lost.
 
 ## Sprints
 ![Project Management Plan(1)](https://user-images.githubusercontent.com/63299377/115594606-d629ef80-a2cd-11eb-8c4d-9ca2078008c3.png)
@@ -172,14 +172,14 @@ The documented market research can be found [here](../Documentation/BackgroundRe
 Sprint number 3 came in the first week on Easter and the key goals related to advancing our paper prototype into a more developed wireframe and develop the back-end with respect to the mongoDB containers and finalizing the dataset with sample questions, broken down by news topic. Further we set a stretch goal to prepare the data model for handling HTTP requests.
 
 Key goals:
-- Finish hand-made quiz dataset, broken down into various topics ready for linking to the front end.
+- Finish hand-made quiz dataset, broken down into various topics ready for linking to the front-end.
 - Prepare mongoDB container ready for HTTP requests.
 - Create a more developed wireframe, implementing the feedback from the initial paper prototype SurveyMonkey questionnaire.
-- Send out new wire frame and questionnaire for further front end feedback.
+- Send out new wire frame and questionnaire for further front-end feedback.
 
-For the front end, the focus was taking onboard the feedback obtained from the SurveyMonkey questionnaire that was previously sent round based off the initial paper prototype. The feedback proved to be useful, especially points focussed around UI and UX, such as the navigation being intuitive and consistent, colour scheme and suggestions for a social sharing feature. As well as taking onboard UX and UI feedback, we also received reasurring feedback that the idea was liked by respondents and that they were interested to use the webpage and take the quiz. With this feedback, we also made our first interactive wireframe.
+For the front-end, the focus was taking onboard the feedback obtained from the SurveyMonkey questionnaire that was previously sent round based off the initial paper prototype. The feedback proved to be useful, especially points focussed around UI and UX, such as the navigation being intuitive and consistent, colour scheme and suggestions for a social sharing feature. As well as taking onboard UX and UI feedback, we also received reasurring feedback that the idea was liked by respondents and that they were interested to use the webpage and take the quiz. With this feedback, we also made our first interactive wireframe.
 
-As our first real coding sprint, we experienced some implementation issues on the back-end. We were previously using proxy data for testing the back-end, but now that we were trying to make the backend utilise MongoDB, storing the data caused some trouble. On reflection, however, it proved a useful learning experience.
+As our first real coding sprint, we experienced some implementation issues on the back-end. We were previously using proxy data for testing the back-end, but now that we were trying to make the back-end utilise MongoDB, storing the data caused some trouble. On reflection, however, it proved a useful learning experience.
 
 | Stakeholders            | Updated Use Case        |
 | ------------------------| ------------------------|
@@ -192,45 +192,45 @@ As our first real coding sprint, we experienced some implementation issues on th
 | Back-end     | Store persistent data in a dockerized mongoDB container | Data was not persisting when creating and running scripts to insert data and deploy docker | Trial and error, Googling and a deep dive into the scripts to ascertain root of the bugs |
 
 ### Sprint 4 : Build Frontend Webpages & Begin Linking Front and Backend (05.04.21-11.04.21)
-Sprint number 4 saw the team coming together to start linking the frontend and backend. On the front end, work was done on highlighting what was, and what wasn't, needed from our selected quiz framework, in order to ascertain how we would tailor it to our liking. New pages and navigation were also added to the website. On the backend, the team finalised the data model schema and created mongoose commands to return the correct JSON payload, ready to be used by the quiz for questions.
+Sprint number 4 saw the team coming together to start linking the front-end and back-end. On the front-end, work was done on highlighting what was, and what wasn't, needed from our selected quiz framework, in order to ascertain how we would tailor it to our liking. New pages and navigation were also added to the website. On the back-end, the team finalised the data model schema and created mongoose commands to return the correct JSON payload, ready to be used by the quiz for questions.
 
 Key goals:
 - Start stripping out unused features from quiz framework.
-- Add new pages and features to frontend, e.g. landing page, stats page, navigation, social sharing.
-- Start linking up the front and backend.
-- Finalize question data model schema appropriate for integration into front end.
+- Add new pages and features to front-end, e.g. landing page, stats page, navigation, social sharing.
+- Start linking up the front and back-end.
+- Finalize question data model schema appropriate for integration into front-end.
 - Create mongoose commands for JSON payload retrieval.
 
-At the start of the sprint, the frontend team got together for a pair programming session to start streamlining the code ready for database integration towards the end of the sprint. However, it quickly became clear that the quiz framework that we had hoped to use was far too complicated for our use case. It was decided between us that we would need to pivot and find a new, simpler framework instead (see the [System Design page](SystemDesign.md) for more on this).
+At the start of the sprint, the front-end team got together for a pair programming session to start streamlining the code ready for database integration towards the end of the sprint. However, it quickly became clear that the quiz framework that we had hoped to use was far too complicated for our use case. It was decided between us that we would need to pivot and find a new, simpler framework instead (see the [System Design page](SystemDesign.md) for more on this).
 
-Collaboratively, the front and backend team also worked together to refactor the typescript quiz and backend data models so that the quiz service files that operated the questions in the quiz worked. Some difficulties arose but they were eventually ironed out.
+Collaboratively, the front and back-end team also worked together to refactor the typescript quiz and back-end data models so that the quiz service files that operated the questions in the quiz worked. Some difficulties arose but they were eventually ironed out.
 
-On reflection of the sprint, it was a productive week, despite the front end quiz framework setback, with lots of movement on all fronts. There was good collaboration between the front and backend in starting to get the database linked up to the front end so that questions for the quiz could be dynamic. We were now in a position to start work in the next sprint on requesting, and presenting, the data from the database in the quiz.
+On reflection of the sprint, it was a productive week, despite the front-end quiz framework setback, with lots of movement on all fronts. There was good collaboration between the front and back-end in starting to get the database linked up to the front-end so that questions for the quiz could be dynamic. We were now in a position to start work in the next sprint on requesting, and presenting, the data from the database in the quiz.
 
 | Stakeholders            | Updated Use Case        |
 | ------------------------| ------------------------|
 | Donald (End-User)       | I can visit the website and take a generic quiz, but I cannot chose between any topic. There is also a nice welcome page to read a bit about fake news on and navigate around the site from.|
 | Neil (University Professor)            | I can now share the website amongst my class for them to take the fake news quiz. This is great and will help raise awareness. |
-| Emma (Admin)            | The database and quiz questions are set up in the backend of our systems, we just need the front end to be able to access the data, as opposed to using a proxy dataset. |
+| Emma (Admin)            | The database and quiz questions are set up in the back-end of our systems, we just need the front-end to be able to access the data, as opposed to using a proxy dataset. |
 
 #### System implementation issues:
 
 | Stack Part  | Goal        | Issue | Fix |
 | ------------| ----------- |-------|-----|
-| Back-end     | Setup data model schema | Data models were not aligned with frontend format required for quiz | Liaised with front end to reformat data |
-| Front-end    | Setup quiz framework in frontend | Quiz framework selected was too advanced | Found a new framework that was more appropriate for our ability |
+| Back-end     | Setup data model schema | Data models were not aligned with front-end format required for quiz | Liaised with front-end to reformat data |
+| Front-end    | Setup quiz framework in front-end | Quiz framework selected was too advanced | Found a new framework that was more appropriate for our ability |
 
 ### Sprint 5 : Further Front and Back-end Integration (12.04.21-18.04.21)
-In this sprint, the team hoped to finally have a fully integrated front and back-end by the end so that general housekeeping and tidying up could begin. On the front end, a quiz topic selection page was created so that the end user could pick between any of the five different set of quiz questions. The back-end team also investigated the possibility of returning a single topic set of quiz questions at a time, as opposed to all questions at once.
+In this sprint, the team hoped to finally have a fully integrated front and back-end by the end so that general housekeeping and tidying up could begin. On the front-end, a quiz topic selection page was created so that the end user could pick between any of the five different set of quiz questions. The back-end team also investigated the possibility of returning a single topic set of quiz questions at a time, as opposed to all questions at once.
 
 Key goals:
-- Inject a data service to the frontend. 
+- Inject a data service to the front-end. 
 - Subscribe the quiz framework to the API JSON payload output.
 - Add a quiz topic selection page.
 - Return mongoDB data topic by topic, as opposed to all at once.
 - Implement method to keep track of number of times questions were answered correctly.
 
-Great progress was made during the sprint. During the week, the frontend team were able to utilize the API that the backend team had developed in prior weeks. By using the JSON payload returned from the API, the frontend team created a data service to subscribe the front end to. With the API data now being automatically fed into the frontend, the team could then update the quiz component classes so that the individual quizzes were loaded into the quiz framework. By creating this link, the team had a fully operating MEAN stack web quiz.
+Great progress was made during the sprint. During the week, the front-end team were able to utilize the API that the back-end team had developed in prior weeks. By using the JSON payload returned from the API, the front-end team created a data service to subscribe the front-end to. With the API data now being automatically fed into the front-end, the team could then update the quiz component classes so that the individual quizzes were loaded into the quiz framework. By creating this link, the team had a fully operating MEAN stack web quiz.
 
 In this sprint, the back-end team also investigated upgrading the API so that it would only return the required quiz questions when a topic was selected on the topic page. The back-end team were able to implement this, but upon further discussion with the wider team, we decided that the preferred method was to request all quiz topics at once and let the quiz framework decide which questions to access. Further, the back-end team investigated implementing a user story we had been striving for since the first paper prototype; adding a, e.g., "76% of users got this question wrong" at the end of each question. This proved to be too difficult, despite consulting with the TAs, and was ultimately dropped.
 
@@ -255,7 +255,7 @@ After successfully linking up the front and back-end last sprint, the team had a
 
 Key goals:
 - Code base tidy up; removing unused code and add comments.
-- Minor frontend formatting.
+- Minor front-end formatting.
 - Implement Jasmin automated unit testing for the front-end.
 - Add functional testing user journeys.
 - Finish write-up, with a focus on conclusion and evaluation.
@@ -277,10 +277,10 @@ As a MEAN stack single page application, our system architecture and design revo
   <img src="../Documentation/Images/WTLTY_Sequence_Diagram.png" alt="Sequence Flow Diagram" width="100%">
 </p>
 
-To explain the sequence flow diagram succinctly, when someone visits the website, this will cause the JavaScript code to be run, calling on the `AppRoutingModule` to direct the user to the `http://localhost:4200/welcome`. Should the user navigate to the quiz topic selection page and choose a quiz topic, a similar series of events will happen; the user will be directed to, e.g., `http://localhost:4200/quiz/brexit`, but this time a call to the `QuizComponent` will occur. Calling the `QuizComponent` will in turn load the `DataService` component, as this is the QuizComponent's dependency injection and the component is subscribed to the data being provided. This DataService is responsible for handling and creating the HTTP requests to the back-end infrastructure, making use of a router, controller and model to process the request and query the database. The database will then process the query and retrieve the data, sending it back to the API as JSON. The resulting JSON payload is the retrieved, and sent back to the frontend, via the HTTP `get` requests originally called by the DataService. 
+To explain the sequence flow diagram succinctly, when someone visits the website, this will cause the JavaScript code to be run, calling on the `AppRoutingModule` to direct the user to the `http://localhost:4200/welcome`. Should the user navigate to the quiz topic selection page and choose a quiz topic, a similar series of events will happen; the user will be directed to, e.g., `http://localhost:4200/quiz/brexit`, but this time a call to the `QuizComponent` will occur. Calling the `QuizComponent` will in turn load the `DataService` component, as this is the QuizComponent's dependency injection and the component is subscribed to the data being provided. This DataService is responsible for handling and creating the HTTP requests to the back-end infrastructure, making use of a router, controller and model to process the request and query the database. The database will then process the query and retrieve the data, sending it back to the API as JSON. The resulting JSON payload is the retrieved, and sent back to the front-end, via the HTTP `get` requests originally called by the DataService. 
 
 #### UML Class diagram
-The UML class diagram shows the structure and relationships between the various moving parts of our frontend webpage and gives a quick overview of the synergies happening. By visually displaying this information, we found it helped us keep track of how things were connected and gave us a sense of orientation; useful as we scaled up and added new components along the development of the page. We have excluded the individual Angular components and spec testing classes to keep it from getting too large.  
+The UML class diagram shows the structure and relationships between the various moving parts of our front-end webpage and gives a quick overview of the synergies happening. By visually displaying this information, we found it helped us keep track of how things were connected and gave us a sense of orientation; useful as we scaled up and added new components along the development of the page. We have excluded the individual Angular components and spec testing classes to keep it from getting too large.  
 
 <p align="center">
   <img src="../Documentation/Images/WTLTY_UML_Class_Diagram.png" alt="UML Class diagram" width="100%">
@@ -429,7 +429,7 @@ So without suitable datasets and no competent web-scraping systems to be seen, w
 
 It's worth mentioning that we also wanted to find **debunking** articles in relation to the Fake News we gathered. Venturing into the darkest (but not _too_ dark) depths of the internet, we came across some perfect examples of Fake News and gave the goal of having a mixture of **5 Fake News** articles and **5 Real News** articles for each of our **5 News Topics** that we had proposed.
 
-Aside from the grind in acquiring the necessary data, we also found ways to improve other elements of our backend structure. We initially had a _Many-to-Many_ relationship between questions and news topics; however, refering to the underlying intent to make this as educational as possible for the user, we decided to alter this to a _One-to-Many_ relationship. This meant that there will no longer be multiple news topics related to a question, we intended to make each article as relevant to the news topic as possible - eradicating and vagueness.
+Aside from the grind in acquiring the necessary data, we also found ways to improve other elements of our back-end structure. We initially had a _Many-to-Many_ relationship between questions and news topics; however, refering to the underlying intent to make this as educational as possible for the user, we decided to alter this to a _One-to-Many_ relationship. This meant that there will no longer be multiple news topics related to a question, we intended to make each article as relevant to the news topic as possible - eradicating and vagueness.
 
 #### Inputting data via insertDataScript
 
@@ -437,9 +437,9 @@ The mechanism we used to get data ready for use in our application consisted of 
 
 #### Creating a mongoDB database
 
-The first step in allowing us to test our backend structure was to get the data we gathered into a MongoDB client to test how effective it was. We decided that rather than inserting our data within the MongoDB shell, we will aim to run a Javascript 'script' that would insert all this data using Mongoose commands - appropriately named [insertDataScript.js](../Application/AngularQuizApp/insertDataScript.js). In short, the script injects into a MongoDB client (using a URL specified in args[0]), our data.
+The first step in allowing us to test our back-end structure was to get the data we gathered into a MongoDB client to test how effective it was. We decided that rather than inserting our data within the MongoDB shell, we will aim to run a Javascript 'script' that would insert all this data using Mongoose commands - appropriately named [insertDataScript.js](../Application/AngularQuizApp/insertDataScript.js). In short, the script injects into a MongoDB client (using a URL specified in args[0]), our data.
 
-This script underwent many changes depending on our evolving decisions regarding backend structure but this final script allows us to unload our data into MongoDB ready for use. A reason why we decided to use import our data in this way because it makes it easier to add more data at a later date; i.e, the structure is there and it is set out into `createOption`, `createNewsTopic` and `createQuizQuestion` methods (amongst others). A simple '*copy + paste*' and '*fill in the blanks*' allows us to add more data whenever we need to. 
+This script underwent many changes depending on our evolving decisions regarding back-end structure but this final script allows us to unload our data into MongoDB ready for use. A reason why we decided to use import our data in this way because it makes it easier to add more data at a later date; i.e, the structure is there and it is set out into `createOption`, `createNewsTopic` and `createQuizQuestion` methods (amongst others). A simple '*copy + paste*' and '*fill in the blanks*' allows us to add more data whenever we need to. 
 
 We needed to require the necessary models at the top of the script:
 
@@ -473,7 +473,7 @@ We decided to build a RESTful API to link our MongoDB database to our front-end 
 
 REST stands for Representational State Transfer and is commonplace in data exchange protocol systems used in web applications today. The REST architectural style determines how the API looks, and how it processes client requests. The main mechanism that RESTful APIs implement is that a resource, (i.e., a piece of data) is retrievable upon a client URL request. This is formally known as a response.
 
-Responses are the result of requests. A response is composed of two parts - the root-endpoint and the path. The root-endpoint is the starting point from where your API lives. In our project, it is where we set the API routes from server.js (localhost:4200/api) - but we will come back to this. The second part of a response is the path. This path determines the resource the client is looking for. We can distinguish between different responses based on these two parts, and implement methods in our API that map responses onto the mongoose and node.js commands that will respond with the correct data from our backend. 
+Responses are the result of requests. A response is composed of two parts - the root-endpoint and the path. The root-endpoint is the starting point from where your API lives. In our project, it is where we set the API routes from server.js (localhost:4200/api) - but we will come back to this. The second part of a response is the path. This path determines the resource the client is looking for. We can distinguish between different responses based on these two parts, and implement methods in our API that map responses onto the mongoose and node.js commands that will respond with the correct data from our back-end. 
 
 The main advantage of using a RESTful API is that each HTTP has all the information needed. In other words, neither the client nor the server needs to remember any previous status to satisfy it (see this [website](https://www.bbvaapimarket.com/en/api-world/rest-api-what-it-and-what-are-its-advantages-project-development/#:~:text=The%20REST%20API%20is%20always,%2C%20Java%2C%20Python%20or%20Node.)). This means that we have a stateless client/server protocol. 
 
@@ -521,7 +521,7 @@ The process is as follows:
 
 As we're exporting the router made in [api.js](../Application/AngularQuizApp/server/routes/api.js), which is required in [server.js](../Application/AngularQuizApp/server.js), the output of this (when integrated with angular) is rendered onto the webpage.
 
-Linking up the frontend to the API is achieved by creating a data service that <i>subscribes</i> to the API and is discussed in the frontend section below.
+Linking up the front-end to the API is achieved by creating a data service that <i>subscribes</i> to the API and is discussed in the front-end section below.
 
 ### Front End : Angular
 
@@ -553,11 +553,11 @@ The meat of the website would be the quiz itself and to implement this we invest
 
 #### Choice and change of Angular Quiz Framework
 
-We spoke with the teaching support on the course about how best to approach implementing a quiz in Angular. On advise from Thomas Bale, we elected to find a pre-made quiz framework and repurpose it for our needs. To do this, we had a front end get together that involved a morning pair programming session sitting down to research, test and try different Angular quiz frameworks that might be suitable as a template for the purpose of this project. We looked at a number of different frameworks in depth including: [Eva Grean's](https://github.com/evagrean/quiz-app) and [Anurag Gandhi's](https://www.codeproject.com/Articles/1167451/Quiz-Application-in-Angular). We eventually decided we would use a fancy looking [Spotify app](https://awesomeopensource.com/project/fabiandev/angular-quiz-app). The reason we chose this framework was because it was aesthetically and functionally pleasing to interact with and thought it would help keep the content of the quiz engaging. Other frameworks we found felt a bit basic, whereas the Spotify Quiz had animations and progress bars, for example. 
+We spoke with the teaching support on the course about how best to approach implementing a quiz in Angular. On advise from Thomas Bale, we elected to find a pre-made quiz framework and repurpose it for our needs. To do this, we had a front-end get together that involved a morning pair programming session sitting down to research, test and try different Angular quiz frameworks that might be suitable as a template for the purpose of this project. We looked at a number of different frameworks in depth including: [Eva Grean's](https://github.com/evagrean/quiz-app) and [Anurag Gandhi's](https://www.codeproject.com/Articles/1167451/Quiz-Application-in-Angular). We eventually decided we would use a fancy looking [Spotify app](https://awesomeopensource.com/project/fabiandev/angular-quiz-app). The reason we chose this framework was because it was aesthetically and functionally pleasing to interact with and thought it would help keep the content of the quiz engaging. Other frameworks we found felt a bit basic, whereas the Spotify Quiz had animations and progress bars, for example. 
 
 Our next task was to familiarise ourselves with the Angular component structure that rendered the site, which we tried and tested over a few days. This quiz app even formed the basis of one of our rounds of user feedback. However, it was not until we made more concerted attempts to build out and refactor the code on this quiz we realised that this quiz was too advanced for our still relatively nascent experience of Angular. As such, we had to make a u-turn and thus settled on [Anurag Gandhi's](https://www.codeproject.com/Articles/1167451/Quiz-Application-in-Angular) quiz framework. Altogether it was much less complex and more malleable for what we had in mind to achieve.  There were sufficiently fewer components, and the code was more simple to re-work and manipulate.  
 
-During our research of Angular frameworks, we also took the opportunity to brainstorm some design ideas as a team about prospective designs for our quiz. This helped us to focus in on our needs and initiate the creative process of building up the single page application front end in our minds. 
+During our research of Angular frameworks, we also took the opportunity to brainstorm some design ideas as a team about prospective designs for our quiz. This helped us to focus in on our needs and initiate the creative process of building up the single page application front-end in our minds. 
 
 We created this mood board to consolidate and draw ideas from:
 
@@ -567,7 +567,7 @@ We created this mood board to consolidate and draw ideas from:
 
 #### Refactoring and restructuring to prepare for back-end code
 
-One of the major challenges for the front end was linking with the back end to load their `.json` file that would render our quiz questions and answers on the website. First, we had to refactor a lot of the models, service and component code on the front end, which included the removal of a lot of unnecessary variables. 
+One of the major challenges for the front-end was linking with the back-end to load their `.json` file that would render our quiz questions and answers on the website. First, we had to refactor a lot of the models, service and component code on the front-end, which included the removal of a lot of unnecessary variables. 
 
 For example, the original `quiz.service.ts` looked as follows originally:
 
@@ -620,7 +620,7 @@ export class Option {
 }
 ```
 
-At the beginning, we could not link the back end JSON file with the front end. This was due to an extra variable within the `options` called `optionR_F` or `optionF_T` that made it very hard to access the data. As shown below:
+At the beginning, we could not link the back-end JSON file with the front-end. This was due to an extra variable within the `options` called `optionR_F` or `optionF_T` that made it very hard to access the data. As shown below:
 
 ```typescript
 "options":
@@ -646,7 +646,7 @@ At the beginning, we could not link the back end JSON file with the front end. T
                ]
 ```
 
-Eventually, we managed to link up with the back end after lengthy communication between the two teams to produce this working format for the quiz framework:
+Eventually, we managed to link up with the back-end after lengthy communication between the two teams to produce this working format for the quiz framework:
 
 ```typescript
  {
@@ -753,7 +753,7 @@ allowed the quizName to be passed into the `loadQuiz()` method and select the ri
 
 #### Connecting To The API
 
-Earlier work, mentioned above, had been done on aligning the backend data formats with the frontend quiz framework data models. As a result of this, the frontend quiz data could be retrieved from the API payload, as opposed to using a dummy JSON file.
+Earlier work, mentioned above, had been done on aligning the back-end data formats with the front-end quiz framework data models. As a result of this, the front-end quiz data could be retrieved from the API payload, as opposed to using a dummy JSON file.
 
 To retrieve the API, a new `data.service.ts` was generated using the Angular CLI. In this service, a `getAll()` method was created that utilised the HTTPClient module from Angular to make `HTTP get requests`. By using a `get` request, all the data provided on the given URL could then be returned. As mentioned earlier, the JSON payload was hosted at `http://localhost:4200/api/NewsTopics` so a HTTP request was made as such:
 ```typescript
@@ -765,7 +765,7 @@ public getAll(){
   }
 ```
 
-This data service could then be injected into whichever components needed access to the data. In our case, only the `quiz.component.ts` needed access to the JSON. All that was left to do was use the data service component to call the `getAll()` and `subscribe` to the data. This meant that if the data changed, or was updated, it would be updated on the frontend - a useful feature for is the questions were to change.  
+This data service could then be injected into whichever components needed access to the data. In our case, only the `quiz.component.ts` needed access to the JSON. All that was left to do was use the data service component to call the `getAll()` and `subscribe` to the data. This meant that if the data changed, or was updated, it would be updated on the front-end - a useful feature for is the questions were to change.  
 
 As the JSON was arriving as an array of quiz topic questions, to access the individual topics and present them to the user, based off what topic they had selected, a check on the quiz name is performed before loading the JSON into the quiz itself:
 ```typescript
@@ -802,15 +802,15 @@ To align with agile working principles, we opted for continuous integration when
 
 #### Integration across FrontEnd and BackEnd
 
-Generally, to implement continuous integration, consolidation between the backend team, and the front end team was imperative. The main integration came from pulling together files from AngularDemoSite and AngularQuizApp, which were at the time two structurally separate projects. We felt initially that it would be best for the backend team to work on AngularDemoSite (which was built upon a skeleton framework of a MEAN Stack project), and for the frontend team to work on AngularQuizApp - which was a quiz framework, focusing mostly on Angular. For continuous integration to apply, team meetings were held often. We had **weekly stand-ups** (the notes for these are [here](../Documentation/Meeting_Log/Standups)), in which the both teams would present their work, and notes would be taken for reference to the counterpart when specialising in their own work. We feel this lead to an easier integration among the two projects. An example of when this came in to effect was creating and implementing the [`Options` model](../Application/AngularQuizApp/models/options.js) in the MongoDB database. 
+Generally, to implement continuous integration, consolidation between the back-end team, and the front-end team was imperative. The main integration came from pulling together files from AngularDemoSite and AngularQuizApp, which were at the time two structurally separate projects. We felt initially that it would be best for the back-end team to work on AngularDemoSite (which was built upon a skeleton framework of a MEAN Stack project), and for the front-end team to work on AngularQuizApp - which was a quiz framework, focusing mostly on Angular. For continuous integration to apply, team meetings were held often. We had **weekly stand-ups** (the notes for these are [here](../Documentation/Meeting_Log/Standups)), in which the both teams would present their work, and notes would be taken for reference to the counterpart when specialising in their own work. We feel this lead to an easier integration among the two projects. An example of when this came in to effect was creating and implementing the [`Options` model](../Application/AngularQuizApp/models/options.js) in the MongoDB database. 
 
 #### Effective Integration Example
 
-The issue arose since the backend team was advancing out of sync since the frontend development of the project meant a lot of research had to be done in order to find a framework to build on. For the backend, guides were used ([Mongoose guide](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose), [Seeds and pipelines](https://www.madetech.com/blog/migrations-seeds-and-pipelines/)) that showed clear and good practices of MongoDB construction and utilisation. The models built were refurbished multiple times. When the frontend team found a framework, the backend team needed to implement an Options model, in order to be compatible with the framework. Specifically, this Options model would incorporate 4 different instances, and it would be the document embedded in a particular quiz question which would allow for the user's answer to be checked against the correct_answer (boolean) field in a payload. Henceforth, files like [`insertDataScript.ts`](../Application/AngularQuizApp/insertDataScript.js), and new files in the [`models`](../Application/AngularQuizApp/models) directory, needed to be changed to incorporate the need for this new model. As well as this, the backend team needed to revisit the schema diagrams, to verify if the relationships that would need to be updated. The main relationship in question was between quiz_question and option. All of this was done with reference to a JSON payload that was shown to the backend team by the frontend team, in order to get a JSON output from the API to match this. One issue was that the Option mongo document name was displayed in the JSON output, which meant all the fields incorporated in a particular option document were not accessible by the front end. This last fix was solved (in [`insertDataScript.js`](../Application/AngularQuizApp/insertDataScript.js)) by including the actual fields of an option in a quiz question as opposed to embedding the actual Option document. We figured this was good practice since we are only referencing the Option documents as value. We, therefore, did not need to update the fields in Option. 
+The issue arose since the back-end team was advancing out of sync since the front-end development of the project meant a lot of research had to be done in order to find a framework to build on. For the back-end, guides were used ([Mongoose guide](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose), [Seeds and pipelines](https://www.madetech.com/blog/migrations-seeds-and-pipelines/)) that showed clear and good practices of MongoDB construction and utilisation. The models built were refurbished multiple times. When the front-end team found a framework, the back-end team needed to implement an Options model, in order to be compatible with the framework. Specifically, this Options model would incorporate 4 different instances, and it would be the document embedded in a particular quiz question which would allow for the user's answer to be checked against the correct_answer (boolean) field in a payload. Henceforth, files like [`insertDataScript.ts`](../Application/AngularQuizApp/insertDataScript.js), and new files in the [`models`](../Application/AngularQuizApp/models) directory, needed to be changed to incorporate the need for this new model. As well as this, the back-end team needed to revisit the schema diagrams, to verify if the relationships that would need to be updated. The main relationship in question was between quiz_question and option. All of this was done with reference to a JSON payload that was shown to the back-end team by the front-end team, in order to get a JSON output from the API to match this. One issue was that the Option mongo document name was displayed in the JSON output, which meant all the fields incorporated in a particular option document were not accessible by the front-end. This last fix was solved (in [`insertDataScript.js`](../Application/AngularQuizApp/insertDataScript.js)) by including the actual fields of an option in a quiz question as opposed to embedding the actual Option document. We figured this was good practice since we are only referencing the Option documents as value. We, therefore, did not need to update the fields in Option. 
 
-We felt this issue was solved efficiently and was aided by the weekly stand-ups and constant communication across both teams. Additionally, members from opposing teams helped out in order to make sure the frontend needs were met by the backend for this particular issue.
+We felt this issue was solved efficiently and was aided by the weekly stand-ups and constant communication across both teams. Additionally, members from opposing teams helped out in order to make sure the front-end needs were met by the back-end for this particular issue.
 
-Another implementation of continuous integration was our project pipeline on GitHub. Details on the design of our workflow are outlined in the [**Sprints & Project Management Section**](#Sprints) of this writeup. In essence, to circumvent the common occurrence of a merge conflict, we created a branch for each team member to do work on. We split the team members into specialised development roles, and the backend and frontend team generally worked in two separate directories. This meant that any conflicts caused generally when working in these directories were caused by members of the same team. This meant that any details left out of stand-ups, specific to teams' individual tasks, were not entirely dealt with by a counterparty member. 
+Another implementation of continuous integration was our project pipeline on GitHub. Details on the design of our workflow are outlined in the [**Sprints & Project Management Section**](#Sprints) of this writeup. In essence, to circumvent the common occurrence of a merge conflict, we created a branch for each team member to do work on. We split the team members into specialised development roles, and the back-end and front-end team generally worked in two separate directories. This meant that any conflicts caused generally when working in these directories were caused by members of the same team. This meant that any details left out of stand-ups, specific to teams' individual tasks, were not entirely dealt with by a counterparty member. 
 
 #### Deployment with Docker
 
@@ -855,10 +855,10 @@ app.use(express.static(path.join(__dirname, 'dist/ng6-quiz')));
 
 #### Docker Volume Fix
 
-Another docker issue, encountered by the backend, was that since Docker mounts volume locally, we needed somewhere to store the data and then import this into MongoDB. This was more of a lesson in how Docker works, but the result - *creating an [`insertDataScript.ts`](../Application/AngularQuizApp/insertDataScript.js) to get JSON files for our models, and then importing them in [`deploy.sh`](../Application/AngularQuizApp/deploy.sh) - lead to a situation where the correct data would be in the mongoDB docker container every time we run `deploy.sh`. Furthermore, due to the internals of Docker, the libraries and dependencies used for mongoDB will be the same for anyone who starts our containers. This aided continuous integration and deployment as it rules out any errors that may have occurred due to discrepancies across mongoDB software versions. 
+Another docker issue, encountered by the back-end, was that since Docker mounts volume locally, we needed somewhere to store the data and then import this into MongoDB. This was more of a lesson in how Docker works, but the result - *creating an [`insertDataScript.ts`](../Application/AngularQuizApp/insertDataScript.js) to get JSON files for our models, and then importing them in [`deploy.sh`](../Application/AngularQuizApp/deploy.sh) - lead to a situation where the correct data would be in the mongoDB docker container every time we run `deploy.sh`. Furthermore, due to the internals of Docker, the libraries and dependencies used for mongoDB will be the same for anyone who starts our containers. This aided continuous integration and deployment as it rules out any errors that may have occurred due to discrepancies across mongoDB software versions. 
 
 #### Slow Build Process Fix
-We found that the build process for Docker could take a while in most cases, and this slowed down development and made pair programming techniques almost redundant as we would make small changes, and spend most of the time waiting for the build process to complete. We consulted with senior members of staff, as highlighted in the backend meeting log, and fixed up a version of docker-build which could be run locally. This process built docker in a similar way, using port 27018, and used the LOCAL fields in the `.env` file. Some other changes include:
+We found that the build process for Docker could take a while in most cases, and this slowed down development and made pair programming techniques almost redundant as we would make small changes, and spend most of the time waiting for the build process to complete. We consulted with senior members of staff, as highlighted in the back-end meeting log, and fixed up a version of docker-build which could be run locally. This process built docker in a similar way, using port 27018, and used the LOCAL fields in the `.env` file. Some other changes include:
 
 - Having a check in [`server.js`](../Application/AngularQuizApp/server.js) to see if we were running locally or not - if we were, module dotenv is used which gets the correct .env credentialy
 - In [`db.js`](../Application/AngularQuizApp/db.js) we created local and container URLs which gets used whether we're using the local or the container's mongoDB database.
