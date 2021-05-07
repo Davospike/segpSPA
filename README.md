@@ -26,7 +26,7 @@
         <td><img src="Documentation/Images/VG_Mugshot.png" width="100" height="100"></td>
     </tr>
     <tr>
-        <td><a href="https://github.com/numberonepikey" target="_blank">Jack Pike</a></td>
+        <td><a href="https://github.com/jackpike1" target="_blank">Jack Pike</a></td>
         <td>jp13087@bristol.ac.uk</td>
         <td>Front-end</td>
         <td><img src="Documentation/Images/JP_Mugshot.png" width="100" height="100"></td>
@@ -44,6 +44,7 @@
         <td><img src="Documentation/Images/NT_Mugshot.png" width="100" height="100"></td>
     </tr>
 </table>
+
 
 ## **The Product**
 
