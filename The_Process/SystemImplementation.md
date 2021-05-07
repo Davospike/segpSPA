@@ -10,15 +10,15 @@
    - [Sprint 1 : Webpage Design & Initial Feedback (01.03.21-07.03.21)](#sprint-1--webpage-design--initial-feedback-010321-070321)
    - [No Sprints : Continue Working On Workbooks (08.03.21-21.03.21)](#no-sprints--continue-working-on-workbooks-080321-210321)
    - [Sprint 2 : Market Research & Deploying Boilerplate (22.03.21-28.03.21)](#sprint-2--market-research--deploying-boilerplate-220321-280321)
-   - [Sprint 3 : Prepare Backend & Additional Wireframe (29.03.21-04.04.21)](#sprint-3--prepare-backend--additional-wireframe-290321-040421)
-   - [Sprint 4 : Build Frontend Webpages & Begin Linking Front and Backend (05.04.21-11.04.21)](#sprint-4--build-frontend-webpages--begin-linking-front-and-backend-050421-110421)
-   - [Sprint 5 : Further Front and Backend Integration (12.04.21-18.04.21)](#sprint-5--further-front-and-backend-integration-120421-180421)
-   - [Sprint 6 : Write-up & Minor Frontend Amendments (19.04.21-07.05.21)](#sprint-6--write-up--minor-frontend-amendments-190421-070521)
+   - [Sprint 3 : Prepare Back-end & Additional Wireframe (29.03.21-04.04.21)](#sprint-3--prepare-back--end--additional-wireframe-290321-040421)
+   - [Sprint 4 : Build Front-end Webpages & Begin Linking Front and Back-end (05.04.21-11.04.21)](#sprint-4--build-front--end-webpages--begin-linking-front-and-back--end-050421-110421)
+   - [Sprint 5 : Further Front and Back-end Integration (12.04.21-18.04.21)](#sprint-5--further-front-and-back--end-integration-120421-180421)
+   - [Sprint 6 : Write-up & Minor Front-end Amendments (19.04.21-07.05.21)](#sprint-6--write-up--minor-front--end-amendments-190421-070521)
 - [MEAN Stack System Implementation](#mean-stack-system-implementation)
    - [Stack Architecture & System Design](#stack-architecture--system-design)
-   - [Back End : MongoDB](#back-end--mongodb)
+   - [Back-end : MongoDB](#back--end--mongodb)
    - [Middle Tier : Express, Node, RESTful API](#middle-tier--express-node-restful-api)
-   - [Front End : Angular](#front-end--angular)
+   - [Front-end : Angular](#front--end--angular)
    - [Deployment Details](#deployment-details)
    - [Additional](#additional)
 
@@ -27,7 +27,7 @@ A software development process can be seen as the application of divide and conq
 
 Due to these constraints, we first sought out a strategy to apply to our work approach. We knew little and often would be beneficial, ensuring a smoother journey towards a minimal viable product. For that reason we set out to compare and contrast the industry standard software development life cycle methods in order to find our approach.
 
-To help manage workloads, we split up into separate, but closely linked, front and backend teams. Daniel Davies, Jack Pike and Harry Smith made up the frontend and Nathan Taylor and Vincenzo Gibliaro on the backend team.
+To help manage workloads, we split up into separate, but closely linked, front and back-end teams. Daniel Davies, Jack Pike and Harry Smith made up the front-end and Nathan Taylor and Vincenzo Gibliaro on the back-end team.
 
 In order to help the team flourish under agile principles (see below), we also gave team members different roles when required to fit the needs of the project. Jack took up the role of Product Owner, and was therefore responsible for the stakeholders in the project. He assumed this responsibility particularly for the development of our user stories during user testing such as our Likert scale questionnaires. Harry was Scrum Master, and in this way, he took charge of developing our sprints and stand-ups. This included documentation, planning and coordinating the team effectively. The remaining team members assumed their roles as development team members. As our team was small, we were all able to provide opinion and input at any stage, but these loosely defined roles helped navigate the team through different stages of the project. 
 ### Why Agile?
@@ -35,7 +35,7 @@ We made the decision to follow agile working principles where possible for the d
 
 First and foremost, our Agile working methods allowed us to deliver software frequently. As our git commit history demonstrates, as a team our commits were 'small and often' as opposed to 'large and infrequent'. For us as a team, this continuous delivery method is closely linked and enables many of the other principles in the Agile manifesto such as reflection at regular intervals on our work. This approach helped us to interrogate every small piece of the larger jigsaw to ensure that our work was the highest quality it could be. Additionally, this iterative approach to delivering software and developing our single page application helped to sustain good morale amongst the team and a productive working environment. We have all learnt that it is important to compartmentalise large projects into small pieces to maintain the feeling of progression at all times. A different approach might have been demotivating for individuals and the group and we are thankful that we maintained a great work ethic for the duration of the project. 
 
-Secondly, another agile working principle that we followed keenly was to work together daily. Close communication was essential for us in developing this project. Despite having to adapt in the face of the pandemic, we in constant communication through our weekly stand-ups, additional meetings on Teams and through the instant messaging platform Discord. The effects of this cannot be understated. This allowed for each team member to assist and offer advice to other members of the group whenever required, and for more complex design decisions, we could draw on five opinions instead of one. For example, the back-end team sought the advice of the front end early on in the project when devising ER diagrams for our database. Considering that many of our team had not met before collaborating on this project, we could have easily taken another path in our communication, which we believe would not have enabled us to ultimately achieve a project to at the same level as this application. It is important to note also that our weekly stand-ups set the tone each week for effective communication about our project. Every Monday morning at 10 am, each team member was given 60 seconds to answer the following three questions: 
+Secondly, another agile working principle that we followed keenly was to work together daily. Close communication was essential for us in developing this project. Despite having to adapt in the face of the pandemic, we in constant communication through our weekly stand-ups, additional meetings on Teams and through the instant messaging platform Discord. The effects of this cannot be understated. This allowed for each team member to assist and offer advice to other members of the group whenever required, and for more complex design decisions, we could draw on five opinions instead of one. For example, the back-end team sought the advice of the front-end early on in the project when devising ER diagrams for our database. Considering that many of our team had not met before collaborating on this project, we could have easily taken another path in our communication, which we believe would not have enabled us to ultimately achieve a project to at the same level as this application. It is important to note also that our weekly stand-ups set the tone each week for effective communication about our project. Every Monday morning at 10 am, each team member was given 60 seconds to answer the following three questions: 
 
 1. What did you do the previous week, and did you encountered any issues?
 2. What does next week have installed for you?
@@ -43,7 +43,7 @@ Secondly, another agile working principle that we followed keenly was to work to
 
 This served to encourage communication in the team, create small incremental progress, address any problems early, be reflective about our work and ultimately deliver working software. 
 
-Constant communication encouraged many other of the agile principles also such as continuous attention to technical excellence and constant reflection of our work. We were able to share work with the team often and talk through what we had were planning to build or what we had built. We do not think this would have been possible without agile ways of working. For example, our back end team reflected often about how best to export their data in json format to link up with the front end. Although we achieved a working format reasonably quickly, upon reflection, we were able to simplify the json payload to link well with the front end. There is a lot that can go wrong when developing software and by being reflective, we were able to solve problems more dynamically using these agile principles. 
+Constant communication encouraged many other of the agile principles also such as continuous attention to technical excellence and constant reflection of our work. We were able to share work with the team often and talk through what we had were planning to build or what we had built. We do not think this would have been possible without agile ways of working. For example, our back-end team reflected often about how best to export their data in json format to link up with the front-end. Although we achieved a working format reasonably quickly, upon reflection, we were able to simplify the json payload to link well with the front-end. There is a lot that can go wrong when developing software and by being reflective, we were able to solve problems more dynamically using these agile principles. 
 
 
 
@@ -64,7 +64,7 @@ To implement continuous integration and deployment within our project, we decide
 
 Our reasons for using Git and GitHub, concerning the Agile software development approach, are best outlined below.
 
-We needed developers in the team to tackle tasks individually (alongside some pair programming). This allows for specialisation across team members, so they can focus on specific features in efficient manour. Key to this was organising *who* builds *what*. Discussions of this sort took place in team meetings, and are generally outlined in the meeting logs (front end and back end). GitHub's utilisation of **branches** effectively allowed us to adopt this methodology in our approach.
+We needed developers in the team to tackle tasks individually (alongside some pair programming). This allows for specialisation across team members, so they can focus on specific features in efficient manour. Key to this was organising *who* builds *what*. Discussions of this sort took place in team meetings, and are generally outlined in the meeting logs (front-end and back-end). GitHub's utilisation of **branches** effectively allowed us to adopt this methodology in our approach.
 
 #### Branching
 
@@ -158,7 +158,7 @@ Key goals:
 - Upload a complete boilerplate dashboard to GitHub repo for further development.
 - Carry out more substantial market research.
 
-As this was also deadline week for another assignment, this sprint was deliberately brief, but was decided with good intentions. Having all teams members at the same level of understanding, regarding the full stack deployment, going into 3 weeks of sprints where we expected to achieve a lot, in terms of advancing the front and backend, would be hugely beneficial. With everyone at the same level, it would mean that if additional resources were required at either end, we would be able to pivot and share the load better amongsts ourselves. Further, with a fully working dashboard up on the GitHub repo, we would be in good stead to hit the ground running for further development on the quiz for the first sprint of Easter.
+As this was also deadline week for another assignment, this sprint was deliberately brief, but was decided with good intentions. Having all teams members at the same level of understanding, regarding the full stack deployment, going into 3 weeks of sprints where we expected to achieve a lot, in terms of advancing the front and back-end, would be hugely beneficial. With everyone at the same level, it would mean that if additional resources were required at either end, we would be able to pivot and share the load better amongsts ourselves. Further, with a fully working dashboard up on the GitHub repo, we would be in good stead to hit the ground running for further development on the quiz for the first sprint of Easter.
 
 The documented market research can be found [here](../Documentation/BackgroundResearch/Market+Field_Research.md). Here, we looked into the surrounding field, and our motivations for our web application. In summary, the section explains how fake news can contribute to the detriment of social health, and cost to companies that are the burden of fake news stories. Further, we found no web applications that offer what we have set out to create.
 
@@ -168,8 +168,8 @@ The documented market research can be found [here](../Documentation/BackgroundRe
 | Neil (University Professor)       | It doesn't look like there are too many websites out there that let visitors learn about and test themselves on fake news. |
 | Emma (Admin)       | With the market research done, I have a better idea of what quiz topics to give users the option of taking. |
 
-### Sprint 3 : Prepare Backend & Additional Wireframe (29.03.21-04.04.21)
-Sprint number 3 came in the first week on Easter and the key goals related to advancing our paper prototype into a more developed wireframe and develop the backend with respect to the mongoDB containers and finalizing the dataset with sample questions, broken down by news topic. Further we set a stretch goal to prepare the data model for handling HTTP requests.
+### Sprint 3 : Prepare Back-end & Additional Wireframe (29.03.21-04.04.21)
+Sprint number 3 came in the first week on Easter and the key goals related to advancing our paper prototype into a more developed wireframe and develop the back-end with respect to the mongoDB containers and finalizing the dataset with sample questions, broken down by news topic. Further we set a stretch goal to prepare the data model for handling HTTP requests.
 
 Key goals:
 - Finish hand-made quiz dataset, broken down into various topics ready for linking to the front end.
@@ -179,7 +179,7 @@ Key goals:
 
 For the front end, the focus was taking onboard the feedback obtained from the SurveyMonkey questionnaire that was previously sent round based off the initial paper prototype. The feedback proved to be useful, especially points focussed around UI and UX, such as the navigation being intuitive and consistent, colour scheme and suggestions for a social sharing feature. As well as taking onboard UX and UI feedback, we also received reasurring feedback that the idea was liked by respondents and that they were interested to use the webpage and take the quiz. With this feedback, we also made our first interactive wireframe.
 
-As our first real coding sprint, we experienced some implementation issues on the backend. We were previously using proxy data for testing the backend, but now that we were trying to make the backend utilise MongoDB, storing the data caused some trouble. On reflection, however, it proved a useful learning experience.
+As our first real coding sprint, we experienced some implementation issues on the back-end. We were previously using proxy data for testing the back-end, but now that we were trying to make the backend utilise MongoDB, storing the data caused some trouble. On reflection, however, it proved a useful learning experience.
 
 | Stakeholders            | Updated Use Case        |
 | ------------------------| ------------------------|
@@ -189,7 +189,7 @@ As our first real coding sprint, we experienced some implementation issues on th
 
 | Stack Part  | Goal        | Issue | Fix |
 | ------------| ----------- |-------|-----|
-| Backend     | Store persistent data in a dockerized mongoDB container | Data was not persisting when creating and running scripts to insert data and deploy docker | Trial and error, Googling and a deep dive into the scripts to ascertain root of the bugs |
+| Back-end     | Store persistent data in a dockerized mongoDB container | Data was not persisting when creating and running scripts to insert data and deploy docker | Trial and error, Googling and a deep dive into the scripts to ascertain root of the bugs |
 
 ### Sprint 4 : Build Frontend Webpages & Begin Linking Front and Backend (05.04.21-11.04.21)
 Sprint number 4 saw the team coming together to start linking the frontend and backend. On the front end, work was done on highlighting what was, and what wasn't, needed from our selected quiz framework, in order to ascertain how we would tailor it to our liking. New pages and navigation were also added to the website. On the backend, the team finalised the data model schema and created mongoose commands to return the correct JSON payload, ready to be used by the quiz for questions.
@@ -217,11 +217,11 @@ On reflection of the sprint, it was a productive week, despite the front end qui
 
 | Stack Part  | Goal        | Issue | Fix |
 | ------------| ----------- |-------|-----|
-| Backend     | Setup data model schema | Data models were not aligned with frontend format required for quiz | Liaised with front end to reformat data |
-| Frontend    | Setup quiz framework in frontend | Quiz framework selected was too advanced | Found a new framework that was more appropriate for our ability |
+| Back-end     | Setup data model schema | Data models were not aligned with frontend format required for quiz | Liaised with front end to reformat data |
+| Front-end    | Setup quiz framework in frontend | Quiz framework selected was too advanced | Found a new framework that was more appropriate for our ability |
 
-### Sprint 5 : Further Front and Backend Integration (12.04.21-18.04.21)
-In this sprint, the team hoped to finally have a fully integrated front and backend by the end so that general housekeeping and tidying up could begin. On the front end, a quiz topic selection page was created so that the end user could pick between any of the five different set of quiz questions. The backend team also investigated the possibility of returning a single topic set of quiz questions at a time, as opposed to all questions at once.
+### Sprint 5 : Further Front and Back-end Integration (12.04.21-18.04.21)
+In this sprint, the team hoped to finally have a fully integrated front and back-end by the end so that general housekeeping and tidying up could begin. On the front end, a quiz topic selection page was created so that the end user could pick between any of the five different set of quiz questions. The back-end team also investigated the possibility of returning a single topic set of quiz questions at a time, as opposed to all questions at once.
 
 Key goals:
 - Inject a data service to the frontend. 
@@ -232,7 +232,7 @@ Key goals:
 
 Great progress was made during the sprint. During the week, the frontend team were able to utilize the API that the backend team had developed in prior weeks. By using the JSON payload returned from the API, the frontend team created a data service to subscribe the front end to. With the API data now being automatically fed into the frontend, the team could then update the quiz component classes so that the individual quizzes were loaded into the quiz framework. By creating this link, the team had a fully operating MEAN stack web quiz.
 
-In this sprint, the backend team also investigated upgrading the API so that it would only return the required quiz questions when a topic was selected on the topic page. The backend team were able to implement this, but upon further discussion with the wider team, we decided that the preferred method was to request all quiz topics at once and let the quiz framework decide which questions to access. Further, the backend team investigated implementing a user story we had been striving for since the first paper prototype; adding a, e.g., "76% of users got this question wrong" at the end of each question. This proved to be too difficult, despite consulting with the TAs, and was ultimately dropped.
+In this sprint, the back-end team also investigated upgrading the API so that it would only return the required quiz questions when a topic was selected on the topic page. The back-end team were able to implement this, but upon further discussion with the wider team, we decided that the preferred method was to request all quiz topics at once and let the quiz framework decide which questions to access. Further, the back-end team investigated implementing a user story we had been striving for since the first paper prototype; adding a, e.g., "76% of users got this question wrong" at the end of each question. This proved to be too difficult, despite consulting with the TAs, and was ultimately dropped.
 
 At the end of the sprint, the team were in agreement that we were all happy with the product and how it operated. The team agreed that the current state was our minimum viable product, and every improvement from here would be an added bonus!
 
@@ -246,12 +246,12 @@ At the end of the sprint, the team were in agreement that we were all happy with
 
 | Stack Part  | Goal        | Issue | Fix |
 | ------------| ----------- |-------|-----|
-| Backend     | Admin wants to view user question stats | Maintaining the state/count of number of times a question was correctly answered proved difficult. Persistence of the data kept getting lost | N/A - Dropped feature as it was proving too difficult to maintain the count of question attempts and answers. Unfortunately, this meant we were not able to fufill two of our user stores. |
-| Frontend    | Linking up front and backend | Data sent through from API was not being picked up by the data service and thus no questions were being presented to the user. | Realized that the JSON payload from the API was being sent as an array of topics and questions. `quiz.component.ts` was refactored to access the correct array elements. |
-| Frontend    | Selecting a quiz topic | Extracting the user's quiz topic selection to use it to load the correct quiz questions.  | Redirect user to e.g. `/quiz/brexit` via the routing module and extract topic from URL to pass into `loadQuiz()` method call. |
+| Back-end     | Admin wants to view user question stats | Maintaining the state/count of number of times a question was correctly answered proved difficult. Persistence of the data kept getting lost | N/A - Dropped feature as it was proving too difficult to maintain the count of question attempts and answers. Unfortunately, this meant we were not able to fufill two of our user stores. |
+| Front-end    | Linking up front and back-end | Data sent through from API was not being picked up by the data service and thus no questions were being presented to the user. | Realized that the JSON payload from the API was being sent as an array of topics and questions. `quiz.component.ts` was refactored to access the correct array elements. |
+| Front-end    | Selecting a quiz topic | Extracting the user's quiz topic selection to use it to load the correct quiz questions.  | Redirect user to e.g. `/quiz/brexit` via the routing module and extract topic from URL to pass into `loadQuiz()` method call. |
 
 ### Sprint 6 : Write-up & Minor Frontend Amendments (19.04.21-07.05.21)
-After successfully linking up the front and backend last sprint, the team had a minimum viable product and were ready to start focusing on writing up the project alongside attending to any minor amendments required for on the code base and website. Further, the team also undertook a final round of user feedback, allowing the tester to directly interact with the website, and added some functional and unit testing to increase the robustness of the website.
+After successfully linking up the front and back-end last sprint, the team had a minimum viable product and were ready to start focusing on writing up the project alongside attending to any minor amendments required for on the code base and website. Further, the team also undertook a final round of user feedback, allowing the tester to directly interact with the website, and added some functional and unit testing to increase the robustness of the website.
 
 Key goals:
 - Code base tidy up; removing unused code and add comments.
@@ -277,7 +277,7 @@ As a MEAN stack single page application, our system architecture and design revo
   <img src="../Documentation/Images/WTLTY_Sequence_Diagram.png" alt="Sequence Flow Diagram" width="100%">
 </p>
 
-To explain the sequence flow diagram succinctly, when someone visits the website, this will cause the JavaScript code to be run, calling on the `AppRoutingModule` to direct the user to the `http://localhost:4200/welcome`. Should the user navigate to the quiz topic selection page and choose a quiz topic, a similar series of events will happen; the user will be directed to, e.g., `http://localhost:4200/quiz/brexit`, but this time a call to the `QuizComponent` will occur. Calling the `QuizComponent` will in turn load the `DataService` component, as this is the QuizComponent's dependency injection and the component is subscribed to the data being provided. This DataService is responsible for handling and creating the HTTP requests to the backend infrastructure, making use of a router, controller and model to process the request and query the database. The database will then process the query and retrieve the data, sending it back to the API as JSON. The resulting JSON payload is the retrieved, and sent back to the frontend, via the HTTP `get` requests originally called by the DataService. 
+To explain the sequence flow diagram succinctly, when someone visits the website, this will cause the JavaScript code to be run, calling on the `AppRoutingModule` to direct the user to the `http://localhost:4200/welcome`. Should the user navigate to the quiz topic selection page and choose a quiz topic, a similar series of events will happen; the user will be directed to, e.g., `http://localhost:4200/quiz/brexit`, but this time a call to the `QuizComponent` will occur. Calling the `QuizComponent` will in turn load the `DataService` component, as this is the QuizComponent's dependency injection and the component is subscribed to the data being provided. This DataService is responsible for handling and creating the HTTP requests to the back-end infrastructure, making use of a router, controller and model to process the request and query the database. The database will then process the query and retrieve the data, sending it back to the API as JSON. The resulting JSON payload is the retrieved, and sent back to the frontend, via the HTTP `get` requests originally called by the DataService. 
 
 #### UML Class diagram
 The UML class diagram shows the structure and relationships between the various moving parts of our frontend webpage and gives a quick overview of the synergies happening. By visually displaying this information, we found it helped us keep track of how things were connected and gave us a sense of orientation; useful as we scaled up and added new components along the development of the page. We have excluded the individual Angular components and spec testing classes to keep it from getting too large.  
@@ -286,7 +286,7 @@ The UML class diagram shows the structure and relationships between the various 
   <img src="../Documentation/Images/WTLTY_UML_Class_Diagram.png" alt="UML Class diagram" width="100%">
 </p>
 
-### Back End : MongoDB
+### Back-End : MongoDB
 #### SQL vs noSQL
 
 Although we have pre-defined our DB schema, and checked for normalisation, we made the transition from an SQL schema to noSQL (mongoDB), to utilise the mongoose object modelling tool.
